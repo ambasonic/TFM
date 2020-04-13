@@ -11,7 +11,6 @@ public class QuotationComponent extends ReusableViewElements {
     }
 
     public void selectNewQuotation() {
-        waitABit(3000);
         element(By.id("quote_actions_dealer:j_idt133")).click();
     }
 }
