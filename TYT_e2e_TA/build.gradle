@@ -30,6 +30,10 @@ ext {
     junitVersion = '4.12'
     assertJVersion = '3.8.0'
     logbackVersion = '1.2.3'
+    apachePoiVersion = '4.1.2'
+    apacheOOXmlPoiVersion = '4.1.2'
+//    apacheooxmlschemas = '1.1'
+//    openxml4jVersion = '1.0-beta'
 }
 
 dependencies {
@@ -39,6 +43,11 @@ dependencies {
             "net.serenity-bdd:serenity-cucumber5:${serenityCucumberVersion}",
             "net.serenity-bdd:serenity-screenplay:${serenityCoreVersion}",
             "net.serenity-bdd:serenity-screenplay-webdriver:${serenityCoreVersion}",
+            "org.apache.poi:poi:${apachePoiVersion}",
+            "org.apache.poi:poi-ooxml-schemas:${apacheOOXmlPoiVersion}",
+            "org.apache.poi:poi-ooxml:${apacheOOXmlPoiVersion}",
+//            "org.apache.poi:ooxml-schemas:${apacheooxmlschemas}",
+//            "org.apache.poi:openxml4j:${openxml4jVersion}",
             "junit:junit:${junitVersion}",
             "org.assertj:assertj-core:${assertJVersion}"
 }

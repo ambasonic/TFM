@@ -1,6 +1,5 @@
 package e2eTests.cukeStepDefinitions.dealerHomePage;
 
-import Pages.dealerHome.DealerHomePage;
 import e2eTests.stepdefinitions.DealerHomePageSteps;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
