@@ -14,8 +14,8 @@ private final String organization = "//button[@id='prospectdata:prospectlistTabl
         super(driver);
     }
 
-    public void clickOnSearch() {
-        element(By.id("quote:prospectname")).sendKeys("ANNA PAGANO");
+    public void searchCustomerByName(String customerName) {
+        element(By.id("quote:prospectname")).sendKeys(customerName);
         element(By.id(searchButton)).click();
         waitABit(4000);
 
@@ -31,7 +31,7 @@ private final String organization = "//button[@id='prospectdata:prospectlistTabl
         element(By.xpath(organization)).click();
     }
 
-    public void acceptAndConfirmConditions() {
+    public void acceptProspectAgreement() {
         waitABit(2000);
         element(By.xpath("//*[@id='quote:j_idt3748:0:j_idt3749']/div[2]")).click();
         element(By.xpath("//*[@id='quote:j_idt3748:1:j_idt3749']/div[2]")).click();

@@ -49,16 +49,70 @@ public class SalePageCucumberSteps {
         salePageSteps.setOption(option);
     }
 
-    @Then("he search a customer")
-    public void he_search_a_customer(){ //TODO maybe define a customer in test data
-        salePageSteps.clickOnSearch();
+    @Then("he search the customer by name {string}")
+    public void he_Search_The_Customer_By_Name(String customerName){
+        salePageSteps.searchCustomerByName(customerName);
         salePageSteps.switchToOrganizationSearch();
         salePageSteps.selectOrganization();
     }
 
-    @Then("he accept the condition")
-    public void he_accept_the_condition() {
-        salePageSteps.acceptAndConfirmConditions();
+    @Then("he accepts the prospect agreement")
+    public void he_accepts_the_prospect_agreement() {
+        salePageSteps.acceptProspectAgreement();
 
+    }
+
+    @When("he select the pending quotes menu")
+    public void he_select_The_Pending_Quotes_Menu() {
+        salePageSteps.clickOnTheBurgerMenu();
+        salePageSteps.clickOnSale();
+        salePageSteps.clickOnPendingQuotations();
+    }
+
+    @Then("he can duplicate a quote")
+    public void he_can_duplicate_a_quote() {
+        salePageSteps.selectQuote();//TODO maybe selects a distinct quote important if the tests are running in parallel
+        salePageSteps.openQuoteActionsMenu();
+        salePageSteps.copyQuote();
+    }
+
+    @And("he updates the duration {int}")
+    public void he_Updates_The_Duration(int duration) {
+        salePageSteps.setDuration(duration);
+    }
+
+    @And("he updates the distance {int}")
+    public void he_Updates_The_Distance(int distance) {
+        salePageSteps.setDistance(distance);
+    }
+
+    @And("he selects the first {int} payment {string}")
+    public void he_Selects_The_payment_method(int paymentIndex, String paymentName) {
+        salePageSteps.selectPaymentMethod(paymentIndex, paymentName);
+    }
+
+    @And("he sets relief vehicle to {string}")
+    public void he_Sets_Relief_Vehicle(String option) {
+        salePageSteps.setReliefVehicle(option);
+    }
+
+    @And("he selects the tyre type {int} {string}")
+    public void heSelectsTheTyreTypeFlexStandard(int tiresIndex, String tiresType) {
+        salePageSteps.selectTireType(tiresIndex, tiresType);
+    }
+
+    @And("he adds {int} tires")
+    public void addTires(int tiresNumber) {
+        salePageSteps.addTires(tiresNumber);
+    }
+
+    @Then("he calculates the quote")
+    public void he_Calculates_The_Quote() {
+        salePageSteps.calculateQuote();
+    }
+
+    @And("he saved it")
+    public void saved_It() {
+        salePageSteps.save();
     }
 }

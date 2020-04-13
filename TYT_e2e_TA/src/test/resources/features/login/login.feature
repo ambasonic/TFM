@@ -1,6 +1,4 @@
 Feature: Login Dealer
-  @ignore
-  @gherkin
   Scenario Outline: Login dealer in Italy and France
     Given The dealer open the MilesWeb portal Dealer home page '<homePage>'
     When he login with the username as '<userName>' and the pwd '<password>'

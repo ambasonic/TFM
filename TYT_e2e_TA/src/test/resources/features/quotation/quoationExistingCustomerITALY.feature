@@ -1,6 +1,6 @@
 # new feature
 # Tags: optional
-
+@italy
 Feature: Quotation Template with an existing Customer Italy
 
   Scenario Outline: quotation
@@ -16,12 +16,20 @@ Feature: Quotation Template with an existing Customer Italy
     And he chooses color '<color>' and upholstery '<upholstery>'
     And he selects an option '<description>'
     And he go to the next page
-    Then he search a customer
-    # give the customer name for the search ANNA PAGANO
+    Then he search the customer by name '<customer Name>'
     And he go to the next page
-    Then he accept the condition
-       # rename to prospect agreement
+    Then he accepts the prospect agreement
+    And he go to the next page
+    And he updates the duration 48
+    And he updates the distance 80000
+    And he selects the first 1 payment 'TFM2_Delivery cost direct/broker from dealer to customer'
+    And he sets relief vehicle to 'yes'
+    And he selects the tyre type 3 'Flex Standard'
+    And he adds 4 tires
+    Then he calculates the quote
+    And he saved it
+
 
     Examples:
-      |homePage| userName  | password | car manufacturer| model| car type | color | upholstery |description |
-      |https://10.7.25.20:9943/TFMIT_TST/user/login.xhtml| testau1  | Amba1@2020  | Toyota | Aygo | 1.0 VVT-i x-play | Anthracite Grey metallic | Cloth upholstery Dark Grey with bi-toned bolsters white and light grey | lojack classic|
+      |homePage| userName  | password | car manufacturer| model| car type | color | upholstery |description | customer Name |
+      |https://10.7.25.20:9943/TFMIT_TST/user/login.xhtml| testau1  | Amba1@2020  | Toyota | Aygo | 1.0 VVT-i x-play | Anthracite Grey metallic | Cloth upholstery Dark Grey with bi-toned bolsters white and light grey | lojack classic| ANNA PAGANO |
