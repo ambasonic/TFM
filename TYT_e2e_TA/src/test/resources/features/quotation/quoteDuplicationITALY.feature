@@ -14,9 +14,10 @@ Feature: Duplicate a quote and change of duration and distance with additional o
     And he updates the duration 60
     And he updates the distance 190000
     And he selects the first 1 payment 'TFM2_Delivery cost direct/broker from dealer to customer'
+    And he sets relief vehicle to 'yes'
+    And he selects the tyre type 3 'Flex Standard'
+    And he adds 4 tires
     And he saved it
-    # Le Lojack Premium
-    # Portabici Dx a change dans excel dois aussi le faire
 
     Examples:
       |homePage| userName  | password |

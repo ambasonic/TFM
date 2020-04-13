@@ -23,9 +23,6 @@ Feature: Quotation Template with an existing Customer Italy
     And he updates the duration 48
     And he updates the distance 80000
     And he selects the first 1 payment 'TFM2_Delivery cost direct/broker from dealer to customer'
-    And he sets relief vehicle to 'yes'
-    And he selects the tyre type 3 'Flex Standard'
-    And he adds 4 tires
     Then he calculates the quote
     And he saved it
 
