@@ -18,6 +18,7 @@ public class FinancesServicesComponent extends ReusableViewElements {
     private final String Tires_Number_Input_Field = "quote:retailfinance:lsc:3:qr:1:qinputs";
     private final String Calculate_Button = "quote:retailfinanceSummary:update";
     private final String Save_Quote = "quote:retailfinanceSummary:save";
+    private final String TotalPrice_Value = "quote:retailfinanceSummary:pricewithfuelexclvat";
 
 
     @FindBy(id="quote:retailfinance:months")
@@ -67,6 +68,7 @@ public class FinancesServicesComponent extends ReusableViewElements {
     }
 
     public void setTiresNumber(int tiresNumber){
+        element(By.id(Tires_Number_Input_Field)).clear();
         element(By.id(Tires_Number_Input_Field)).sendKeys(String.valueOf(tiresNumber));
     }
 
@@ -77,5 +79,10 @@ public class FinancesServicesComponent extends ReusableViewElements {
 
     public void saveQuote(){
         element(By.id(Save_Quote)).click();
+    }
+
+    public String getTotalPrice(){
+        String totalPrice = element(By.id(TotalPrice_Value)).getText();
+        return totalPrice;
     }
 }

@@ -4,8 +4,8 @@
 Feature: Quotation Template with an existing Customer
 
   Scenario Outline: quotation
-    Given The dealer open the MilesWeb portal Dealer home page '<homePage>'
-    When he login with the username as '<userName>' and the pwd '<password>'
+    Given The dealer open the MilesWeb portal Dealer home page
+    And he login
     Then he can see the dealer home page
     When he selects a new quotation
     And he selects a vehicle '<car manufacturer>'

@@ -4,8 +4,8 @@
 Feature: Duplicate a quote and change of duration and distance with additional options
 
   Scenario Outline: quote duplication
-    Given The dealer open the MilesWeb portal Dealer home page '<homePage>'
-    When he login with the username as '<userName>' and the pwd '<password>'
+    Given The dealer open the MilesWeb portal Dealer home page
+    And he login
     Then he can see the dealer home page
     When he select the pending quotes menu
     Then he can duplicate a quote

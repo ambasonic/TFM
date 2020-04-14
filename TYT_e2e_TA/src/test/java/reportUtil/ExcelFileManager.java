@@ -10,6 +10,7 @@ import java.io.*;
 import java.net.URL;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.Properties;
 
 
 public class ExcelFileManager {
@@ -244,8 +245,8 @@ public class ExcelFileManager {
         }
     }
 
-   public static void main(String[] arg){
-        ExcelFileManager excelFileManager = new ExcelFileManager();
-    }
+   public static void main(String[] arg) throws IOException {
 
+//        ExcelFileManager excelFileManager = new ExcelFileManager();
+   }
 }

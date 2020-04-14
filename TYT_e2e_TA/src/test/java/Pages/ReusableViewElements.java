@@ -17,7 +17,7 @@ public class ReusableViewElements extends PageObject {
     }
 
     public void clickOnNext() {
-        waitABit(1000);
+        waitABit(2000);
         element(By.id(nextButtonId)).click();
         waitABit(3000);
     }

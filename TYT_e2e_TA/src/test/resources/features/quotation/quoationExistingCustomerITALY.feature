@@ -4,8 +4,8 @@
 Feature: Quotation Template with an existing Customer Italy
 
   Scenario Outline: quotation
-    Given The dealer open the MilesWeb portal Dealer home page '<homePage>'
-    When he login with the username as '<userName>' and the pwd '<password>'
+    Given The dealer open the MilesWeb portal Dealer home page
+    And he login
     Then he can see the dealer home page
     When he selects a new quotation
     And he selects a vehicle '<car manufacturer>'
@@ -20,13 +20,14 @@ Feature: Quotation Template with an existing Customer Italy
     And he go to the next page
     Then he accepts the prospect agreement
     And he go to the next page
-    And he updates the duration 48
-    And he updates the distance 80000
-    And he selects the first 1 payment 'TFM2_Delivery cost direct/broker from dealer to customer'
+    And he updates the duration <duration>
+    And he updates the distance <distance>
+    And he selects the first <paymentIndex> payment '<paymentMethod>'
     Then he calculates the quote
     And he saved it
+    And he log out
 
 
     Examples:
-      |homePage| userName  | password | car manufacturer| model| car type | color | upholstery |description | customer Name |
-      |https://10.7.25.20:9943/TFMIT_TST/user/login.xhtml| testau1  | Amba1@2020  | Toyota | Aygo | 1.0 VVT-i x-play | Anthracite Grey metallic | Cloth upholstery Dark Grey with bi-toned bolsters white and light grey | lojack classic| ANNA PAGANO |
+      | car manufacturer| model| car type | color | upholstery |description | customer Name | duration | distance | paymentIndex | paymentMethod |
+      | Toyota | Aygo | 1.0 VVT-i x-play | Anthracite Grey metallic | Cloth upholstery Dark Grey with bi-toned bolsters white and light grey | lojack classic| ANNA PAGANO | 48 | 80000 | 1 |TFM2_Delivery cost direct/broker from dealer to customer|

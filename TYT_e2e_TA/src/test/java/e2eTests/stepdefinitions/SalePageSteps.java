@@ -3,6 +3,9 @@ package e2eTests.stepdefinitions;
 import Pages.sale.SalePage;
 import net.thucydides.core.annotations.Step;
 
+import static org.hamcrest.Matchers.is;
+import static org.junit.Assert.assertThat;
+
 public class SalePageSteps {
 
     SalePage salePage;
@@ -67,17 +70,17 @@ public class SalePageSteps {
 
     @Step("The dealer click on the burger menu Kinto one")
     public void clickOnTheBurgerMenu() {
-        salePage.clickOnTheBurgerMenu();
+        salePage.getTopBarComponent().clickOnTheBurgerMenu();
     }
 
     @Step("The dealer click on sale button")
     public void clickOnSale() {
-        salePage.clickOnSale();
+        salePage.getTopBarComponent().clickOnSale();
     }
 
     @Step("The dealer click on pending quotation")
     public void clickOnPendingQuotations() {
-        salePage.clickOnPendingQuotations();
+        salePage.getTopBarComponent().clickOnPendingQuotations();
     }
 
     @Step("The dealer select the quote to duplicate")
@@ -137,6 +140,27 @@ public class SalePageSteps {
     @Step("the dealer saved it")
     public void save() {
         salePage.getFinancesServicesComponent().saveQuote();
+    }
+
+    @Step("The dealer expects: {0} as total price")
+    public void checkTotalPrice(String totalPrice) {
+        String expectedPrice = salePage.getFinancesServicesComponent().getTotalPrice();
+        assertThat(expectedPrice, is(totalPrice));
+    }
+
+    @Step("The dealer click on topBar menu")
+    public void topBarMenu() {
+        salePage.getTopBarComponent().openTopBar();
+    }
+
+    @Step("The dealer click On profile")
+    public void clickOnProfile() {
+        salePage.getTopBarComponent().clickOnProfile();
+    }
+
+    @Step("The dealer click On logOut")
+    public void clickOnLogOut() {
+        salePage.getTopBarComponent().clickOnLogOut();
     }
 }
 

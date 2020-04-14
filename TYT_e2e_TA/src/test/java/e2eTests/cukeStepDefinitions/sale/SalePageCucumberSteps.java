@@ -3,6 +3,7 @@ package e2eTests.cukeStepDefinitions.sale;
 
 import e2eTests.stepdefinitions.SalePageSteps;
 import io.cucumber.java.en.And;
+import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import net.thucydides.core.annotations.Steps;
@@ -111,8 +112,22 @@ public class SalePageCucumberSteps {
         salePageSteps.calculateQuote();
     }
 
+
+    @And("the total price should be {string}")
+    public void the_Total_Price_Should_Be(String totalPrice) {
+        salePageSteps.checkTotalPrice(totalPrice);
+    }
+
     @And("he saved it")
     public void saved_It() {
         salePageSteps.save();
     }
+
+    @And("he log out")
+    public void logOut() {
+        salePageSteps.topBarMenu();
+        salePageSteps.clickOnProfile();
+        salePageSteps.clickOnLogOut();
+    }
+
 }
