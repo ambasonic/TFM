@@ -1,6 +1,7 @@
 # new feature
 # Tags: optional
 @italy
+@case1
 Feature: Quotation Template with an existing Customer Italy
 
   Scenario Outline: quotation

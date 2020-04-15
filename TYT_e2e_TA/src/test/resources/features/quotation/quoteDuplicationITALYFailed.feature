@@ -2,6 +2,7 @@
 # Tags: optional
 
 @italy
+@case3
 Feature: Failed Duplicate a quote and change of duration and distance with additional options
 
   Scenario Outline: quote duplication
@@ -17,9 +18,9 @@ Feature: Failed Duplicate a quote and change of duration and distance with addit
     And he selects the tyre type <tyreIndex> '<tyreName>'
     And he adds <tyreNumber> tires
     Then he calculates the quote
-    And the total price should be '<totalPrice>'
+    And the total price is '<totalPrice>'
     And he saved it
 
     Examples:
       |duration| distance | paymentIndex | paymentMethod | relief_vehicle | tyreIndex | tyreName | tyreNumber | totalPrice |
-      |60      | 190000   | 1            |TFM2_Delivery cost direct/broker from dealer to customer| yes | 2 | Flex Standard | 4 |€ 447.59 |
+      |60      | 190000   | 1            |TFM2_Delivery cost direct/broker from dealer to customer| yes | 2 | Flex Standard | 4 |€ 448.59 |

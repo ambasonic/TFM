@@ -145,4 +145,10 @@ public class SalePageCucumberSteps {
         System.out.println("####");
         System.out.println("####");
     }
+
+    //TODO TO Remove
+    @And("the total price is {string}")
+    public void theTotalPriceIsTotalPrice(String expectedPrice) {
+        salePageSteps.checkTotalPrice2(expectedPrice);
+    }
 }

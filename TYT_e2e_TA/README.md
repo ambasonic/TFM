@@ -27,7 +27,17 @@ $ mvn clean verify -Ddriver=chrome
 ```
 Or 
 ```json
-$ gradle clean test -Pdriver=chrome
+$ gradle clean test -Pdriver=chrome  -Dcucumber.options=–tags italys
+```
+
+Command to run all features from Italy
+
+```json
+$ gradle clean test -Dcucumber.options="--tags @italy"
+
+$ gradle clean test -Dcucumber.options="--tags @case1"
+$ gradle clean test -Dcucumber.options="--tags @case2"
+$ gradle clean test -Dcucumber.options="--tags @case3"
 ```
 
 The test results will be recorded in the `target/site/serenity` directory.

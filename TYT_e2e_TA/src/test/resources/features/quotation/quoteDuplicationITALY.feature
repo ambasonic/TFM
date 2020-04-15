@@ -2,6 +2,7 @@
 # Tags: optional
 
 @italy
+@case2
 Feature: Duplicate a quote and change of duration and distance with additional options
 
   Scenario Outline: quote duplication

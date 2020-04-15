@@ -1,7 +1,5 @@
 package e2eTests;
 
-import io.cucumber.core.gherkin.Scenario;
-import io.cucumber.java.Before;
 import io.cucumber.junit.CucumberOptions;
 import net.serenitybdd.cucumber.CucumberWithSerenity;
 import org.junit.After;

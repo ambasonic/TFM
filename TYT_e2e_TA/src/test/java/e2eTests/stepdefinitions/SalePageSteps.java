@@ -145,7 +145,7 @@ public class SalePageSteps {
     @Step("The dealer expects: {0} as total price")
     public void checkTotalPrice(String totalPrice) {
         String expectedPrice = salePage.getFinancesServicesComponent().getTotalPrice();
-        assertThat(totalPrice, is(expectedPrice));
+        assertThat(totalPrice, is(expectedPrice)); //TODO refactor put total price
     }
 
     @Step("The dealer click on topBar menu")
@@ -161,6 +161,12 @@ public class SalePageSteps {
     @Step("The dealer click On logOut")
     public void clickOnLogOut() {
         salePage.getTopBarComponent().clickOnLogOut();
+    }
+
+    @Step("The dealer expects: {0} as total price")
+    public void checkTotalPrice2(String expectedPrice) {
+        String mockedPrice = "€ 450";
+        assertThat(expectedPrice, is(mockedPrice)); //TODO refactor put total price
     }
 }
 

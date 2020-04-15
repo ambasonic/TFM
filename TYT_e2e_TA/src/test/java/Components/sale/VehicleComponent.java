@@ -18,6 +18,8 @@ public class VehicleComponent extends ReusableViewElements {
 
     public void selectCarManufacturer(String manufacturer) {
 //        assertThat(element(By.id(manufacturer_id)).getText().equalsIgnoreCase(manufacturer));
+        waitABit(4000);
+        element(By.xpath("//*[@id=\"quote:makeFieldSet\"]/legend")).click(); //TODO refactor lazy solution
         element(By.id(manufacturer_id)).click();
         waitABit(3000);
     }
