@@ -5,7 +5,6 @@ public enum CellName {
     ACTUAL_RESULT("  Actual result  "),
     EXPECTED_RESULT("  Expected result  "),
     OPTION_ACCESSORIES("Option/Accessories"),
-    DISCOUNTED_PRICE("Discounted price"),
     LEASE_PRICE("Lease Price"),
     SERVICES("Services");
 

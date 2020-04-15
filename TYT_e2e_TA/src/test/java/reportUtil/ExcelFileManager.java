@@ -37,7 +37,7 @@ public class ExcelFileManager {
         XSSFSheet sheet = addSheet(workbook, sheetName);
         int rowIndex = 0;
         // add items to test report
-        for (int i = 0; i< 4; i++){
+        for (int i = 0; i< 2; i++){
             // add basic items to test report
             addBasicRowDataToReport(sheet, rowIndex, "TestaCase ID:"+356+i);
             // for all new Test case add 5 to all index
@@ -69,7 +69,7 @@ public class ExcelFileManager {
         addExpectedResult(xssfRow, sheet);
 
         //List of cell name with same layout
-        String[] cellArray ={CellName.OPTION_ACCESSORIES.getDescription(), CellName.DISCOUNTED_PRICE.getDescription(),
+        String[] cellArray ={CellName.OPTION_ACCESSORIES.getDescription(),
         CellName.LEASE_PRICE.getDescription(), CellName.SERVICES.getDescription()};
         int cellIndex = 2;
         for (int i = 0; i < cellArray.length; i++) {
@@ -81,15 +81,13 @@ public class ExcelFileManager {
         //TODO make better ans save the Price as number not String
 //        TODO put in red the field where the expected result is not ok
 
-        addActualResult(sheet.getRow(rowIndex+1).createCell(2), "1500€");
-        addActualResult(sheet.getRow(rowIndex+1).createCell(3), "210,0€");
-        addActualResult(sheet.getRow(rowIndex+1).createCell(4), "220,0€");
-        addActualResult(sheet.getRow(rowIndex+1).createCell(5), "320,0€");
+        addActualResult(sheet.getRow(rowIndex+1).createCell(2), "189.10 €");
+        addActualResult(sheet.getRow(rowIndex+1).createCell(3), "310.99 €");
+        addActualResult(sheet.getRow(rowIndex+1).createCell(4), "150.85 €");
 
-        addExpectedResult(sheet.getRow(rowIndex+2).createCell(2), "320,0€");
-        addExpectedResult(sheet.getRow(rowIndex+2).createCell(3), "1500€");
-        addExpectedResult(sheet.getRow(rowIndex+2).createCell(4), "210,0€");
-        addExpectedResult(sheet.getRow(rowIndex+2).createCell(5), "220,0€");
+        addExpectedResult(sheet.getRow(rowIndex+2).createCell(2), "189.10 €");
+        addExpectedResult(sheet.getRow(rowIndex+2).createCell(3), "306.40 €");
+        addExpectedResult(sheet.getRow(rowIndex+2).createCell(4), "240.8 €");
 
 
     }
@@ -236,6 +234,6 @@ public class ExcelFileManager {
 
    public static void main(String[] arg) throws IOException {
 
-//        ExcelFileManager excelFileManager = new ExcelFileManager();
+        ExcelFileManager excelFileManager = new ExcelFileManager();
    }
 }

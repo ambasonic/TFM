@@ -79,6 +79,7 @@ public class FinancesServicesComponent extends ReusableViewElements {
 
     public void saveQuote(){
         element(By.id(Save_Quote)).click();
+        waitABit(3000);
     }
 
     public String getTotalPrice(){

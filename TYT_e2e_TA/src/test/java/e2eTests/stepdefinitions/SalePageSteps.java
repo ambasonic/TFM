@@ -145,7 +145,7 @@ public class SalePageSteps {
     @Step("The dealer expects: {0} as total price")
     public void checkTotalPrice(String totalPrice) {
         String expectedPrice = salePage.getFinancesServicesComponent().getTotalPrice();
-        assertThat(expectedPrice, is(totalPrice));
+        assertThat(totalPrice, is(expectedPrice));
     }
 
     @Step("The dealer click on topBar menu")
