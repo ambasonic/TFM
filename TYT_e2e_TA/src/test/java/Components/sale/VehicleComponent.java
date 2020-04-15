@@ -9,8 +9,8 @@ import static org.assertj.core.api.Assertions.assertThat;
 public class VehicleComponent extends ReusableViewElements {
 
     private final String manufacturer_id = "quote:makeList:1:j_idt705";
-    private final String carType = "typespan8"; // TODO mak the typeSpan iterable
-    private final String carModel = "quote:modelList:13:j_idt714";
+    private final String carType = "typespan8"; // TODO make the typeSpan iterable
+    private final String carModel = "quote:modelList:13:j_idt714"; //TODO make model distinct
     public VehicleComponent(WebDriver driver) {
         super(driver);
     }

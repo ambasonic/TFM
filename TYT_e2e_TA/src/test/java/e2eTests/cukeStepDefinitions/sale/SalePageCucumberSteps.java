@@ -2,6 +2,8 @@ package e2eTests.cukeStepDefinitions.sale;
 
 
 import e2eTests.stepdefinitions.SalePageSteps;
+import io.cucumber.java.After;
+import io.cucumber.java.Before;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -130,4 +132,17 @@ public class SalePageCucumberSteps {
         salePageSteps.clickOnLogOut();
     }
 
+    @After
+    public static void getFeatureFileNameFromScenarioId(io.cucumber.java.Scenario scenario) {
+        String featureName = "Feature ";
+        String rawFeatureName = scenario.getName();
+        System.out.println();
+        System.out.println("####");
+        System.out.println("####");
+        System.out.println("####");
+        System.out.println(rawFeatureName);
+        System.out.println("####");
+        System.out.println("####");
+        System.out.println("####");
+    }
 }

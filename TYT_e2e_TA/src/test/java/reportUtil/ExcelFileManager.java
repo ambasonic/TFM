@@ -234,17 +234,6 @@ public class ExcelFileManager {
 
     }
 
-    private File extractFile(String fileName){
-        ClassLoader classLoader = getClass().getClassLoader();
-        URL resource = classLoader.getResource(fileName);
-
-        if (resource == null) {
-            throw new IllegalArgumentException("file is not found!");
-        } else {
-            return new File(resource.getFile());
-        }
-    }
-
    public static void main(String[] arg) throws IOException {
 
 //        ExcelFileManager excelFileManager = new ExcelFileManager();

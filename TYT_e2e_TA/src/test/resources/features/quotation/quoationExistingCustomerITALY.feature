@@ -30,4 +30,4 @@ Feature: Quotation Template with an existing Customer Italy
 
     Examples:
       | car manufacturer| model| car type | color | upholstery |description | customer Name | duration | distance | paymentIndex | paymentMethod |
-      | Toyota | Aygo | 1.0 VVT-i x-play | Anthracite Grey metallic | Cloth upholstery Dark Grey with bi-toned bolsters white and light grey | lojack classic| ANNA PAGANO | 48 | 80000 | 1 |TFM2_Delivery cost direct/broker from dealer to customer|
+      | Toyota | Yaris | 1.0 VVT-i x-play | Anthracite Grey metallic | Cloth upholstery Dark Grey with bi-toned bolsters white and light grey | lojack classic| ANNA PAGANO | 48 | 80000 | 1 |TFM2_Delivery cost direct/broker from dealer to customer|

@@ -6,9 +6,8 @@ import e2eTests.navigationSteps.NavigateTo;
 import e2eTests.stepdefinitions.LoginSteps;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
-import io.cucumber.java.en.When;
 import net.thucydides.core.annotations.Steps;
-import utils.Utils;
+import utils.UserPropertiesManager;
 
 public class loginCucumberSteps {
 
@@ -20,6 +19,7 @@ public class loginCucumberSteps {
 
     HomePage homePage;
 
+
     @Given("The dealer open the MilesWeb portal Dealer home page")
     public void theDealerOpenTheMilesWebPortalDealerHomePage() {
         homePage.open();
@@ -27,8 +27,8 @@ public class loginCucumberSteps {
 
     @And("he login")
     public void doLogin() {
-        loginSteps.setUsername(Utils.getUserProperty().getProperty("user.username"));
-        loginSteps.setPassword(Utils.getUserProperty().getProperty("user.password"));
+        loginSteps.setUsername(UserPropertiesManager.getUserProperty().getProperty("user.username"));
+        loginSteps.setPassword(UserPropertiesManager.getUserProperty().getProperty("user.password"));
         loginSteps.clickOnLoginButton();
     }
 }

@@ -2,7 +2,7 @@
 # Tags: optional
 
 @italy
-Feature: Duplicate a quote and change of duration and distance with additional options
+Feature: Failed Duplicate a quote and change of duration and distance with additional options
 
   Scenario Outline: quote duplication
     Given The dealer open the MilesWeb portal Dealer home page
@@ -22,4 +22,4 @@ Feature: Duplicate a quote and change of duration and distance with additional o
 
     Examples:
       |duration| distance | paymentIndex | paymentMethod | relief_vehicle | tyreIndex | tyreName | tyreNumber | totalPrice |
-      |60      | 190000   | 1            |TFM2_Delivery cost direct/broker from dealer to customer| yes | 2 | Flex Standard | 4 |€ 448.59 |
+      |60      | 190000   | 1            |TFM2_Delivery cost direct/broker from dealer to customer| yes | 2 | Flex Standard | 4 |€ 447.59 |
