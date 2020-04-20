@@ -16,7 +16,6 @@ public class HomePage extends ReusableViewElements {
     public LoginComponent getLoginComponent(){return new LoginComponent(getDriver());}
 
     public String getHomePageTitle(){
-        waitABit(5000);
         return find(By.cssSelector(titleSelector)).getText();
     }
 

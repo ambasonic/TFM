@@ -12,9 +12,6 @@ import utils.UserPropertiesManager;
 public class loginCucumberSteps {
 
     @Steps
-    NavigateTo navigateTo;
-
-    @Steps
     LoginSteps loginSteps;
 
     HomePage homePage;
@@ -22,7 +19,7 @@ public class loginCucumberSteps {
 
     @Given("The dealer open the MilesWeb portal Dealer home page")
     public void theDealerOpenTheMilesWebPortalDealerHomePage() {
-        homePage.open();
+        homePage.open(); //TODO this method used the default url please refactor it
     }
 
     @And("he login")

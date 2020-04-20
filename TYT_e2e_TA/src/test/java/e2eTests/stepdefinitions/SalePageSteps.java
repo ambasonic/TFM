@@ -165,8 +165,8 @@ public class SalePageSteps {
 
     @Step("The dealer expects: {0} as total price")
     public void checkTotalPrice2(String expectedPrice) {
-        String mockedPrice = "€ 450";
-        assertThat(expectedPrice, is(mockedPrice)); //TODO refactor put total price
+        String mockedPrice =  "\u20ac"+" 450";
+        assertThat(mockedPrice, is(expectedPrice)); //TODO refactor put total price
     }
 }
 

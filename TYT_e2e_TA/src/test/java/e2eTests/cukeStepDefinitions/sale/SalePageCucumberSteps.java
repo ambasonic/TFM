@@ -134,16 +134,16 @@ public class SalePageCucumberSteps {
 
     @After
     public static void getFeatureFileNameFromScenarioId(io.cucumber.java.Scenario scenario) {
-        String featureName = "Feature ";
-        String rawFeatureName = scenario.getName();
-        System.out.println();
-        System.out.println("####");
-        System.out.println("####");
-        System.out.println("####");
-        System.out.println(rawFeatureName);
-        System.out.println("####");
-        System.out.println("####");
-        System.out.println("####");
+//        String featureName = "Feature ";
+//        String rawFeatureName = scenario.getName();
+//        System.out.println();
+//        System.out.println("####");
+//        System.out.println("####");
+//        System.out.println("####");
+//        System.out.println(rawFeatureName);
+//        System.out.println("####");
+//        System.out.println("####");
+//        System.out.println("####");
     }
 
     //TODO TO Remove
