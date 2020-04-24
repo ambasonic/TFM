@@ -1,11 +1,9 @@
-package e2eTests.cukeStepDefinitions.sale;
+package e2eTests.cukeStepDefinitions.milesWeb.sale;
 
 
 import e2eTests.stepdefinitions.SalePageSteps;
 import io.cucumber.java.After;
-import io.cucumber.java.Before;
 import io.cucumber.java.en.And;
-import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import net.thucydides.core.annotations.Steps;

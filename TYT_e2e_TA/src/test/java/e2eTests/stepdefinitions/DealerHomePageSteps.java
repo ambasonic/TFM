@@ -1,14 +1,14 @@
 package e2eTests.stepdefinitions;
 
-import Pages.dealerHome.DealerHomePage;
+import Pages.dealerHome.MilesWebHomePage;
 import net.thucydides.core.annotations.Step;
 
 public class DealerHomePageSteps {
 
-    DealerHomePage dealerHomePage;
+    MilesWebHomePage milesWebHomePage;
 
     @Step("The dealer select a new quotation")
     public void selectNewQuotation() {
-        dealerHomePage.getQuotationComponent().selectNewQuotation();
+        milesWebHomePage.getQuotationComponent().selectNewQuotation();
     }
 }

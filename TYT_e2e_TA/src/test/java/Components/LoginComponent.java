@@ -15,11 +15,24 @@ public class LoginComponent extends ReusableViewElements {
         element(By.id("login:user")).sendKeys(username);
     }
 
+    public void setUsernameMilesRia(String username) {
+        waitABit(2000);
+        element(By.name("username")).sendKeys(username);
+    }
+
     public void setPassword(String pwd) {
         element(By.id("login:password")).sendKeys(pwd);
     }
 
+    public void setPasswordMilesRia(String pwd) {
+        element(By.name("password")).sendKeys(pwd);
+    }
+
     public void submitLoginCredential() {
         element(By.id("login:loginButton")).click();
+    }
+
+    public void submitLoginCredentialMilesRia() {
+        element(By.id("isc_1I")).click();
     }
 }

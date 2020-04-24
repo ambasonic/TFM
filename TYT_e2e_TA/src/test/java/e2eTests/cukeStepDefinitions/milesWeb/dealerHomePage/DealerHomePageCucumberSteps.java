@@ -1,4 +1,4 @@
-package e2eTests.cukeStepDefinitions.dealerHomePage;
+package e2eTests.cukeStepDefinitions.milesWeb.dealerHomePage;
 
 import e2eTests.stepdefinitions.DealerHomePageSteps;
 import io.cucumber.java.en.Then;

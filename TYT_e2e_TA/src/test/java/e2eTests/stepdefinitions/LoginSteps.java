@@ -21,4 +21,20 @@ public class LoginSteps {
     public void clickOnLoginButton() {
         homePage.getLoginComponent().submitLoginCredential();
     }
+
+
+    @Step("The dealer fills the username: {0} into the userAccount field")
+    public void setUsernameMilesRia(String username) {
+        homePage.getLoginComponent().setUsernameMilesRia(username);
+    }
+
+    @Step("The dealer fills the password: {0} into the password field")
+    public void setPasswordMilesRia(String pwd) {
+        homePage.getLoginComponent().setPasswordMilesRia(pwd);
+    }
+
+    @Step("The dealer submit the login credentials")
+    public void clickOnLogonButtonMilesRia() {
+        homePage.getLoginComponent().submitLoginCredentialMilesRia();
+    }
 }
