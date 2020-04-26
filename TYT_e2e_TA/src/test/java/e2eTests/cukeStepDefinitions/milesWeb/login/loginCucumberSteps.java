@@ -8,7 +8,7 @@ import io.cucumber.java.en.Given;
 import net.thucydides.core.annotations.Steps;
 import utils.UserPropertiesManager;
 
-import static Utils.Country.*;
+import static Utils.constance.Country.*;
 
 public class loginCucumberSteps {
 
