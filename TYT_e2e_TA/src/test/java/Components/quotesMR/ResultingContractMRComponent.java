@@ -16,27 +16,10 @@ public class ResultingContractMRComponent extends ReusableViewElements {
     }
 
     public void selectContract() {
-        waitABit(1000);
+        waitABit(5000);
         scrollToElement(element(resultingContract));
         element(resultingContract).click();
         element(contractId).click();
         waitABit(5000);
-
-        Boolean staleElement = true;
-
-//        while(staleElement){
-//            try{
-//                element("[name=A297]").sendKeys(Keys.TAB);
-//                element("[name=A953]").sendKeys(Keys.TAB);
-//                element("[name=A298]").sendKeys(Keys.TAB);
-//                element("[name=A299]").sendKeys(Keys.TAB);
-//                element("[name=A3117]").sendKeys(Keys.TAB);
-//                staleElement = false;
-//
-//            } catch(StaleElementReferenceException e){
-//                staleElement = true;
-//            }
-//        }
-//        element("[name=A297]").sendKeys(Keys.TAB);
     }
 }

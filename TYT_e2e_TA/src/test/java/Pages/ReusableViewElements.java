@@ -7,7 +7,10 @@ import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.time.Duration;
+import java.util.Calendar;
 import java.util.NoSuchElementException;
 
 public class ReusableViewElements extends PageObject {
@@ -78,6 +81,19 @@ public class ReusableViewElements extends PageObject {
         }
     }
 
+    public void typeAfterStaleness(By elementBy, CharSequence... charSequences) {
+        Boolean staleElement = true;
+        while(staleElement){
+            try{
+                element(elementBy).type(charSequences);
+                staleElement = false;
+
+            } catch(StaleElementReferenceException e){
+                staleElement = true;
+            }
+        }
+    }
+
     public void waitUntilStaleness(By by) {
         Boolean staleElement = true;
         while(staleElement){
@@ -103,6 +119,25 @@ public class ReusableViewElements extends PageObject {
                 staleElement = true;
             }
         }
-
     }
+
+    public String getActualDate() {
+        Calendar calendar = Calendar.getInstance();
+        DateFormat formatter = new SimpleDateFormat( "dd/MM/yyyy" );
+        return formatter.format(calendar.getTime());
+    }
+
+    /**
+     * This method select a date in the future
+     *
+     * @param numBerOfDaysInTheFuture
+     * @return Actual date plus a number of day to reach the future date
+     */
+    public String getFutureDate(int numBerOfDaysInTheFuture) {
+        Calendar calendar = Calendar.getInstance();
+        calendar.add(Calendar.DAY_OF_YEAR, numBerOfDaysInTheFuture);
+        DateFormat formatter = new SimpleDateFormat( "dd/MM/yyyy" );
+        return formatter.format(calendar.getTime());
+    }
+
 }

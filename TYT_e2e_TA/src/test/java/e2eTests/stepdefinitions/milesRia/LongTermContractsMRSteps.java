@@ -11,4 +11,10 @@ public class LongTermContractsMRSteps {
     public void clickOnVehicle() {
         longTermContractsTab.getVehicleMRComponent().clickOnVehicle();
     }
+
+    @Step("The dealer go to the Long terms contract tab")
+    public void OpenLTCTab() {
+        longTermContractsTab.open("https://10.7.25.20:10143/milesria/#tab_2"); //TODO refactor
+        String s = "";
+    }
 }

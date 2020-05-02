@@ -1,10 +1,18 @@
 package Components.quotesMR;
 
 import Pages.ReusableViewElements;
-import org.openqa.selenium.By;
-import org.openqa.selenium.Keys;
-import org.openqa.selenium.StaleElementReferenceException;
-import org.openqa.selenium.WebDriver;
+import org.jetbrains.annotations.NotNull;
+import org.junit.rules.Timeout;
+import org.openqa.selenium.*;
+import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+import java.awt.*;
+import java.awt.event.KeyEvent;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
 
 public class VehicleOrderInfComponent extends ReusableViewElements {
     public VehicleOrderInfComponent(WebDriver driver) {
@@ -17,29 +25,26 @@ public class VehicleOrderInfComponent extends ReusableViewElements {
     private final By Supplier = By.name("R692");
     private final By VehicleOrder = By.name("A1370");
 
-    public void setRequestDeliveryDate() {
-        setSupplier();
-        sendKeysAfterStaleness(RequestedDeliveryDate, false,"27/04/2020" );
-        setEstimatedDeliveryDate();
-        setActualDeliveryDate();
-
+    public void setRequestDeliveryDate(String deliveryDate) {
+        sendKeysAfterStaleness(RequestedDeliveryDate, true,deliveryDate );
     }
 
-    public void setEstimatedDeliveryDate() {
-        sendKeysAfterStaleness(EstimatedDeliveryDate, false,"27/04/2020" );
+    public void setEstimatedDeliveryDate(String deliveryDate) {
+        sendKeysAfterStaleness(EstimatedDeliveryDate, true, deliveryDate );
     }
 
-    public void setActualDeliveryDate() {
-        sendKeysAfterStaleness(ActualDeliveryDate, false,"27/04/2020" );
-        waitABit(10000);
+    public void setActualDeliveryDate(String deliveryDate) {
+        sendKeysAfterStaleness(ActualDeliveryDate, true, deliveryDate );
     }
 
-    public void setSupplier() {
-        sendKeysAfterStaleness(VehicleOrder, false,Keys.TAB );
-        element(Supplier).click();
-        element(Supplier).sendKeys("A.Corvi");
-        element(Supplier).sendKeys(Keys.ENTER);
+    public void setSupplier(String supplierName) {
+
+        Actions action = new Actions(getDriver());
+        action.sendKeys(Keys.TAB).build().perform();
+        waitABit(1000);
+        action.sendKeys(Keys.TAB).build().perform();
+        action.sendKeys(supplierName).build().perform();
+        action.sendKeys(Keys.DOWN).build().perform();
+        action.sendKeys(Keys.ENTER).build().perform();
     }
-
-
 }
