@@ -12,6 +12,8 @@ public class TopBarComponent extends ReusableViewElements {
     private final String Pending_Quotations = "j_idt53_0_0";
     private final String Profile_Button = "Profile";
     private final String Logout_Button = "//span[contains(.,'Log out')]";
+    private final String customer = "j_idt53_3";
+    private final String newCustomer = "j_idt53_3_1";
 
     public TopBarComponent(WebDriver driver) {
         super(driver);
@@ -27,6 +29,16 @@ public class TopBarComponent extends ReusableViewElements {
 
     public void clickOnPendingQuotations() {
         element(net.serenitybdd.core.annotations.findby.By.id(Pending_Quotations)).click();
+    }
+
+    public void clickOnMenu_Customer(){
+        waitABit(2000);
+        element(net.serenitybdd.core.annotations.findby.By.id(customer)).click();
+    }
+
+    public void clickOnSubMenu_NewCustomer(){
+        waitABit(2000);
+        element(By.id(newCustomer)).click();
     }
 
     public void openTopBar(){
