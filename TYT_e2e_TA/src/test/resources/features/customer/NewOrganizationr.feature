@@ -1,9 +1,9 @@
 # new feature
 # Tags: optional
 
-Feature: Create new Customer for Organization Miles Web
+Feature: Create new Customer as Organization Miles Web
 
-  Scenario Outline: quote duplication
+  Scenario Outline: create Organization
     Given The dealer open the MilesWeb portal Dealer home page
     And he login
     Then he can see the dealer home page
