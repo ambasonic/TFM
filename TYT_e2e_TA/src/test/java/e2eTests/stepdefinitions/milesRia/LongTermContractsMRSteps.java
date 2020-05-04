@@ -43,4 +43,9 @@ public class LongTermContractsMRSteps {
     public void setRegistrationDate(String futureDate) {
         longTermContractsPage.getVehicleUsagesMRComponent().setRegistrationDate(futureDate);
     }
+
+    @Step("The dealer set the chassis Number as {0}")
+    public void setVINNr(String vinNr) {
+        longTermContractsPage.getVehicleUsagesMRComponent().setVINNr(vinNr);
+    }
 }

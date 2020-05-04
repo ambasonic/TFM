@@ -15,7 +15,6 @@ public class LongTermContractsMRCucumberSteps {
 
     @Then("he can see the generated long term contract")
     public void heCanSeeTheGeneratedLongTermContract() {
-        longTermContractsMRSteps.openVehicle();
     }
 
     @And("he create a vehicle Order")
@@ -37,6 +36,16 @@ public class LongTermContractsMRCucumberSteps {
     public void heRegisteredTheVehiclePlates() {
         longTermContractsMRSteps.clickOnRegistrationAndDocuments();
         longTermContractsMRSteps.registeredLicencePlate();
-        longTermContractsMRSteps.setRegistrationDate(DateUtilsMR.getFutureDate(1));
+        longTermContractsMRSteps.setRegistrationDate(DateUtilsMR.getFutureDate(0));
+    }
+
+    @And("he set the chassis number {string}")
+    public void heSetTheChassisNumberVinNr(String vinNr) {
+        longTermContractsMRSteps.setVINNr(vinNr);
+    }
+
+    @And("he open the vehicle")
+    public void heOpenTheVehicle() {
+        longTermContractsMRSteps.openVehicle();
     }
 }
