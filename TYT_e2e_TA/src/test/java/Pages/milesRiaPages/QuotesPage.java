@@ -1,12 +1,12 @@
-package Pages.milesRiaTabs;
+package Pages.milesRiaPages;
 
 import Components.quotesMR.CreditScoreMRComponent;
 import Components.quotesMR.ResultingContractMRComponent;
 import Pages.ReusableViewElements;
 import org.openqa.selenium.WebDriver;
 
-public class QuotesTab extends ReusableViewElements {
-    public QuotesTab(WebDriver driver) {
+public class QuotesPage extends ReusableViewElements {
+    public QuotesPage(WebDriver driver) {
         super(driver);
     }
 

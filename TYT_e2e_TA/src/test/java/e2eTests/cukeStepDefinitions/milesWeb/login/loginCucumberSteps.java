@@ -34,9 +34,9 @@ public class loginCucumberSteps {
     public void openMilesRiaBackofficeItaly(String country) {
         switch (country.toUpperCase()){
 
-            case "ITALY": homePage.OpenURL(ITALY.getMilesRiaURL());
+            case "ITALY": homePage.openURL(ITALY.getMilesRiaURL());
                 break;
-            case "FRANCE": homePage.OpenURL(FRANCE.getMilesRiaURL());
+            case "FRANCE": homePage.openURL(FRANCE.getMilesRiaURL());
                 break;
             default:
                 throw new IllegalStateException("Unexpected value: " + country.toUpperCase());

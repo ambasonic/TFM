@@ -3,6 +3,7 @@ package Pages;
 
 import net.serenitybdd.core.pages.PageObject;
 import org.openqa.selenium.*;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -22,8 +23,9 @@ public class ReusableViewElements extends PageObject {
 
     protected WebDriverWait webDriverWait= new WebDriverWait(getDriver(), 20);
 
-    public void OpenURL(String pageURL){
+    public void openURL(String pageURL){
         getDriver().get(pageURL);
+        waitABit(1000);
     }
 
     public void clickOnNext() {

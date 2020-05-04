@@ -9,11 +9,11 @@ public class VehicleMRComponent extends ReusableViewElements {
         super(driver);
     }
 
-    private final By vehicleID =  By.xpath("//div[3]/div/div/div/div[2]/div/div[4]/div/div[2]/div/div/div/div/div/table/tbody/tr/td");
+    private final String vehicleImg = "//img[contains(@src,'https://10.7.25.20:10143/milesria/resource/skins/MRI/images/Sofico/16/order.png?sv=0c361dca65211eee9a7833a6d278d85771a04349')]";
 
     public void clickOnVehicle() {
-        waitABit(4000);
-        element(vehicleID).click();
+        waitABit(5000);
+        findAll(vehicleImg).get(2).click();
         waitABit(5000);
     }
 }

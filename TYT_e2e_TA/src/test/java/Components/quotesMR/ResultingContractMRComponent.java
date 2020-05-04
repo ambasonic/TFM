@@ -16,7 +16,7 @@ public class ResultingContractMRComponent extends ReusableViewElements {
     }
 
     public void selectContract() {
-        waitABit(5000);
+        waitABit(6000);
         scrollToElement(element(resultingContract));
         element(resultingContract).click();
         element(contractId).click();
