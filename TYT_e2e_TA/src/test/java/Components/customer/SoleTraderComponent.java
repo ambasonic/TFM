@@ -45,8 +45,8 @@ public class SoleTraderComponent extends ReusableViewElements {
         waitABit(2000);
     }
 
-    public void setCity (String theCity){
-        element(city).sendKeys(theCity);
+    public void setCity (String city_name){
+        element(city).sendKeys(city_name);
         waitABit(2000);
     }
 

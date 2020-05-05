@@ -23,4 +23,4 @@ Feature: Create new customer as sole trader MilesWeb
 
     Examples:
       |position |legal|trader_name |  street_name | street_Nr | city_name | zip_code | country | phone_number |
-      | 2 |Sole\' trader | Francesco |  Plaza del sol |3 | Nichelino1| 10042| ITALY | 5455566 |
+      | 2 |Sole\' trader | Francesco |  Plaza del Rey |8 |Milano| 10042| ITALY | 5455599 |
