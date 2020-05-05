@@ -52,7 +52,6 @@ public class OrganizationComponent extends ReusableViewElements {
     }
 
     public void setStreetNumber(String number){
-
         element(streetNumber).sendKeys(number);
         waitABit(2000);
     }
@@ -68,13 +67,11 @@ public class OrganizationComponent extends ReusableViewElements {
     }
 
     public void setPhoneNumber(String phone_Number){
-
         element(phoneNumber).sendKeys(phone_Number);
         waitABit(2000);
     }
 
     public void setCountry(String theCountry){
-
         element(country).sendKeys(theCountry);
         waitABit(2000);
     }

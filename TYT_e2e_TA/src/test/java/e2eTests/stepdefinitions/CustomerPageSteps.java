@@ -15,4 +15,9 @@ public class CustomerPageSteps {
     public void setCompany(String name) {
         customerPage.getOrganizationComponent().setCompany(name);
     }
+
+
+    public void setTrader(String name) {
+        customerPage.getSoleTraderComponent().setTrader(name);
+    }
 }
