@@ -27,8 +27,10 @@ Feature: Quote validation
     And he registered the vehicle plates
     And he set the chassis number '<VinNr>'
     Then he saved
+    When he selects the resulting contract
+    And he calculate
 
 
     Examples:
       |quoteID| VinNr  |
-      |001903/001| 1NXBR32E93Z070422 |
+      |001922/001| 1NXBR32E93Z070422 |

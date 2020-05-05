@@ -5,12 +5,13 @@ Feature: Quote validation
     And he login in MilesRia
     And he search a quote '<quoteID>'
     When he selects the resulting contract
-    And he open the vehicle
-    Then he select the vehicle usage
-    And he registered the vehicle plates
-    And he set the chassis number '<VinNr>'
-    Then he saved
-
+#    And he open the vehicle
+#    Then he select the vehicle usage
+#    And he registered the vehicle plates
+#    And he set the chassis number '<VinNr>'
+#    Then he saved
+#    When he open the long term contract
+    And he calculate
 
     Examples:
       |quoteID| VinNr  | password |

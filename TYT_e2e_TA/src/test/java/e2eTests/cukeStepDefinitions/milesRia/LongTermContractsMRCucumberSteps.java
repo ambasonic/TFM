@@ -48,4 +48,9 @@ public class LongTermContractsMRCucumberSteps {
     public void heOpenTheVehicle() {
         longTermContractsMRSteps.openVehicle();
     }
+
+    @And("he calculate")
+    public void heCalculate() {
+        longTermContractsMRSteps.clickOnCalculate();
+    }
 }

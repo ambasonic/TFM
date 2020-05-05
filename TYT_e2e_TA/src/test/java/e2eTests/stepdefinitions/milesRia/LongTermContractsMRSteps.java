@@ -48,4 +48,8 @@ public class LongTermContractsMRSteps {
     public void setVINNr(String vinNr) {
         longTermContractsPage.getVehicleUsagesMRComponent().setVINNr(vinNr);
     }
+
+    public void clickOnCalculate() {
+        longTermContractsPage.clickOnCalculate();
+    }
 }
