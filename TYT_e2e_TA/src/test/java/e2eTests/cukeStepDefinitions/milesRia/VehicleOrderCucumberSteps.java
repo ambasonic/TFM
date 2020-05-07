@@ -1,16 +1,11 @@
 package e2eTests.cukeStepDefinitions.milesRia;
 
-import Utils.DateUtilsMR;
+import Utils.generatedTestData.TestDataGenerator;
 import e2eTests.stepdefinitions.milesRia.VehicleOrderMRSteps;
 import io.cucumber.java.en.And;
-import io.cucumber.java.en.Then;
 import net.thucydides.core.annotations.Steps;
 
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
-import java.util.Calendar;
-
-public class VehicleOrderCucumberSteps {
+public class VehicleOrderCucumberSteps extends TestDataGenerator {
 
     @Steps
     VehicleOrderMRSteps vehicleOrderMRSteps;
@@ -18,11 +13,9 @@ public class VehicleOrderCucumberSteps {
 
     @And("he update the delivery date")
     public void heUpdateTheDeliveryDate() {
-        int numBerOfDaysInTheFuture = (int) ((Math.random() * ((100 - 1) + 1)) + 1);
-        String futureDate = DateUtilsMR.getFutureDate(1); // TODO pour pouvoir r?utiliser une quote je dois au moins changer la date
-        vehicleOrderMRSteps.setRequestDeliveryDate(futureDate);
-        vehicleOrderMRSteps.setEstimatedDeliveryDate(futureDate);
-        vehicleOrderMRSteps.setActualDeliveryDate(futureDate);
+        vehicleOrderMRSteps.setRequestDeliveryDate(getActualDate());
+        vehicleOrderMRSteps.setEstimatedDeliveryDate(getActualDate());
+        vehicleOrderMRSteps.setActualDeliveryDate(getActualDate());
     }
 
     @And("he set the supplier name to {string}")

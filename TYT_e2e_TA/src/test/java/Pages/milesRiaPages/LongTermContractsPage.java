@@ -14,6 +14,9 @@ public class LongTermContractsPage extends ReusableViewElements {
             "calculate.png?sv=0c361dca65211eee9a7833a6d278d85771a04349')]");
     private final String ActionIcon = "//img[contains(@src,'https://10.7.25.20:10143/milesria/resource/skins/MRI/images/Sofico/16/" +
             "action.png?sv=0c361dca65211eee9a7833a6d278d85771a04349')]";
+    private final String OK = "//img[contains(@src,'https://10.7.25.20:10143/milesria/resource/skins/MRI/images/Sofico/16/ok.png?sv=0c361dca65211eee9a7833a6d278d85771a04349')]";
+    private final By DiSTANCE = By.name("A1339");
+    private final String DELIVER = "//img[contains(@src,'https://10.7.25.20:10143/milesria/resource/skins/MRI/images/Sofico/16/action.png?sv=0c361dca65211eee9a7833a6d278d85771a04349')]";
 
     public VehicleMRComponent getVehicleMRComponent(){
         return new VehicleMRComponent(getDriver());
@@ -28,11 +31,30 @@ public class LongTermContractsPage extends ReusableViewElements {
         return new VehicleUsagesMRComponent(getDriver());
     }
     public void clickOnCalculate() {
-        waitABit(1000);
+        waitABit(3000);
         element(Calculate).click();
-        int size = findAll(ActionIcon).size();
+    }
+
+    public void selectTheDelivery(String delivery) { //TODO implement de delivery choice the default is Express
+    }
+
+    public void clickOnDelivery() {
         waitABit(7000);
         findAll(ActionIcon).get(2).click();
+        waitABit(1000);
+        element(OK).click();
+        waitABit(1000);
+    }
 
+    public void setDistance(String distance) {
+        waitABit(2000);
+        sendKeysAfterStaleness(DiSTANCE, false, distance);
+    }
+
+    public void clickOnDeliver(){
+        waitABit(5000);
+        int size = findAll(DELIVER).size();
+        findAll(DELIVER).get(7).click();
+        waitABit(1000);
     }
 }

@@ -35,8 +35,8 @@ public class LongTermContractsMRSteps {
     }
 
     @Step("The dealer set the registration number")
-    public void registeredLicencePlate() {
-        longTermContractsPage.getVehicleUsagesMRComponent().registeredLicencePlate("");
+    public void registeredLicencePlate(String licenceNumber) {
+        longTermContractsPage.getVehicleUsagesMRComponent().registeredLicencePlate(licenceNumber);
     }
 
     @Step("The dealer set the registration date")
@@ -49,7 +49,28 @@ public class LongTermContractsMRSteps {
         longTermContractsPage.getVehicleUsagesMRComponent().setVINNr(vinNr);
     }
 
+    @Step("The dealer click on calculate")
     public void clickOnCalculate() {
         longTermContractsPage.clickOnCalculate();
+    }
+
+    @Step("The dealer selects {0} as delivery")
+    public void selectTheDelivery(String delivery) {
+        longTermContractsPage.selectTheDelivery(delivery);
+    }
+
+    @Step("The dealer click on delivery")
+    public void clickOnDelivery() {
+        longTermContractsPage.clickOnDelivery();
+    }
+
+    @Step("The dealer set the distance to: {0}")
+    public void setDistance(String distance) {
+        longTermContractsPage.setDistance(distance);
+    }
+
+    @Step("The dealer click on deliver")
+    public void clickOnDeliver() {
+        longTermContractsPage.clickOnDeliver();
     }
 }

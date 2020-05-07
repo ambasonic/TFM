@@ -19,7 +19,7 @@ public class ResultingContractMRComponent extends ReusableViewElements {
         waitABit(2000);
         scrollToElement(element(resultingContract));
         element(resultingContract).click();
-        waitABit(10000);
+        waitABit(5000);
         element(contractId).click();
         waitABit(5000);
     }

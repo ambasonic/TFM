@@ -25,12 +25,14 @@ Feature: Quote validation
     And he open the vehicle
     Then he select the vehicle usage
     And he registered the vehicle plates
-    And he set the chassis number '<VinNr>'
     Then he saved
-    When he selects the resulting contract
+    When he open the long term contract
     And he calculate
+    And he select the 'Express delivery' as delivery
+    And he set the distance
+    Then he deliver
 
 
     Examples:
       |quoteID| VinNr  |
-      |001922/001| 1NXBR32E93Z070422 |
+      |001952/001| 1NXBR32E93Z070422 |
