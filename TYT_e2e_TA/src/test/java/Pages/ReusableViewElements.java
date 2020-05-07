@@ -29,7 +29,7 @@ public class ReusableViewElements extends PageObject {
     }
 
     public void clickOnNext() {
-        waitABit(2000);
+        waitABit(1000);
         element(By.id(nextButtonId)).click();
         waitABit(3000);
     }
@@ -51,24 +51,6 @@ public class ReusableViewElements extends PageObject {
         };
     }
 
-    public ExpectedCondition<Boolean> sendKeysUntilElementIsStale(WebElement toClick, String keys) {
-        return driver -> {
-            try {
-                if (webDriverWait.withTimeout(Duration.ofSeconds(4))
-                        .until(ExpectedConditions.stalenessOf(toClick))) {
-                    return true;
-                }
-            } catch (NoSuchElementException | StaleElementReferenceException | TimeoutException e) {
-            }
-            try {
-                toClick.clear();
-                toClick.sendKeys(keys);
-            } catch (StaleElementReferenceException e) {
-
-            }
-            return false;
-        };
-    }
     public void sendKeysAfterStaleness(By elementBy, boolean cleartext, CharSequence... charSequences) {
         Boolean staleElement = true;
         while(staleElement){
@@ -96,19 +78,10 @@ public class ReusableViewElements extends PageObject {
         }
     }
 
-    public void waitUntilStaleness(By by) {
-        Boolean staleElement = true;
-        while(staleElement){
-            try{
-                element(by);
-                staleElement = false;
-
-            } catch(StaleElementReferenceException e){
-                staleElement = true;
-            }
-        }
-    }
-
+    /**
+     *
+     * @param elementToReach
+     */
     public void scrollToElement(WebElement elementToReach) {
         JavascriptExecutor js = (JavascriptExecutor) getDriver();
         Boolean staleElement = true;
@@ -123,10 +96,14 @@ public class ReusableViewElements extends PageObject {
         }
     }
 
-    public String getActualDate() {
-        Calendar calendar = Calendar.getInstance();
-        DateFormat formatter = new SimpleDateFormat( "dd/MM/yyyy" );
-        return formatter.format(calendar.getTime());
+    /**
+     *
+     * @param from position x
+     * @param to to position y
+     */
+    public void scrollToPosition(int from, int to) {
+        JavascriptExecutor js = (JavascriptExecutor) getDriver();
+        js.executeScript("scroll("+from+", "+to+");");
     }
 
     /**
@@ -141,5 +118,4 @@ public class ReusableViewElements extends PageObject {
         DateFormat formatter = new SimpleDateFormat( "dd/MM/yyyy" );
         return formatter.format(calendar.getTime());
     }
-
 }

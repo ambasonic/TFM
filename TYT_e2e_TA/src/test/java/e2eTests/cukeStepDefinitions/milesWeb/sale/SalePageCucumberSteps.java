@@ -22,7 +22,7 @@ public class SalePageCucumberSteps {
 
     @And("he selects a model {string}")
     public void he_selects_a_model(String model) {
-        salePageSteps.selectCarModel("model");
+        salePageSteps.selectCarModel(model);
     }
 
     @And("he selects the type {string}")
@@ -45,9 +45,29 @@ public class SalePageCucumberSteps {
         salePageSteps.setUpholstery(upholstery);
     }
 
-    @And("he selects an option {string}")
+    @And("he selects an option from popUp Menu {string}")
     public void he_selects_an_option(String option) {
+        salePageSteps.selectsOptionFromPopUp(option);
+    }
+
+    @And("he selects an option {string}")
+    public void selectsOptionFromPopUp(String option) {
         salePageSteps.setOption(option);
+    }
+
+    @And("he selects the option pack {string}")
+    public void selectOptionPack(String optionPack) {
+        salePageSteps.selectOptionPack(optionPack);
+    }
+
+    @And("he selects the accessories {string}")
+    public void setAccessories(String accessory) {
+        salePageSteps.setAccessories(accessory);
+    }
+
+    @Then("he can create a new customer")
+    public void gotToNewCustomerMenu() {
+        salePageSteps.gotToNewCustomerMenu();
     }
 
     @Then("he search the customer by name {string}")
@@ -130,6 +150,12 @@ public class SalePageCucumberSteps {
         salePageSteps.clickOnLogOut();
     }
 
+    @And("the total price is {string}")
+    public void theTotalPriceIsTotalPrice(String expectedPrice) {
+        salePageSteps.checkTotalPrice2(expectedPrice);
+    }
+
+
     @After
     public static void getFeatureFileNameFromScenarioId(io.cucumber.java.Scenario scenario) {
 //        String featureName = "Feature ";
@@ -142,11 +168,5 @@ public class SalePageCucumberSteps {
 //        System.out.println("####");
 //        System.out.println("####");
 //        System.out.println("####");
-    }
-
-    //TODO TO Remove
-    @And("the total price is {string}")
-    public void theTotalPriceIsTotalPrice(String expectedPrice) {
-        salePageSteps.checkTotalPrice2(expectedPrice);
-    }
+    }  //TODO TO Remove
 }

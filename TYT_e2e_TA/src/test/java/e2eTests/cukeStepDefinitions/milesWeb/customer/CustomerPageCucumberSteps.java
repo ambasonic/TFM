@@ -9,7 +9,6 @@ import net.thucydides.core.annotations.Steps;
 public class CustomerPageCucumberSteps {
 
     CustomerPage customerPage;
-
     @Steps
     public CustomerPageSteps customerPageSteps;
 
@@ -19,18 +18,18 @@ public class CustomerPageCucumberSteps {
     }
 
     @And("he gives a company name {string} in the company form")
-    public void heGivesACompanyNameCompany_nameInTheCompanyForm(String name) {
+    public void he_gives_a_company_name_in_the_company_form(String name) {
         customerPageSteps.setCompany(name);
     }
 
     @And("he gives the street name {string} in the contact data form")
     public void heGivesTheStreetNameStreet_nameInTheContactDataForm(String streetName) {
-        customerPage.getOrganizationComponent().setStreetName(streetName);
+        customerPageSteps.setStreetName(streetName);
     }
 
     @And("he gives the street number {string} in the contact data form")
     public void heGivesTheStreetNumberStreet_numberInTheContactDataForm(String street_number) {
-        customerPage.getOrganizationComponent().setStreetNumber(street_number);
+        customerPageSteps.setStreetNumber(street_number);
     }
 
     @And("he gives the city name {string} in the contact data form")
@@ -53,9 +52,9 @@ public class CustomerPageCucumberSteps {
         customerPage.getOrganizationComponent().setPhoneNumber(phoneNumber);
     }
 
-    @And("he select the legal entity {string}")
+    @And("he selects the legal entity {string}")
     public void heSelectTheLegalEntityLegal_entity(String legalEntity) {
-        customerPage.getOrganizationComponent().setLegaly_entity(legalEntity);
+        customerPage.getOrganizationComponent().setLegal_entity(legalEntity);
     }
 
     @And("he click on the button save")
@@ -65,6 +64,31 @@ public class CustomerPageCucumberSteps {
 
     @And("he choose the legal entity {string}")
     public void heChooseTheLegalEntityLegal(String legalEntity) {
-        customerPage.getOrganizationComponent().setLegaly_entity(legalEntity);
+        customerPage.getOrganizationComponent().setLegal_entity(legalEntity);
+    }
+
+    @And("he go to contact person and selects the title {string}")
+    public void heGoToContactPersonAndSelectsTheTitleTitle(String title) {
+        customerPage.getOrganizationComponent().setTitle(title);
+    }
+
+    @And("he gives the surname {string}")
+    public void heGivesTheSurname(String surname) {
+        customerPage.getOrganizationComponent().setSurname(surname);
+    }
+
+    @And("he gives the first name {string}")
+    public void heGivesTheFirstName(String firstName) {
+        customerPage.getOrganizationComponent().setName(firstName);
+    }
+
+    @And("he gives the email {string}")
+    public void heGivesTheEmail(String email) {
+        customerPage.getOrganizationComponent().setEmail(email);
+    }
+
+    @And("he gives the date of birth {string}")
+    public void heGivesTheDateOfBirth(String birthDate) {
+        customerPage.getOrganizationComponent().setBirthDate(birthDate);
     }
 }

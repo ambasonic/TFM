@@ -15,18 +15,13 @@ public class SalePageSteps {
         salePage.getVehicleComponent().selectCarManufacturer(manufacturer);
     }
 
-    @Step("The dealer open the make field box")
-    public void openMakeSelectionBox() {
-        salePage.getVehicleComponent().openMakeSelectionBox();
-    }
-
     @Step("The dealer selects '{0}' as model")
     public void selectCarModel(String model) {
-        salePage.getVehicleComponent().selectCarModel();
+        salePage.getVehicleComponent().selectCarModel(model);
     }
 
     @Step("The dealer selects '{0}' as type")
-    public void selectCarType(String type) { salePage.getVehicleComponent().selCarType();
+    public void selectCarType(String type) { salePage.getVehicleComponent().selCarType(type);
     }
 
     @Step("The dealer clicks on next")
@@ -44,9 +39,22 @@ public class SalePageSteps {
         salePage.getOptionsComponent().setUpholstery();
     }
 
+    public void selectOptionPack(String optionPack) {
+        salePage.getOptionsComponent().selectOptionPack(optionPack);
+    }
+
+    public void setAccessories(String accessory) {
+        salePage.getOptionsComponent().setAccessories(accessory);
+    }
+
     @Step("The dealer validates the option: {0} from pop menu")
+    public void selectsOptionFromPopUp(String option) {
+        salePage.getOptionsComponent().selectsOptionFromPopUp(option);
+    }
+
+    @Step("The dealer selects the option: {0}")
     public void setOption(String option) {
-        salePage.getOptionsComponent().setOption();
+        salePage.getOptionsComponent().setOption(option);
     }
 
     @Step("The dealer set the customer name: {0} into the search field and click on search ")
@@ -167,6 +175,11 @@ public class SalePageSteps {
     public void checkTotalPrice2(String expectedPrice) {
         String mockedPrice =  "\u20ac"+" 450";
         assertThat(mockedPrice, is(expectedPrice)); //TODO refactor put total price
+    }
+
+    @Step("The dealer click on ne customer")
+    public void gotToNewCustomerMenu() {
+        salePage.getCustomerComponent().clickOnNewCustomer();
     }
 }
 

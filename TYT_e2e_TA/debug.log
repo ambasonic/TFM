@@ -17,3 +17,18 @@
 [0505/084428.010:ERROR:file_io_win.cc(170)] CreateFile C:\Users\Admin\AppData\Local\Temp\scoped_dir91848_1405313453\Crashpad\reports\bc170b22-aba2-475b-83b3-b6ceef7f4700.dmp: The system cannot find the path specified. (0x3)
 [0505/084428.010:ERROR:crash_report_exception_handler.cc(97)] PrepareNewCrashReport failed
 [0506/174115.101:ERROR:file_io_win.cc(161)] CreateFile C:\Users\Admin\AppData\Local\Temp\scoped_dir71196_2071386903\Crashpad\settings.dat: The system cannot find the file specified. (0x2)
+[0507/095802.880:ERROR:file_io_win.cc(161)] CreateFile C:\Users\Admin\AppData\Local\Temp\scoped_dir39168_601549342\Crashpad\settings.dat: The system cannot find the file specified. (0x2)
+[0507/102436.172:ERROR:file_io_win.cc(170)] CreateFile C:\Users\Admin\AppData\Local\Temp\scoped_dir15000_798192902\Crashpad\reports\28f2e82e-27b7-4e36-9d4a-9c4219a7bcc3.dmp: The system cannot find the path specified. (0x3)
+[0507/102436.173:ERROR:crash_report_exception_handler.cc(97)] PrepareNewCrashReport failed
+[0507/165343.758:ERROR:file_io_win.cc(161)] CreateFile C:\Users\Admin\AppData\Local\Temp\scoped_dir55180_465670214\Crashpad\settings.dat: The system cannot find the path specified. (0x3)
+[0507/165343.759:ERROR:file_io_win.cc(170)] CreateFile C:\Users\Admin\AppData\Local\Temp\scoped_dir55180_465670214\Crashpad\reports\6e3de766-2370-491f-8c35-2be6a96dab63.dmp: The system cannot find the path specified. (0x3)
+[0507/165343.759:ERROR:crash_report_exception_handler.cc(97)] PrepareNewCrashReport failed
+[0507/165504.619:ERROR:file_io_win.cc(161)] CreateFile C:\Users\Admin\AppData\Local\Temp\scoped_dir19528_2069287639\Crashpad\settings.dat: The system cannot find the path specified. (0x3)
+[0507/165504.620:ERROR:file_io_win.cc(170)] CreateFile C:\Users\Admin\AppData\Local\Temp\scoped_dir19528_2069287639\Crashpad\reports\387f6480-d3b0-464d-bb8a-e9e3b5cc4959.dmp: The system cannot find the path specified. (0x3)
+[0507/165504.620:ERROR:crash_report_exception_handler.cc(97)] PrepareNewCrashReport failed
+[0507/165823.675:ERROR:file_io_win.cc(161)] CreateFile C:\Users\Admin\AppData\Local\Temp\scoped_dir16748_116871160\Crashpad\settings.dat: The system cannot find the path specified. (0x3)
+[0507/165823.676:ERROR:file_io_win.cc(170)] CreateFile C:\Users\Admin\AppData\Local\Temp\scoped_dir16748_116871160\Crashpad\reports\4e8d97b1-63aa-49c7-82d6-c3a29832a9e8.dmp: The system cannot find the path specified. (0x3)
+[0507/165823.676:ERROR:crash_report_exception_handler.cc(97)] PrepareNewCrashReport failed
+[0507/170058.108:ERROR:file_io_win.cc(161)] CreateFile C:\Users\Admin\AppData\Local\Temp\scoped_dir28044_502069865\Crashpad\settings.dat: The system cannot find the path specified. (0x3)
+[0507/170058.109:ERROR:file_io_win.cc(170)] CreateFile C:\Users\Admin\AppData\Local\Temp\scoped_dir28044_502069865\Crashpad\reports\857f3a4a-a32d-49da-a106-f188d7cc3050.dmp: The system cannot find the path specified. (0x3)
+[0507/170058.109:ERROR:crash_report_exception_handler.cc(97)] PrepareNewCrashReport failed
