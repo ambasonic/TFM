@@ -1,21 +1,21 @@
 package e2eTests.cukeStepDefinitions.milesRia;
 
-import Utils.DateUtilsMR;
 import Utils.constance.Country;
+import Utils.generatedTestData.TestDataGenerator;
+import Utils.generatedTestData.VinGeneratorUtils;
 import e2eTests.stepdefinitions.milesRia.LongTermContractsMRSteps;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import net.thucydides.core.annotations.Steps;
 
-public class LongTermContractsMRCucumberSteps {
+public class LongTermContractsMRCucumberSteps extends TestDataGenerator {
 
     @Steps
     LongTermContractsMRSteps longTermContractsMRSteps;
 
     @Then("he can see the generated long term contract")
     public void heCanSeeTheGeneratedLongTermContract() {
-        longTermContractsMRSteps.openVehicle();
     }
 
     @And("he create a vehicle Order")
@@ -36,7 +36,34 @@ public class LongTermContractsMRCucumberSteps {
     @And("he registered the vehicle plates")
     public void heRegisteredTheVehiclePlates() {
         longTermContractsMRSteps.clickOnRegistrationAndDocuments();
-        longTermContractsMRSteps.registeredLicencePlate();
-        longTermContractsMRSteps.setRegistrationDate(DateUtilsMR.getFutureDate(1));
+        longTermContractsMRSteps.setVINNr(VinGeneratorUtils.getRandomVin());
+        longTermContractsMRSteps.registeredLicencePlate(getLicenceNumber());
+        longTermContractsMRSteps.setRegistrationDate(getActualDate());
+    }
+
+    @And("he open the vehicle")
+    public void heOpenTheVehicle() {
+        longTermContractsMRSteps.openVehicle();
+    }
+
+    @And("he calculate")
+    public void heCalculate() {
+        longTermContractsMRSteps.clickOnCalculate();
+    }
+
+    @And("he select the {string} as delivery")
+    public void heSelectTheExpressDeliveryAsDelivery(String delivery) {
+        longTermContractsMRSteps.clickOnDelivery();
+        longTermContractsMRSteps.selectTheDelivery(delivery); //TODO IMPLEMENT
+    }
+
+    @And("he set the distance")
+    public void heSetTheDistance() {
+        longTermContractsMRSteps.setDistance(getDistance(1));
+    }
+
+    @Then("he deliver")
+    public void heDeliver() {
+        longTermContractsMRSteps.clickOnDeliver();
     }
 }
