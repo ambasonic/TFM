@@ -31,12 +31,12 @@ public class SalePageSteps {
 
     @Step("The dealer selects the car color: {0}")
     public void setCarColor(String colorName) {
-        salePage.getOptionsComponent().setCarColor();
+        salePage.getOptionsComponent().setCarColor(colorName);
     }
 
     @Step("The dealer selects the car upholstery: {0}")
     public void setUpholstery(String upholstery) {
-        salePage.getOptionsComponent().setUpholstery();
+        salePage.getOptionsComponent().setUpholstery(upholstery);
     }
 
     public void selectOptionPack(String optionPack) {
@@ -181,5 +181,6 @@ public class SalePageSteps {
     public void gotToNewCustomerMenu() {
         salePage.getCustomerComponent().clickOnNewCustomer();
     }
+
 }
 

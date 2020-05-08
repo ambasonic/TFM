@@ -13,6 +13,8 @@ public class VehicleComponent extends ReusableViewElements {
     private final String TYPE_SPAN = "typespan";
     private final By YARIS = By.id("quote:modelList:13:j_idt714");
     private final By RX = By.id("quote:modelList:7:j_idt714");
+    private final By CHR = By.id("quote:modelList:1:j_idt714");
+    private final By COROLLA = By.id("quote:modelList:2:j_idt714");
     public VehicleComponent(WebDriver driver) {
         super(driver);
     }
@@ -22,10 +24,10 @@ public class VehicleComponent extends ReusableViewElements {
         waitABit(4000);
         element(By.xpath("//*[@id='quote:makeFieldSet']/legend")).click(); //TODO refactor lazy solution
         waitABit(2000);
-        switch (manufacturer){
-            case "Toyota": element(TOYOTA).click();
+        switch (manufacturer.toLowerCase()){
+            case "toyota": element(TOYOTA).click();
                 break;
-            case "Lexus": element(LEXUS).click();
+            case "lexus": element(LEXUS).click();
                 break;
             default:assertFalse(" The manufacturer selector for: "+manufacturer+" is unknown", true);
         }
@@ -33,10 +35,14 @@ public class VehicleComponent extends ReusableViewElements {
     }
 
     public void selectCarModel(String model){
-        switch (model){
-            case "Yaris": element(YARIS).click();
+        switch (model.toLowerCase()){
+            case "yaris": element(YARIS).click();
                 break;
-            case "Rx":element(RX).click();
+            case "rx":element(RX).click();
+                break;
+            case "chr":element(CHR).click();
+                break;
+            case "corolla":element(COROLLA).click();
                 break;
             default:assertFalse(" The model selector for: "+model+" is unknown", true);
         }
@@ -49,6 +55,10 @@ public class VehicleComponent extends ReusableViewElements {
             case "TODO": element(By.id(TYPE_SPAN+8)).click();
                 break;
             case "450h F Sport":element(By.id(TYPE_SPAN+1)).click();
+                break;
+            case "TOYOTA C-HR 1.8H (122CV) E-CVT Dynamic":element(By.id(TYPE_SPAN+6)).click();
+                break;
+            case "TS 1.8 Hybride Active":element(By.id(TYPE_SPAN+2)).click();
                 break;
             default:assertFalse(" The carType selector for:"+carType+" is unknown", true);
         }

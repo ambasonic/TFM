@@ -1,6 +1,7 @@
 package e2eTests.cukeStepDefinitions.milesWeb.sale;
 
 
+import Pages.sale.SalePage;
 import e2eTests.stepdefinitions.SalePageSteps;
 import io.cucumber.java.After;
 import io.cucumber.java.en.And;
@@ -12,6 +13,8 @@ public class SalePageCucumberSteps {
 
     @Steps
     SalePageSteps salePageSteps;
+
+    SalePage salePage;
 
     @When("he selects a vehicle {string}")
     public void he_selects_a_vehicle(String manufacturer) {
@@ -135,7 +138,7 @@ public class SalePageCucumberSteps {
 
     @And("the total price should be {string}")
     public void the_Total_Price_Should_Be(String totalPrice) {
-        salePageSteps.checkTotalPrice(totalPrice);
+        salePageSteps.checkTotalPrice(totalPrice);  //TODO REMOVE
     }
 
     @And("he saved it")
@@ -152,7 +155,48 @@ public class SalePageCucumberSteps {
 
     @And("the total price is {string}")
     public void theTotalPriceIsTotalPrice(String expectedPrice) {
-        salePageSteps.checkTotalPrice2(expectedPrice);
+        salePageSteps.checkTotalPrice2(expectedPrice); //TODO REMOVE
+    }
+
+    @And("he gives a down payment of {string}")
+    public void heGivesADownPaymentOfDownPayment(String payment) {
+        salePage.getFinancesServicesComponent().setDownPayment(payment);
+    }
+
+    @And("he set the insurance type {string}")
+    public void heSetTheInsuranceTypeInsurance(String insurance) {
+        salePage.getFinancesServicesComponent().setInsuranceType(insurance);
+    }
+
+    @And("he check the lease price {string}")
+    public void heCheckTheLeasePriceLeasePrice(String leasePrice) {
+        salePage.getFinancesServicesComponent().checkLeasePrice(leasePrice);
+
+    }
+
+    @And("he check the service price {string}")
+    public void heCheckTheServicePriceServicePrice(String servicePrice) {
+        salePage.getFinancesServicesComponent().checkServicePrice(servicePrice);
+    }
+
+    @And("he check the total price {string}")
+    public void heCheckTheTotalPriceTotalPrice(String totalPrice) {
+        salePage.getFinancesServicesComponent().checkTotalPrice(totalPrice);
+    }
+
+    @And("he check the accessories price {string}")
+    public void heCheckTheAccessoriesPriceAccessoriesPrice(String accPrice) {
+        salePage.getFinancesServicesComponent().checkAccessoriesPrice(accPrice);
+    }
+
+    @And("he check the option price {string}")
+    public void heCheckTheOptionPriceOptionPrice(String optionPrice) {
+        salePage.getFinancesServicesComponent().checkOptionPrice(optionPrice);
+    }
+
+    @And("he check the option pack price {string}")
+    public void heCheckTheOptionPackPriceOptionPackPrice(String packPrice) {
+        salePage.getFinancesServicesComponent().checkPackPrice( packPrice);
     }
 
 

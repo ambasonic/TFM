@@ -29,6 +29,8 @@ public class OrganizationComponent extends ReusableViewElements {
     private final By BIRTH_DATE = By.id("quote:prospectdetail:prospectView:main:primaryContact:contact_date_of_birth2_input");
     private final By LEGAL_ENTITY = By.id("quote:prospectdetail:prospectView:main:legalentity_label");
     private final By ENTITY_SOCIETA_SIMPLICE = By.id("quote:prospectdetail:prospectView:main:legalentity_33");
+    private final By IMPRESA_INDIVIDUALE = By.id("quote:prospectdetail:prospectView:main:legalentity_3");
+
 
 
     public OrganizationComponent(WebDriver driver) {
@@ -42,6 +44,8 @@ public class OrganizationComponent extends ReusableViewElements {
         switch (legal_entity){
 
             case "Societa  Semplice": element(ENTITY_SOCIETA_SIMPLICE).click();
+            break;
+            case"IMPRESA INDIVIDUALE": element(IMPRESA_INDIVIDUALE).click();
         }
         waitABit(1000);
     }

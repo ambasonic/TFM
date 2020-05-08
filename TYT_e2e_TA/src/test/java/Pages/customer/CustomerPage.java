@@ -13,7 +13,7 @@ import java.util.List;
 
 public class CustomerPage extends ReusableViewElements {
 
-    private final By tabId = By.id("prospectdetail:prospectView:main:legalentitygroup");
+    private final By tabId = By.id("quote:prospectdetail:prospectView:main:legalentitygroup");
     private final By buttonClass = By.className("ui-state-default");
 
     public IndividualComponent getIndividualComponent(){return new IndividualComponent (getDriver());}
