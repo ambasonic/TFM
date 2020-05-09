@@ -6,6 +6,7 @@ import org.openqa.selenium.WebDriver;
 
 import static org.hamcrest.Matchers.is;
 import static org.junit.Assert.assertThat;
+import static org.junit.Assert.fail;
 
 
 public class FinancesServicesComponent extends ReusableViewElements {
@@ -25,6 +26,8 @@ public class FinancesServicesComponent extends ReusableViewElements {
     private final By DURATION  = By.id("quote:retailfinance:months");
     private final By DISTANCE  = By.id("quote:retailfinance:kms");
     private final By INSURANCE_LABEL = By.id("quote:retailfinance:lsc:7:pcs_label");
+    private final By FUEL_CARD_ENI_LABEL = By.id("quote:retailfinance:lsc:8:pcs");
+    private final By FUEL_CARD_ENI_YES = By.id("quote:retailfinance:lsc:8:pcs_0");
     private final By INSURANCE_TYPE1 = By.id("quote:retailfinance:lsc:7:pcs_0");
     private final By VAT_LEASE_PRICE = By.id("quote:retailfinanceSummary:leasepricevat");
     private final By VAT_SERVICE_PRICE = By.id("quote:retailfinanceSummary:servicesleasepricevat");
@@ -99,9 +102,14 @@ public class FinancesServicesComponent extends ReusableViewElements {
     }
 
     public void setInsuranceType(String insuranceType){
-        waitABit(500);
+        waitABit(1000);
         element(INSURANCE_LABEL).click();
-        element(INSURANCE_TYPE1).click();
+        switch (insuranceType){
+            case "Anti-Theft Lojack Abbonamento >34":
+                break;
+            case "Anti-Theft Lojack Abbonamento <=34": element(INSURANCE_TYPE1).click();
+            default: fail("Unknown insurance type: "+insuranceType);
+        }
         waitABit(500);
     }
 
@@ -138,5 +146,17 @@ public class FinancesServicesComponent extends ReusableViewElements {
     public void checkPackPrice(String packPrice) {
         String price = element("#quote\\:selopt\\:tbody_element > tr:nth-child(4) > td:nth-child(3)").getText();
         assertThat(price, is(packPrice));
+    }
+
+    public void acceptFuelCardEni(String choice) {
+        waitABit(500);
+        element(FUEL_CARD_ENI_LABEL).click();
+        switch (choice.toLowerCase()){
+            case "yes": element(FUEL_CARD_ENI_YES).click();
+                break;
+            case "no":
+                break;
+            default: fail("Unknown choice: "+choice);
+        }
     }
 }

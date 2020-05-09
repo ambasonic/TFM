@@ -58,7 +58,7 @@ public class VehicleComponent extends ReusableViewElements {
                 break;
             case "TOYOTA C-HR 1.8H (122CV) E-CVT Dynamic":element(By.id(TYPE_SPAN+6)).click();
                 break;
-            case "TS 1.8 Hybride Active":element(By.id(TYPE_SPAN+2)).click();
+            case "TS Hybrid Active":element(By.id(TYPE_SPAN+2)).click();
                 break;
             default:assertFalse(" The carType selector for:"+carType+" is unknown", true);
         }

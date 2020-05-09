@@ -23,6 +23,11 @@ public class CustomerPageCucumberSteps extends TestDataGenerator {
         customerPageSteps.setCompany(getNameWithNumeric());
     }
 
+    @And("he sets a company name")
+    public void setCompany() {
+        customerPage.getIndividualComponent().setCompany(getNameWithNumeric());
+    }
+
     @And("he gives the street name {string} in the contact data form")
     public void heGivesTheStreetNameStreet_nameInTheContactDataForm(String streetName) {
         customerPageSteps.setStreetName(streetName);

@@ -199,6 +199,10 @@ public class SalePageCucumberSteps {
         salePage.getFinancesServicesComponent().checkPackPrice( packPrice);
     }
 
+    @And("he accepts the Fuel card Eni {string}")
+    public void heAcceptsTheFuelCardEni(String choice) {
+        salePage.getFinancesServicesComponent().acceptFuelCardEni(choice);
+    }
 
     @After
     public static void getFeatureFileNameFromScenarioId(io.cucumber.java.Scenario scenario) {
@@ -213,4 +217,5 @@ public class SalePageCucumberSteps {
 //        System.out.println("####");
 //        System.out.println("####");
     }  //TODO TO Remove
+
 }

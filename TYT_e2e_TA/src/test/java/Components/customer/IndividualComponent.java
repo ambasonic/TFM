@@ -21,12 +21,18 @@ public class IndividualComponent extends ReusableViewElements {
     private final By SURNAME = By.id("quote:prospectdetail:prospectView:main:contact_lname_prvt");
     private final By LAST_NAME = By.id("quote:prospectdetail:prospectView:main:contact_fname_prvt");
     private final By Email = By.id("quote:prospectdetail:prospectView:main:contactemail_prvt");
+    private final By COMPANY = By.id("quote:prospectdetail:prospectView:main:businessAddress:name");
+
 
     public IndividualComponent(WebDriver driver) {
         super(driver);
     }
 
 
+    public void setCompany(String company_Name){
+        element(COMPANY).sendKeys(company_Name);
+        scrollToPosition(0, 300);
+    }
 
     public void setStreetName(String street_Name){
         element(STREET_NAME).sendKeys(street_Name);
