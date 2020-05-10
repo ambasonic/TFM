@@ -66,4 +66,14 @@ public class LongTermContractsMRCucumberSteps extends TestDataGenerator {
     public void heDeliver() {
         longTermContractsMRSteps.clickOnDeliver();
     }
+
+    @Then("he opens the workflow and he selects the contract initiation")
+    public void heOpensTheWorkflowAndHeSelectsTheContractInitiation() {
+        longTermContractsMRSteps.clickOnContractInitiation();
+    }
+
+    @And("he reevaluates the contract and close the tab")
+    public void heReevaluatesTheContractAndCloseTheTab() {
+        longTermContractsMRSteps.reevaluatesContractAndCloseTheTab();
+    }
 }

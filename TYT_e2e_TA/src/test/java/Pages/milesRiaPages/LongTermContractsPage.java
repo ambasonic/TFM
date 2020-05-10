@@ -5,8 +5,11 @@ import Components.quotesMR.VehicleMRComponent;
 import Components.quotesMR.VehicleUsagesMRComponent;
 import Pages.ReusableViewElements;
 import Pages.milesRiaTabs.TopBarTabs;
+import net.serenitybdd.core.pages.WebElementFacade;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+
+import java.util.List;
 
 public class LongTermContractsPage extends ReusableViewElements {
 
@@ -17,6 +20,14 @@ public class LongTermContractsPage extends ReusableViewElements {
     private final String OK = "//img[contains(@src,'https://10.7.25.20:10143/milesria/resource/skins/MRI/images/Sofico/16/ok.png?sv=0c361dca65211eee9a7833a6d278d85771a04349')]";
     private final By DiSTANCE = By.name("A1339");
     private final String DELIVER = "//img[contains(@src,'https://10.7.25.20:10143/milesria/resource/skins/MRI/images/Sofico/16/action.png?sv=0c361dca65211eee9a7833a6d278d85771a04349')]";
+    private final By CONTRACT_INITIATION = By.id("grid_WorkList_Activities_Tree_2_valueCell0");
+    private final By CLOSE = By.className("buttonRounded");
+    private final String location_text = "Via Verdi  1\n" +
+            "20018 SEDRIANO\n" +
+            "MILANO Italy";
+    private final By REQUESTED_LOCATION =  By.name("A2725");
+    private final By Vehicle_Receipt_By = By.name("R678");
+
 
     public VehicleMRComponent getVehicleMRComponent(){
         return new VehicleMRComponent(getDriver());
@@ -31,18 +42,20 @@ public class LongTermContractsPage extends ReusableViewElements {
         return new VehicleUsagesMRComponent(getDriver());
     }
     public void clickOnCalculate() {
-        waitABit(3000);
         element(Calculate).click();
+        waitABit(8000);
     }
 
     public void selectTheDelivery(String delivery) { //TODO implement de delivery choice the default is Express
+        waitABit(1000);
+        element(OK).click();
+        waitABit(1000);
+        waitABit(1000);
     }
 
     public void clickOnDelivery() {
         waitABit(7000);
         findAll(ActionIcon).get(2).click();
-        waitABit(1000);
-        element(OK).click();
         waitABit(1000);
     }
 
@@ -52,9 +65,41 @@ public class LongTermContractsPage extends ReusableViewElements {
     }
 
     public void clickOnDeliver(){
+        waitABit(2000);
+        setRequestLocation();
+        setVehicleReceipt("TestAutomation");
         waitABit(5000);
         int size = findAll(DELIVER).size();
         findAll(DELIVER).get(7).click();
+        waitABit(3000);
+        element(By.xpath("//img[contains(@src,'https://10.7.25.20:10143/milesria/resource/skins/MRI/images/Sofico/16/ok.png?sv=0c361dca65211eee9a7833a6d278d85771a04349')] ")).click();
+        waitABit(10000);
+    }
+
+    public void clickOnContractInitiation() {
+        waitABit(2000);
+        element(CONTRACT_INITIATION).click();
+        waitABit(2000);
+    }
+
+    public void clickOnReevaluate() {
+        List<WebElementFacade> skinlessButtons = findAll(By.className("skinlessButton"));
+        skinlessButtons.get(4).click();
+        waitABit(3000);
+
+        //close Tab
+        List<WebElementFacade> closeButton = findAll(CLOSE);
+        closeButton.get(0).click();
+        waitABit(1000);
+    }
+
+    public void setRequestLocation(){
+        sendKeysAfterStaleness(REQUESTED_LOCATION, false, location_text);
+        waitABit(1000);
+    }
+
+    public void setVehicleReceipt(String name){
+        sendKeysAfterStaleness(Vehicle_Receipt_By, false, name);
         waitABit(1000);
     }
 }

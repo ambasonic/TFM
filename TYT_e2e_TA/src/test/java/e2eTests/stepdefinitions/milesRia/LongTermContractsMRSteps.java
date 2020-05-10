@@ -73,4 +73,12 @@ public class LongTermContractsMRSteps {
     public void clickOnDeliver() {
         longTermContractsPage.clickOnDeliver();
     }
+
+    public void clickOnContractInitiation() {
+        longTermContractsPage.clickOnContractInitiation();
+    }
+
+    public void reevaluatesContractAndCloseTheTab() {
+        longTermContractsPage.clickOnReevaluate();
+    }
 }

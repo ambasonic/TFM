@@ -27,6 +27,8 @@ Feature: Quote validation
     And he registered the vehicle plates
     Then he saved
     When he open the long term contract
+    Then he opens the workflow and he selects the contract initiation
+    And he reevaluates the contract and close the tab
     And he calculate
     And he select the 'Express delivery' as delivery
     And he set the distance
@@ -34,5 +36,5 @@ Feature: Quote validation
 
 
     Examples:
-      |quoteID| VinNr  |
-      |001952/001| 1NXBR32E93Z070422 |
+      |quoteID   |
+      |001968/001|
