@@ -1,43 +1,67 @@
 package Components.sale;
 
 import Pages.ReusableViewElements;
-import net.serenitybdd.core.annotations.findby.By;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
-import static org.assertj.core.api.Assertions.assertThat;
+import static org.junit.Assert.*;
 
 public class VehicleComponent extends ReusableViewElements {
 
-    private final String manufacturer_id = "quote:makeList:1:j_idt705";
-    private final String carType = "typespan8"; // TODO make the typeSpan iterable
-    private final String carModel = "quote:modelList:13:j_idt714"; //TODO make model distinct
+    private final By TOYOTA = By.id("quote:makeList:1:j_idt705");
+    private final By LEXUS = By.id("quote:makeList:0:j_idt705");
+    private final String TYPE_SPAN = "typespan";
+    private final By YARIS = By.id("quote:modelList:13:j_idt714");
+    private final By RX = By.id("quote:modelList:7:j_idt714");
+    private final By CHR = By.id("quote:modelList:1:j_idt714");
+    private final By COROLLA = By.id("quote:modelList:2:j_idt714");
     public VehicleComponent(WebDriver driver) {
         super(driver);
     }
 
 
     public void selectCarManufacturer(String manufacturer) {
-//        assertThat(element(By.id(manufacturer_id)).getText().equalsIgnoreCase(manufacturer));
         waitABit(4000);
-        element(By.xpath("//*[@id=\"quote:makeFieldSet\"]/legend")).click(); //TODO refactor lazy solution
-        element(By.id(manufacturer_id)).click();
+        element(By.xpath("//*[@id='quote:makeFieldSet']/legend")).click(); //TODO refactor lazy solution
+        waitABit(2000);
+        switch (manufacturer.toLowerCase()){
+            case "toyota": element(TOYOTA).click();
+                break;
+            case "lexus": element(LEXUS).click();
+                break;
+            default:assertFalse(" The manufacturer selector for: "+manufacturer+" is unknown", true);
+        }
         waitABit(3000);
     }
 
-    public void openMakeSelectionBox(){
-        waitABit(5000);
-        element(By.xpath("//button[@id='quote_actions_dealer:j_idt133']/span")).click();
-        waitABit(3000);
+    public void selectCarModel(String model){
+        switch (model.toLowerCase()){
+            case "yaris": element(YARIS).click();
+                break;
+            case "rx":element(RX).click();
+                break;
+            case "chr":element(CHR).click();
+                break;
+            case "corolla":element(COROLLA).click();
+                break;
+            default:assertFalse(" The model selector for: "+model+" is unknown", true);
+        }
+        waitABit(2000);
     }
 
-    public void selectCarModel(){
-        waitABit(2000);
-        element(By.id(carModel)).click();
-        waitABit(2000);
-    }
-
-    public void selCarType() {
+    public void selCarType(String carType) {
         waitABit(1000);
-        element(By.id(carType)).click();
+        switch (carType){
+            case "TODO": element(By.id(TYPE_SPAN+8)).click();
+                break;
+            case "450h F Sport":element(By.id(TYPE_SPAN+1)).click();
+                break;
+            case "TOYOTA C-HR 1.8H (122CV) E-CVT Dynamic":element(By.id(TYPE_SPAN+6)).click();
+                break;
+            case "TS Hybrid Active":element(By.id(TYPE_SPAN+2)).click();
+                break;
+            default:assertFalse(" The carType selector for:"+carType+" is unknown", true);
+        }
+        waitABit(2000);
     }
 }

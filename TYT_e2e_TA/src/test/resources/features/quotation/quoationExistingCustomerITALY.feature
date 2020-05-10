@@ -15,7 +15,7 @@ Feature: Quotation Template with an existing Customer Italy
     And he go to the next page
     Then he can selects vehicle options
     And he chooses color '<color>' and upholstery '<upholstery>'
-    And he selects an option '<description>'
+    And he selects an option from popUp Menu '<description>'
     And he go to the next page
     Then he search the customer by name '<customer Name>'
     And he go to the next page

@@ -1,6 +1,7 @@
 package e2eTests.cukeStepDefinitions.milesWeb.sale;
 
 
+import Pages.sale.SalePage;
 import e2eTests.stepdefinitions.SalePageSteps;
 import io.cucumber.java.After;
 import io.cucumber.java.en.And;
@@ -13,6 +14,8 @@ public class SalePageCucumberSteps {
     @Steps
     SalePageSteps salePageSteps;
 
+    SalePage salePage;
+
     @When("he selects a vehicle {string}")
     public void he_selects_a_vehicle(String manufacturer) {
 //        salePageSteps.openMakeSelectionBox(); //Only use if the box is not activated
@@ -22,7 +25,7 @@ public class SalePageCucumberSteps {
 
     @And("he selects a model {string}")
     public void he_selects_a_model(String model) {
-        salePageSteps.selectCarModel("model");
+        salePageSteps.selectCarModel(model);
     }
 
     @And("he selects the type {string}")
@@ -45,9 +48,29 @@ public class SalePageCucumberSteps {
         salePageSteps.setUpholstery(upholstery);
     }
 
-    @And("he selects an option {string}")
+    @And("he selects an option from popUp Menu {string}")
     public void he_selects_an_option(String option) {
+        salePageSteps.selectsOptionFromPopUp(option);
+    }
+
+    @And("he selects an option {string}")
+    public void selectsOptionFromPopUp(String option) {
         salePageSteps.setOption(option);
+    }
+
+    @And("he selects the option pack {string}")
+    public void selectOptionPack(String optionPack) {
+        salePageSteps.selectOptionPack(optionPack);
+    }
+
+    @And("he selects the accessories {string}")
+    public void setAccessories(String accessory) {
+        salePageSteps.setAccessories(accessory);
+    }
+
+    @Then("he can create a new customer")
+    public void gotToNewCustomerMenu() {
+        salePageSteps.gotToNewCustomerMenu();
     }
 
     @Then("he search the customer by name {string}")
@@ -115,7 +138,7 @@ public class SalePageCucumberSteps {
 
     @And("the total price should be {string}")
     public void the_Total_Price_Should_Be(String totalPrice) {
-        salePageSteps.checkTotalPrice(totalPrice);
+        salePageSteps.checkTotalPrice(totalPrice);  //TODO REMOVE
     }
 
     @And("he saved it")
@@ -130,6 +153,57 @@ public class SalePageCucumberSteps {
         salePageSteps.clickOnLogOut();
     }
 
+    @And("the total price is {string}")
+    public void theTotalPriceIsTotalPrice(String expectedPrice) {
+        salePageSteps.checkTotalPrice2(expectedPrice); //TODO REMOVE
+    }
+
+    @And("he gives a down payment of {string}")
+    public void heGivesADownPaymentOfDownPayment(String payment) {
+        salePage.getFinancesServicesComponent().setDownPayment(payment);
+    }
+
+    @And("he set the insurance type {string}")
+    public void heSetTheInsuranceTypeInsurance(String insurance) {
+        salePage.getFinancesServicesComponent().setInsuranceType(insurance);
+    }
+
+    @And("he check the lease price {string}")
+    public void heCheckTheLeasePriceLeasePrice(String leasePrice) {
+        salePage.getFinancesServicesComponent().checkLeasePrice(leasePrice);
+
+    }
+
+    @And("he check the service price {string}")
+    public void heCheckTheServicePriceServicePrice(String servicePrice) {
+        salePage.getFinancesServicesComponent().checkServicePrice(servicePrice);
+    }
+
+    @And("he check the total price {string}")
+    public void heCheckTheTotalPriceTotalPrice(String totalPrice) {
+        salePage.getFinancesServicesComponent().checkTotalPrice(totalPrice);
+    }
+
+    @And("he check the accessories price {string}")
+    public void heCheckTheAccessoriesPriceAccessoriesPrice(String accPrice) {
+        salePage.getFinancesServicesComponent().checkAccessoriesPrice(accPrice);
+    }
+
+    @And("he check the option price {string}")
+    public void heCheckTheOptionPriceOptionPrice(String optionPrice) {
+        salePage.getFinancesServicesComponent().checkOptionPrice(optionPrice);
+    }
+
+    @And("he check the option pack price {string}")
+    public void heCheckTheOptionPackPriceOptionPackPrice(String packPrice) {
+        salePage.getFinancesServicesComponent().checkPackPrice( packPrice);
+    }
+
+    @And("he accepts the Fuel card Eni {string}")
+    public void heAcceptsTheFuelCardEni(String choice) {
+        salePage.getFinancesServicesComponent().acceptFuelCardEni(choice);
+    }
+
     @After
     public static void getFeatureFileNameFromScenarioId(io.cucumber.java.Scenario scenario) {
 //        String featureName = "Feature ";
@@ -142,11 +216,6 @@ public class SalePageCucumberSteps {
 //        System.out.println("####");
 //        System.out.println("####");
 //        System.out.println("####");
-    }
+    }  //TODO TO Remove
 
-    //TODO TO Remove
-    @And("the total price is {string}")
-    public void theTotalPriceIsTotalPrice(String expectedPrice) {
-        salePageSteps.checkTotalPrice2(expectedPrice);
-    }
 }

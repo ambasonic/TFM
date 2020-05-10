@@ -15,10 +15,10 @@ public class TestDataGenerator {
     }
 
     /**
-     * This method return the actual date plus a number of days
-     * to reach the target date
+     * This method return the actual date with the format dd/MM/yyyy
+     * plus a number of days to reach the target date
      *
-     * @param numBerOfDaysInTheFuture
+     * @param numBerOfDaysInTheFuture number of days to add to the actual date
      * @return date in the future
      */
     public String getFutureDate(int numBerOfDaysInTheFuture) {
@@ -29,6 +29,7 @@ public class TestDataGenerator {
     }
 
     /**
+     * return the date of today with the format dd/MM/yyyy
      *
      * @return the date of today
      */
@@ -40,19 +41,22 @@ public class TestDataGenerator {
     }
 
     /**
-     * This method generate a random Alpha numeric number in Uppercase
-     * @param length invoice number length
-     * @return
+     * return a random Alpha numeric invoice digit in Uppercase
+     *
+     * @param length invoice digit length
+     * @return random invoice as String
+     * @see RandomStringUtils
      */
     public  String getInvoiceNumber(int length) {
         return RandomStringUtils.randomAlphanumeric(length).toUpperCase();
     }
 
     /**
-     * This method generate a random Licence number with the pattern
+     * return a random Licence number with the pattern
      * 2 Alphabetic + 3 Numeric + 2 Alphabetic
      *
-     * @return
+     * @return the random Licence number as String
+     * @see RandomStringUtils
      */
     public  String getLicenceNumber() {
         String alpha1 = RandomStringUtils.randomAlphabetic(2).toUpperCase();
@@ -62,12 +66,25 @@ public class TestDataGenerator {
     }
 
     /**
-     * This method generate a distance from the length count
-     * @param count
-     * @return
+     *
+     * return <p>a random distance whose length is the number of characters
+     * specified.</p>
+     * @param count the length of random string to create
+     *
+     * @return the random distance as string
      */
     public  String getDistance(int count) {
         return RandomStringUtils.randomNumeric(count);
+    }
+
+    public String getNameWithNumeric(){
+        Calendar calendar =  Calendar.getInstance();
+        StringBuilder stringBuilder = new StringBuilder();
+        stringBuilder.append("Testautomation");
+        stringBuilder.append(RandomStringUtils.randomAlphabetic(2).toUpperCase());
+        stringBuilder.append(calendar.get(Calendar.MINUTE));
+        stringBuilder.append(calendar.get(Calendar.MILLISECOND));
+        return stringBuilder.toString();
     }
 
     public static void main(String[] args) {
@@ -85,10 +102,11 @@ public class TestDataGenerator {
         System.out.println();
         System.out.println("Licence Number");
         System.out.println(testDataGenerator.getLicenceNumber());
+        System.out.println();
         System.out.println("Random vehicle VIN");
         System.out.println(VinGeneratorUtils.getRandomVin());
-
-
-
+        System.out.println();
+        System.out.println("Random name with numeric");
+        System.out.println(testDataGenerator.getNameWithNumeric());
     }
 }

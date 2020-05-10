@@ -9,7 +9,7 @@ public class CustomerComponent extends ReusableViewElements {
 private final String searchButton = "quote:j_idt934";
 private final String organizationMenuButton = "//div[@id='prospectdata:prospectlegalEntityGroup']/div/span";
 private final String organization = "//button[@id='prospectdata:prospectlistTable:0:j_idt114']/span[2]";
-
+private final By MODIFY_CUSTOMER_NEW = By.id("quote:j_idt932");
     public CustomerComponent(WebDriver driver) {
         super(driver);
     }
@@ -39,6 +39,12 @@ private final String organization = "//button[@id='prospectdata:prospectlistTabl
         element(By.xpath(" //*[@id='quote:save-confirmButton']")).click();
 
         waitABit(1000);
+    }
+
+    public void clickOnNewCustomer() {
+        waitABit(1000);
+        element(MODIFY_CUSTOMER_NEW).click();
+        waitABit(2000);
     }
 }
 

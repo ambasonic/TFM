@@ -1,44 +1,53 @@
 package Components.sale;
 
 import Pages.ReusableViewElements;
-import net.serenitybdd.core.pages.WebElementFacade;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.support.FindBy;
+
+import static org.hamcrest.Matchers.is;
+import static org.junit.Assert.assertThat;
+import static org.junit.Assert.fail;
+
 
 public class FinancesServicesComponent extends ReusableViewElements {
 
     private final String Delivery_Menu = "quote:retailfinance:dcc";
     private final String Delivery_Method = "quote:retailfinance:dcc_";
     private final String Relief_Vehicle_Field = "quote:retailfinance:lsc:1:pcs";
-    private final String Relief_Vehicle_Yes_Choice = "quote:retailfinance:lsc:1:pcs_1";
-    private final String Relief_Vehicle_No_Choice = "quote:retailfinance:lsc:1:pcs_0";
+    private final By Relief_Vehicle_Yes_Choice = By.id("quote:retailfinance:lsc:1:pcs_1");
+    private final By Relief_Vehicle_No_Choice = By.id("quote:retailfinance:lsc:1:pcs_0");
     private final String Tires_Vehicle_Field = "quote:retailfinance:lsc:3:pcs";
     private final String Tires_Type = "quote:retailfinance:lsc:3:pcs_";
     private final String Tires_Number_Input_Field = "quote:retailfinance:lsc:3:qr:1:qinputs";
     private final String Calculate_Button = "quote:retailfinanceSummary:update";
     private final String Save_Quote = "quote:retailfinanceSummary:save";
     private final String TotalPrice_Value = "quote:retailfinanceSummary:pricewithfuelexclvat";
+    private final By DOWN_PAYMENT = By.id("quote:retailfinanceSummary:upfront");
+    private final By DURATION  = By.id("quote:retailfinance:months");
+    private final By DISTANCE  = By.id("quote:retailfinance:kms");
+    private final By INSURANCE_LABEL = By.id("quote:retailfinance:lsc:7:pcs_label");
+    private final By FUEL_CARD_ENI_LABEL = By.id("quote:retailfinance:lsc:8:pcs");
+    private final By FUEL_CARD_ENI_YES = By.id("quote:retailfinance:lsc:8:pcs_0");
+    private final By INSURANCE_TYPE1 = By.id("quote:retailfinance:lsc:7:pcs_0");
+    private final By VAT_LEASE_PRICE = By.id("quote:retailfinanceSummary:leasepricevat");
+    private final By VAT_SERVICE_PRICE = By.id("quote:retailfinanceSummary:servicesleasepricevat");
+    private final By VAT_TOTAL_PRICE = By.id("quote:retailfinanceSummary:pricewithfuel");
 
-
-    @FindBy(id="quote:retailfinance:months")
-    WebElementFacade durationFieldElement;
-
-    @FindBy(id="quote:retailfinance:kms")
-    WebElementFacade distanceFieldElement;
 
     public FinancesServicesComponent(WebDriver driver) {
         super(driver);
     }
 
     public void setDuration(int duration){
-        durationFieldElement.clear();
-        durationFieldElement.sendKeys(String.valueOf(duration));
+        waitABit(500);
+        element(DURATION).clear();
+        element(DURATION).sendKeys(String.valueOf(duration));
     }
 
     public void setDistance(int distance){
-        distanceFieldElement.clear();
-        distanceFieldElement.sendKeys(String.valueOf(distance));
+        waitABit(500);
+        element(DISTANCE).clear();
+        element(DISTANCE).sendKeys(String.valueOf(distance));
     }
 
     //TODO find a way to check the payment name
@@ -54,9 +63,9 @@ public class FinancesServicesComponent extends ReusableViewElements {
     public void setReliefVehicle(boolean choice){
         element(By.id(Relief_Vehicle_Field)).click();
         if(choice){
-            element(By.id(Relief_Vehicle_Yes_Choice)).click();
+            element(Relief_Vehicle_Yes_Choice).click();
         } else {
-            element(By.id(Relief_Vehicle_No_Choice)).click();
+            element(Relief_Vehicle_No_Choice).click();
         }
         waitABit(2000);
     }
@@ -85,5 +94,69 @@ public class FinancesServicesComponent extends ReusableViewElements {
     public String getTotalPrice(){
         String totalPrice = element(By.id(TotalPrice_Value)).getText();
         return totalPrice;
+    }
+
+    public void setDownPayment(String payment) {
+        waitABit(1000);
+        element(DOWN_PAYMENT).sendKeys(payment);
+    }
+
+    public void setInsuranceType(String insuranceType){
+        waitABit(1000);
+        element(INSURANCE_LABEL).click();
+        switch (insuranceType){
+            case "Anti-Theft Lojack Abbonamento >34":
+                break;
+            case "Anti-Theft Lojack Abbonamento <=34": element(INSURANCE_TYPE1).click();
+            default: fail("Unknown insurance type: "+insuranceType);
+        }
+        waitABit(500);
+    }
+
+    public void checkLeasePrice(String leasePrice) {
+        waitABit(500);
+        String price = element(VAT_LEASE_PRICE).getText();
+        assertThat(price, is(leasePrice));
+    }
+
+    public void checkServicePrice(String servicePrice) {
+        waitABit(500);
+//        replace("?","\u20ac")
+        String price = element(VAT_SERVICE_PRICE).getText();
+        assertThat(price, is(servicePrice));
+    }
+
+    public void checkTotalPrice(String totalPrice) {
+        waitABit(500);
+        String price = element(VAT_TOTAL_PRICE).getText();
+        assertThat(price, is(totalPrice));
+        waitABit(500);
+    }
+
+    public void checkAccessoriesPrice(String accPrice) {
+        String price= element("#quote\\:selopt\\:tbody_element > tr:nth-child(5) > td:nth-child(3) > span").getText();
+        assertThat(price, is(accPrice));
+    }
+
+    public void checkOptionPrice(String optionPrice) {
+        String price = element("#quote\\:selopt\\:tbody_element > tr:nth-child(3) > td:nth-child(3) > span").getText();
+        assertThat(price, is(optionPrice));
+    }
+
+    public void checkPackPrice(String packPrice) {
+        String price = element("#quote\\:selopt\\:tbody_element > tr:nth-child(4) > td:nth-child(3)").getText();
+        assertThat(price, is(packPrice));
+    }
+
+    public void acceptFuelCardEni(String choice) {
+        waitABit(500);
+        element(FUEL_CARD_ENI_LABEL).click();
+        switch (choice.toLowerCase()){
+            case "yes": element(FUEL_CARD_ENI_YES).click();
+                break;
+            case "no":
+                break;
+            default: fail("Unknown choice: "+choice);
+        }
     }
 }
