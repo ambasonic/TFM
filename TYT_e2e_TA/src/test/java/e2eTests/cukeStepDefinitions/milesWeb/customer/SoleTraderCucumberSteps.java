@@ -55,4 +55,5 @@ public class SoleTraderCucumberSteps {
     public void heClicksOnTheButtonSave() {
         customerPage.getSoleTraderComponent().save();
     }
+
 }

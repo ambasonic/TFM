@@ -1,6 +1,6 @@
 # new feature
 # Tags: optional
-
+@pck2case1
 Feature: Quotation Template with an existing Customer Italy
 
   Scenario Outline: quotation

@@ -1,7 +1,7 @@
 # new feature
 # Tags: optional
 @italy
-@case1
+@pck1case1
 Feature: Quotation Template with an existing Customer Italy
 
   Scenario Outline: quotation
@@ -29,5 +29,5 @@ Feature: Quotation Template with an existing Customer Italy
     And he log out
 
     Examples:
-      | car manufacturer| model| car type | color | upholstery |description | customer Name | duration | distance | paymentIndex | paymentMethod |
-      | Toyota | Yaris | 1.0 VVT-i x-play | Anthracite Grey metallic | Cloth upholstery Dark Grey with bi-toned bolsters white and light grey | lojack classic| ANNA PAGANO | 36 | 80000 | 1 |TFM2_Delivery cost direct/broker from dealer to customer|
+      | car manufacturer| model | car type                          | color                    | upholstery       |description    | customer Name | duration | distance | paymentIndex | paymentMethod                                          |
+      | Toyota          | Yaris | 1.5 Hybrid Lounge Red/Bronze MY19 | Red Mica &Black Metalic  | Cloth black/grey | lojack classic| BOMI          | 48       | 80000    | 1            |TFM2_Delivery cost direct/broker from dealer to customer|

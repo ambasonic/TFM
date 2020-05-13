@@ -39,7 +39,7 @@ public class FinancesServicesComponent extends ReusableViewElements {
     }
 
     public void setDuration(int duration){
-        waitABit(500);
+        waitABit(1000);
         element(DURATION).clear();
         element(DURATION).sendKeys(String.valueOf(duration));
     }
@@ -108,6 +108,7 @@ public class FinancesServicesComponent extends ReusableViewElements {
             case "Anti-Theft Lojack Abbonamento >34":
                 break;
             case "Anti-Theft Lojack Abbonamento <=34": element(INSURANCE_TYPE1).click();
+                break;
             default: fail("Unknown insurance type: "+insuranceType);
         }
         waitABit(500);
@@ -158,5 +159,10 @@ public class FinancesServicesComponent extends ReusableViewElements {
                 break;
             default: fail("Unknown choice: "+choice);
         }
+    }
+
+    public void checkP(String optionPrice) {
+        String price = element("#quote\\:selopt\\:tbody_element > tr:nth-child(7) > td:nth-child(3) > span").getText();
+        assertThat(price, is(optionPrice));
     }
 }

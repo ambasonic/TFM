@@ -18,7 +18,7 @@ Feature: Failed Duplicate a quote and change of duration and distance with addit
     And he selects the tyre type <tyreIndex> '<tyreName>'
     And he adds <tyreNumber> tires
     Then he calculates the quote
-    And the total price is '<totalPrice>'
+    And he check the total price '<totalPrice>'
     And he saved it
 
     Examples:

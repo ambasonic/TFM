@@ -136,10 +136,10 @@ public class SalePageCucumberSteps {
     }
 
 
-    @And("the total price should be {string}")
-    public void the_Total_Price_Should_Be(String totalPrice) {
-        salePageSteps.checkTotalPrice(totalPrice);  //TODO REMOVE
-    }
+//    @And("the total price should be {string}")
+//    public void the_Total_Price_Should_Be(String totalPrice) {
+//        salePageSteps.checkTotalPrice(totalPrice);  //TODO REMOVE
+//    }
 
     @And("he saved it")
     public void saved_It() {
@@ -218,4 +218,9 @@ public class SalePageCucumberSteps {
 //        System.out.println("####");
     }  //TODO TO Remove
 
+    @And("he check the option price sole trader {string}")
+    public void heCheckTheOptionPriceSoleTraderOptionPrice(String optionPrice) {
+        salePage.getFinancesServicesComponent().checkP(optionPrice); //TODO REFACTOR DELETE
+    }
+//    TODO REMOVE this method
 }

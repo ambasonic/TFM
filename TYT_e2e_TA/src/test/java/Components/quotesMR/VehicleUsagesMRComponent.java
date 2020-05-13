@@ -48,6 +48,7 @@ public class VehicleUsagesMRComponent extends ReusableViewElements {
         actions.sendKeys(licenceNumber).build().perform();
         waitABit(1000);
         actions.sendKeys(Keys.TAB).build().perform();
+        waitABit(1000);
     }
 
     public void setRegistrationDate(String futureDate) {

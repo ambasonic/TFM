@@ -35,8 +35,8 @@ Command to run all features from Italy
 ```json
 $ gradle clean test -Dcucumber.options="--tags @italy"
 
-$ gradle clean test -Dcucumber.options="--tags @case1"
-$ gradle clean test -Dcucumber.options="--tags @case2"
+$ gradle clean test -Dcucumber.options="--tags @pck1case1"
+$ gradle clean test -Dcucumber.options="--tags @pck1case2"
 $ gradle clean test -Dcucumber.options="--tags @case3"
 ```
 

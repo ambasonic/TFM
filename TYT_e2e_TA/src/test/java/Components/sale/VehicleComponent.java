@@ -52,11 +52,11 @@ public class VehicleComponent extends ReusableViewElements {
     public void selCarType(String carType) {
         waitABit(1000);
         switch (carType){
-            case "TODO": element(By.id(TYPE_SPAN+8)).click();
+            case "1.5 Hybrid Lounge Red/Bronze MY19": element(By.id(TYPE_SPAN+8)).click();
                 break;
             case "450h F Sport":element(By.id(TYPE_SPAN+1)).click();
                 break;
-            case "TOYOTA C-HR 1.8H (122CV) E-CVT Dynamic":element(By.id(TYPE_SPAN+6)).click();
+            case "1.8H (122CV) E-CVT Dynamic (2019)":element(By.id(TYPE_SPAN+6)).click();
                 break;
             case "TS Hybrid Active":element(By.id(TYPE_SPAN+2)).click();
                 break;
