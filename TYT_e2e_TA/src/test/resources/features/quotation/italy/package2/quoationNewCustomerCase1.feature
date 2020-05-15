@@ -13,11 +13,11 @@ Feature: Quotation Template with an existing Customer Italy
     And he selects the type '<car type>'
     And he go to the next page
     Then he can selects vehicle options
+    And he go to the next page
     And he chooses color '<color>' and upholstery '<upholstery>'
     And he selects the option pack '<option pack>'
     And he selects an option '<option>'
     And he selects the accessories '<accessories>'
-    And he go to the next page
     Then he can create a new customer
     And he selects the legal entity '<legal entity>'
     And he gives a company name in the company form

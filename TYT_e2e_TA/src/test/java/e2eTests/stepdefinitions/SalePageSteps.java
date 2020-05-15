@@ -21,7 +21,7 @@ public class SalePageSteps {
     }
 
     @Step("The dealer selects '{0}' as type")
-    public void selectCarType(String type) { salePage.getVehicleComponent().selCarType(type);
+    public void selectCarType(String type) { salePage.getVehicleComponent().selectCarType(type);
     }
 
     @Step("The dealer clicks on next")

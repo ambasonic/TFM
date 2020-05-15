@@ -49,10 +49,12 @@ public class VehicleComponent extends ReusableViewElements {
         waitABit(2000);
     }
 
-    public void selCarType(String carType) {
+    public void selectCarType(String carType) {
         waitABit(1000);
         switch (carType){
             case "1.5 Hybrid Lounge Red/Bronze MY19": element(By.id(TYPE_SPAN+8)).click();
+                break;
+            case "1.5 Hybrid Active MY19 (2019)": element(By.id(TYPE_SPAN+5)).click();
                 break;
             case "450h F Sport":element(By.id(TYPE_SPAN+1)).click();
                 break;

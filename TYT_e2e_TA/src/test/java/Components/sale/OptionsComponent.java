@@ -31,6 +31,8 @@ public class OptionsComponent extends ReusableViewElements {
     private final By LOJACK_CLASSIC = By.id("option_2000001");
     private final By SENSORI_DI_PARCHEGGIO_ANTERIORI = By.id("option_2000118");
     private final By Touch2_with_Go_Limited_Edition_Campaign = By.id("option_2000004");
+    private final By LoJack_Premium = By.id("option_2000002");
+    private final By PORTABICI_SX = By.id("option_2000026");
 
     public OptionsComponent(WebDriver driver) {
         super(driver);
@@ -108,6 +110,10 @@ public class OptionsComponent extends ReusableViewElements {
         waitABit(2000);
         switch (accessory){
             case "Lojack classic":element(LOJACK_CLASSIC).click();
+                break;
+            case "LoJack Premium":element(LoJack_Premium).click();
+                break;
+            case "Portabici Sx":element(PORTABICI_SX).click();
                 break;
             case "Lojack premium":element(LOGJACK_PREMIUM).click();
                 break;
