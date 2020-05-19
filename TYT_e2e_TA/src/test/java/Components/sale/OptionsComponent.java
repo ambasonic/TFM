@@ -122,6 +122,7 @@ public class OptionsComponent extends ReusableViewElements {
                 .stream()
                 .filter(c -> c.find(By.className("optionNameColumn")).getText().equalsIgnoreCase(optionPack))
                 .collect(Collectors.toList());
+        assertFalse("The optionPack: "+optionPack+" is unknown", anchors.size()!=1);
         anchors.get(0).findElement(By.className("optchk")).click();
 
     }

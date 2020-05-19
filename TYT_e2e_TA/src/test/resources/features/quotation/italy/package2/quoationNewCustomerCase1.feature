@@ -13,9 +13,8 @@ Feature: Quotation Template with an existing Customer Italy
     And he selects the type '<car type>'
     And he go to the next page
     Then he can selects vehicle options
-    And he go to the next page
     And he chooses color '<color>' and upholstery '<upholstery>'
-    And he selects the option pack '<option pack>'
+    And he selects the option pack '<optionPack>'
     And he selects an option '<option>'
     And he selects the accessories '<accessories>'
     Then he can create a new customer
@@ -45,12 +44,15 @@ Feature: Quotation Template with an existing Customer Italy
     And he check the lease price '<leasePrice>'
     And he check the service price '<servicePrice>'
     And he check the total price '<totalPrice>'
-    And he check the accessories price '<accessoriesPrice>'
-    And he check the option price '<optionPrice>'
-    And he check the option pack price '<optionPackPrice>'
+    And he checks the selected option price '<option>' '<optionPrice>'
+    And he checks the selected option price '<accessories>' '<accessoriesPrice>'
+    And he checks the selected option price '<optionPack>' '<optionPackPrice>'
+#    And he check the accessories price '<accessoriesPrice>'
+#    And he check the option price '<optionPrice>'
+#    And he check the option pack price '<optionPackPrice>'
     And he saved it
     And he log out
 
     Examples:
-      |manufacturer|model|  car type  |  color  |  upholstery  |  accessories  |        option         |  option pack |  legal entity   |  street_name   | street_number | city_name | zip_code | phone_number | title |surname| name         |     email     | birthDate  |duration|distance|tyreIndex | tyreName              | tyreNumber | paymentIndex |                   paymentMethod                        |downPayment|              insurance           |leasePrice|servicePrice|totalPrice|accessoriesPrice|optionPrice|optionPackPrice|
-      |Lexus       | Rx  |450h F Sport| F White | Leather Black| Lojack premium|Metallic or pearl paint| Premium Pack |Societa  Semplice|  Plaza del sol |       3       | Nichelino | 10042    |    5455566   |   Dr  |Silvio | Berluscozini | ac@milano.it  | 10/01/1947 |    24  | 40000  |     0    | Summer tires Standard |      4     |      1       |TFM2_Delivery cost direct/broker from dealer to customer|   7000    |Anti-Theft Lojack Abbonamento <=34| € 1,153.74|€ 320.64   |€ 1,474.38| € 272.06       |€ 1,250.00 |€ 2,850.01     |
+      |manufacturer|model|  car type         |  color  |  upholstery  |  accessories  |        option         |  optionPack         |  legal entity   |  street_name   | street_number | city_name | zip_code | phone_number | title |surname| name         |     email     | birthDate  |duration|distance|tyreIndex | tyreName              | tyreNumber | paymentIndex |                   paymentMethod                        |downPayment|              insurance           |leasePrice|servicePrice|totalPrice|accessoriesPrice|optionPrice|optionPackPrice|
+      |Lexus       | Rx  |450h F Sport (2020)| F White | Leather Black| Lojack premium|Metallic or pearl paint| Premium Pack Fsport |Societa  Semplice|  Plaza del sol |       3       | Nichelino | 10042    |    5455566   |   Dr  |Silvio | Berluscozini | ac@milano.it  | 10/01/1947 |    24  | 40000  |     0    | Summer tires Standard |      4     |      1       |TFM2_Delivery cost direct/broker from dealer to customer|   7000    |Anti-Theft Lojack Abbonamento <=34| € 1,153.74|€ 320.64   |€ 1,474.38| € 272.06       |€ 1,250.00 |€ 2,850.01     |
