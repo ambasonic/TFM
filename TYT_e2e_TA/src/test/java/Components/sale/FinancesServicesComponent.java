@@ -1,8 +1,12 @@
 package Components.sale;
 
 import Pages.ReusableViewElements;
+import net.serenitybdd.core.pages.WebElementFacade;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+
+import java.util.List;
+import java.util.stream.Collectors;
 
 import static org.hamcrest.Matchers.is;
 import static org.junit.Assert.assertThat;
@@ -28,10 +32,13 @@ public class FinancesServicesComponent extends ReusableViewElements {
     private final By INSURANCE_LABEL = By.id("quote:retailfinance:lsc:7:pcs_label");
     private final By FUEL_CARD_ENI_LABEL = By.id("quote:retailfinance:lsc:8:pcs");
     private final By FUEL_CARD_ENI_YES = By.id("quote:retailfinance:lsc:8:pcs_0");
+    private final By FUEL_CARD_EDENRED_LABEL = By.id("quote:retailfinance:lsc:11:pcs");
+    private final By FUEL_CARD_EDENRED_YES = By.id("quote:retailfinance:lsc:11:pcs_0");
     private final By INSURANCE_TYPE1 = By.id("quote:retailfinance:lsc:7:pcs_0");
     private final By VAT_LEASE_PRICE = By.id("quote:retailfinanceSummary:leasepricevat");
     private final By VAT_SERVICE_PRICE = By.id("quote:retailfinanceSummary:servicesleasepricevat");
     private final By VAT_TOTAL_PRICE = By.id("quote:retailfinanceSummary:pricewithfuel");
+    private final By SELECTIONS_TABLE = By.id("quote:selopt:tbody_element");
 
 
     public FinancesServicesComponent(WebDriver driver) {
@@ -157,12 +164,34 @@ public class FinancesServicesComponent extends ReusableViewElements {
                 break;
             case "no":
                 break;
-            default: fail("Unknown choice: "+choice);
+            default: fail("Unknown choice: "+choice+ " choice should be yes or no");
+        }
+    }
+
+    public void acceptFuelCardEdenRed(String choice) {
+        waitABit(500);
+        element(FUEL_CARD_EDENRED_LABEL).click();
+        switch (choice.toLowerCase()){
+            case "yes": element(FUEL_CARD_EDENRED_YES).click();
+                break;
+            case "no":
+                break;
+            default: fail("Unknown choice: "+choice+ " choice should be yes or no");
         }
     }
 
     public void checkP(String optionPrice) {
         String price = element("#quote\\:selopt\\:tbody_element > tr:nth-child(7) > td:nth-child(3) > span").getText();
         assertThat(price, is(optionPrice));
+    }
+
+    public void checkPrice(String optionName, String expectedVATPrice) {
+        List<WebElementFacade> anchors = element(SELECTIONS_TABLE).thenFindAll(By.tagName("tr"))
+                .stream()
+                .filter(a -> a.find(By.className("optionNameColumn")).getText().equalsIgnoreCase(optionName))
+                .collect(Collectors.toList());
+        String price = anchors.get(0).thenFindAll(By.className("optionPriceColumn")).get(1).getText();
+        assertThat(price, is(expectedVATPrice));
+
     }
 }

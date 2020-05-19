@@ -48,9 +48,9 @@ public class SalePageCucumberSteps {
         salePageSteps.setUpholstery(upholstery);
     }
 
-    @And("he selects an option from popUp Menu {string}")
-    public void he_selects_an_option(String option) {
-        salePageSteps.selectsOptionFromPopUp(option);
+    @And("he selects an option from popUp Menu")
+    public void he_selects_an_option() {
+        salePageSteps.selectsOptionFromPopUp();
     }
 
     @And("he selects an option {string}")
@@ -221,6 +221,16 @@ public class SalePageCucumberSteps {
     @And("he check the option price sole trader {string}")
     public void heCheckTheOptionPriceSoleTraderOptionPrice(String optionPrice) {
         salePage.getFinancesServicesComponent().checkP(optionPrice); //TODO REFACTOR DELETE
+    }
+
+    @And("he accepts the Fuel Card Edenred {string}")
+    public void heAcceptsTheFuelCardEdenRed(String choice) {
+        salePage.getFinancesServicesComponent().acceptFuelCardEdenRed(choice);
+    }
+
+    @And("he checks the selected option price {string} {string}")
+    public void heChecksTheSelectedOptionPrice(String optionName, String expectedVATPrice) {
+        salePage.getFinancesServicesComponent().checkPrice(optionName, expectedVATPrice);
     }
 //    TODO REMOVE this method
 }

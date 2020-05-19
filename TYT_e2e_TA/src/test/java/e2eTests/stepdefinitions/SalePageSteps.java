@@ -17,11 +17,11 @@ public class SalePageSteps {
 
     @Step("The dealer selects '{0}' as model")
     public void selectCarModel(String model) {
-        salePage.getVehicleComponent().selectCarModel(model);
+        salePage.getVehicleComponent().selectCarModelByText(model);
     }
 
     @Step("The dealer selects '{0}' as type")
-    public void selectCarType(String type) { salePage.getVehicleComponent().selectCarType(type);
+    public void selectCarType(String type) { salePage.getVehicleComponent().selectCarTypeByText(type);
     }
 
     @Step("The dealer clicks on next")
@@ -31,25 +31,25 @@ public class SalePageSteps {
 
     @Step("The dealer selects the car color: {0}")
     public void setCarColor(String colorName) {
-        salePage.getOptionsComponent().setCarColor(colorName);
+        salePage.getOptionsComponent().setCarColorByText(colorName);
     }
 
     @Step("The dealer selects the car upholstery: {0}")
     public void setUpholstery(String upholstery) {
-        salePage.getOptionsComponent().setUpholstery(upholstery);
+        salePage.getOptionsComponent().setCarUpholsteryByText(upholstery);
     }
 
     public void selectOptionPack(String optionPack) {
-        salePage.getOptionsComponent().selectOptionPack(optionPack);
+        salePage.getOptionsComponent().selectOptionPackByText(optionPack);
     }
 
     public void setAccessories(String accessory) {
-        salePage.getOptionsComponent().setAccessories(accessory);
+        salePage.getOptionsComponent().setAccessoriesByText(accessory);
     }
 
     @Step("The dealer validates the option: {0} from pop menu")
-    public void selectsOptionFromPopUp(String option) {
-        salePage.getOptionsComponent().selectsOptionFromPopUp(option);
+    public void selectsOptionFromPopUp() {
+        salePage.getOptionsComponent().selectsOptionFromPopUp();
     }
 
     @Step("The dealer selects the option: {0}")

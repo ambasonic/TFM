@@ -1,8 +1,11 @@
 package Components.sale;
 
 import Pages.ReusableViewElements;
+import net.serenitybdd.core.pages.WebElementFacade;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+
+import java.util.List;
 
 public class CustomerComponent extends ReusableViewElements {
 
@@ -10,6 +13,8 @@ private final String searchButton = "quote:j_idt934";
 private final String organizationMenuButton = "//div[@id='prospectdata:prospectlegalEntityGroup']/div/span";
 private final String organization = "//button[@id='prospectdata:prospectlistTable:0:j_idt114']/span[2]";
 private final By MODIFY_CUSTOMER_NEW = By.id("quote:j_idt932");
+private final By PROSPECT_DATA_TABLE = By.id("prospectdata:prospectlistTable_data");
+
     public CustomerComponent(WebDriver driver) {
         super(driver);
     }
@@ -28,7 +33,10 @@ private final By MODIFY_CUSTOMER_NEW = By.id("quote:j_idt932");
     }
 
     public void selectOrganization(){
-        element(By.xpath(organization)).click();
+        waitABit(1000);
+        List<WebElementFacade> anchor = element(PROSPECT_DATA_TABLE).thenFindAll(By.tagName("tr"));
+        anchor.get(0).findElement(By.tagName("button")).click();
+        waitABit(500);
     }
 
     public void acceptProspectAgreement() {
