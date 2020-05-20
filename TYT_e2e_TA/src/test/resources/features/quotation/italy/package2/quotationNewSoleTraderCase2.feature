@@ -14,7 +14,7 @@ Feature: Quotation Template with an existing Customer Italy
     And he go to the next page
     Then he can selects vehicle options
     And he chooses color '<color>' and upholstery '<upholstery>'
-    And he selects the option pack '<option pack>'
+    And he selects the option pack '<optionPack>'
 #    And he selects an option '<option>'
     And he selects the accessories '<accessories>'
     And he go to the next page
@@ -41,14 +41,14 @@ Feature: Quotation Template with an existing Customer Italy
     And he sets relief vehicle to '<relief_vehicle>'
     And he set the insurance type '<insurance>'
     Then he calculates the quote
-    And he check the lease price '<leasePrice>'
-    And he check the service price '<servicePrice>'
-    And he check the total price '<totalPrice>'
-    And he check the accessories price '<accessoriesPrice>'
-    And he check the option price sole trader '<optionPrice>'
+#    And he check the lease price '<leasePrice>'
+#    And he check the service price '<servicePrice>'
+#    And he check the total price '<totalPrice>'
+    And he checks the selected option price '<accessories>' '<accessoriesPrice>'
+    And he checks the selected option price '<optionPack>' '<optionPackPrice>'
     And he saved it
     And he log out
 
     Examples:
-      |manufacturer|  model  |            car type             |  position |               color         |            upholstery         |  accessories  |                        option pack               |   legal entity    |  street_name   | street_number | city_name | zip_code | phone_number | title |surname| name         |     email     | duration|distance| paymentIndex |                   paymentMethod                        |downPayment|              insurance           |leasePrice|servicePrice|totalPrice|accessoriesPrice|optionPrice|relief_vehicle|
-      |Toyota      |   chr   |1.8H (122CV) E-CVT Dynamic (2019)|     1     |Dark grey Met with black roof| Leather interior and Alcantara| Lojack classic| Touch2 with Go Limited Edition Campaign (no MY20)|IMPRESA INDIVIDUALE|  Plaza del sol |       3       | Nichelino | 10042    |    5455566   |   Dr  |Silvio | Berluscozini | ac@milano.it  |     48  | 100000 |      1       |TFM2_Delivery cost direct/broker from dealer to customer|   5000    |Anti-Theft Lojack Abbonamento >34 |€ 286.20  |€ 196.83    |€ 483.03  | € 189.10       |€ 732.00   |      yes     |
+      |manufacturer|  model  |            car type             |  position |               color         |            upholstery         |  accessories  |                        optionPack                |   legal entity    |  street_name   | street_number | city_name | zip_code | phone_number | title |surname| name         |     email     | duration|distance| paymentIndex |                   paymentMethod                        |downPayment|              insurance           |leasePrice|servicePrice|totalPrice|accessoriesPrice|optionPackPrice|relief_vehicle|
+      |Toyota      |  C-HR   |1.8H (122CV) E-CVT Dynamic (2019)|     1     |Dark grey Met with black roof| Leather interior and Alcantara| Lojack classic| Touch2 with Go Limited Edition Campaign (no MY20)|IMPRESA INDIVIDUALE|  Plaza del sol |       3       | Nichelino | 10042    |    5455566   |   Dr  |Silvio | Berluscozini | ac@milano.it  |     48  | 100000 |      1       |TFM2_Delivery cost direct/broker from dealer to customer|   5000    |Anti-Theft Lojack Abbonamento >34 |€ 286.20  |€ 196.83    |€ 483.03  | € 189.10       |€ 732.00   |      yes     |

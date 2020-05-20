@@ -29,12 +29,12 @@ public class FinancesServicesComponent extends ReusableViewElements {
     private final By DOWN_PAYMENT = By.id("quote:retailfinanceSummary:upfront");
     private final By DURATION  = By.id("quote:retailfinance:months");
     private final By DISTANCE  = By.id("quote:retailfinance:kms");
-    private final By INSURANCE_LABEL = By.id("quote:retailfinance:lsc:7:pcs_label");
+    private final By INSURANCE_LABEL = By.id("quote:retailfinance:lsc:8:pcs_label");
     private final By FUEL_CARD_ENI_LABEL = By.id("quote:retailfinance:lsc:8:pcs");
     private final By FUEL_CARD_ENI_YES = By.id("quote:retailfinance:lsc:8:pcs_0");
     private final By FUEL_CARD_EDENRED_LABEL = By.id("quote:retailfinance:lsc:11:pcs");
     private final By FUEL_CARD_EDENRED_YES = By.id("quote:retailfinance:lsc:11:pcs_0");
-    private final By INSURANCE_TYPE1 = By.id("quote:retailfinance:lsc:7:pcs_0");
+    private final By INSURANCE_TYPE1 = By.id("quote:retailfinance:lsc:8:pcs_0");
     private final By VAT_LEASE_PRICE = By.id("quote:retailfinanceSummary:leasepricevat");
     private final By VAT_SERVICE_PRICE = By.id("quote:retailfinanceSummary:servicesleasepricevat");
     private final By VAT_TOTAL_PRICE = By.id("quote:retailfinanceSummary:pricewithfuel");

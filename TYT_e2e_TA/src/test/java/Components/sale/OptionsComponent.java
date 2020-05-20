@@ -4,6 +4,7 @@ import Pages.ReusableViewElements;
 import net.serenitybdd.core.pages.WebElementFacade;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 
 import java.util.List;
 import java.util.stream.Collectors;
@@ -123,25 +124,11 @@ public class OptionsComponent extends ReusableViewElements {
                 .filter(c -> c.find(By.className("optionNameColumn")).getText().equalsIgnoreCase(optionPack))
                 .collect(Collectors.toList());
         assertFalse("The optionPack: "+optionPack+" is unknown", anchors.size()!=1);
-        anchors.get(0).findElement(By.className("optchk")).click();
-
-    }
-        public void selectOptionPack(String optionPack) { //TODO delete if not use
-        waitABit(2000);
-        switch (optionPack.toLowerCase()){
-            case "premium pack":element(PREMIUM_PACK_FSPORT).click();
-                break;
-            case "sensori di parcheggio anteriori":element(SENSORI_DI_PARCHEGGIO_ANTERIORI).click();
-                break;
-            case "touch2 with go plus":element(TOUCH2_WITH_GO_PLUS).click();
-                break;
-            case "toyota touch3 with go plus":element(TOUCH3_WITH_GO_PLUS).click();
-                break;
-            case "touch2 with go limited edition campaign (no my20)":element(Touch2_with_Go_Limited_Edition_Campaign).click();
-                break;
-            default:
-                fail(" The option pack selector for: " + optionPack + " is unknown");
-        }
+        scrollToPosition(0,500);
+        waitABit(750);
+        WebElement optchk = anchors.get(0).findElement(By.className("optchk"));
+        optchk.findElement(By.tagName("div")).click();
+        waitABit(500);
     }
 
     public void setAccessoriesByText(String accessory){

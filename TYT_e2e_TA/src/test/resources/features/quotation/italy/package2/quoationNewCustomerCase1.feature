@@ -17,6 +17,7 @@ Feature: Quotation Template with an existing Customer Italy
     And he selects the option pack '<optionPack>'
     And he selects an option '<option>'
     And he selects the accessories '<accessories>'
+    And he go to the next page
     Then he can create a new customer
     And he selects the legal entity '<legal entity>'
     And he gives a company name in the company form
@@ -38,8 +39,8 @@ Feature: Quotation Template with an existing Customer Italy
     And he gives a down payment of '<downPayment>'
     And he selects the first <paymentIndex> payment '<paymentMethod>'
     And he selects the tyre type <tyreIndex> '<tyreName>'
-    And he adds <tyreNumber> tires
     And he set the insurance type '<insurance>'
+    And he adds <tyreNumber> tires
     Then he calculates the quote
     And he check the lease price '<leasePrice>'
     And he check the service price '<servicePrice>'
@@ -47,9 +48,6 @@ Feature: Quotation Template with an existing Customer Italy
     And he checks the selected option price '<option>' '<optionPrice>'
     And he checks the selected option price '<accessories>' '<accessoriesPrice>'
     And he checks the selected option price '<optionPack>' '<optionPackPrice>'
-#    And he check the accessories price '<accessoriesPrice>'
-#    And he check the option price '<optionPrice>'
-#    And he check the option pack price '<optionPackPrice>'
     And he saved it
     And he log out
 
