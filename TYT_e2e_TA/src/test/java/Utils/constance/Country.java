@@ -1,8 +1,8 @@
 package Utils.constance;
 
 public enum Country {
-    ITALY("https://10.7.25.20:10143/milesria/",""),
-    FRANCE("http://10.7.25.10:9480/milesria/","");
+    ITALY("https://10.7.25.20:10143/milesria/","https://10.7.25.20:9943/TFMIT_TST/user/login.xhtml"),
+    FRANCE("http://10.7.25.10:9480/milesria/","http://10.7.25.10:8080/TFMFR_TST/user/login.xhtml");
 
 
 

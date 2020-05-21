@@ -1,11 +1,11 @@
 # new feature
 # Tags: optional
-@italy
+@france
 @pck1case1
-Feature: Quotation Template with an existing Customer Italy
+Feature: Quotation Template with an existing Customer France
 
   Scenario Outline: quotation
-    Given The dealer open the MilesWeb backoffice 'ITALY'
+    Given The dealer open the MilesWeb backoffice 'FRANCE'
     And he login
     Then he can see the dealer home page
     When he selects a new quotation
@@ -15,7 +15,7 @@ Feature: Quotation Template with an existing Customer Italy
     And he go to the next page
     Then he can selects vehicle options
     And he chooses color '<color>' and upholstery '<upholstery>'
-    And he selects the accessories '<accessories>'
+    And he selects an option '<option>'
     And he go to the next page
     Then he search the customer by name '<customer Name>'
     And he go to the next page
@@ -29,5 +29,5 @@ Feature: Quotation Template with an existing Customer Italy
     And he log out
 
     Examples:
-      | car manufacturer| model | car type                          | color                    | upholstery       |accessories    | customer Name | duration | distance | paymentIndex | paymentMethod                                          |
-      | Toyota          | Yaris | 1.5 Hybrid Lounge Red/Bronze MY19 | Red Mica &Black Metalic  | Cloth black/grey | lojack classic| BOMI          | 48       | 80000    | 1            |TFM2_Delivery cost direct/broker from dealer to customer|
+      | car manufacturer| model         | car type                  | color                    | upholstery  |option        | customer Name  | duration | distance | paymentIndex | paymentMethod                                          |
+      | Toyota          | Yaris Hybride | Hybride 114h France (2020)| Pure White gloss paint   | Cloth black |Metallic paint| 2BDEVELOPPEMENT| 48       | 80000    | 1            |TFM2_Delivery cost direct/broker from dealer to customer|

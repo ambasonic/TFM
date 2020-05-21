@@ -1,9 +1,9 @@
 package Pages;
 
 
+import Utils.CurrentProperties;
 import net.serenitybdd.core.pages.PageObject;
 import org.openqa.selenium.*;
-import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -14,6 +14,9 @@ import java.time.Duration;
 import java.util.Calendar;
 import java.util.NoSuchElementException;
 
+import static Utils.constance.Country.FRANCE;
+import static Utils.constance.Country.ITALY;
+
 public class ReusableViewElements extends PageObject {
 
     private final String nextButtonId = "quote:navigationButton_next";
@@ -21,10 +24,40 @@ public class ReusableViewElements extends PageObject {
         super(driver);
     }
 
+    public static CurrentProperties currentProperties;
     protected WebDriverWait webDriverWait= new WebDriverWait(getDriver(), 10);
 
     public void openURL(String pageURL){
         getDriver().get(pageURL);
+        waitABit(1000);
+    }
+
+    public void openMilesWebMainPageURL(String country){
+        // important to set the active country property at the beginning
+        currentProperties = new CurrentProperties(country);
+        switch (country.toUpperCase()){
+            case "ITALY": openURL(ITALY.getMilesWebURL());
+                break;
+            case "FRANCE": openURL(FRANCE.getMilesWebURL());
+                // important to set the active country property at the beginning
+                break;
+            default:
+                throw new IllegalStateException("Unexpected value: " + country.toUpperCase());
+        }
+        waitABit(1000);
+    }
+
+    public void openMilesRiaMainPageURL(String country){
+        // important to set the active country property at the beginning
+        currentProperties = new CurrentProperties(country);
+        switch (country.toUpperCase()){
+            case "ITALY": openURL(ITALY.getMilesRiaURL());
+                break;
+            case "FRANCE": openURL(FRANCE.getMilesRiaURL());
+                break;
+            default:
+                throw new IllegalStateException("Unexpected value: " + country.toUpperCase());
+        }
         waitABit(1000);
     }
 
@@ -118,4 +151,6 @@ public class ReusableViewElements extends PageObject {
         DateFormat formatter = new SimpleDateFormat( "dd/MM/yyyy" );
         return formatter.format(calendar.getTime());
     }
+
+    // getter and setter
 }

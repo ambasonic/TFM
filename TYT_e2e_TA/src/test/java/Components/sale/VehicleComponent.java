@@ -12,14 +12,8 @@ import java.util.stream.Collectors;
 import static org.junit.Assert.*;
 
 public class VehicleComponent extends ReusableViewElements {
-
     private final By TOYOTA = By.id("quote:makeList:1:j_idt705");
     private final By LEXUS = By.id("quote:makeList:0:j_idt705");
-    private final String TYPE_SPAN = "typespan";
-    private final By YARIS = By.id("quote:modelList:13:j_idt714");
-    private final By RX = By.id("quote:modelList:7:j_idt714");
-    private final By CHR = By.id("quote:modelList:1:j_idt714");
-    private final By COROLLA = By.id("quote:modelList:2:j_idt714");
     private final By MODEL_TABLE = By.id("quote:modeltable");
     private final By VEHICLE_ROWS = By.xpath("//div[@class='veh-row']");
 
@@ -29,9 +23,9 @@ public class VehicleComponent extends ReusableViewElements {
 
 
     public void selectCarManufacturer(String manufacturer) {
-        waitABit(4000);
+        waitABit(3500);
         element(By.xpath("//*[@id='quote:makeFieldSet']/legend")).click(); //TODO refactor lazy solution
-        waitABit(2000);
+        waitABit(1500);
         switch (manufacturer.toLowerCase()){
             case "toyota": element(TOYOTA).click();
                 break;
@@ -52,21 +46,6 @@ public class VehicleComponent extends ReusableViewElements {
         waitABit(2000);
     }
 
-    public void selectCarModel(String model){  //TODO delete if not use
-        switch (model.toLowerCase()){
-            case "yaris": element(YARIS).click();
-                break;
-            case "rx":element(RX).click();
-                break;
-            case "chr":element(CHR).click();
-                break;
-            case "corolla":element(COROLLA).click();
-                break;
-            default:assertFalse("The model selector for: "+model+" is unknown", true);
-        }
-        waitABit(2000);
-    }
-
     public void selectCarTypeByText(String carTye){
         List<WebElementFacade> anchors = findAll(VEHICLE_ROWS)
                 .stream()
@@ -74,23 +53,6 @@ public class VehicleComponent extends ReusableViewElements {
                 .collect(Collectors.toList());
         assertFalse("The type: "+carTye+" is unknown or more than one car model was found", anchors.size()!=1);
         anchors.get(0).click();
-        waitABit(2000);
-    }
-    public void selectCarType(String carType) { //TODO delete if not use
-        waitABit(1000);
-        switch (carType){
-            case "1.5 Hybrid Lounge Red/Bronze MY19": element(By.id(TYPE_SPAN+8)).click();
-                break;
-            case "1.5 Hybrid Active MY19 (2019)": element(By.id(TYPE_SPAN+5)).click();
-                break;
-            case "450h F Sport":element(By.id(TYPE_SPAN+1)).click();
-                break;
-            case "1.8H (122CV) E-CVT Dynamic (2019)":element(By.id(TYPE_SPAN+6)).click();
-                break;
-            case "TS Hybrid Active":element(By.id(TYPE_SPAN+2)).click();
-                break;
-            default:assertFalse(" The carType selector for:"+carType+" is unknown", true);
-        }
         waitABit(2000);
     }
 }

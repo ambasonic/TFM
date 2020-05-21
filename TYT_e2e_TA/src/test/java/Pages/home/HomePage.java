@@ -19,5 +19,4 @@ public class HomePage extends ReusableViewElements {
         return find(By.cssSelector(titleSelector)).getText();
     }
 
-
 }

@@ -4,24 +4,32 @@ import Pages.ReusableViewElements;
 import net.serenitybdd.core.pages.WebElementFacade;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
 
 import java.util.List;
 
 public class CustomerComponent extends ReusableViewElements {
 
-private final String searchButton = "quote:j_idt934";
-private final String organizationMenuButton = "//div[@id='prospectdata:prospectlegalEntityGroup']/div/span";
-private final String organization = "//button[@id='prospectdata:prospectlistTable:0:j_idt114']/span[2]";
-private final By MODIFY_CUSTOMER_NEW = By.id("quote:j_idt932");
-private final By PROSPECT_DATA_TABLE = By.id("prospectdata:prospectlistTable_data");
+    private final String searchButtonIT = "quote:j_idt934";
+    private final String searchButtonFR = "quote:j_idt947";
+    private final String organizationMenuButton = "//div[@id='prospectdata:prospectlegalEntityGroup']/div/span";
+    private final String organization = "//button[@id='prospectdata:prospectlistTable:0:j_idt114']/span[2]";
+    private final By MODIFY_CUSTOMER_NEW = By.id("quote:j_idt932");
+    private final By PROSPECT_DATA_TABLE = By.id("prospectdata:prospectlistTable_data");
+    private final By PROSPECT_NAME = By.id("quote:prospectname");
 
     public CustomerComponent(WebDriver driver) {
         super(driver);
     }
 
     public void searchCustomerByName(String customerName) {
-        element(By.id("quote:prospectname")).sendKeys(customerName);
-        element(By.id(searchButton)).click();
+        element(PROSPECT_NAME).sendKeys(customerName);
+        if (currentProperties.getCurrentCountry().equalsIgnoreCase("france")){
+            element(By.id(searchButtonFR)).click();
+        } else if (currentProperties.getCurrentCountry().equalsIgnoreCase("italy")){
+            element(By.id(searchButtonIT)).click();
+        }
         waitABit(4000);
 
     }

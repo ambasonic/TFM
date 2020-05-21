@@ -30,18 +30,15 @@ public class loginCucumberSteps {
         loginSteps.clickOnLoginButton();
     }
 
+
+    @Given("The dealer open the MilesWeb backoffice {string}")
+    public void theDealerOpenTheMilesWebBackoffice(String country) {
+        homePage.openMilesWebMainPageURL(country);
+    }
+
     @Given("The dealer open the MilesRia backoffice {string}")
-    public void openMilesRiaBackofficeItaly(String country) {
-        switch (country.toUpperCase()){
-
-            case "ITALY": homePage.openURL(ITALY.getMilesRiaURL());
-                break;
-            case "FRANCE": homePage.openURL(FRANCE.getMilesRiaURL());
-                break;
-            default:
-                throw new IllegalStateException("Unexpected value: " + country.toUpperCase());
-        }
-
+    public void openMilesRiaBackoffice(String country) {
+        homePage.openMilesRiaMainPageURL(country);
     }
 
     @And("he login in MilesRia")

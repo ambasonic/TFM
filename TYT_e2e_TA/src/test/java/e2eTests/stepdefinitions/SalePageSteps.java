@@ -54,7 +54,7 @@ public class SalePageSteps {
 
     @Step("The dealer selects the option: {0}")
     public void setOption(String option) {
-        salePage.getOptionsComponent().setOption(option);
+        salePage.getOptionsComponent().setOptionByText(option);
     }
 
     @Step("The dealer set the customer name: {0} into the search field and click on search ")
