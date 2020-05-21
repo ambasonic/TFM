@@ -4,7 +4,7 @@
 Feature: Quotation Template with an existing Customer Italy
 
   Scenario Outline: quotation
-    Given The dealer open the MilesWeb portal Dealer home page
+    Given The dealer open the MilesWeb backoffice 'ITALY'
     And he login
     Then he can see the dealer home page
     When he selects a new quotation

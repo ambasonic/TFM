@@ -44,8 +44,8 @@ public class SalePageCucumberSteps {
 
     @Then("he chooses color {string} and upholstery {string}")
     public void he_chooses_color_and_upholstery(String colorName, String upholstery) {
-        salePageSteps.setCarColor(colorName);
         salePageSteps.setUpholstery(upholstery);
+        salePageSteps.setCarColor(colorName);
     }
 
     @And("he selects an option from popUp Menu")

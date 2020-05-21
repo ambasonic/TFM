@@ -35,6 +35,7 @@ public class FinancesServicesComponent extends ReusableViewElements {
     private final By FUEL_CARD_EDENRED_LABEL = By.id("quote:retailfinance:lsc:11:pcs");
     private final By FUEL_CARD_EDENRED_YES = By.id("quote:retailfinance:lsc:11:pcs_0");
     private final By INSURANCE_TYPE1 = By.id("quote:retailfinance:lsc:8:pcs_0");
+    private final By INSURANCE_TYPE2 = By.id("quote:retailfinance:lsc:8:pcs_1");
     private final By VAT_LEASE_PRICE = By.id("quote:retailfinanceSummary:leasepricevat");
     private final By VAT_SERVICE_PRICE = By.id("quote:retailfinanceSummary:servicesleasepricevat");
     private final By VAT_TOTAL_PRICE = By.id("quote:retailfinanceSummary:pricewithfuel");
@@ -112,7 +113,7 @@ public class FinancesServicesComponent extends ReusableViewElements {
         waitABit(1000);
         element(INSURANCE_LABEL).click();
         switch (insuranceType){
-            case "Anti-Theft Lojack Abbonamento >34":
+            case "Anti-Theft Lojack Abbonamento >34": element(INSURANCE_TYPE2).click();
                 break;
             case "Anti-Theft Lojack Abbonamento <=34": element(INSURANCE_TYPE1).click();
                 break;
@@ -180,7 +181,7 @@ public class FinancesServicesComponent extends ReusableViewElements {
         }
     }
 
-    public void checkP(String optionPrice) {
+    public void checkP(String optionPrice) { //TODO Remove
         String price = element("#quote\\:selopt\\:tbody_element > tr:nth-child(7) > td:nth-child(3) > span").getText();
         assertThat(price, is(optionPrice));
     }
