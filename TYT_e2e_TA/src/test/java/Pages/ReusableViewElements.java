@@ -23,7 +23,6 @@ public class ReusableViewElements extends PageObject {
     public ReusableViewElements(WebDriver driver) {
         super(driver);
     }
-
     public static CurrentProperties currentProperties;
     protected WebDriverWait webDriverWait= new WebDriverWait(getDriver(), 10);
 

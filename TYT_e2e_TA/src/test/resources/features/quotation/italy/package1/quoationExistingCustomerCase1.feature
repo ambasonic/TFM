@@ -29,5 +29,5 @@ Feature: Quotation Template with an existing Customer Italy
     And he log out
 
     Examples:
-      | car manufacturer| model | car type                          | color                    | upholstery       |accessories    | customer Name | duration | distance | paymentIndex | paymentMethod                                          |
-      | Toyota          | Yaris | 1.5 Hybrid Lounge Red/Bronze MY19 | Red Mica &Black Metalic  | Cloth black/grey | lojack classic| BOMI          | 48       | 80000    | 1            |TFM2_Delivery cost direct/broker from dealer to customer|
+      | car manufacturer| model | car type                                 | color                    | upholstery       |accessories    | customer Name | duration | distance | paymentIndex | paymentMethod                                          |
+      | Toyota          | Yaris | 1.5 Hybrid Lounge Red/Bronze MY19 (2019) | Red Mica&Black metallic  | Cloth black/grey | lojack classic| BOMI          | 48       | 80000    | 1            |TFM2_Delivery cost direct/broker from dealer to customer|
