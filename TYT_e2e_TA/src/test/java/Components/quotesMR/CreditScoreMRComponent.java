@@ -1,6 +1,7 @@
 package Components.quotesMR;
 
 import Pages.ReusableViewElements;
+import Utils.CurrentProperties;
 import org.openqa.selenium.*;
 
 
@@ -11,8 +12,7 @@ public class CreditScoreMRComponent extends ReusableViewElements {
     private final By creditScore = By.id("id_menu_1_valueCell4");
     private final By statusTextField = By.name("A3211");
     private final By decisionTextField = By.name("A3214");
-    private final By contract = By.xpath("//img[contains(@src,'https://10.7.25.20:10143/milesria/resource/skins/MRI/images/Sofico/24/" +
-            "status_end.png?sv=0c361dca65211eee9a7833a6d278d85771a04349')]");
+    private final By contract = By.xpath("//img[contains(@src,'"+ currentProperties.getCurrentCountryIP() +"resource/skins/MRI/images/Sofico/24/status_end.png?')]");
 
     public CreditScoreMRComponent(WebDriver driver) {
         super(driver);
@@ -30,6 +30,7 @@ public class CreditScoreMRComponent extends ReusableViewElements {
         while(staleElement){
             try{
                 element(statusTextField).clear();
+                waitABit(500);
                 element(statusTextField).sendKeys(status);
                 element(statusTextField).sendKeys(Keys.ENTER);
                 staleElement = false;

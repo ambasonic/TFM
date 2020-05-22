@@ -18,6 +18,7 @@ public class MilesRiaTopHeaderComponent extends ReusableViewElements {
     public void setQuickAccessMenu(String menuName) {
         waitABit(2000);
         element(quickNavigation).sendKeys(menuName);
+        waitABit(150);
         element(By.cssSelector("tr:nth-child(1) > .cell:nth-child(3) > div")).click();
         waitABit(100);
     }

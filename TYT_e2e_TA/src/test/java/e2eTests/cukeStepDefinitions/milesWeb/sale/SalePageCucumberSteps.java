@@ -232,5 +232,10 @@ public class SalePageCucumberSteps {
     public void heChecksTheSelectedOptionPrice(String optionName, String expectedVATPrice) {
         salePage.getFinancesServicesComponent().checkPrice(optionName, expectedVATPrice);
     }
+
+    @And("he sets the product to {string}")
+    public void heSetsTheProductType(String product) {
+        salePage.getProductComponent().setProduct(product);
+    }
 //    TODO REMOVE this method
 }

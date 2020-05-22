@@ -48,12 +48,16 @@ public class CustomerComponent extends ReusableViewElements {
     }
 
     public void acceptProspectAgreement() {
-        waitABit(2000);
-        element(By.xpath("//*[@id='quote:j_idt3748:0:j_idt3749']/div[2]")).click();
-        element(By.xpath("//*[@id='quote:j_idt3748:1:j_idt3749']/div[2]")).click();
         waitABit(1000);
-        element(By.xpath(" //*[@id='quote:save-confirmButton']")).click();
-
+        if(currentProperties.getCurrentCountry().equalsIgnoreCase("france")){
+            element(By.xpath(" //*[@id='quote:save-confirmButton']")).click();
+        }else if(currentProperties.getCurrentCountry().equalsIgnoreCase("italy")){
+            waitABit(1000);
+            element(By.xpath("//*[@id='quote:j_idt3748:0:j_idt3749']/div[2]")).click();
+            element(By.xpath("//*[@id='quote:j_idt3748:1:j_idt3749']/div[2]")).click();
+            waitABit(1000);
+            element(By.xpath(" //*[@id='quote:save-confirmButton']")).click();
+        }
         waitABit(1000);
     }
 

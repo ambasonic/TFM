@@ -3,6 +3,7 @@ package Pages;
 
 import Utils.CurrentProperties;
 import net.serenitybdd.core.pages.PageObject;
+import org.junit.Assert;
 import org.openqa.selenium.*;
 import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -13,6 +14,7 @@ import java.text.SimpleDateFormat;
 import java.time.Duration;
 import java.util.Calendar;
 import java.util.NoSuchElementException;
+import java.util.concurrent.TimeUnit;
 
 import static Utils.constance.Country.FRANCE;
 import static Utils.constance.Country.ITALY;
@@ -116,8 +118,9 @@ public class ReusableViewElements extends PageObject {
      */
     public void scrollToElement(WebElement elementToReach) {
         JavascriptExecutor js = (JavascriptExecutor) getDriver();
+        long startTime = System.currentTimeMillis();
         Boolean staleElement = true;
-        while(staleElement){
+        while(staleElement && (System.currentTimeMillis()-startTime)< 5000){
             try{
                 js.executeScript("arguments[0].scrollIntoView();",  elementToReach);
                 staleElement = false;
@@ -151,5 +154,20 @@ public class ReusableViewElements extends PageObject {
         return formatter.format(calendar.getTime());
     }
 
+    public void waitAndClickElementUsingJS(WebElement element) {
+        JavascriptExecutor js = (JavascriptExecutor) getDriver();
+        try {
+            webDriverWait.until(ExpectedConditions.elementToBeClickable(element));
+            js.executeScript("arguments[0].click();", element);
+        } catch (StaleElementReferenceException elementUpdated) {
+            WebElement staleElement = element;
+            Boolean elementPresent = webDriverWait.until(ExpectedConditions.elementToBeClickable(staleElement)).isEnabled();
+            if (elementPresent == true) {
+                js.executeScript("arguments[0].click();", elementPresent);
+            }
+        } catch (NoSuchElementException e) {
+            Assert.fail("Unable to JS click on the WebElement, Exception: " + e.getMessage());
+        }
+    }
     // getter and setter
 }

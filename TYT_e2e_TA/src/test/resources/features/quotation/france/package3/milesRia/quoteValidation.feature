@@ -4,16 +4,16 @@
 Feature: Quote validation
 
   Scenario Outline: The dealer validates a quote in MilesRia
-    Given The dealer open the MilesRia backoffice 'ITALY'
+    Given The dealer open the MilesRia backoffice 'FRANCE'
     And he login in MilesRia
     And he search a quote '<quoteID>'
     When he selects the credit score
-    And he set the status to 'Completed' and the decision to 'Accepted'
+    And he set the status to 'Complété' and the decision to 'Accepted'
     Then he generate the contract
     When he selects the resulting contract
     Then he can see the generated long term contract
     And he create a vehicle Order
-    And he set the supplier name to 'A.Corvi'
+    And he set the supplier name to 'Roland Bosch'
     And he update the delivery date
     Then he saved
     And he validate
@@ -37,4 +37,4 @@ Feature: Quote validation
 
     Examples:
       |quoteID   |
-      |001974/001|
+      |002468/001|
