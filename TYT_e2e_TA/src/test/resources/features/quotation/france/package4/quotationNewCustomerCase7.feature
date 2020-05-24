@@ -1,8 +1,9 @@
 # new feature
 # Tags: optional
+
 @france
-@pck1case1
-Feature: Quotation Template with an existing Customer France
+@pck4case7
+Feature: Quotation Template with a New Customer France including relief vehicle and Fuel card
 
   Scenario Outline: quotation
     Given The dealer open the MilesWeb backoffice 'FRANCE'
@@ -17,18 +18,12 @@ Feature: Quotation Template with an existing Customer France
     And he chooses color '<color>' and upholstery '<upholstery>'
     And he selects an option '<option>'
     And he go to the next page
-    Then he search the customer by name '<customer Name>'
+    Then he can create a new customer
+
     And he go to the next page
     Then he accepts the prospect agreement
-    And he sets the product to '<product_type>'
     And he go to the next page
     And he updates the duration <duration>
     And he updates the distance <distance>
-#    And he selects the first <paymentIndex> payment '<paymentMethod>'
-    Then he calculates the quote
-    And he saved it
-    And he log out
 
     Examples:
-      | car manufacturer| model         | car type                      | color                    | upholstery  |option                 | customer Name  | product_type| duration | distance |
-      | Toyota          | Yaris Hybride | 1.5 VVT-I HYBRID France (2019)| Pure White gloss paint   | Cloth black |Space saver spare wheel| 2BDEVELOPPEMENT| KINTO ONE   |48        | 80000    |

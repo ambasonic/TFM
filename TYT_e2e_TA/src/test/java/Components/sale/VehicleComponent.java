@@ -46,12 +46,15 @@ public class VehicleComponent extends ReusableViewElements {
         waitABit(2000);
     }
 
-    public void selectCarTypeByText(String carTye){
+    public void selectCarTypeByText(String carType){
         List<WebElementFacade> anchors = findAll(VEHICLE_ROWS)
                 .stream()
-                .filter(c -> c.findElements(By.tagName("span")).get(1).getText().equalsIgnoreCase(carTye))
+                .filter(c -> c.findElements(By.tagName("span")).get(1).getText().equalsIgnoreCase(carType))
                 .collect(Collectors.toList());
-        assertFalse("The type: "+carTye+" is unknown or more than one car model was found", anchors.size()!=1);
+        scrollToPosition(0,500);
+        waitABit(750);
+
+//        assertFalse("The type: "+carType+" is unknown or more than one car model was found", anchors.size()!=1); //TODO to be looking at by Fred to see if necessary to keep it
         anchors.get(0).click();
         waitABit(2000);
     }
