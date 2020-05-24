@@ -12,7 +12,7 @@ public class CreditScoreMRComponent extends ReusableViewElements {
     private final By creditScore = By.id("id_menu_1_valueCell4");
     private final By statusTextField = By.name("A3211");
     private final By decisionTextField = By.name("A3214");
-    private final By contract = By.xpath("//img[contains(@src,'"+ currentProperties.getCurrentCountryIP() +"resource/skins/MRI/images/Sofico/24/status_end.png?')]");
+    private final By contract = By.xpath("//img[contains(@src,'"+ currentProperties.getCurrentCountryIP() +"milesria/resource/skins/MRI/images/Sofico/24/status_end.png?')]");
 
     public CreditScoreMRComponent(WebDriver driver) {
         super(driver);
@@ -60,6 +60,6 @@ public class CreditScoreMRComponent extends ReusableViewElements {
         element(By.name("R1305")).click();
         waitABit(2000);
         element(contract).click();
-        waitABit(4000);
+        waitABit(7000);
     }
 }

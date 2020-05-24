@@ -17,11 +17,8 @@ public class VehicleUsagesMRComponent extends ReusableViewElements {
     }
 
     private final By VehicleUsages = By.xpath("//div[@id='id_menu_5_valueCell6']/div");
-//    private final By VehicleUsages = By.xpath("//div[@id='id_menu_3_valueCell6']/div");
     private final By Registration_And_Documents = By.xpath("//div[@id='id_menu_5_valueCell7']/div");
-//    private final By Registration_And_Documents = By.xpath("//div[@id='id_menu_3_valueCell7']/div");
-    private final String ADD_LICENCE_PLATE = "//img[contains(@src,'https://10.7.25.20:10143/milesria/resource/skins/MRI/images/Sofico/16/add.png?" +
-            "sv=0c361dca65211eee9a7833a6d278d85771a04349')]";
+    private final String ADD_LICENCE_PLATE = "//img[contains(@src,'"+currentProperties.getCurrentCountryIP()+"milesria/resource/skins/MRI/images/Sofico/16/add.png')]";
     private final By VinNumber = By.name("A917");
     public void clickOnVehicleUsages() {
         waitABit(3000);

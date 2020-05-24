@@ -35,4 +35,27 @@ public class QuotesMRSteps {
     public void selectResultingContracts() {
        quotesPage.getResultingContractMRComponent().selectContract();
     }
+
+    @Step()
+    public void selectStipulation() {
+        openFinancial();
+        quotesPage.getResultingContractMRComponent().openStipulation();
+        quotesPage.getResultingContractMRComponent().selectAllStipulation();
+    }
+
+    @Step()
+    public void openFinancial(){
+        quotesPage.getResultingContractMRComponent().openFinancial();
+    }
+
+    @Step()
+    public void activateStipulation() {
+        quotesPage.getResultingContractMRComponent().activateStipulation();
+        clickOnGeneral();
+    }
+
+    @Step()
+    public void clickOnGeneral() {
+        quotesPage.getResultingContractMRComponent().backToGeneral();
+    }
 }

@@ -13,11 +13,10 @@ import java.util.List;
 
 public class TopBarTabs extends ReusableViewElements {
 
-    private final String SAVE = "//img[contains(@src,'https://10.7.25.20:10143/milesria/resource/skins/MRI/images/Sofico/24/save.png?sv=0c361dca65211eee9a7833a6d278d85771a04349')]";
-    private final String NEXT_BUTTONS = "//img[contains(@src,'https://10.7.25.20:10143/milesria/resource/skins/MRI/images/Sofico/24/status_next.png?sv=0c361dca65211eee9a7833a6d278d85771a04349')]";
-    private final String NEW_INVOICE = "//img[contains(@src,'https://10.7.25.20:10143/milesria/resource/skins/MRI/images/Sofico/16/invoice.png?sv=0c361dca65211eee9a7833a6d278d85771a04349')]";
-    private String OPEN_VEHICLE = "//img[contains(@src,'https://10.7.25.20:10143/milesria/resource/skins/MRI/images/Sofico/24/vehicle.png" +
-            "?sv=0c361dca65211eee9a7833a6d278d85771a04349')]";
+    private final String SAVE = "//img[contains(@src,'"+currentProperties.getCurrentCountryIP()+"milesria/resource/skins/MRI/images/Sofico/24/save.png')]";
+    private final String NEXT_BUTTONS = "//img[contains(@src,'"+currentProperties.getCurrentCountryIP()+"milesria/resource/skins/MRI/images/Sofico/24/status_next.png?')]";
+    private final String NEW_INVOICE = "//img[contains(@src,'"+currentProperties.getCurrentCountryIP()+"milesria/resource/skins/MRI/images/Sofico/16/invoice.png')]";
+    private String OPEN_VEHICLE = "//img[contains(@src,'"+currentProperties.getCurrentCountryIP()+"milesria/resource/skins/MRI/images/Sofico/24/vehicle.png')]";
 
     public TopBarTabs(WebDriver driver) {
         super(driver);

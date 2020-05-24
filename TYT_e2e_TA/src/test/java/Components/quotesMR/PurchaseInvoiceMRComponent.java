@@ -29,13 +29,24 @@ public class PurchaseInvoiceMRComponent extends ReusableViewElements {
     }
 
     public void processValidate() {
-        int t = findAll(POST).size();
+        doValidate();
+        doAllocate();
+        doApprove();
+        post();
+    }
+
+    public void doValidate() {
         findAll(VALIDATE).get(3).click();
+    }
+    public void doAllocate() {
         findAll(ALLOCATE).get(3).click();
         waitABit(2000);
+    }
+    public void doApprove() {
         findAll(APPROVE).get(3).click();
         waitABit(2000);
-
+    }
+    public void post(){
         findAll(POST).get(2).click();
     }
 }

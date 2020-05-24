@@ -1,6 +1,5 @@
 package e2eTests.cukeStepDefinitions.milesRia;
 
-import Utils.constance.Country;
 import Utils.generatedTestData.TestDataGenerator;
 import Utils.generatedTestData.VinGeneratorUtils;
 import e2eTests.stepdefinitions.milesRia.LongTermContractsMRSteps;
@@ -22,10 +21,14 @@ public class LongTermContractsMRCucumberSteps extends TestDataGenerator {
     public void create_Vehicle_Order() {
         longTermContractsMRSteps.clickOnVehicle();
     }
+    @And("he click on the vehicle order link")
+    public void click_On_Vehicle_Order_Link() {
+        longTermContractsMRSteps.clickOnVehicleOrderByLink();
+    }
 
     @When("he open the long term contract")
     public void heOpenTheLongTermContract() {
-        longTermContractsMRSteps.openMRTab(Country.ITALY.getMilesRiaURL(), 2); //TODO refactor creer un context Italy des le d?but des Tests
+        longTermContractsMRSteps.openMRTab( ); //TODO refactor creer un context Italy des le d?but des Tests
     }
 
     @Then("he select the vehicle usage")
@@ -37,7 +40,7 @@ public class LongTermContractsMRCucumberSteps extends TestDataGenerator {
     public void heRegisteredTheVehiclePlates() {
         longTermContractsMRSteps.clickOnRegistrationAndDocuments();
         longTermContractsMRSteps.setVINNr(VinGeneratorUtils.getRandomVin());
-        longTermContractsMRSteps.registeredLicencePlate(getLicenceNumber());
+        longTermContractsMRSteps.registeredLicencePlate(getLicenceNumberFrance());
         longTermContractsMRSteps.setRegistrationDate(getActualDate());
     }
 
@@ -71,9 +74,20 @@ public class LongTermContractsMRCucumberSteps extends TestDataGenerator {
     public void heOpensTheWorkflowAndHeSelectsTheContractInitiation() {
         longTermContractsMRSteps.clickOnContractInitiation();
     }
+    @Then("he opens the workflow and he selects the contract Activation")
+    public void heOpensTheWorkflowAndHeSelectsTheContractActivation() {
+        longTermContractsMRSteps.clickOnContractInitiation();
+    }
+
 
     @And("he reevaluates the contract and close the tab")
     public void heReevaluatesTheContractAndCloseTheTab() {
         longTermContractsMRSteps.reevaluatesContractAndCloseTheTab();
+    }
+
+    @And("he checks the status {string}")
+    public void heChecksTheStatus(String status) {
+        longTermContractsMRSteps.checkTheStatus(status);
+
     }
 }

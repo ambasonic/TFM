@@ -15,8 +15,8 @@ public class LongTermContractsMRSteps {
     }
 
     @Step("The dealer go to the Long terms contract tab")
-    public void openMRTab(String countryUrl, int tabIndex) {
-        homePage.openURL(countryUrl+"#tab_"+tabIndex);
+    public void openMRTab() {
+        homePage.openMRTab(2);
     }
 
     @Step("The dealer Open the vehicle")
@@ -80,5 +80,13 @@ public class LongTermContractsMRSteps {
 
     public void reevaluatesContractAndCloseTheTab() {
         longTermContractsPage.clickOnReevaluate();
+    }
+
+    public void clickOnVehicleOrderByLink() {
+        longTermContractsPage.getVehicleMRComponent().clickOnVehicleOrderByLink();
+    }
+
+    public void checkTheStatus(String status) {
+        longTermContractsPage.checkStatus(status);
     }
 }

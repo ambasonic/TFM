@@ -54,15 +54,31 @@ public class TestDataGenerator {
     /**
      * return a random Licence number with the pattern
      * 2 Alphabetic + 3 Numeric + 2 Alphabetic
+     * for Italy
      *
      * @return the random Licence number as String
      * @see RandomStringUtils
      */
-    public  String getLicenceNumber() {
+    public static String getLicenceNumberITALY() {
         String alpha1 = RandomStringUtils.randomAlphabetic(2).toUpperCase();
         String numeric = RandomStringUtils.randomNumeric(3).toUpperCase();
         String alpha2 = RandomStringUtils.randomAlphabetic(2).toUpperCase();
         return alpha1+numeric+alpha2;
+    }
+
+    /**
+     * return a random Licence number with the pattern
+     * 2 Alphabetic + 3 Numeric + 2 Alphabetic
+     * for france
+     *
+     * @return the random Licence number as String
+     * @see RandomStringUtils
+     */
+    public static String getLicenceNumberFrance() {
+        String alpha1 = RandomStringUtils.randomAlphabetic(2).toUpperCase();
+        String numeric = RandomStringUtils.randomNumeric(3).toUpperCase();
+        String alpha2 = RandomStringUtils.randomAlphabetic(2).toUpperCase();
+        return alpha1+"-"+numeric+"-"+alpha2;
     }
 
     /**
@@ -73,7 +89,7 @@ public class TestDataGenerator {
      *
      * @return the random distance as string
      */
-    public  String getDistance(int count) {
+    public  static String getDistance(int count) {
         return RandomStringUtils.randomNumeric(count);
     }
 
@@ -101,7 +117,7 @@ public class TestDataGenerator {
         System.out.println(testDataGenerator.getInvoiceNumber(8));
         System.out.println();
         System.out.println("Licence Number");
-        System.out.println(testDataGenerator.getLicenceNumber());
+        System.out.println(testDataGenerator.getLicenceNumberITALY());
         System.out.println();
         System.out.println("Random vehicle VIN");
         System.out.println(VinGeneratorUtils.getRandomVin());

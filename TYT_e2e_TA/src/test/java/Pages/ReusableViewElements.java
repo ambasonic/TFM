@@ -33,6 +33,18 @@ public class ReusableViewElements extends PageObject {
         waitABit(1000);
     }
 
+    public void openMRTab(int tabIndex){
+        String country =  currentProperties.getCurrentCountry();
+        switch (country.toUpperCase()){
+            case "ITALY": openURL(ITALY.getMilesRiaURL()+"#tab_"+tabIndex);
+                break;
+            case "FRANCE" : openURL(FRANCE.getMilesRiaURL()+"#tab_"+tabIndex);
+                break;
+            default:
+                throw new IllegalStateException("Unexpected value: " + country.toUpperCase());
+        }
+    }
+
     public void openMilesWebMainPageURL(String country){
         // important to set the active country property at the beginning
         currentProperties = new CurrentProperties(country);

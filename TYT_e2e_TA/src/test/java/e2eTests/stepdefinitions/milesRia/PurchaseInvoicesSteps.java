@@ -12,7 +12,7 @@ public class PurchaseInvoicesSteps {
         purchaseInvoicesTab.getPurchaseInvoiceMRComponent().setInvoiceNumber(invoiceNumber);
     }
 
-    @Step("The dealer click on Validate")
+    @Step("The dealer validate the whole process")
     public void processValidate() {
         purchaseInvoicesTab.getPurchaseInvoiceMRComponent().processValidate();
     }

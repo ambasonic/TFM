@@ -1,11 +1,11 @@
 package Pages.milesRiaPages;
 
-import Components.header.TopBarComponent;
 import Components.quotesMR.VehicleMRComponent;
 import Components.quotesMR.VehicleUsagesMRComponent;
 import Pages.ReusableViewElements;
 import Pages.milesRiaTabs.TopBarTabs;
 import net.serenitybdd.core.pages.WebElementFacade;
+import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
@@ -13,20 +13,21 @@ import java.util.List;
 
 public class LongTermContractsPage extends ReusableViewElements {
 
-    private final By Calculate = By.xpath("//img[contains(@src,'https://10.7.25.20:10143/milesria/resource/skins/MRI/images/Sofico/16/" +
-            "calculate.png?sv=0c361dca65211eee9a7833a6d278d85771a04349')]");
-    private final String ActionIcon = "//img[contains(@src,'https://10.7.25.20:10143/milesria/resource/skins/MRI/images/Sofico/16/" +
-            "action.png?sv=0c361dca65211eee9a7833a6d278d85771a04349')]";
-    private final String OK = "//img[contains(@src,'https://10.7.25.20:10143/milesria/resource/skins/MRI/images/Sofico/16/ok.png?sv=0c361dca65211eee9a7833a6d278d85771a04349')]";
+    private final By Calculate = By.xpath("//img[contains(@src,'"+currentProperties.getCurrentCountryIP()+"milesria/resource/skins/MRI/images/Sofico/16/calculate.png')]");
+    private final String ActionIcon = "//img[contains(@src,'"+currentProperties.getCurrentCountryIP()+"milesria/resource/skins/MRI/images/Sofico/16/action.png')]";
+    private final String OK = "//img[contains(@src,'"+currentProperties.getCurrentCountryIP()+"milesria/resource/skins/MRI/images/Sofico/16/ok.png')]";
     private final By DiSTANCE = By.name("A1339");
-    private final String DELIVER = "//img[contains(@src,'https://10.7.25.20:10143/milesria/resource/skins/MRI/images/Sofico/16/action.png?sv=0c361dca65211eee9a7833a6d278d85771a04349')]";
+    private final String DELIVER = "//img[contains(@src,'"+currentProperties.getCurrentCountryIP()+"milesria/resource/skins/MRI/images/Sofico/16/action.png')]";
     private final By CONTRACT_INITIATION = By.id("grid_WorkList_Activities_Tree_2_valueCell0");
     private final By CLOSE = By.className("buttonRounded");
-    private final String location_text = "Via Verdi  1\n" +
+    private final String location_text_Italy = "Via Verdi  1\n" +
             "20018 SEDRIANO\n" +
             "MILANO Italy";
+    private final String location_text_France= "8 rue de la liberté\n" +
+            "95000 CERGY ";
     private final By REQUESTED_LOCATION =  By.name("A2725");
     private final By Vehicle_Receipt_By = By.name("R678");
+    private final By Status = By.name("A953");
 
 
     public VehicleMRComponent getVehicleMRComponent(){
@@ -67,12 +68,16 @@ public class LongTermContractsPage extends ReusableViewElements {
     public void clickOnDeliver(){
         waitABit(2000);
         setRequestLocation();
-        setVehicleReceipt("TestAutomation");
+        if (currentProperties.getCurrentCountry().equalsIgnoreCase("france")){
+            setVehicleReceipt("Roland, Bosch");
+        } else {
+            setVehicleReceipt("TestAutomation");
+        }
         waitABit(5000);
         int size = findAll(DELIVER).size();
         findAll(DELIVER).get(7).click();
         waitABit(3000);
-        element(By.xpath("//img[contains(@src,'https://10.7.25.20:10143/milesria/resource/skins/MRI/images/Sofico/16/ok.png?sv=0c361dca65211eee9a7833a6d278d85771a04349')] ")).click();
+        element(OK).click();
         waitABit(10000);
     }
 
@@ -94,12 +99,21 @@ public class LongTermContractsPage extends ReusableViewElements {
     }
 
     public void setRequestLocation(){
-        sendKeysAfterStaleness(REQUESTED_LOCATION, false, location_text);
+        if (currentProperties.getCurrentCountry().equalsIgnoreCase("france")){
+            sendKeysAfterStaleness(REQUESTED_LOCATION, false, location_text_France);
+        }else if (currentProperties.getCurrentCountry().equalsIgnoreCase("Italy")){
+            sendKeysAfterStaleness(REQUESTED_LOCATION, false, location_text_Italy);
+        }
         waitABit(1000);
     }
 
     public void setVehicleReceipt(String name){
         sendKeysAfterStaleness(Vehicle_Receipt_By, false, name);
         waitABit(1000);
+    }
+
+    public void checkStatus(String status) {
+        String text = element(Status).getText();
+        Assert.assertEquals("The status is not "+status, status.toLowerCase(), text.toLowerCase());
     }
 }

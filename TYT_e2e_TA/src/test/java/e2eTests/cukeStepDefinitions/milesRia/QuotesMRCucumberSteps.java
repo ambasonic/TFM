@@ -31,4 +31,14 @@ public class QuotesMRCucumberSteps {
     public void selectResultingContracts() {
         quotesMRSteps.selectResultingContracts();
     }
+
+    @When("he selects stipulation")
+    public void selectsStipulation() {
+        quotesMRSteps.selectStipulation();
+    }
+
+    @And("he activates the selected stipulation")
+    public void selectedStipulationActivation() {
+        quotesMRSteps.activateStipulation();
+    }
 }
