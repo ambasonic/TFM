@@ -9,9 +9,9 @@ import java.util.Calendar;
 /**
  * @Author King Neg
  */
-public class TestDataGenerator {
+public class TestData {
 
-    public TestDataGenerator(){
+    public TestData(){
     }
 
     /**
@@ -105,24 +105,24 @@ public class TestDataGenerator {
 
     public static void main(String[] args) {
 
-        TestDataGenerator testDataGenerator = new TestDataGenerator();
+        TestData testData = new TestData();
         int days = 5;
         System.out.println("Date of Today");
-        System.out.println(testDataGenerator.getActualDate());
+        System.out.println(testData.getActualDate());
         System.out.println();
         System.out.println("Date of Today + " + days);
-        System.out.println(testDataGenerator.getFutureDate(days));
+        System.out.println(testData.getFutureDate(days));
         System.out.println();
         System.out.println("Invoice Number");
-        System.out.println(testDataGenerator.getInvoiceNumber(8));
+        System.out.println(testData.getInvoiceNumber(8));
         System.out.println();
         System.out.println("Licence Number");
-        System.out.println(testDataGenerator.getLicenceNumberITALY());
+        System.out.println(testData.getLicenceNumberITALY());
         System.out.println();
         System.out.println("Random vehicle VIN");
         System.out.println(VinGeneratorUtils.getRandomVin());
         System.out.println();
         System.out.println("Random name with numeric");
-        System.out.println(testDataGenerator.getNameWithNumeric());
+        System.out.println(testData.getNameWithNumeric());
     }
 }

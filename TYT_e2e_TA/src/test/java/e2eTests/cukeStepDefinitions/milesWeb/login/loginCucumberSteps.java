@@ -2,17 +2,16 @@ package e2eTests.cukeStepDefinitions.milesWeb.login;
 
 
 import Pages.home.HomePage;
-import Utils.generatedTestData.TestDataGenerator;
-import e2eTests.cukeStepDefinitions.milesRia.ParametrizedCountry;
+import Utils.generatedTestData.TestData;
 import e2eTests.stepdefinitions.LoginSteps;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import net.thucydides.core.annotations.Steps;
 import utils.UserPropertiesManager;
 
-import static Utils.constance.Country.*;
+public class loginCucumberSteps extends TestData{
 
-public class loginCucumberSteps {
+//    private ThreadLocal<String> countryThreadLocal = new ThreadLocal<>();
 
     @Steps
     LoginSteps loginSteps;

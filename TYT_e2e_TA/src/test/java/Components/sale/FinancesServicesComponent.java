@@ -22,7 +22,8 @@ public class FinancesServicesComponent extends ReusableViewElements {
     private final By Relief_Vehicle_No_Choice = By.id("quote:retailfinance:lsc:1:pcs_0");
     private final String Tires_Vehicle_Field = "quote:retailfinance:lsc:3:pcs";
     private final String Tires_Type = "quote:retailfinance:lsc:3:pcs_";
-    private final String Tires_Number_Input_Field = "quote:retailfinance:lsc:3:qr:1:qinputs";
+    private final String Tires_Number_Input_Field_Start = "quote:retailfinance:lsc:3:qr:";
+    private final String Tires_Number_Input_Field_End =":qinputs";
     private final String Calculate_Button = "quote:retailfinanceSummary:update";
     private final String Save_Quote = "quote:retailfinanceSummary:save";
     private final String TotalPrice_Value = "quote:retailfinanceSummary:pricewithfuelexclvat";
@@ -80,13 +81,14 @@ public class FinancesServicesComponent extends ReusableViewElements {
 
     //TODO find a way to check the Tires name
     public void selectTires(int tiresIndex, String tiresName){
+        scrollToElement( element(By.id(Tires_Vehicle_Field)));
         element(By.id(Tires_Vehicle_Field)).click();
         element(By.id(Tires_Type+tiresIndex)).click();
     }
 
-    public void setTiresNumber(int tiresNumber){
-        element(By.id(Tires_Number_Input_Field)).clear();
-        element(By.id(Tires_Number_Input_Field)).sendKeys(String.valueOf(tiresNumber));
+    public void setTiresNumber(int index, int tiresNumber){
+        element(By.id(Tires_Number_Input_Field_Start+index+Tires_Number_Input_Field_End)).clear();
+        element(By.id(Tires_Number_Input_Field_Start+index+Tires_Number_Input_Field_End)).sendKeys(String.valueOf(tiresNumber));
     }
 
     public void quoteCalculation(){

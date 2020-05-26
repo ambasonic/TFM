@@ -135,9 +135,9 @@ public class SalePageSteps {
         salePage.getFinancesServicesComponent().selectTires(tiresIndex, tiresType);
     }
 
-    @Step("The dealer adds {0} tires")
-    public void addTires(int tiresNumber) {
-        salePage.getFinancesServicesComponent().setTiresNumber(tiresNumber);
+    @Step("The dealer adds {1} tires")
+    public void addTires(int index, int tiresNumber) {
+        salePage.getFinancesServicesComponent().setTiresNumber(index, tiresNumber);
     }
 
     @Step("The dealer calculates the quote")

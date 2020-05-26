@@ -43,6 +43,7 @@ public class LongTermContractsPage extends ReusableViewElements {
         return new VehicleUsagesMRComponent(getDriver());
     }
     public void clickOnCalculate() {
+        waitABit(1000);
         element(Calculate).click();
         waitABit(8000);
     }

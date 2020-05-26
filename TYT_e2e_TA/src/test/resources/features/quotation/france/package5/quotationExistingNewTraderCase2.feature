@@ -2,8 +2,8 @@
 # Tags: optional
 
 @france
-@pck5case3
-Feature: Quotation Template with a New Sole Trader France including combinations of services(fuel card)
+@pck5case2
+Feature: Quotation Template with an Existing Sole Trader France including Downpayment and relief vehicle
 
   Scenario Outline: quotation
     Given The dealer open the MilesWeb backoffice 'FRANCE'
@@ -20,5 +20,5 @@ Feature: Quotation Template with a New Sole Trader France including combinations
     And he go to the next page
 
     Examples:
-      | car manufacturer| model  | car type         | color              | upholstery                   |option          |
-      | Toyota          | PROACE | 450h Luxe (2020) | Gris Titane métal. |Sièges Cuir Noir Inserts Noir |Pack Technology |
+      | car manufacturer| model | car type         | color              | upholstery                   |option          |
+      | Toyota          | YARIS | 450h Luxe (2020) | Gris Titane métal. |Sièges Cuir Noir Inserts Noir |Pack Technology |

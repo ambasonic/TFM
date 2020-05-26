@@ -125,9 +125,9 @@ public class SalePageCucumberSteps {
         salePageSteps.selectTireType(tiresIndex, tiresType);
     }
 
-    @And("he adds {int} tires")
-    public void addTires(int tiresNumber) {
-        salePageSteps.addTires(tiresNumber);
+    @And("he adds {int} {int} tires")
+    public void addTires(int index, int tiresNumber) {
+        salePageSteps.addTires(index, tiresNumber);
     }
 
     @Then("he calculates the quote")

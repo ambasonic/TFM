@@ -1,11 +1,12 @@
 package e2eTests.cukeStepDefinitions.milesWeb.dealerHomePage;
 
+import Utils.generatedTestData.TestData;
 import e2eTests.stepdefinitions.DealerHomePageSteps;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import net.thucydides.core.annotations.Steps;
 
-public class DealerHomePageCucumberSteps {
+public class DealerHomePageCucumberSteps extends TestData {
 
     @Steps
     DealerHomePageSteps dealerHomePageSteps;

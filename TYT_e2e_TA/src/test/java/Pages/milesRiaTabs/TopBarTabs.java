@@ -2,10 +2,7 @@ package Pages.milesRiaTabs;
 
 import Pages.ReusableViewElements;
 import net.serenitybdd.core.pages.WebElementFacade;
-import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
 import org.openqa.selenium.support.FindAll;
 
 import java.util.List;
@@ -28,8 +25,13 @@ public class TopBarTabs extends ReusableViewElements {
     }
 
     public void clickOnSaved() {
-        waitABit(1000);
-        element(SAVE).click();
+        waitABit(2000);
+        try {
+            element(SAVE).click();
+        }catch(ElementNotInteractableException enie){
+            findAll(SAVE).get(1).click();
+            waitABit(1000);
+        }
     }
 
     public void clickOnValidate(){

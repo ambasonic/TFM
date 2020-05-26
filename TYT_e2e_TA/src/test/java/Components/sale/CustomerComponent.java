@@ -16,6 +16,7 @@ public class CustomerComponent extends ReusableViewElements {
     private final String organizationMenuButton = "//div[@id='prospectdata:prospectlegalEntityGroup']/div/span";
     private final String organization = "//button[@id='prospectdata:prospectlistTable:0:j_idt114']/span[2]";
     private final By MODIFY_CUSTOMER_NEW = By.id("quote:j_idt932");
+    private final By MODIFY_CUSTOMER_NEW_FR = By.id("quote:j_idt945");
     private final By PROSPECT_DATA_TABLE = By.id("prospectdata:prospectlistTable_data");
     private final By PROSPECT_NAME = By.id("quote:prospectname");
 
@@ -62,9 +63,16 @@ public class CustomerComponent extends ReusableViewElements {
     }
 
     public void clickOnNewCustomer() {
-        waitABit(1000);
-        element(MODIFY_CUSTOMER_NEW).click();
-        waitABit(2000);
+        if(currentProperties.getCurrentCountry().equalsIgnoreCase("france")){
+            waitABit(1000);
+            element(MODIFY_CUSTOMER_NEW_FR).click();
+            waitABit(2000);
+        }else {
+            waitABit(1000);
+            element(MODIFY_CUSTOMER_NEW).click();
+            waitABit(2000);
+        }
+
     }
 }
 

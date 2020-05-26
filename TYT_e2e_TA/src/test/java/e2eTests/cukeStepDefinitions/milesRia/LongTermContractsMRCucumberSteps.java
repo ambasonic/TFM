@@ -1,6 +1,6 @@
 package e2eTests.cukeStepDefinitions.milesRia;
 
-import Utils.generatedTestData.TestDataGenerator;
+import Utils.generatedTestData.TestData;
 import Utils.generatedTestData.VinGeneratorUtils;
 import e2eTests.stepdefinitions.milesRia.LongTermContractsMRSteps;
 import io.cucumber.java.en.And;
@@ -8,7 +8,7 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import net.thucydides.core.annotations.Steps;
 
-public class LongTermContractsMRCucumberSteps extends TestDataGenerator {
+public class LongTermContractsMRCucumberSteps extends TestData {
 
     @Steps
     LongTermContractsMRSteps longTermContractsMRSteps;

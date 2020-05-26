@@ -1,11 +1,11 @@
 package e2eTests.cukeStepDefinitions.milesRia;
 
-import Utils.generatedTestData.TestDataGenerator;
+import Utils.generatedTestData.TestData;
 import e2eTests.stepdefinitions.milesRia.VehicleOrderMRSteps;
 import io.cucumber.java.en.And;
 import net.thucydides.core.annotations.Steps;
 
-public class VehicleOrderCucumberSteps extends TestDataGenerator {
+public class VehicleOrderCucumberSteps extends TestData {
 
     @Steps
     VehicleOrderMRSteps vehicleOrderMRSteps;

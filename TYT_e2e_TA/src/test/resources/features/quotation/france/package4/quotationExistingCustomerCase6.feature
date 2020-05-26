@@ -14,8 +14,8 @@ Feature: Quotation Template with an existing Customer France including relief ve
     And he selects the type '<car type>'
     And he go to the next page
     Then he can selects vehicle options
-    And he chooses color '<color>' and upholstery '<upholstery>'
     And he selects an option '<option>'
+    And he chooses color '<color>' and upholstery '<upholstery>'
     And he go to the next page
     Then he search the customer by name '<customer Name>'
     And he go to the next page
@@ -24,9 +24,12 @@ Feature: Quotation Template with an existing Customer France including relief ve
     And he go to the next page
     And he updates the duration <duration>
     And he updates the distance <distance>
-#    And he selects the first <paymentIndex> payment '<paymentMethod>'
+    And he selects the tyre type <tyreIndex> '<tyreName>'
+    And he adds <tyreNumberIndex> <tyreNumber> tires
     Then he calculates the quote
     And he saved it
     And he log out
-
+# retirer tous les index tyreIndex, tyreNumberIndex
     Examples:
+      | car manufacturer| model   | car type                | color                   | upholstery                                                             |option            | customer Name  | product_type  | duration | distance  |tyreIndex | tyreName        | tyreNumberIndex|tyreNumber |
+      | Toyota          | AYGO    | 1.0 VVT-i x-play (2019) | Red Chilien gloss paint | Cloth upholstery Dark Grey with bi-toned bolsters white and light grey |Chilien Red paint |2BDEVELOPPEMENT | KINTO ONE     |90        | 48000     |     2    | 4-Seasons Tires |      0         |      4    |

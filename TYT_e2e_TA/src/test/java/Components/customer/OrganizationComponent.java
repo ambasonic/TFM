@@ -23,6 +23,7 @@ public class OrganizationComponent extends ReusableViewElements {
     private final By saveBtn = By.id("prospectdetail:saveButton");
     private final By TITLE = By.id("quote:prospectdetail:prospectView:main:primaryContact:common_contact");
     private final By TITLE_Dr = By.id("quote:prospectdetail:prospectView:main:primaryContact:common_contact_1");
+    private final By TITLE_Mr = By.id("quote:prospectdetail:prospectView:main:primaryContact:common_contact_1");
     private final By SURNAME = By.id("quote:prospectdetail:prospectView:main:primaryContact:contact_lname");
     private final By LAST_NAME = By.id("quote:prospectdetail:prospectView:main:primaryContact:contact_fname");
     private final By Email = By.id("quote:prospectdetail:prospectView:main:primaryContact:contactemail");
@@ -30,7 +31,8 @@ public class OrganizationComponent extends ReusableViewElements {
     private final By LEGAL_ENTITY = By.id("quote:prospectdetail:prospectView:main:legalentity_label");
     private final By ENTITY_SOCIETA_SIMPLICE = By.id("quote:prospectdetail:prospectView:main:legalentity_33");
     private final By IMPRESA_INDIVIDUALE = By.id("quote:prospectdetail:prospectView:main:legalentity_3");
-
+    private final By SARL= By.id("quote:prospectdetail:prospectView:main:legalentity_7");
+    private final By Fleet_Size = By.id("quote:prospectdetail:prospectView:main:primaryAddress:fleetSize");
 
 
     public OrganizationComponent(WebDriver driver) {
@@ -46,6 +48,8 @@ public class OrganizationComponent extends ReusableViewElements {
             case "Societa  Semplice": element(ENTITY_SOCIETA_SIMPLICE).click();
             break;
             case"IMPRESA INDIVIDUALE": element(IMPRESA_INDIVIDUALE).click();
+            break;
+            case "SARL": element(SARL).click();
         }
         waitABit(1000);
     }
@@ -56,6 +60,9 @@ public class OrganizationComponent extends ReusableViewElements {
     }
 
 
+    public void setFleetSize(String fleetSize){
+        element(Fleet_Size).sendKeys(fleetSize);
+    }
     public void setCompany(String company_Name){
         element(COMPANY).sendKeys(company_Name);
         scrollToPosition(0, 300);
@@ -101,6 +108,8 @@ public class OrganizationComponent extends ReusableViewElements {
         waitABit(500);
         switch (title){
             case "Dr" : element(TITLE_Dr).click();
+                break;
+            case "Mr" : element(TITLE_Mr).click();
                 break;
             default:
         }

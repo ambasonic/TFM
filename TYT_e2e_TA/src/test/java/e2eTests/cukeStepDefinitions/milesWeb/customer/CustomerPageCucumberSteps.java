@@ -1,13 +1,13 @@
 package e2eTests.cukeStepDefinitions.milesWeb.customer;
 
 import Pages.customer.CustomerPage;
-import Utils.generatedTestData.TestDataGenerator;
+import Utils.generatedTestData.TestData;
 import e2eTests.stepdefinitions.CustomerPageSteps;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.When;
 import net.thucydides.core.annotations.Steps;
 
-public class CustomerPageCucumberSteps extends TestDataGenerator {
+public class CustomerPageCucumberSteps extends TestData {
 
     CustomerPage customerPage;
     @Steps
@@ -31,6 +31,11 @@ public class CustomerPageCucumberSteps extends TestDataGenerator {
     @And("he gives the street name {string} in the contact data form")
     public void heGivesTheStreetNameStreet_nameInTheContactDataForm(String streetName) {
         customerPageSteps.setStreetName(streetName);
+    }
+
+    @And("he gives the street fleet size {string} in the contact data form")
+    public void heGivesTheStreetFleetSizeFleet_SizeInTheContactDataForm(String size) {
+        customerPage.getOrganizationComponent().setFleetSize(size);
     }
 
     @And("he gives the street name {string}")
