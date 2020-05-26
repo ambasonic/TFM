@@ -26,6 +26,7 @@ Feature: Quotation Template with an existing Customer Italy
     And he selects the first <paymentIndex> payment '<paymentMethod>'
     Then he calculates the quote
     And he saved it
+    Then he sends the credit request
     And he log out
 
     Examples:

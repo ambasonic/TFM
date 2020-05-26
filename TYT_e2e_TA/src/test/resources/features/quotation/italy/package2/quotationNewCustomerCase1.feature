@@ -1,5 +1,6 @@
 # new feature
 # Tags: optional
+@italy
 @pck2case1
 Feature: Quotation Template with an existing Customer Italy
 
@@ -40,7 +41,7 @@ Feature: Quotation Template with an existing Customer Italy
     And he selects the first <paymentIndex> payment '<paymentMethod>'
     And he selects the tyre type <tyreIndex> '<tyreName>'
     And he set the insurance type '<insurance>'
-    And he adds <tyreNumber> tires
+    And he adds at index 1 '<tyreNumber>' tires
     Then he calculates the quote
     And he check the lease price '<leasePrice>'
     And he check the service price '<servicePrice>'

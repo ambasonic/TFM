@@ -24,7 +24,7 @@ Feature: Quotation Duplication with an existing Customer France(change of durati
     And he updates the duration <duration>
     And he updates the distance <distance>
     And he selects the tyre type <tyreIndex> '<tyreName>'
-    And he adds <tyreNumberIndex> <tyreNumber> tires
+    And he adds at index 2 '<tyreNumber>' tires
     Then he calculates the quote
     And he saved it
     And he log out

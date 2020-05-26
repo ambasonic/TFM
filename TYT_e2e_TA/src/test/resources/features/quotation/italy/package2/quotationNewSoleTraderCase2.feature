@@ -1,5 +1,6 @@
 # new feature
 # Tags: optional
+@italy
 @pck2case2
 Feature: Quotation Template with an existing Customer Italy
 
@@ -15,7 +16,6 @@ Feature: Quotation Template with an existing Customer Italy
     Then he can selects vehicle options
     And he chooses color '<color>' and upholstery '<upholstery>'
     And he selects the option pack '<optionPack>'
-#    And he selects an option '<option>'
     And he selects the accessories '<accessories>'
     And he go to the next page
     Then he can create a new customer

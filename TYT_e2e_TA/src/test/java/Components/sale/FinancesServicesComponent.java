@@ -41,7 +41,8 @@ public class FinancesServicesComponent extends ReusableViewElements {
     private final By VAT_SERVICE_PRICE = By.id("quote:retailfinanceSummary:servicesleasepricevat");
     private final By VAT_TOTAL_PRICE = By.id("quote:retailfinanceSummary:pricewithfuel");
     private final By SELECTIONS_TABLE = By.id("quote:selopt:tbody_element");
-
+    private final By CREDIT_REQUEST = By.id("quote:retailfinanceSummary:order");
+    private final By SEND_CREDIT_REQUEST = By.id("orderQuote:quote:j_idt768");
 
     public FinancesServicesComponent(WebDriver driver) {
         super(driver);
@@ -81,7 +82,7 @@ public class FinancesServicesComponent extends ReusableViewElements {
 
     //TODO find a way to check the Tires name
     public void selectTires(int tiresIndex, String tiresName){
-        scrollToElement( element(By.id(Tires_Vehicle_Field)));
+//        scrollToElement( element(By.id(Tires_Vehicle_Field)));
         element(By.id(Tires_Vehicle_Field)).click();
         element(By.id(Tires_Type+tiresIndex)).click();
     }
@@ -183,11 +184,6 @@ public class FinancesServicesComponent extends ReusableViewElements {
         }
     }
 
-    public void checkP(String optionPrice) { //TODO Remove
-        String price = element("#quote\\:selopt\\:tbody_element > tr:nth-child(7) > td:nth-child(3) > span").getText();
-        assertThat(price, is(optionPrice));
-    }
-
     public void checkPrice(String optionName, String expectedVATPrice) {
         List<WebElementFacade> anchors = element(SELECTIONS_TABLE).thenFindAll(By.tagName("tr"))
                 .stream()
@@ -196,5 +192,15 @@ public class FinancesServicesComponent extends ReusableViewElements {
         String price = anchors.get(0).thenFindAll(By.className("optionPriceColumn")).get(1).getText();
         assertThat(price, is(expectedVATPrice));
 
+    }
+
+    public void clickOnCreditRequest() {
+        element(CREDIT_REQUEST).click();
+        waitABit(2000);
+    }
+
+    public void clickOnSendCreditRequest() {
+        element(SEND_CREDIT_REQUEST).click();
+        waitABit(2000);
     }
 }

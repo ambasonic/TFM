@@ -16,11 +16,11 @@ Feature: Duplicate a quote and change of duration and distance with additional o
     And he selects the first <paymentIndex> payment '<paymentMethod>'
     And he sets relief vehicle to '<relief_vehicle>'
     And he selects the tyre type <tyreIndex> '<tyreName>'
-    And he adds <tyreNumber> tires
+    And he adds at index 1 '<tyreNumber>' tires
     Then he calculates the quote
     And he check the total price '<totalPrice>'
     And he saved it
 
     Examples:
-      |duration| distance | paymentIndex | paymentMethod | relief_vehicle | tyreIndex | tyreName | tyreNumber | totalPrice |
-      |60      | 190000   | 1            |TFM2_Delivery cost direct/broker from dealer to customer| yes | 2 | Flex Standard | 4 |€ 535.91 |
+      |duration| distance | paymentIndex | paymentMethod                                          | relief_vehicle | tyreIndex | tyreName      | tyreNumber | totalPrice |
+      |60      | 190000   | 1            |TFM2_Delivery cost direct/broker from dealer to customer| yes            | 2         | Flex Standard | 4          |€ 535.91    |

@@ -171,12 +171,6 @@ public class SalePageSteps {
         salePage.getTopBarComponent().clickOnLogOut();
     }
 
-    @Step("The dealer expects: {0} as total price")
-    public void checkTotalPrice2(String expectedPrice) {
-        String mockedPrice =  "\u20ac"+" 450";
-        assertThat(mockedPrice, is(expectedPrice)); //TODO refactor put total price
-    }
-
     @Step("The dealer click on ne customer")
     public void gotToNewCustomerMenu() {
         salePage.getCustomerComponent().clickOnNewCustomer();

@@ -125,21 +125,15 @@ public class SalePageCucumberSteps {
         salePageSteps.selectTireType(tiresIndex, tiresType);
     }
 
-    @And("he adds {int} {int} tires")
-    public void addTires(int index, int tiresNumber) {
-        salePageSteps.addTires(index, tiresNumber);
+    @And("he adds at index {int} {string} tires")
+    public void addTires(int index, String tiresNumber) {
+        salePageSteps.addTires(index, Integer.parseInt(tiresNumber));
     }
 
     @Then("he calculates the quote")
     public void he_Calculates_The_Quote() {
         salePageSteps.calculateQuote();
     }
-
-
-//    @And("the total price should be {string}")
-//    public void the_Total_Price_Should_Be(String totalPrice) {
-//        salePageSteps.checkTotalPrice(totalPrice);  //TODO REMOVE
-//    }
 
     @And("he saved it")
     public void saved_It() {
@@ -151,11 +145,6 @@ public class SalePageCucumberSteps {
         salePageSteps.topBarMenu();
         salePageSteps.clickOnProfile();
         salePageSteps.clickOnLogOut();
-    }
-
-    @And("the total price is {string}")
-    public void theTotalPriceIsTotalPrice(String expectedPrice) {
-        salePageSteps.checkTotalPrice2(expectedPrice); //TODO REMOVE
     }
 
     @And("he gives a down payment of {string}")
@@ -218,11 +207,6 @@ public class SalePageCucumberSteps {
 //        System.out.println("####");
     }  //TODO TO Remove
 
-    @And("he check the option price sole trader {string}")
-    public void heCheckTheOptionPriceSoleTraderOptionPrice(String optionPrice) {
-        salePage.getFinancesServicesComponent().checkP(optionPrice); //TODO REFACTOR DELETE
-    }
-
     @And("he accepts the Fuel Card Edenred {string}")
     public void heAcceptsTheFuelCardEdenRed(String choice) {
         salePage.getFinancesServicesComponent().acceptFuelCardEdenRed(choice);
@@ -237,5 +221,10 @@ public class SalePageCucumberSteps {
     public void heSetsTheProductType(String product) {
         salePage.getProductComponent().setProduct(product);
     }
-//    TODO REMOVE this method
+
+    @Then("he sends the credit request")
+    public void heSendTheCreditRequest() {
+        salePage.getFinancesServicesComponent().clickOnCreditRequest();
+        salePage.getFinancesServicesComponent().clickOnSendCreditRequest();
+    }
 }
