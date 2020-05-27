@@ -30,5 +30,5 @@ Feature: Quotation Duplication with an existing Customer France(change of durati
     And he log out
 # retirer tous les index tyreIndex, tyreNumberIndex
     Examples:
-      | car manufacturer| model   | car type                             | color                  | upholstery          |option         |option2                              | customer Name  | product_type        | duration | distance   |tyreIndex | tyreName     | tyreNumberIndex|tyreNumber |
-      | Toyota          | COROLLA | Hybride 122h Dynamic Business (2020) | Black metallic paint   | Sellerie tissu Noir |Metallic paint | Front radar parking distance sensors|2BDEVELOPPEMENT | KINTO ONE DECALAGE  |60        | 120000     |     0    | Summer Tires |      0         |      4    |
+      | car manufacturer| model   | car type                             | color                  | upholstery          |option         |option2                              | customer Name  | product_type        | duration | distance   |tyreIndex | tyreName     | tyreNumber |
+      | Toyota          | COROLLA | Hybride 122h Dynamic Business (2020) | Black metallic paint   | Sellerie tissu Noir |Metallic paint | Front radar parking distance sensors|2BDEVELOPPEMENT | KINTO ONE DECALAGE  |60        | 120000     |     0    | Summer Tires |       4    |
