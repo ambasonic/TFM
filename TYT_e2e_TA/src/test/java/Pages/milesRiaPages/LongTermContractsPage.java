@@ -19,6 +19,7 @@ public class LongTermContractsPage extends ReusableViewElements {
     private final By DiSTANCE = By.name("A1339");
     private final String DELIVER = "//img[contains(@src,'"+currentProperties.getCurrentCountryIP()+"milesria/resource/skins/MRI/images/Sofico/16/action.png')]";
     private final By CONTRACT_INITIATION = By.id("grid_WorkList_Activities_Tree_2_valueCell0");
+    private final By NEW_DOCUMENT = By.xpath("//img[contains(@src,'"+currentProperties.getCurrentCountryIP()+"milesria/resource/skins/MRI/images/Sofico/24/document.png')]");
     private final By CLOSE = By.className("buttonRounded");
     private final String location_text_Italy = "Via Verdi  1\n" +
             "20018 SEDRIANO\n" +
@@ -28,7 +29,10 @@ public class LongTermContractsPage extends ReusableViewElements {
     private final By REQUESTED_LOCATION =  By.name("A2725");
     private final By Vehicle_Receipt_By = By.name("R678");
     private final By Status = By.name("A953");
-
+    private final String DOCUMENT_START = "grid_DocumentTemplate_1_valueCell"; //1 - 9
+    private final By NEXT = By.xpath("//img[contains(@src,'"+currentProperties.getCurrentCountryIP()+"milesria/resource/skins/MRI/images/Sofico/24/right.png')]");
+    private final By PREVIEW = By.xpath("//img[contains(@src,'"+currentProperties.getCurrentCountryIP()+"milesria/resource/skins/MRI/images/Sofico/16/eye.png?')]");
+    private final By BACK = By.xpath("//img[contains(@src,'"+currentProperties.getCurrentCountryIP()+"milesria/resource/skins/MRI/images/Sofico/16/left.png')] ");
 
     public VehicleMRComponent getVehicleMRComponent(){
         return new VehicleMRComponent(getDriver());
@@ -116,5 +120,25 @@ public class LongTermContractsPage extends ReusableViewElements {
     public void checkStatus(String status) {
         String text = element(Status).getText();
         Assert.assertEquals("The status is not "+status, status.toLowerCase(), text.toLowerCase());
+    }
+
+    public void openNewDocument() {
+        waitABit(1000);
+        element(NEW_DOCUMENT).click();
+    }
+
+    public void selectsDocument() {
+        waitABit(1000);
+        for (int i = 1; i < 10; i++) {
+            String item = DOCUMENT_START + i;
+            element(By.id(item)).click();
+            waitABit(500);
+            element(NEXT).click();
+            waitABit(3000);
+            element(PREVIEW).click();
+            waitABit(3000);
+            element(BACK).click();
+            waitABit(2000);
+        }
     }
 }

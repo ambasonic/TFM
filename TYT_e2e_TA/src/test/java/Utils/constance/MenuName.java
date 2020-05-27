@@ -2,7 +2,7 @@ package Utils.constance;
 
 public enum MenuName {
     QUOTES("Quotes"),
-    LONG_TERM_CONTRACTS("Long Term Contracts");
+    LONG_TERM_CONTRACTS("Long");
 
     private final String menuName;
 

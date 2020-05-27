@@ -43,6 +43,7 @@ public class FinancesServicesComponent extends ReusableViewElements {
     private final By SELECTIONS_TABLE = By.id("quote:selopt:tbody_element");
     private final By CREDIT_REQUEST = By.id("quote:retailfinanceSummary:order");
     private final By SEND_CREDIT_REQUEST = By.id("orderQuote:quote:j_idt768");
+    private final By SUBMIT = By.id("prospectdetail:submitbtn");
 
     public FinancesServicesComponent(WebDriver driver) {
         super(driver);
@@ -201,6 +202,11 @@ public class FinancesServicesComponent extends ReusableViewElements {
 
     public void clickOnSendCreditRequest() {
         element(SEND_CREDIT_REQUEST).click();
+        waitABit(2000);
+    }
+
+    public void submitRequest() {
+        element(SUBMIT).click();
         waitABit(2000);
     }
 }

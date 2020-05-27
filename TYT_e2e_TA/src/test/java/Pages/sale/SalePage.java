@@ -4,9 +4,12 @@ import Components.header.TopBarComponent;
 import Components.sale.FinancesServicesComponent;
 import Components.sale.*;
 import Pages.ReusableViewElements;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
 public class SalePage extends ReusableViewElements {
+
+    private final By PRINT_DOCUMENT = By.id("stips:printbtn");
 
     public VehicleComponent getVehicleComponent() { return new VehicleComponent(getDriver()); }
     public OptionsComponent getOptionsComponent(){
@@ -24,4 +27,8 @@ public class SalePage extends ReusableViewElements {
     }
 
 
+    public void printDocument() {
+        element(PRINT_DOCUMENT).click();
+        waitABit(1000);
+    }
 }

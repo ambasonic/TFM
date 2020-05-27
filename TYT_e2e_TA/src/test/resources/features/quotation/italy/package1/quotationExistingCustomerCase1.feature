@@ -27,8 +27,10 @@ Feature: Quotation Template with an existing Customer Italy
     Then he calculates the quote
     And he saved it
     Then he sends the credit request
-    And he log out
+    And he accepts the prospect agreement
+    Then he prints documents
+#    And he log out
 
     Examples:
       | car manufacturer| model | car type                                 | color                    | upholstery       |accessories    | customer Name | duration | distance | paymentIndex | paymentMethod                                          |
-      | Toyota          | Yaris | 1.5 Hybrid Lounge Red/Bronze MY19 (2019) | Red Mica&Black metallic  | Cloth black/grey | lojack classic| BOMI          | 48       | 80000    | 1            |TFM2_Delivery cost direct/broker from dealer to customer|
+      | Toyota          | Yaris | 1.5 Hybrid Lounge Red/Bronze MY19 (2019) | Red Mica&Black metallic  | Cloth black/grey | lojack classic| Cifelli       | 48       | 80000    | 1            |TFM2_Delivery cost direct/broker from dealer to customer|

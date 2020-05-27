@@ -89,4 +89,12 @@ public class LongTermContractsMRSteps {
     public void checkTheStatus(String status) {
         longTermContractsPage.checkStatus(status);
     }
+
+    public void openNewDocument() {
+        longTermContractsPage.openNewDocument();
+    }
+
+    public void selectsDocument() {
+        longTermContractsPage.selectsDocument();
+    }
 }

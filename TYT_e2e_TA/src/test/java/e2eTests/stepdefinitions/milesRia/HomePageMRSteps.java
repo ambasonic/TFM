@@ -8,12 +8,12 @@ public class HomePageMRSteps {
     MilesRiaHomePage milesRiaHomePage;
 
     @Step("The dealer select quotes in quick access")
-    public void selectQuotesInQuickAccess(String menuName) {
+    public void selectItemInQuickAccess(String menuName) {
         milesRiaHomePage.getMilesRiaTopHeaderComponent().setQuickAccessMenu(menuName);
     }
 
     @Step("The dealer search the quoteId: {0}")
-    public void searchQuote(String quoteId) {
-        milesRiaHomePage.getMilesRiaTopHeaderComponent().searchQuote(quoteId);
+    public void searchItem(String item) {
+        milesRiaHomePage.getMilesRiaTopHeaderComponent().searchQuote(item);
     }
 }

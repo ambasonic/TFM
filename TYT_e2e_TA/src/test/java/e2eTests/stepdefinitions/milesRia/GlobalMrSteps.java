@@ -27,4 +27,5 @@ public class GlobalMrSteps {
     public void clickOnNewInvoice() {
         topBarTabs.clickOnNewInvoice();
     }
+
 }

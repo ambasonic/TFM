@@ -90,4 +90,14 @@ public class LongTermContractsMRCucumberSteps extends TestData {
         longTermContractsMRSteps.checkTheStatus(status);
 
     }
+
+    @Then("he creates a new document")
+    public void heCreatesANewDocument() {
+        longTermContractsMRSteps.openNewDocument();
+    }
+
+    @And("selects document")
+    public void selectsDocument() {
+        longTermContractsMRSteps.selectsDocument();
+    }
 }

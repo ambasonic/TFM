@@ -226,5 +226,11 @@ public class SalePageCucumberSteps {
     public void heSendTheCreditRequest() {
         salePage.getFinancesServicesComponent().clickOnCreditRequest();
         salePage.getFinancesServicesComponent().clickOnSendCreditRequest();
+        salePage.getFinancesServicesComponent().submitRequest();
+    }
+
+    @Then("he prints documents")
+    public void hePrintsDocuments() {
+        salePage.printDocument();
     }
 }

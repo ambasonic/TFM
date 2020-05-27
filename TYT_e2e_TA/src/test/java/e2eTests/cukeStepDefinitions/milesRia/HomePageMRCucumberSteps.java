@@ -1,9 +1,11 @@
 package e2eTests.cukeStepDefinitions.milesRia;
 
 import e2eTests.stepdefinitions.milesRia.HomePageMRSteps;
+import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import net.thucydides.core.annotations.Steps;
 
+import static Utils.constance.MenuName.LONG_TERM_CONTRACTS;
 import static Utils.constance.MenuName.QUOTES;
 
 public class HomePageMRCucumberSteps {
@@ -14,7 +16,13 @@ public class HomePageMRCucumberSteps {
 
     @Given("he search a quote {string}")
     public void he_search_a_quote(String quoteId) {
-        homePageMRSteps.selectQuotesInQuickAccess(QUOTES.getName());
-        homePageMRSteps.searchQuote(quoteId);
+        homePageMRSteps.selectItemInQuickAccess(QUOTES.getName());
+        homePageMRSteps.searchItem(quoteId);
+    }
+
+    @And("he search a long term contract {string}")
+    public void heSearchALongTermContractQuoteID(String ltc) {
+        homePageMRSteps.selectItemInQuickAccess(LONG_TERM_CONTRACTS.getName());
+        homePageMRSteps.searchItem(ltc);
     }
 }
