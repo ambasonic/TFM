@@ -33,4 +33,4 @@ Feature: Quotation Template with an Existing Sole Trader France including Downpa
 
     Examples:
       | car manufacturer| model         | car type                           | color                      | upholstery       |option               |customer Name  | product_type       | duration | distance  |tyreIndex | tyreName        |tyreNumber |
-      | Toyota          | YARIS HYBRIDE | 1.5 VVT-I HYBRID Collection (2019) | Two-tone Pearl White/Black |Cloth Black/White |Rear parking sensors |COCCINELLE     | KINTO ONE DECALAGE |48        | 80000     |     2    | 4-Seasons Tires |     4     |
+      | Toyota          | YARIS HYBRIDE | 1.5 VVT-I HYBRID Collection (2019) | Two-tone Pearl White/Black |Cloth Black/White |Rear parking sensors |COCCINELLE     | KINTO ONE DECALAGE |48        | 80git000     |     2    | 4-Seasons Tires |     4     |
