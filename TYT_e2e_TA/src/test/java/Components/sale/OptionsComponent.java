@@ -37,8 +37,11 @@ public class OptionsComponent extends ReusableViewElements {
                 .stream()
                 .filter(c -> c.find(By.tagName("td")).getText().equalsIgnoreCase(colorName))
                 .collect(Collectors.toList());
-        assertFalse("The color name: "+colorName+" is unknown", anchors.size()!=1);
+//        assertFalse("The color name: "+colorName+" is unknown", anchors.size()!=1);
+        scrollToPosition(0,500);
+        waitABit(750);
         anchors.get(0).click();
+        waitABit(500);
     }
 
     public void setCarUpholsteryByText(String upholstery) {
