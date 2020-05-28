@@ -33,7 +33,7 @@ Feature: Quotation Template with a New Customer Italy including Relief Vehicle a
     And he gives the email '<email>'
     And he gives the date of birth '<birthDate>'
     And he go to the next page
-    Then he accepts the prospect agreement
+    Then he accepts the prospect agreement 'Geo-Localization', 'Marketing purposes','Surveys'
     And he go to the next page
     And he selects the first <paymentIndex> payment '<paymentMethod>'
     And he accepts the Fuel Card Edenred '<Fuel Card EdenRed>'

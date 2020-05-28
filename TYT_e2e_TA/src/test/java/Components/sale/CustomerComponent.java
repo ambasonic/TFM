@@ -23,6 +23,7 @@ public class CustomerComponent extends ReusableViewElements {
 //    ex GDPR "//*[contains(text(),'Geo-Localization')]";
     private final String GDPR_start = "//*[contains(text(),'";
     private final String GDPR_end = "')]";
+    private final By SAVE_BUTTON = By.xpath("//*[@id='quote:save-confirmButton']");
 
     public CustomerComponent(WebDriver driver) {
         super(driver);
@@ -55,7 +56,8 @@ public class CustomerComponent extends ReusableViewElements {
     public void acceptProspectAgreement(String ... agreements) {
         waitABit(1000);
         if(currentProperties.getCurrentCountry().equalsIgnoreCase("france")){
-            element(By.xpath(" //*[@id='quote:save-confirmButton']")).click();
+            element(SAVE_BUTTON).click();
+            return;
         }else if(currentProperties.getCurrentCountry().equalsIgnoreCase("italy")){
             waitABit(1000);
             for (String item: agreements) {
@@ -65,7 +67,7 @@ public class CustomerComponent extends ReusableViewElements {
         waitABit(2000);
 //
         try {
-            element(By.xpath("//*[@id='quote:save-confirmButton']")).click();
+            element(SAVE_BUTTON).click();
         } catch (ElementShouldBeEnabledException e){
             element(By.id("prospectdetail:submit-confirmButton")).click();
         }

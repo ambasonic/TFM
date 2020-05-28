@@ -238,4 +238,9 @@ public class SalePageCucumberSteps {
     public void hePrintsTheDocument() {
         salePage.getFinancesServicesComponent().clickOnPrint();
     }
+
+    @Then("he accepts the prospect agreement")
+    public void heAcceptsTheProspectAgreement() {
+        salePageSteps.acceptProspectAgreement();
+    }
 }
