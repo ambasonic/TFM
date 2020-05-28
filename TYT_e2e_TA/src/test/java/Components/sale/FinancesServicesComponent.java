@@ -43,6 +43,8 @@ public class FinancesServicesComponent extends ReusableViewElements {
     private final By SELECTIONS_TABLE = By.id("quote:selopt:tbody_element");
     private final By CREDIT_REQUEST = By.id("quote:retailfinanceSummary:order");
     private final By SEND_CREDIT_REQUEST = By.id("orderQuote:quote:j_idt768");
+    private final By VEHICLE_NUMBER = By.id("quote:retailfinanceSummary:nr_of_vehicles_input");
+    private final By SUBMIT = By.id("prospectdetail:submitbtn");
 
     public FinancesServicesComponent(WebDriver driver) {
         super(driver);
@@ -202,5 +204,25 @@ public class FinancesServicesComponent extends ReusableViewElements {
     public void clickOnSendCreditRequest() {
         element(SEND_CREDIT_REQUEST).click();
         waitABit(2000);
+    }
+
+    public void setVehicleNumber(int number) {
+        scrollToPosition(0,0);
+        waitABit(1000);
+        element(VEHICLE_NUMBER).clear();
+        element(VEHICLE_NUMBER).sendKeys(String.valueOf(number));
+        waitABit(500);
+    }
+
+    public void submit(){
+        element(SUBMIT).click();
+        waitABit(2000);
+    }
+
+    public void clickOnPrint() {
+        element(By.id("stips:printbtn")).click();
+        waitABit(1000);
+        element(By.cssSelector("#printdocument > table > tbody > tr:nth-child(2) > td > div > a")).click();
+        waitABit(100);
     }
 }

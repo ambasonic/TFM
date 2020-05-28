@@ -2,6 +2,7 @@ package Components.sale;
 
 import Pages.ReusableViewElements;
 import net.serenitybdd.core.pages.WebElementFacade;
+import net.thucydides.core.webdriver.exceptions.ElementShouldBeEnabledException;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -19,6 +20,9 @@ public class CustomerComponent extends ReusableViewElements {
     private final By MODIFY_CUSTOMER_NEW_FR = By.id("quote:j_idt945");
     private final By PROSPECT_DATA_TABLE = By.id("prospectdata:prospectlistTable_data");
     private final By PROSPECT_NAME = By.id("quote:prospectname");
+//    ex GDPR "//*[contains(text(),'Geo-Localization')]";
+    private final String GDPR_start = "//*[contains(text(),'";
+    private final String GDPR_end = "')]";
 
     public CustomerComponent(WebDriver driver) {
         super(driver);
@@ -48,16 +52,22 @@ public class CustomerComponent extends ReusableViewElements {
         waitABit(500);
     }
 
-    public void acceptProspectAgreement() {
+    public void acceptProspectAgreement(String ... agreements) {
         waitABit(1000);
         if(currentProperties.getCurrentCountry().equalsIgnoreCase("france")){
             element(By.xpath(" //*[@id='quote:save-confirmButton']")).click();
         }else if(currentProperties.getCurrentCountry().equalsIgnoreCase("italy")){
             waitABit(1000);
-            element(By.xpath("//*[@id='quote:j_idt3748:0:j_idt3749']/div[2]")).click();
-            element(By.xpath("//*[@id='quote:j_idt3748:1:j_idt3749']/div[2]")).click();
-            waitABit(1000);
-            element(By.xpath(" //*[@id='quote:save-confirmButton']")).click();
+            for (String item: agreements) {
+                findAll(GDPR_start +item+GDPR_end).get(0).click();
+            }
+        }
+        waitABit(2000);
+//
+        try {
+            element(By.xpath("//*[@id='quote:save-confirmButton']")).click();
+        } catch (ElementShouldBeEnabledException e){
+            element(By.id("prospectdetail:submit-confirmButton")).click();
         }
         waitABit(1000);
     }
