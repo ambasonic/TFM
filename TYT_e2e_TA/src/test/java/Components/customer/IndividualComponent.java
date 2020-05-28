@@ -1,10 +1,17 @@
 package Components.customer;
 
 import Pages.ReusableViewElements;
+import net.serenitybdd.core.pages.WebElementFacade;
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+
+import java.util.List;
+import java.util.stream.Collectors;
+
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.fail;
 
 public class IndividualComponent extends ReusableViewElements {
 
@@ -17,7 +24,11 @@ public class IndividualComponent extends ReusableViewElements {
     private final By country = By.id ("prospectdetail:prospectView:main:bpPrimaryAddress:country_label");
     private final By saveBtn = By.id("prospectdetail:saveButton");
     private final By TITLE = By.id("quote:prospectdetail:prospectView:main:common_contact_prvt_label");
+    private final By TITLE_ITEMS = By.id("quote:prospectdetail:prospectView:main:common_contact_prvt_items");
     private final By TITLE_Dr = By.id("quote:prospectdetail:prospectView:main:common_contact_prvt_1");
+    private final By TITLE_Mr = By.id("quote:prospectdetail:prospectView:main:common_contact_prvt_1");
+    private final By TITLE_Mrs = By.id("quote:prospectdetail:prospectView:main:common_contact_prvt_2");
+    private final By ESTABLISHMENT_DATE = By.id("quote:prospectdetail:prospectView:main:businessAddress:establishmentdate_input");
     private final By SURNAME = By.id("quote:prospectdetail:prospectView:main:contact_lname_prvt");
     private final By LAST_NAME = By.id("quote:prospectdetail:prospectView:main:contact_fname_prvt");
     private final By Email = By.id("quote:prospectdetail:prospectView:main:contactemail_prvt");
@@ -36,41 +47,59 @@ public class IndividualComponent extends ReusableViewElements {
 
     public void setStreetName(String street_Name){
         element(STREET_NAME).sendKeys(street_Name);
-        waitABit(2000);
+        waitABit(1000);
+    }
+
+    public void setEstablishmentDate(String date){
+        element(ESTABLISHMENT_DATE).sendKeys(date);
+        waitABit(1000);
     }
 
     public void setStreetNumber(String number){
         element(STREET_NUMBER).sendKeys(number);
-        waitABit(2000);
+        waitABit(1000);
     }
 
     public void setZipCode(String zip_code){
         element(ZIP_CODE).sendKeys(zip_code);
-        waitABit(2000);
+        waitABit(1000);
     }
 
     public void setCity (String theCity){
         element(CITY).sendKeys(theCity);
-        waitABit(2000);
+        waitABit(1000);
     }
 
     public void setPhoneNumber(String phone_Number){
         element(PHONE_NUMBER).sendKeys(phone_Number);
-        waitABit(2000);
+        waitABit(1000);
     }
 
     public void save() {
         element(saveBtn).click();
     }
 
-    public void setTitle(String title) {
-
+    public void setTitleByText(String title){
+        WebElementFacade elementFacade = find(TITLE_ITEMS);
+        List<WebElement> anchors = elementFacade.findElements(By.tagName("li"));
+//                .stream()
+//                .filter(c -> c.getText().equalsIgnoreCase(title))
+//                .collect(Collectors.toList());
+        String s = anchors.get(0).getText();
+        assertFalse("The title: "+title+" is unknown", anchors.size()!=1);
+        anchors.get(0).click();
+    }
+    public void setTitle(String title) { //TODO select by text
         element(TITLE).click();
         waitABit(500);
         switch (title){
             case "Dr" : element(TITLE_Dr).click();
                 break;
-            default:
+            case "Mr" : element(TITLE_Mr).click();
+                break;
+            case "Mrs" : element(TITLE_Mrs).click();
+                break;
+            default: fail("Unknown Title: "+title);
         }
         waitABit(1000);
     }

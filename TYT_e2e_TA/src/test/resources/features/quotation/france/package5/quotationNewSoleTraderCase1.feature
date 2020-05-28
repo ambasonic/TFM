@@ -22,6 +22,7 @@ Feature: Quotation Template with a New Sole Trader France including Downpayment
     And navigate to organization <position>
     And he selects the legal entity '<legal entity>'
     And he sets a company name
+    And he sets the establishment date to '28/05/2020'
     And he gives the street name '<street_name>'
     And he gives the street number '<street_number>'
     And he gives the zip code '<zip_code>'

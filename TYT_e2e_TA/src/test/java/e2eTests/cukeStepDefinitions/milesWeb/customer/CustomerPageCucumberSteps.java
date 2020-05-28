@@ -143,4 +143,9 @@ public class CustomerPageCucumberSteps extends TestData {
     public void heGivesTheDateOfBirth(String birthDate) {
         customerPage.getOrganizationComponent().setBirthDate(birthDate);
     }
+
+    @And("he sets the establishment date to {string}")
+    public void heSetsTheEstablishmentDateTo(String date) {
+        customerPage.getIndividualComponent().setEstablishmentDate(date);
+    }
 }
