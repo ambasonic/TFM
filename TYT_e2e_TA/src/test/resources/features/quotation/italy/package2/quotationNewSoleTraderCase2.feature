@@ -41,9 +41,8 @@ Feature: Quotation Template with an existing Customer Italy
     And he sets relief vehicle to '<relief_vehicle>'
     And he set the insurance type '<insurance>'
     Then he calculates the quote
-#    And he check the lease price '<leasePrice>'
-#    And he check the service price '<servicePrice>'
-#    And he check the total price '<totalPrice>'
+    And he sets the number of vehicle to 2
+    Then he calculates the quote
     And he checks the selected option price '<accessories>' '<accessoriesPrice>'
     And he checks the selected option price '<optionPack>' '<optionPackPrice>'
     And he saved it

@@ -72,8 +72,8 @@ public class SalePageSteps {
         salePage.getCustomerComponent().selectOrganization();
     }
 
-    public void acceptProspectAgreement() {
-        salePage.getCustomerComponent().acceptProspectAgreement();
+    public void acceptProspectAgreement(String ... agreements) {
+        salePage.getCustomerComponent().acceptProspectAgreement(agreements);
     }
 
     @Step("The dealer click on the burger menu Kinto one")

@@ -80,9 +80,9 @@ public class SalePageCucumberSteps {
         salePageSteps.selectOrganization();
     }
 
-    @Then("he accepts the prospect agreement")
-    public void he_accepts_the_prospect_agreement() {
-        salePageSteps.acceptProspectAgreement();
+    @Then("he accepts the prospect agreement {string}, {string},{string}")
+    public void he_accepts_the_prospect_agreement(String gdpr1, String gdpr2, String gdpr3) {
+        salePageSteps.acceptProspectAgreement(gdpr1, gdpr2,gdpr3);
 
     }
 
@@ -226,11 +226,16 @@ public class SalePageCucumberSteps {
     public void heSendTheCreditRequest() {
         salePage.getFinancesServicesComponent().clickOnCreditRequest();
         salePage.getFinancesServicesComponent().clickOnSendCreditRequest();
-        salePage.getFinancesServicesComponent().submitRequest();
+        salePage.getFinancesServicesComponent().submit();
     }
 
-    @Then("he prints documents")
-    public void hePrintsDocuments() {
-        salePage.printDocument();
+    @And("he sets the number of vehicle to {int}")
+    public void heSetsTheNumberOfVehicleTo(int number) {
+        salePage.getFinancesServicesComponent().setVehicleNumber(number);
+    }
+
+    @And("he prints the document")
+    public void hePrintsTheDocument() {
+        salePage.getFinancesServicesComponent().clickOnPrint();
     }
 }

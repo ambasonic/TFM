@@ -19,7 +19,7 @@ Feature: Quotation Template with an existing Customer Italy
     And he go to the next page
     Then he search the customer by name '<customer Name>'
     And he go to the next page
-    Then he accepts the prospect agreement
+    Then he accepts the prospect agreement 'Geo-Localization', 'Marketing purposes','Surveys'
     And he go to the next page
     And he updates the duration <duration>
     And he updates the distance <distance>
@@ -27,9 +27,10 @@ Feature: Quotation Template with an existing Customer Italy
     Then he calculates the quote
     And he saved it
     Then he sends the credit request
-    And he accepts the prospect agreement
-    Then he prints documents
+    Then he accepts the prospect agreement 'Geo-Localization', 'Marketing purposes','Surveys'
+    And he prints the document
 #    And he log out
+
 
     Examples:
       | car manufacturer| model | car type                                 | color                    | upholstery       |accessories    | customer Name | duration | distance | paymentIndex | paymentMethod                                          |
