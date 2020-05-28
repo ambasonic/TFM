@@ -243,4 +243,5 @@ public class SalePageCucumberSteps {
     public void heAcceptsTheProspectAgreement() {
         salePageSteps.acceptProspectAgreement();
     }
+
 }
