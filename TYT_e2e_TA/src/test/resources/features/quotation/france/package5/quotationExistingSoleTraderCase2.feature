@@ -1,8 +1,9 @@
 # new feature
 # Tags: optional
+
 @france
-@pck4case6
-Feature: Quotation Template with an existing Customer France including relief vehicle
+@pck5case2
+Feature: Quotation Template with an Existing Sole Trader France including Downpayment and relief vehicle
 
   Scenario Outline: quotation
     Given The dealer open the MilesWeb backoffice 'FRANCE'
@@ -29,7 +30,7 @@ Feature: Quotation Template with an existing Customer France including relief ve
     Then he calculates the quote
     And he saved it
     And he log out
-# retirer tous les index tyreIndex, tyreNumberIndex
+
     Examples:
-      | car manufacturer| model   | car type                | color                   | upholstery                                                             |option            | customer Name  | product_type  | duration | distance  |tyreIndex | tyreName        |tyreNumber |
-      | Toyota          | AYGO    | 1.0 VVT-i x-play (2019) | Red Chilien gloss paint | Cloth upholstery Dark Grey with bi-toned bolsters white and light grey |Chilien Red paint |2BDEVELOPPEMENT | KINTO ONE     |90        | 48000     |     2    | 4-Seasons Tires |     4     |
+      | car manufacturer| model         | car type                           | color                      | upholstery       |option               |customer Name  | product_type       | duration | distance  |tyreIndex | tyreName        |tyreNumber |
+      | Toyota          | YARIS HYBRIDE | 1.5 VVT-I HYBRID Collection (2019) | Two-tone Pearl White/Black |Cloth Black/White |Rear parking sensors |COCCINELLE     | KINTO ONE DECALAGE |48        | 80000     |     2    | 4-Seasons Tires |     4     |

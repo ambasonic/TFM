@@ -38,7 +38,7 @@ Feature: Quotation Template with a New Customer France including relief vehicle 
     And he updates the duration <duration>
     And he updates the distance <distance>
     And he selects the tyre type <tyreIndex> '<tyreName>'
-    And he adds at index 0 '<tyreNumber>' tires
+    And he adds at index 2 '<tyreNumber>' tires
     Then he calculates the quote
     And he saved it
     And he log out
