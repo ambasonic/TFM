@@ -9,6 +9,7 @@ Feature: Quotation Template with an existing Private Customer Italy including Do
     And he login
     Then he can see the dealer home page
     When he selects a new quotation
+    Then he sets the customer as 'Private'
     ## TODO from here select the type ---> 'Private' instead of 'Company' as has been doing so far
     And he selects a vehicle '<car manufacturer>'
     And he selects a model '<model>'
