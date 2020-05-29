@@ -29,7 +29,7 @@ public class OrganizationComponent extends ReusableViewElements {
     private final String legaly_entity = "prospectdetail:prospectView:main:legalentity_";
     private final By saveBtn = By.id("prospectdetail:saveButton");
     private final By TITLE = By.id("quote:prospectdetail:prospectView:main:primaryContact:common_contact");
-    private final By TITLE_items = By.id("quote:prospectdetail:prospectView:main:primaryContact:common_contact");
+    private final By TITLE_items = By.id("quote:prospectdetail:prospectView:main:primaryContact:common_contact_items");
     private final By TITLE_Dr = By.id("quote:prospectdetail:prospectView:main:primaryContact:common_contact_1");
     private final By TITLE_Mr = By.id("quote:prospectdetail:prospectView:main:primaryContact:common_contact_1");
     private final By SURNAME = By.id("quote:prospectdetail:prospectView:main:primaryContact:contact_lname");
@@ -120,7 +120,7 @@ public class OrganizationComponent extends ReusableViewElements {
 
     public void setTitleByText(String title){
         element(TITLE).click();
-        WebElementFacade elementFacade = find(TITLE);
+        WebElementFacade elementFacade = find(TITLE_items);
         List<WebElement> anchors = elementFacade.findElements(By.tagName("li"))
                 .stream()
                 .filter(c -> c.getAttribute("textContent").equalsIgnoreCase(title))

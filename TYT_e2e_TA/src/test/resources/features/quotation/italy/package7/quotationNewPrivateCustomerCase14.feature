@@ -23,7 +23,6 @@ Feature: Quotation Template with a new private Customer Italy including Downpaym
     And he selects the accessories '<accessories2>'
     And he go to the next page
     Then he can create a new customer
-    ##TODO ici c est different, il faut regarder
     And he gives the street name '<street_name>'
     And he gives the street number '<street_number>'
     And he gives the zip code '<zip_code>'
