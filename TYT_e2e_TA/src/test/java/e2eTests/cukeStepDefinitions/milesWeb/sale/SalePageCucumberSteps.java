@@ -244,4 +244,9 @@ public class SalePageCucumberSteps {
         salePageSteps.acceptProspectAgreement();
     }
 
+    @Then("he sets the customer as {string}")
+    public void heSetsTheCustomerAsPrivate(String customerType) {
+        salePageSteps.selectCustomerType(customerType);
+    }
+
 }

@@ -176,5 +176,8 @@ public class SalePageSteps {
         salePage.getCustomerComponent().clickOnNewCustomer();
     }
 
+    public void selectCustomerType(String customerType) {
+        salePage.getVehicleComponent().setCustomerType(customerType);
+    }
 }
 
