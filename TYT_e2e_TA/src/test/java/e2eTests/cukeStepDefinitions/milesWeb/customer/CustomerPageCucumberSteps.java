@@ -21,12 +21,12 @@ public class CustomerPageCucumberSteps extends TestData {
 
     @And("he gives a company name in the company form")
     public void he_gives_a_company_name_in_the_company_form() {
-        customerPageSteps.setCompany(getNameWithNumeric());
+        customerPageSteps.setCompany(getNameWithNumeric("Testaumation"));
     }
 
     @And("he sets a company name")
     public void setCompany() {
-        customerPage.getIndividualComponent().setCompany(getNameWithNumeric());
+        customerPage.getIndividualComponent().setCompany(getNameWithNumeric("Testaumation"));
     }
 
     @And("he gives the street name {string} in the contact data form")
@@ -96,11 +96,11 @@ public class CustomerPageCucumberSteps extends TestData {
 
     @And("he go to contact person and selects the title {string}")
     public void heGoToContactPersonAndSelectsTheTitleTitle(String title) {
-        customerPage.getOrganizationComponent().setTitle(title);
+        customerPage.getOrganizationComponent().setTitleByText(title);
     }
     @And("he select the contact person title {string}")
     public void selectTitle(String title) {
-        customerPage.getIndividualComponent().setTitle(title);
+        customerPage.getIndividualComponent().setTitleByText(title);
     }
 
     @And("he click on the button save")
@@ -117,7 +117,7 @@ public class CustomerPageCucumberSteps extends TestData {
 
     @And("he sets the surname {string}")
     public void setTheSurname(String surname) {
-        customerPage.getIndividualComponent().setSurname(surname);
+        customerPage.getIndividualComponent().setSurname(getNameWithNumeric(surname));
     }
 
     @And("he gives the first name {string}")

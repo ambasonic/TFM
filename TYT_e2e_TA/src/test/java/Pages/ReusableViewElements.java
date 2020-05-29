@@ -26,7 +26,7 @@ public class ReusableViewElements extends PageObject {
         super(driver);
     }
     public static CurrentProperties currentProperties;
-    protected WebDriverWait webDriverWait= new WebDriverWait(getDriver(), 10);
+    protected WebDriverWait webDriverWait= new WebDriverWait(getDriver(), 7);
 
     public void openURL(String pageURL){
         getDriver().get(pageURL);

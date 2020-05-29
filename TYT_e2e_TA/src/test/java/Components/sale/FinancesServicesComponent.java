@@ -118,11 +118,11 @@ public class FinancesServicesComponent extends ReusableViewElements {
         waitABit(1000);
         element(INSURANCE_LABEL).click();
         switch (insuranceType){
-            case "Anti-Theft Lojack Abbonamento >34": element(INSURANCE_TYPE2).click();
+            case "Anti-Theft LoJack Abbonamento > 34 mesi": element(INSURANCE_TYPE2).click();
                 break;
-            case "Anti-Theft Lojack Abbonamento <=34": element(INSURANCE_TYPE1).click();
+            case "Anti-Theft LoJack Abbonamento <= 34 mesi": element(INSURANCE_TYPE1).click();
                 break;
-            default: fail("Unknown insurance type: "+insuranceType);
+            default: fail("Unknown insurance type found: "+insuranceType+" expected: Anti-Theft Lojack Abbonamento >34");
         }
         waitABit(500);
     }

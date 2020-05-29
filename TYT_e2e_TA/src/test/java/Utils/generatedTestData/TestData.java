@@ -93,10 +93,10 @@ public class TestData {
         return RandomStringUtils.randomNumeric(count);
     }
 
-    public String getNameWithNumeric(){
+    public String getNameWithNumeric(String name){
         Calendar calendar =  Calendar.getInstance();
         StringBuilder stringBuilder = new StringBuilder();
-        stringBuilder.append("Testautomation");
+        stringBuilder.append(name);
         stringBuilder.append(RandomStringUtils.randomAlphabetic(2).toUpperCase());
         stringBuilder.append(calendar.get(Calendar.MINUTE));
         stringBuilder.append(calendar.get(Calendar.MILLISECOND));
@@ -123,6 +123,6 @@ public class TestData {
         System.out.println(VinGeneratorUtils.getRandomVin());
         System.out.println();
         System.out.println("Random name with numeric");
-        System.out.println(testData.getNameWithNumeric());
+        System.out.println(testData.getNameWithNumeric("Testaumation"));
     }
 }
