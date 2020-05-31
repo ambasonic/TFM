@@ -1,6 +1,7 @@
 package Components.quotesMR;
 
 import Pages.ReusableViewElements;
+import net.serenitybdd.core.pages.WebElementFacade;
 import org.jetbrains.annotations.NotNull;
 import org.junit.rules.Timeout;
 import org.openqa.selenium.*;
@@ -38,11 +39,10 @@ public class VehicleOrderInfComponent extends ReusableViewElements {
     }
 
     public void setSupplier(String supplierName) {
-
-        Actions action = new Actions(getDriver());
-        action.sendKeys(Keys.TAB).build().perform();
         waitABit(1000);
-        action.sendKeys(Keys.TAB).build().perform();
+        WebElementFacade elementFacade = findAll(Supplier).get(1);
+        elementFacade.click();
+        Actions action = new Actions(getDriver());
         action.sendKeys(supplierName).build().perform();
         action.sendKeys(Keys.DOWN).build().perform();
         action.sendKeys(Keys.ENTER).build().perform();

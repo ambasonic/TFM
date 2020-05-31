@@ -119,6 +119,7 @@ public class LongTermContractsPage extends ReusableViewElements {
 
     public void checkStatus(String status) {
         String text = element(Status).getText();
+        String text1 = element(Status).getAttribute("value");
         Assert.assertEquals("The status is not "+status, status.toLowerCase(), text.toLowerCase());
     }
 

@@ -3,6 +3,7 @@ package Pages;
 
 import Utils.CurrentProperties;
 import net.serenitybdd.core.pages.PageObject;
+import net.serenitybdd.core.pages.WebElementFacade;
 import org.junit.Assert;
 import org.openqa.selenium.*;
 import org.openqa.selenium.support.ui.ExpectedCondition;
@@ -99,10 +100,25 @@ public class ReusableViewElements extends PageObject {
 
     public void sendKeysAfterStaleness(By elementBy, boolean cleartext, CharSequence... charSequences) {
         Boolean staleElement = true;
-        while(staleElement){
+        long startTime = System.currentTimeMillis();
+        while(staleElement && (System.currentTimeMillis()-startTime)< 5000){
             try{
                 if(cleartext) element(elementBy).clear();
                 element(elementBy).sendKeys(charSequences);
+                staleElement = false;
+
+            } catch(StaleElementReferenceException e){
+                staleElement = true;
+            }
+        }
+    }
+    public void sendKeysAfterStaleness(WebElementFacade we, boolean cleartext, CharSequence... charSequences) {
+        Boolean staleElement = true;
+        long startTime = System.currentTimeMillis();
+        while(staleElement && (System.currentTimeMillis()-startTime)< 5000){
+            try{
+                if(cleartext) we.clear();
+                we.sendKeys(charSequences);
                 staleElement = false;
 
             } catch(StaleElementReferenceException e){

@@ -9,7 +9,7 @@ public class VehicleMRComponent extends ReusableViewElements {
         super(driver);
     }
 
-    private final String vehicleImg = "//img[contains(@src,'"+ currentProperties.getCurrentCountryIP() +"resource/skins/MRI/images/Sofico/24/order.png')]";
+    private final String vehicleImg = "//img[contains(@src,'"+ currentProperties.getCurrentCountryIP() +"milesria/resource/skins/MRI/images/Sofico/24/order.png')]";
     private final String vehicleOrderLinks = "a.silkClickableLink";
 
     public void clickOnVehicle() {

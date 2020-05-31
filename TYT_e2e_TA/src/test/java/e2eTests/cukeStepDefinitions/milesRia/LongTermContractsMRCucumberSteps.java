@@ -40,7 +40,7 @@ public class LongTermContractsMRCucumberSteps extends TestData {
     public void heRegisteredTheVehiclePlates() {
         longTermContractsMRSteps.clickOnRegistrationAndDocuments();
         longTermContractsMRSteps.setVINNr(VinGeneratorUtils.getRandomVin());
-        longTermContractsMRSteps.registeredLicencePlate(getLicenceNumberFrance());
+        longTermContractsMRSteps.registeredLicencePlate();
         longTermContractsMRSteps.setRegistrationDate(getActualDate());
     }
 

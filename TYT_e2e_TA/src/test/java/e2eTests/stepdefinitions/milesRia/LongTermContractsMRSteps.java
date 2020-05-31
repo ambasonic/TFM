@@ -35,8 +35,8 @@ public class LongTermContractsMRSteps {
     }
 
     @Step("The dealer set the registration number")
-    public void registeredLicencePlate(String licenceNumber) {
-        longTermContractsPage.getVehicleUsagesMRComponent().registeredLicencePlate(licenceNumber);
+    public void registeredLicencePlate() {
+        longTermContractsPage.getVehicleUsagesMRComponent().registeredLicencePlate();
     }
 
     @Step("The dealer set the registration date")
