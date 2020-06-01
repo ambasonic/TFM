@@ -1,6 +1,7 @@
 # new feature
 # Tags: optional
-
+@italy
+@pck3
 Feature: Quote validation
 
   Scenario Outline: The dealer validates a quote in MilesRia
@@ -8,8 +9,8 @@ Feature: Quote validation
     And he login in MilesRia
     And he search a quote '<quoteID>'
     When he selects the credit score
-#    And he set the status to 'Completed' and the decision to 'Accepted'
-#    Then he generate the contract
+    And he set the status to 'Completed' and the decision to 'Accepted'
+    Then he generate the contract
     When he selects the resulting contract
     Then he can see the generated long term contract
     And he create a vehicle Order
@@ -33,9 +34,9 @@ Feature: Quote validation
     And he select the 'Express delivery' as delivery
     And he set the distance
     Then he deliver
-    And he checks the status 'Running'
+    And he checks the status 'Runnings'
 
 
     Examples:
       |quoteID   |
-      |001986/001|
+      |001984/001|

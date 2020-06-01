@@ -117,10 +117,9 @@ public class LongTermContractsPage extends ReusableViewElements {
         waitABit(1000);
     }
 
-    public void checkStatus(String status) {
-        String text = element(Status).getText();
-        String text1 = element(Status).getAttribute("value");
-        Assert.assertEquals("The status is not "+status, status.toLowerCase(), text.toLowerCase());
+    public void checkStatus(String expectedStatus) {
+        String  actualStatus= element(Status).getAttribute("value");
+        Assert.assertEquals("Status do not match", expectedStatus.toLowerCase(), actualStatus.toLowerCase());
     }
 
     public void openNewDocument() {
