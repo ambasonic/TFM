@@ -133,6 +133,9 @@ public class LongTermContractsPage extends ReusableViewElements {
         element(NEW_DOCUMENT).click();
     }
 
+    public void selectDocument(String docName) {
+        element(By.xpath("//*[contains(text(),'"+docName+"')]")).click();
+    }
 
     public void goToNextStep() {
         waitABit(500);

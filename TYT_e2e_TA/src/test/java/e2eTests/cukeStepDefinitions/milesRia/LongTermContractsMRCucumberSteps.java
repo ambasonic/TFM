@@ -79,7 +79,6 @@ public class LongTermContractsMRCucumberSteps extends TestData {
         longTermContractsMRSteps.clickOnContractInitiation();
     }
 
-
     @And("he reevaluates the contract and close the tab")
     public void heReevaluatesTheContractAndCloseTheTab() {
         longTermContractsMRSteps.reevaluatesContractAndCloseTheTab();
@@ -93,6 +92,11 @@ public class LongTermContractsMRCucumberSteps extends TestData {
     @Then("he creates a new document")
     public void heCreatesANewDocument() {
         longTermContractsMRSteps.openNewDocument();
+    }
+
+    @Then("he selects the document {string}")
+    public void selectDocument(String docName) {
+        longTermContractsMRSteps.selectDocument(docName);
     }
 
     @And("he goes to the next step")

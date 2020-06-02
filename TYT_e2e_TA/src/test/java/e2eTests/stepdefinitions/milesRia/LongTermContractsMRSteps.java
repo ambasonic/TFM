@@ -98,6 +98,11 @@ public class LongTermContractsMRSteps {
         longTermContractsPage.goToNextStep();
     }
 
+    public void selectDocument(String docName) {
+        longTermContractsPage.selectDocument(docName);
+    }
+
+
     public void clearAndSetEmailField(String email) {
         longTermContractsPage.clearAndSetEmailField(email);
     }
