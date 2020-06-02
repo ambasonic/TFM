@@ -100,4 +100,24 @@ public class LongTermContractsMRCucumberSteps extends TestData {
     public void selectsDocument() {
         longTermContractsMRSteps.selectsDocument();
     }
+
+    @Then("he sends  the document {string} per email {string}")
+    public void sendDocument(String docName, String email) {
+        longTermContractsMRSteps.sendDocument(docName, email);
+    }
+
+    @Then("he sends  the document {string} per email")
+    public void sendDocument(String docName) {
+        longTermContractsMRSteps.sendDocument(docName);
+    }
+
+    @Then("he sends  the TFM document {string} per email")
+    public void sendTFM_FR_Document(String docName) {
+        longTermContractsMRSteps.sendTFM_FR_Document(docName);
+    }
+
+    @Then("he sends  the TFMIT document {string} per email")
+    public void sendTFM_IT_Document(String docName) {
+        longTermContractsMRSteps.sendTFM_IT_Document(docName);
+    }
 }

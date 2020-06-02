@@ -8,8 +8,19 @@ Feature: Quote validation
     Given The dealer open the MilesRia backoffice 'FRANCE'
     And he login in MilesRia
     And he search a long term contract '20I00197'
-    Then he creates a new document
-    And selects document
+    When he creates a new document
+    Then he sends  the document 'Avoirs à recevoir non lettrés' per email 'armel.bouendeu@toyota-fs.com'
+    When he creates a new document
+    Then he sends  the document 'Recapitulatif pour commande' per email
+    When he creates a new document
+    Then he sends  the document 'Suivi dépôt de garantie' per email 'armel.bouendeu@toyota-fs.com'
+    When he creates a new document
+    Then he sends  the TFM document 'TFM_Contract' per email
+    When he creates a new document
+    Then he sends  the TFM document 'TFM_FondDossier' per email
+    When he creates a new document
+    Then he sends  the TFM document 'TFM_WelcomeLetter' per email
+#    And selects document
 
     Examples:
       |quoteID   |

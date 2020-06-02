@@ -103,6 +103,17 @@ public class TestData {
         return stringBuilder.toString();
     }
 
+    public static String unicodeEscaped(char ch) {
+        if (ch < 0x10) {
+            return "\\u000" + Integer.toHexString(ch);
+        } else if (ch < 0x100) {
+            return "\\u00" + Integer.toHexString(ch);
+        } else if (ch < 0x1000) {
+            return "\\u0" + Integer.toHexString(ch);
+        }
+        return "\\u" + Integer.toHexString(ch);
+    }
+
     public static void main(String[] args) {
 
         TestData testData = new TestData();
@@ -124,5 +135,14 @@ public class TestData {
         System.out.println();
         System.out.println("Random name with numeric");
         System.out.println(testData.getNameWithNumeric("Testaumation"));
+
+        String s = "à,â,ô";
+
+        String s1 = s.replaceAll("à", "\u00e0");
+        s.replaceAll("[â]","\u00e2");
+        s.replaceAll("Ô","o");
+
+        System.out.println("\u00e0");
+        // output : E,E,E,E,U,U,I,I,A,A,O,e,e,e,e,u,u,i,i,a,a,o
     }
 }

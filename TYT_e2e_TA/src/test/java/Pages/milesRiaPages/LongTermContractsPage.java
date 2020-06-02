@@ -7,9 +7,15 @@ import Pages.milesRiaTabs.TopBarTabs;
 import net.serenitybdd.core.pages.WebElementFacade;
 import org.junit.Assert;
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.interactions.Actions;
 
+import java.awt.event.KeyEvent;
+import java.nio.charset.StandardCharsets;
 import java.util.List;
+
+import static Utils.generatedTestData.TestData.unicodeEscaped;
 
 public class LongTermContractsPage extends ReusableViewElements {
 
@@ -31,7 +37,7 @@ public class LongTermContractsPage extends ReusableViewElements {
     private final By Status = By.name("A953");
     private final String DOCUMENT_START = "grid_DocumentTemplate_1_valueCell"; //1 - 9
     private final By NEXT = By.xpath("//img[contains(@src,'"+currentProperties.getCurrentCountryIP()+"milesria/resource/skins/MRI/images/Sofico/24/right.png')]");
-    private final By PREVIEW = By.xpath("//img[contains(@src,'"+currentProperties.getCurrentCountryIP()+"milesria/resource/skins/MRI/images/Sofico/16/eye.png?')]");
+    private final By SEND_EMAIL = By.xpath("//img[contains(@src,'"+currentProperties.getCurrentCountryIP()+"milesria/resource/skins/MRI/images/Sofico/16/send.png')]");
     private final By BACK = By.xpath("//img[contains(@src,'"+currentProperties.getCurrentCountryIP()+"milesria/resource/skins/MRI/images/Sofico/16/left.png')] ");
 
     public VehicleMRComponent getVehicleMRComponent(){
@@ -129,16 +135,37 @@ public class LongTermContractsPage extends ReusableViewElements {
 
     public void selectsDocument() {
         waitABit(1000);
-        for (int i = 1; i < 10; i++) {
-            String item = DOCUMENT_START + i;
-            element(By.id(item)).click();
+        String rawString = "Avoirs à recevoir non lettrés";
+        String replace = rawString.replaceAll("à", "\u00e0");
+        replace = replace.replaceAll("é", "\u00e9");
+        selectsDocumentByName("armel.bouendeu@toyota-fs.com", replace,false, true);
+    }
+    public void selectsDocumentByName(String documentName, boolean withOneNext) {
+        selectsDocumentByName(documentName,"",withOneNext, false);
+    }
+
+    public void selectsDocumentByName(String documentName, String email, boolean withOneNext, boolean addEmail) {
+        if(withOneNext){
+            element(By.xpath("//*[contains(text(),'"+documentName+"')]")).click();
+            waitABit(500);
+        }else {
+            String element = "//*[contains(text(),'"+documentName+"')]";
+            boolean present = element(By.xpath(element)).isPresent();
+            boolean dis = element(By.xpath(element)).isDisplayed();
+            element(By.xpath("//*[contains(text(),'"+documentName+"')]")).click();
             waitABit(500);
             element(NEXT).click();
             waitABit(3000);
-            element(PREVIEW).click();
-            waitABit(3000);
-            element(BACK).click();
-            waitABit(2000);
         }
+        element(NEXT).click();
+        waitABit(3000);
+        Actions action = new Actions(getDriver());
+        action.sendKeys(Keys.TAB).build().perform();
+        if(addEmail){
+            element(By.cssSelector("[id^='id__toLinks_'] > div:nth-child(2) > input")).sendKeys(email);
+        }
+        waitABit(1000);
+        element(SEND_EMAIL).click();
+        waitABit(15000);
     }
 }
