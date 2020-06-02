@@ -33,7 +33,7 @@ Feature: Quotation Template with an existing Customer Italy
     And he gives the email '<email>'
     And he gives the date of birth '<birthDate>'
     And he go to the next page
-    Then he accepts the prospect agreement
+    Then he accepts the prospect agreement 'Geo-Localization', 'Marketing purposes','Surveys'
     And he go to the next page
     And he updates the duration <duration>
     And he updates the distance <distance>

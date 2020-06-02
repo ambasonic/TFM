@@ -30,10 +30,15 @@ Feature: Quotation Template with an existing Private Customer Italy including Do
     And he sets relief vehicle to '<relief_vehicle>'
     And he set the insurance type '<insurance>'
     Then he calculates the quote
+    ##TODO il faut regarder a partir dici
+    And he check the lease price '<leasePrice>'
+    And he check the service price '<servicePrice>'
+    And he check the total price '<totalPrice>'
+    And he checks the selected option price '<option>' '<optionPrice>'
+    And he checks the selected option price '<accessories>' '<accessoriesPrice>'
     And he saved it
-    ##TODO Milesria: Discounts(1.295,70euro), delivery cost(1.889,17euro)
     And he log out
 
     Examples:
-      | car manufacturer| model | car type                           | color              | upholstery       |option            | accessories    |customer Name |duration |distance | paymentIndex |                   paymentMethod                        |downPayment |relief_vehicle| insurance                             |
-      | Toyota          | Yaris | 1.5 Hybrid Active Plus MY19 (2019) | Super White gloss  | Cloth black/grey |Super White paint | LoJack Classic |Addoloreta    |36       |40000    |      1       |TFM2_Delivery cost direct/broker from dealer to customer|   4000     |yes           |Anti-Theft LoJack Abbonamento > 34 mesi|
+      | car manufacturer| model | car type                           | color              | upholstery       |option            | accessories    |customer Name |duration |distance | paymentIndex |                   paymentMethod                        |downPayment |relief_vehicle| insurance                             |leasePrice |servicePrice|totalPrice|accessoriesPrice|optionPrice|
+      | Toyota          | Yaris | 1.5 Hybrid Active Plus MY19 (2019) | Super White gloss  | Cloth black/grey |Super White paint | LoJack Classic |Addoloreta    |36       |40000    |      1       |TFM2_Delivery cost direct/broker from dealer to customer|   4000     |yes           |Anti-Theft LoJack Abbonamento > 34 mesi| € 274.72  |€ 112.20    |€ 703.28| € 155.00       |€ 368.85   |

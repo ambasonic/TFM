@@ -32,17 +32,17 @@ Feature: Quotation Template with a New Customer Italy including TPL(Services)
     And he gives the email '<email>'
     And he gives the date of birth '<birthDate>'
     And he go to the next page
-    Then he accepts the prospect agreement
+    Then he accepts the prospect agreement 'Geo-Localization', 'Marketing purposes','Surveys'
     And he go to the next page
-#    And he selects the first <paymentIndex> payment '<paymentMethod>'
-#    And he accepts the Fuel Card Edenred '<Fuel Card EdenRed>'
-#    And he sets relief vehicle to '<relief_vehicle>'
-#    Then he calculates the quote
-#    And he checks the selected option price '<option>' '<optionPrice>'
-#    And he checks the selected option price '<accessories>' '<accessoriesPrice>'
-#    And he checks the selected option price '<accessories2>' '<accessories2Price>'
-#    And he saved it
-#    And he log out
+    And he selects the first <paymentIndex> payment '<paymentMethod>'
+    And he accepts the Fuel Card Edenred '<Fuel Card EdenRed>'
+    And he sets relief vehicle to '<relief_vehicle>'
+    Then he calculates the quote
+    And he checks the selected option price '<option>' '<optionPrice>'
+    And he checks the selected option price '<accessories>' '<accessoriesPrice>'
+    And he checks the selected option price '<accessories2>' '<accessories2Price>'
+    And he saved it
+    And he log out
 
     Examples:
       | car manufacturer| model | car type                          | color                    | upholstery                              |option         | accessories    | legal entity    |  street_name   | street_number | city_name | zip_code | phone_number | title |surname| name         |     email     | birthDate   |paymentIndex | paymentMethod                                          |relief_vehicle |Fuel Card EdenRed |optionPrice |accessoriesPrice|accessories2Price|
