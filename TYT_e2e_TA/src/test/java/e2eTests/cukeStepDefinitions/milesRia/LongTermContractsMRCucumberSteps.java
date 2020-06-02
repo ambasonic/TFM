@@ -40,7 +40,7 @@ public class LongTermContractsMRCucumberSteps extends TestData {
     public void heRegisteredTheVehiclePlates() {
         longTermContractsMRSteps.clickOnRegistrationAndDocuments();
         longTermContractsMRSteps.setVINNr(VinGeneratorUtils.getRandomVin());
-        longTermContractsMRSteps.registeredLicencePlate(getLicenceNumberFrance());
+        longTermContractsMRSteps.registeredLicencePlate();
         longTermContractsMRSteps.setRegistrationDate(getActualDate());
     }
 
@@ -79,7 +79,6 @@ public class LongTermContractsMRCucumberSteps extends TestData {
         longTermContractsMRSteps.clickOnContractInitiation();
     }
 
-
     @And("he reevaluates the contract and close the tab")
     public void heReevaluatesTheContractAndCloseTheTab() {
         longTermContractsMRSteps.reevaluatesContractAndCloseTheTab();
@@ -88,7 +87,6 @@ public class LongTermContractsMRCucumberSteps extends TestData {
     @And("he checks the status {string}")
     public void heChecksTheStatus(String status) {
         longTermContractsMRSteps.checkTheStatus(status);
-
     }
 
     @Then("he creates a new document")
@@ -96,8 +94,28 @@ public class LongTermContractsMRCucumberSteps extends TestData {
         longTermContractsMRSteps.openNewDocument();
     }
 
-    @And("selects document")
-    public void selectsDocument() {
-        longTermContractsMRSteps.selectsDocument();
+    @Then("he selects the document {string}")
+    public void selectDocument(String docName) {
+        longTermContractsMRSteps.selectDocument(docName);
+    }
+
+    @And("he goes to the next step")
+    public void goToNextStep() {
+        longTermContractsMRSteps.goToNextStep();
+    }
+
+    @And("he clears the email input field And sets the email Address To with :{string}")
+    public void clearAndSetEmailAddress(String email) {
+        longTermContractsMRSteps.clearAndSetEmailField(email);
+    }
+
+    @Then("he sends the email")
+    public void heSendsTheEmail() {
+        longTermContractsMRSteps.sendEmail();
+    }
+
+    @And("he sets the email Address To with: {string}")
+    public void sendEmailWithoutClearing(String email) {
+        longTermContractsMRSteps.sendEmailWithoutClearing(email);
     }
 }

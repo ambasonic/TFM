@@ -35,8 +35,8 @@ public class LongTermContractsMRSteps {
     }
 
     @Step("The dealer set the registration number")
-    public void registeredLicencePlate(String licenceNumber) {
-        longTermContractsPage.getVehicleUsagesMRComponent().registeredLicencePlate(licenceNumber);
+    public void registeredLicencePlate() {
+        longTermContractsPage.getVehicleUsagesMRComponent().registeredLicencePlate();
     }
 
     @Step("The dealer set the registration date")
@@ -94,7 +94,24 @@ public class LongTermContractsMRSteps {
         longTermContractsPage.openNewDocument();
     }
 
-    public void selectsDocument() {
-        longTermContractsPage.selectsDocument();
+    public void goToNextStep() {
+        longTermContractsPage.goToNextStep();
+    }
+
+    public void selectDocument(String docName) {
+        longTermContractsPage.selectDocument(docName);
+    }
+
+
+    public void clearAndSetEmailField(String email) {
+        longTermContractsPage.clearAndSetEmailField(email);
+    }
+
+    public void sendEmail() {
+        longTermContractsPage.sendEmail();
+    }
+
+    public void sendEmailWithoutClearing(String email) {
+        longTermContractsPage.sendEmailWithoutClearing(email);
     }
 }

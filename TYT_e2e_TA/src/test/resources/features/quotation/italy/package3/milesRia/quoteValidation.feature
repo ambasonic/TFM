@@ -1,6 +1,7 @@
 # new feature
 # Tags: optional
-
+@italy
+@pck3
 Feature: Quote validation
 
   Scenario Outline: The dealer validates a quote in MilesRia
@@ -33,8 +34,9 @@ Feature: Quote validation
     And he select the 'Express delivery' as delivery
     And he set the distance
     Then he deliver
+    And he checks the status 'Runnings'
 
 
     Examples:
       |quoteID   |
-      |001981/001|
+      |001984/001|

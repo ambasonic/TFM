@@ -7,7 +7,9 @@ import Pages.milesRiaTabs.TopBarTabs;
 import net.serenitybdd.core.pages.WebElementFacade;
 import org.junit.Assert;
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.interactions.Actions;
 
 import java.util.List;
 
@@ -31,7 +33,7 @@ public class LongTermContractsPage extends ReusableViewElements {
     private final By Status = By.name("A953");
     private final String DOCUMENT_START = "grid_DocumentTemplate_1_valueCell"; //1 - 9
     private final By NEXT = By.xpath("//img[contains(@src,'"+currentProperties.getCurrentCountryIP()+"milesria/resource/skins/MRI/images/Sofico/24/right.png')]");
-    private final By PREVIEW = By.xpath("//img[contains(@src,'"+currentProperties.getCurrentCountryIP()+"milesria/resource/skins/MRI/images/Sofico/16/eye.png?')]");
+    private final By SEND_EMAIL = By.xpath("//img[contains(@src,'"+currentProperties.getCurrentCountryIP()+"milesria/resource/skins/MRI/images/Sofico/16/send.png')]");
     private final By BACK = By.xpath("//img[contains(@src,'"+currentProperties.getCurrentCountryIP()+"milesria/resource/skins/MRI/images/Sofico/16/left.png')] ");
 
     public VehicleMRComponent getVehicleMRComponent(){
@@ -52,7 +54,7 @@ public class LongTermContractsPage extends ReusableViewElements {
         waitABit(8000);
     }
 
-    public void selectTheDelivery(String delivery) { //TODO implement de delivery choice the default is Express
+    public void selectTheDelivery(String delivery) { //TODO implement  delivery choice the default is Express
         waitABit(1000);
         element(OK).click();
         waitABit(1000);
@@ -80,7 +82,11 @@ public class LongTermContractsPage extends ReusableViewElements {
         }
         waitABit(5000);
         int size = findAll(DELIVER).size();
-        findAll(DELIVER).get(7).click();
+        if(currentProperties.getCurrentCountry().equalsIgnoreCase("france")){
+            findAll(DELIVER).get(6).click();
+        }else{
+            findAll(DELIVER).get(7).click();
+        }
         waitABit(3000);
         element(OK).click();
         waitABit(10000);
@@ -117,9 +123,9 @@ public class LongTermContractsPage extends ReusableViewElements {
         waitABit(1000);
     }
 
-    public void checkStatus(String status) {
-        String text = element(Status).getText();
-        Assert.assertEquals("The status is not "+status, status.toLowerCase(), text.toLowerCase());
+    public void checkStatus(String expectedStatus) {
+        String  actualStatus= element(Status).getAttribute("value");
+        Assert.assertEquals("Status do not match", expectedStatus.toLowerCase(), actualStatus.toLowerCase());
     }
 
     public void openNewDocument() {
@@ -127,18 +133,33 @@ public class LongTermContractsPage extends ReusableViewElements {
         element(NEW_DOCUMENT).click();
     }
 
-    public void selectsDocument() {
+    public void selectDocument(String docName) {
+        element(By.xpath("//*[contains(text(),'"+docName+"')]")).click();
+    }
+
+    public void goToNextStep() {
+        waitABit(500);
+        element(NEXT).click();
+        waitABit(3000);
+    }
+
+    public void clearAndSetEmailField(String email) {
+        waitABit(3000);
+        Actions action = new Actions(getDriver());
+        action.sendKeys(Keys.TAB).build().perform();
+        element(By.className("silkMultipleValue_closeButton")).click();
+        waitABit(500);
+        element(By.cssSelector("[id^='id__toLinks_'] > div:nth-child(2) > input")).sendKeys(email);
+    }
+
+    public void sendEmail() {
         waitABit(1000);
-        for (int i = 1; i < 10; i++) {
-            String item = DOCUMENT_START + i;
-            element(By.id(item)).click();
-            waitABit(500);
-            element(NEXT).click();
-            waitABit(3000);
-            element(PREVIEW).click();
-            waitABit(3000);
-            element(BACK).click();
-            waitABit(2000);
-        }
+        element(SEND_EMAIL).click();
+        waitABit(15000);
+    }
+
+    public void sendEmailWithoutClearing(String email) {
+        waitABit(3000);
+        element(By.cssSelector("[id^='id__toLinks_'] > div:nth-child(2) > input")).sendKeys(email);
     }
 }

@@ -9,7 +9,7 @@ Feature: Quotation Template with a new Private customer Italy including vehicles
     And he login
     Then he can see the dealer home page
     When he selects a new quotation
-    ## TODO from here select the type ---> 'Private' instead of 'Company' as has been doing so far
+    Then he sets the customer as 'Private'
     And he selects a vehicle '<car manufacturer>'
     And he selects a model '<model>'
     And he selects the type '<car type>'
@@ -19,18 +19,17 @@ Feature: Quotation Template with a new Private customer Italy including vehicles
     And he selects the accessories '<accessories>'
     And he go to the next page
     Then he can create a new customer
-    ##TODO ici c est different, il faut regarder
-    And he gives the street name '<street_name>' in the contact data form
-    And he gives the street number '<street_number>' in the contact data form
-    And he gives the zip code '<zip_code>' in the contact data form
-    And he gives the city name '<city_name>' in the contact data form
-    And he gives the phone number '<phone_number>' in the contact data form
-    And he go to contact person and selects the title '<title>'
-    And he gives the surname '<surname>'
-    And he gives the first name '<name>'
-    And he gives the email '<email>'
-    And he gives the date of birth '<birthDate>'
-    Then he accepts the prospect agreement
+    And he gives the street name '<street_name>'
+    And he gives the street number '<street_number>'
+    And he gives the zip code '<zip_code>'
+    And he gives the city name '<city_name>'
+    And he gives the phone number '<phone_number>'
+    And he select the contact person title '<title>'
+    And he sets the surname '<surname>'
+    And he sets the first name '<name>'
+    And he sets the email '<email>'
+    And he go to the next page
+    Then he accepts the prospect agreement 'Geo-Localization', 'Marketing purposes','Surveys'
     And he go to the next page
     And he updates the duration <duration>
     And he updates the distance <distance>
@@ -38,8 +37,7 @@ Feature: Quotation Template with a new Private customer Italy including vehicles
     And he accepts the Fuel card Eni '<Fuel card Eni>'
     And he set the insurance type '<insurance>'
     Then he calculates the quote
-    ##TODO ici il faut implementer le nombre de vehicule a 2
-    ##TODO set the number of vehicles at 'monthly = 2'
+    And he sets the number of vehicle to 2
     And he saved it
     ##TODO Milesria: Discounts(1.295,70euro), delivery cost(1.889,17euro)
     And he log out

@@ -1,7 +1,7 @@
 # new feature
 # Tags: optional
 @france
-@pck1case1
+@pck1case2france
 Feature: Quotation Duplication with an existing Customer France (change of duration and distance)
 
   Scenario Outline: quotation

@@ -1,6 +1,7 @@
 package Components.customer;
 
 import Pages.ReusableViewElements;
+import net.serenitybdd.core.pages.WebElementFacade;
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
@@ -11,6 +12,10 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.util.List;
+import java.util.stream.Collectors;
+
+import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.fail;
 
 public class OrganizationComponent extends ReusableViewElements {
@@ -24,6 +29,7 @@ public class OrganizationComponent extends ReusableViewElements {
     private final String legaly_entity = "prospectdetail:prospectView:main:legalentity_";
     private final By saveBtn = By.id("prospectdetail:saveButton");
     private final By TITLE = By.id("quote:prospectdetail:prospectView:main:primaryContact:common_contact");
+    private final By TITLE_items = By.id("quote:prospectdetail:prospectView:main:primaryContact:common_contact_items");
     private final By TITLE_Dr = By.id("quote:prospectdetail:prospectView:main:primaryContact:common_contact_1");
     private final By TITLE_Mr = By.id("quote:prospectdetail:prospectView:main:primaryContact:common_contact_1");
     private final By SURNAME = By.id("quote:prospectdetail:prospectView:main:primaryContact:contact_lname");
@@ -110,6 +116,18 @@ public class OrganizationComponent extends ReusableViewElements {
 
     public void save() {
         element(saveBtn).click();
+    }
+
+    public void setTitleByText(String title){
+        element(TITLE).click();
+        WebElementFacade elementFacade = find(TITLE_items);
+        List<WebElement> anchors = elementFacade.findElements(By.tagName("li"))
+                .stream()
+                .filter(c -> c.getAttribute("textContent").equalsIgnoreCase(title))
+                .collect(Collectors.toList());
+        String s = anchors.get(0).getAttribute("textContent");
+        assertFalse("The title: "+title+" is unknown", anchors.size()!=1);
+        anchors.get(0).click();
     }
 
     public void setTitle(String title) {

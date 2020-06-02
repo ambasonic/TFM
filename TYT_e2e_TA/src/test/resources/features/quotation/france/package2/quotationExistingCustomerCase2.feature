@@ -18,7 +18,7 @@ Feature: Quotation Duplication with an existing Customer France(change of durati
     And he go to the next page
     Then he search the customer by name '<customer Name>'
     And he go to the next page
-    Then he accepts the prospect agreement
+    Then he accepts the prospect agreement 'Geo-Localization', 'Marketing purposes','Surveys'
     And he sets the product to '<product_type>'
     And he go to the next page
     And he updates the duration <duration>

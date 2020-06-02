@@ -28,6 +28,7 @@ public class IndividualComponent extends ReusableViewElements {
     private final By TITLE_Dr = By.id("quote:prospectdetail:prospectView:main:common_contact_prvt_1");
     private final By TITLE_Mr = By.id("quote:prospectdetail:prospectView:main:common_contact_prvt_1");
     private final By TITLE_Mrs = By.id("quote:prospectdetail:prospectView:main:common_contact_prvt_2");
+    private final By TITLE_Miss = By.id("quote:prospectdetail:prospectView:main:common_contact_prvt_2");
     private final By ESTABLISHMENT_DATE = By.id("quote:prospectdetail:prospectView:main:businessAddress:establishmentdate_input");
     private final By SURNAME = By.id("quote:prospectdetail:prospectView:main:contact_lname_prvt");
     private final By LAST_NAME = By.id("quote:prospectdetail:prospectView:main:contact_fname_prvt");
@@ -80,16 +81,20 @@ public class IndividualComponent extends ReusableViewElements {
     }
 
     public void setTitleByText(String title){
+        element(TITLE).click();
         WebElementFacade elementFacade = find(TITLE_ITEMS);
-        List<WebElement> anchors = elementFacade.findElements(By.tagName("li"));
-//                .stream()
-//                .filter(c -> c.getText().equalsIgnoreCase(title))
-//                .collect(Collectors.toList());
-        String s = anchors.get(0).getText();
+        List<WebElement> anchors = elementFacade.findElements(By.tagName("li"))
+                .stream()
+                .filter(c -> c.getAttribute("textContent").equalsIgnoreCase(title))
+                .collect(Collectors.toList());
+        String s = anchors.get(0).getAttribute("textContent");
         assertFalse("The title: "+title+" is unknown", anchors.size()!=1);
         anchors.get(0).click();
+        waitABit(1000);
     }
+
     public void setTitle(String title) { //TODO select by text
+
         element(TITLE).click();
         waitABit(500);
         switch (title){

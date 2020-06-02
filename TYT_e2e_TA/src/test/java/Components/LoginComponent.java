@@ -34,5 +34,6 @@ public class LoginComponent extends ReusableViewElements {
 
     public void submitLoginCredentialMilesRia() {
         element(By.id("isc_1I")).click();
+        waitABit(1000);
     }
 }

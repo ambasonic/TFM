@@ -13,3 +13,5 @@
 [0524/132501.572:ERROR:file_io_win.cc(170)] CreateFile C:\Users\Admin\AppData\Local\Temp\scoped_dir17008_85442954\Crashpad\reports\7dd89310-4487-4921-8ff3-b1ef57ec234b.dmp: The system cannot find the path specified. (0x3)
 [0524/132501.572:ERROR:crash_report_exception_handler.cc(97)] PrepareNewCrashReport failed
 [0529/102625.989:ERROR:file_io.cc(89)] ReadExactly: expected 36, observed 0
+[0601/153012.808:ERROR:file_io.cc(89)] ReadExactly: expected 36, observed 0
+[0601/164122.526:ERROR:file_io.cc(89)] ReadExactly: expected 36, observed 0

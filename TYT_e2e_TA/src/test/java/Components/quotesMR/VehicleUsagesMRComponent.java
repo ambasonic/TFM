@@ -1,6 +1,7 @@
 package Components.quotesMR;
 
 import Pages.ReusableViewElements;
+import Utils.generatedTestData.TestData;
 import net.serenitybdd.core.pages.WebElementFacade;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
@@ -32,7 +33,13 @@ public class VehicleUsagesMRComponent extends ReusableViewElements {
         waitABit(1000);
     }
 
-    public void registeredLicencePlate(String licenceNumber){
+    public void registeredLicencePlate(){
+        String licenceNumber = "";
+        if(currentProperties.getCurrentCountry().equalsIgnoreCase("France")){
+            licenceNumber = TestData.getLicenceNumberFrance();
+        }else if (currentProperties.getCurrentCountry().equalsIgnoreCase("Italy")){
+            licenceNumber = TestData.getLicenceNumberITALY();
+        }
         Actions actions = new Actions(getDriver());
         List<WebElementFacade> all = findAll(ADD_LICENCE_PLATE);
         all.get(6).click();

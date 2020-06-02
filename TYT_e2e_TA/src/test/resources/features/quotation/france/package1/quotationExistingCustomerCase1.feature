@@ -1,7 +1,7 @@
 # new feature
 # Tags: optional
 @france
-@pck1case1
+@pck1case1france
 Feature: Quotation Template with an existing Customer France
 
   Scenario Outline: quotation

@@ -1,40 +1,39 @@
-# new feature
+# =new feature
 # Tags: optional
-@france
-@pck6case1
+@italy
+@pck8case1
 Feature: Quote validation
 
   Scenario Outline: The dealer validates a quote in MilesRia
-    Given The dealer open the MilesRia backoffice 'FRANCE'
+    Given The dealer open the MilesRia backoffice 'ITALY'
     And he login in MilesRia
-    And he search a long term contract '20I00197'
+    And he search a long term contract '20L00207'
     When he creates a new document
-    And he selects the document 'Avoirs à recevoir non lettrés'
+    And he selects the document 'Rental contract expiration notice - Avviso di scadenza contratto di noleggio'
+    And he goes to the next step
+    And he goes to the next step
+    And he clears the email input field And sets the email Address To with :'armel.bouendeu@toyota-fs.com'
+    Then he sends the email
+    When he creates a new document
+    And he selects the document 'TFM_Delivery Document'
+    And he goes to the next step
+    And he goes to the next step
+    And he clears the email input field And sets the email Address To with :'armel.bouendeu@toyota-fs.com'
+    Then he sends the email
+    When he creates a new document
+    And he selects the document 'TFM_Treasury Reporting'
     And he goes to the next step
     And he goes to the next step
     And he sets the email Address To with: 'armel.bouendeu@toyota-fs.com'
     Then he sends the email
     When he creates a new document
-    And he selects the document 'Recapitulatif pour commande'
+    And he selects the document 'TFM_Withdrawal authorization'
     And he goes to the next step
-    And he goes to the next step
+    And he clears the email input field And sets the email Address To with :'armel.bouendeu@toyota-fs.com'
     Then he sends the email
     When he creates a new document
-    And he selects the document 'Suivi dépôt de garantie'
+    And he selects the document 'TFMIT_Vehicle delivery Confirmation'
     And he goes to the next step
-    And he goes to the next step
-    And he sets the email Address To with: 'armel.bouendeu@toyota-fs.com'
-    Then he sends the email
-    When he creates a new document
-    And he selects the document 'TFM_Contract'
-    And he goes to the next step
-    Then he sends the email
-    When he creates a new document
-    And he selects the document 'TFM_FondDossier'
-    And he goes to the next step
-    Then he sends the email
-    When he creates a new document
-    And he selects the document 'TFM_WelcomeLetter'
     And he goes to the next step
     And he clears the email input field And sets the email Address To with :'armel.bouendeu@toyota-fs.com'
     Then he sends the email
