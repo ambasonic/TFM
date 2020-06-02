@@ -37,10 +37,10 @@ Feature: Quote validation
     And he select the 'Express delivery' as delivery
     And he set the distance
     Then he deliver
-    And he checks the status 'Actif'
-  #    (status label name="A953")
+    And he checks the status 'Running'
+    #LE status que la methode donne est Running pas Actif
 
 
     Examples:
       |quoteID   |
-      |002563/001|
+      |002707/001|

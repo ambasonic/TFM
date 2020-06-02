@@ -82,7 +82,11 @@ public class LongTermContractsPage extends ReusableViewElements {
         }
         waitABit(5000);
         int size = findAll(DELIVER).size();
-        findAll(DELIVER).get(7).click();
+        if(currentProperties.getCurrentCountry().equalsIgnoreCase("france")){
+            findAll(DELIVER).get(6).click();
+        }else{
+            findAll(DELIVER).get(7).click();
+        }
         waitABit(3000);
         element(OK).click();
         waitABit(10000);
