@@ -27,7 +27,7 @@ $ mvn clean verify -Ddriver=chrome
 ```
 Or 
 ```json
-$ gradle clean test -Pdriver=chrome  -Dcucumber.options=–tags italys
+$ gradle clean test -Pdriver=chrome  -Dcucumber.options=–tags italy
 ```
 
 Command to run all features from Italy

@@ -11,11 +11,7 @@ import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.interactions.Actions;
 
-import java.awt.event.KeyEvent;
-import java.nio.charset.StandardCharsets;
 import java.util.List;
-
-import static Utils.generatedTestData.TestData.unicodeEscaped;
 
 public class LongTermContractsPage extends ReusableViewElements {
 
@@ -58,7 +54,7 @@ public class LongTermContractsPage extends ReusableViewElements {
         waitABit(8000);
     }
 
-    public void selectTheDelivery(String delivery) { //TODO implement de delivery choice the default is Express
+    public void selectTheDelivery(String delivery) { //TODO implement  delivery choice the default is Express
         waitABit(1000);
         element(OK).click();
         waitABit(1000);
@@ -133,39 +129,30 @@ public class LongTermContractsPage extends ReusableViewElements {
         element(NEW_DOCUMENT).click();
     }
 
-    public void selectsDocument() {
-        waitABit(1000);
-        String rawString = "Avoirs à recevoir non lettrés";
-        String replace = rawString.replaceAll("à", "\u00e0");
-        replace = replace.replaceAll("é", "\u00e9");
-        selectsDocumentByName("armel.bouendeu@toyota-fs.com", replace,false, true);
-    }
-    public void selectsDocumentByName(String documentName, boolean withOneNext) {
-        selectsDocumentByName(documentName,"",withOneNext, false);
+
+    public void goToNextStep() {
+        waitABit(500);
+        element(NEXT).click();
+        waitABit(3000);
     }
 
-    public void selectsDocumentByName(String documentName, String email, boolean withOneNext, boolean addEmail) {
-        if(withOneNext){
-            element(By.xpath("//*[contains(text(),'"+documentName+"')]")).click();
-            waitABit(500);
-        }else {
-            String element = "//*[contains(text(),'"+documentName+"')]";
-            boolean present = element(By.xpath(element)).isPresent();
-            boolean dis = element(By.xpath(element)).isDisplayed();
-            element(By.xpath("//*[contains(text(),'"+documentName+"')]")).click();
-            waitABit(500);
-            element(NEXT).click();
-            waitABit(3000);
-        }
-        element(NEXT).click();
+    public void clearAndSetEmailField(String email) {
         waitABit(3000);
         Actions action = new Actions(getDriver());
         action.sendKeys(Keys.TAB).build().perform();
-        if(addEmail){
-            element(By.cssSelector("[id^='id__toLinks_'] > div:nth-child(2) > input")).sendKeys(email);
-        }
+        element(By.className("silkMultipleValue_closeButton")).click();
+        waitABit(500);
+        element(By.cssSelector("[id^='id__toLinks_'] > div:nth-child(2) > input")).sendKeys(email);
+    }
+
+    public void sendEmail() {
         waitABit(1000);
         element(SEND_EMAIL).click();
         waitABit(15000);
+    }
+
+    public void sendEmailWithoutClearing(String email) {
+        waitABit(3000);
+        element(By.cssSelector("[id^='id__toLinks_'] > div:nth-child(2) > input")).sendKeys(email);
     }
 }

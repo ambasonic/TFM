@@ -94,23 +94,19 @@ public class LongTermContractsMRSteps {
         longTermContractsPage.openNewDocument();
     }
 
-    public void selectsDocument() {
-        longTermContractsPage.selectsDocument();
+    public void goToNextStep() {
+        longTermContractsPage.goToNextStep();
     }
 
-    public void sendDocument(String docName, String email) {
-        longTermContractsPage.selectsDocumentByName(docName, email, false, true );
+    public void clearAndSetEmailField(String email) {
+        longTermContractsPage.clearAndSetEmailField(email);
     }
 
-    public void sendDocument(String docName) {
-        longTermContractsPage.selectsDocumentByName(docName, false);
+    public void sendEmail() {
+        longTermContractsPage.sendEmail();
     }
 
-    public void sendTFM_FR_Document(String docName) {
-        longTermContractsPage.selectsDocumentByName(docName, true);
-    }
-
-    public void sendTFM_IT_Document(String docName) {
-        longTermContractsPage.selectsDocumentByName(docName, false);
+    public void sendEmailWithoutClearing(String email) {
+        longTermContractsPage.sendEmailWithoutClearing(email);
     }
 }

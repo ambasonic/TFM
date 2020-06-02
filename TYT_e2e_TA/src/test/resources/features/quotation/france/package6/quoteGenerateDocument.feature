@@ -9,18 +9,35 @@ Feature: Quote validation
     And he login in MilesRia
     And he search a long term contract '20I00197'
     When he creates a new document
-    Then he sends  the document 'Avoirs à recevoir non lettrés' per email 'armel.bouendeu@toyota-fs.com'
+    And he selects the document 'Avoirs à recevoir non lettrés'
+    And he goes to the next step
+    And he goes to the next step
+    And he sets the email Address To with: 'armel.bouendeu@toyota-fs.com'
+    Then he sends the email
     When he creates a new document
-    Then he sends  the document 'Recapitulatif pour commande' per email
+    And he selects the document 'Recapitulatif pour commande'
+    And he goes to the next step
+    And he goes to the next step
+    Then he sends the email
     When he creates a new document
-    Then he sends  the document 'Suivi dépôt de garantie' per email 'armel.bouendeu@toyota-fs.com'
+    And he selects the document 'Suivi dépôt de garantie'
+    And he goes to the next step
+    And he goes to the next step
+    And he sets the email Address To with: 'armel.bouendeu@toyota-fs.com'
+    Then he sends the email
     When he creates a new document
-    Then he sends  the TFM document 'TFM_Contract' per email
+    And he selects the document 'TFM_Contract'
+    And he goes to the next step
+    Then he sends the email
     When he creates a new document
-    Then he sends  the TFM document 'TFM_FondDossier' per email
+    And he selects the document 'TFM_FondDossier'
+    And he goes to the next step
+    Then he sends the email
     When he creates a new document
-    Then he sends  the TFM document 'TFM_WelcomeLetter' per email
-#    And selects document
+    And he selects the document 'TFM_WelcomeLetter'
+    And he goes to the next step
+    And he clears the email input field And sets the email Address To with :'armel.bouendeu@toyota-fs.com'
+    Then he sends the email
 
     Examples:
       |quoteID   |

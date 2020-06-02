@@ -88,7 +88,6 @@ public class LongTermContractsMRCucumberSteps extends TestData {
     @And("he checks the status {string}")
     public void heChecksTheStatus(String status) {
         longTermContractsMRSteps.checkTheStatus(status);
-
     }
 
     @Then("he creates a new document")
@@ -96,28 +95,23 @@ public class LongTermContractsMRCucumberSteps extends TestData {
         longTermContractsMRSteps.openNewDocument();
     }
 
-    @And("selects document")
-    public void selectsDocument() {
-        longTermContractsMRSteps.selectsDocument();
+    @And("he goes to the next step")
+    public void goToNextStep() {
+        longTermContractsMRSteps.goToNextStep();
     }
 
-    @Then("he sends  the document {string} per email {string}")
-    public void sendDocument(String docName, String email) {
-        longTermContractsMRSteps.sendDocument(docName, email);
+    @And("he clears the email input field And sets the email Address To with :{string}")
+    public void clearAndSetEmailAddress(String email) {
+        longTermContractsMRSteps.clearAndSetEmailField(email);
     }
 
-    @Then("he sends  the document {string} per email")
-    public void sendDocument(String docName) {
-        longTermContractsMRSteps.sendDocument(docName);
+    @Then("he sends the email")
+    public void heSendsTheEmail() {
+        longTermContractsMRSteps.sendEmail();
     }
 
-    @Then("he sends  the TFM document {string} per email")
-    public void sendTFM_FR_Document(String docName) {
-        longTermContractsMRSteps.sendTFM_FR_Document(docName);
-    }
-
-    @Then("he sends  the TFMIT document {string} per email")
-    public void sendTFM_IT_Document(String docName) {
-        longTermContractsMRSteps.sendTFM_IT_Document(docName);
+    @And("he sets the email Address To with: {string}")
+    public void sendEmailWithoutClearing(String email) {
+        longTermContractsMRSteps.sendEmailWithoutClearing(email);
     }
 }
