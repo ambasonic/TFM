@@ -14,6 +14,7 @@ Feature: Quotation Template with a New Customer Italy including TPL(Services)
     And he selects the type '<car type>'
     And he go to the next page
     Then he can selects vehicle options
+    ##TODO regarder ici au niveau de option, cest Metallic paint and Panoramic roof quon doit choisi en meme temps
     And he chooses color '<color>' and upholstery '<upholstery>'
     And he selects an option '<option>'
     And he selects the accessories '<accessories>'
@@ -34,16 +35,17 @@ Feature: Quotation Template with a New Customer Italy including TPL(Services)
     And he go to the next page
     Then he accepts the prospect agreement 'Geo-Localization', 'Marketing purposes','Surveys'
     And he go to the next page
+    ##TODO il y a des ervices a ajouter ici: TPL exemption(500) & Theft, fire, glasses exemption(500)
+    And he updates the duration <duration>
+    And he updates the distance <distance>
+    And he gives a down payment of '<downPayment>'
     And he selects the first <paymentIndex> payment '<paymentMethod>'
-    And he accepts the Fuel Card Edenred '<Fuel Card EdenRed>'
-    And he sets relief vehicle to '<relief_vehicle>'
     Then he calculates the quote
     And he checks the selected option price '<option>' '<optionPrice>'
     And he checks the selected option price '<accessories>' '<accessoriesPrice>'
-    And he checks the selected option price '<accessories2>' '<accessories2Price>'
     And he saved it
     And he log out
 
     Examples:
-      | car manufacturer| model | car type                          | color                    | upholstery                              |option         | accessories    | legal entity    |  street_name   | street_number | city_name | zip_code | phone_number | title |surname| name         |     email     | birthDate   |paymentIndex | paymentMethod                                          |relief_vehicle |Fuel Card EdenRed |optionPrice |accessoriesPrice|accessories2Price|
-      | Lexus          | NX     |  Hybrid Luxury 4WD (2020)         | Copper metallic          | Black Luxury Leather with Bamboo insert |Panoramic roof | LoJack Classic |Societa  Semplice|  Plaza del sol |       3       | Nichelino | 10045    |    5787556   |   Dr  |Silvio | Berluscozini | ac@milano.it  | 10/01/1947  |1            |TFM2_Delivery cost direct/broker from dealer to customer|    yes        |yes               |€ 700.00    |€ 272.06        |€ 161.22         |
+      | car manufacturer| model | car type                  | color       | upholstery                                     |option                            | accessories    | legal entity    |  street_name   | street_number | city_name | zip_code | phone_number | title |surname| name         |     email     | birthDate   |duration |distance|paymentIndex | paymentMethod                                          |downPayment|optionPrice |accessoriesPrice|
+      | Lexus           | NX    |  Hybrid Luxury 4WD (2020) | White pearl | Dark Rose Luxury Leather with Shimamoku insert |Panoramic roof and Metallic paint | LoJack Classic |Societa  Semplice|  Plaza del sol |       3       | Nichelino | 10045    |    5787556   |   Dr  |Silvio | Berluscozini | ac@milano.it  | 10/01/1947  |     48  | 60000  |1            |TFM2_Delivery cost direct/broker from dealer to customer|4500       |€ 700.00    |€ 272.06        |
