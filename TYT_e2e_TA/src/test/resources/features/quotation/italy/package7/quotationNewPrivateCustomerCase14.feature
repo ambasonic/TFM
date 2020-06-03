@@ -17,10 +17,8 @@ Feature: Quotation Template with a new private Customer Italy including Downpaym
     And he selects the type '<car type>'
     And he go to the next page
     Then he can selects vehicle options
-    ##TODO il faut regarder a partir d'ici car ca clashe
     And he selects an option '<option>'
     And he chooses color '<color>' and upholstery '<upholstery>'
-    And he selects an option from popUp Menu
     And he selects the accessories '<accessories>'
     And he selects the accessories '<accessories2>'
     And he go to the next page
@@ -45,13 +43,11 @@ Feature: Quotation Template with a new private Customer Italy including Downpaym
     And he set the insurance type '<insurance>'
     And he adds at index 1 '<tyreNumber>' tires
     Then he calculates the quote
-    ##TODO il faut regarder a partir dici
     And he check the lease price '<leasePrice>'
     And he check the service price '<servicePrice>'
     And he check the total price '<totalPrice>'
     And he check the option price '<optionPrice>'
     And he checks the selected option price '<accessories>' '<accessoriesPrice>'
-    ##TODO to be implemented
     And he checks the selected option price '<accessories2>' '<accessories2Price>'
     And he saved it
     And he log out
@@ -59,4 +55,4 @@ Feature: Quotation Template with a new private Customer Italy including Downpaym
 
     Examples:
       |  manufacturer  | model  | car type             | color       | upholstery   |option                  |  accessories    | accessories2 |  street_name   | street_number | city_name | zip_code | phone_number | title   |surname  | name         |     email     | duration |distance |tyreIndex | tyreName              | tyreNumber | paymentIndex |                   paymentMethod                        |downPayment| insurance                              |leasePrice |servicePrice|totalPrice|optionPrice  |accessoriesPrice |accessories2Price|
-      | Lexus          | RX     |450h Executive (2020) | Cargo Green | Leather Ocher|Metallic or pearl paint | LoJack Premium  | Portabici Sx |  Plaza del sol |       3       | Nichelino | 10042    |    5455566   |   Miss  |Silviana | Berluscozini | ac@milano.it  | 48       |80000    |    0     | Summer tires standard |      4     |      1       |TFM2_Delivery cost direct/broker from dealer to customer|   4000     |Anti-Theft LoJack Abbonamento > 34 mesi|€ 985.16   |€ 250.41    |€ 2,357.38| € 1,024.59  | € 223.00	      |€ 132.95         |
+      | Lexus          | RX     |450h Executive (2020) | Cargo Green | Leather Ocher|Metallic or pearl paint | LoJack Premium  | Portabici Sx |  Plaza del sol |       3       | Nichelino | 10042    |    5455566   |   Miss  |Silviana | Berluscozini | ac@milano.it  | 48       |80000    |    0     | Summer tires standard |      4     |      1       |TFM2_Delivery cost direct/broker from dealer to customer|   4000     |Anti-Theft LoJack Abbonamento > 34 mesi|€ 896.40   |€ 305.50    |€ 1,201.90| € 1,250.00  | € 272.06	      |€ 162.20         |

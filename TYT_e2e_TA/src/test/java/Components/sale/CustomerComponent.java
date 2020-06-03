@@ -71,7 +71,7 @@ public class CustomerComponent extends ReusableViewElements {
         } catch (ElementShouldBeEnabledException e){
             element(By.id("prospectdetail:submit-confirmButton")).click();
         }
-        waitABit(1000);
+        waitABit(3000);
     }
 
     public void clickOnNewCustomer() {

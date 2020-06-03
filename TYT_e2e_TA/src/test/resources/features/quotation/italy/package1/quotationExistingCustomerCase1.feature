@@ -29,7 +29,6 @@ Feature: Quotation Template with an existing Customer Italy
     Then he sends the credit request
     Then he accepts the prospect agreement 'Geo-Localization', 'Marketing purposes','Surveys'
     And he prints the document
-#    And he log out
 
 
     Examples:

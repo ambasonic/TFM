@@ -38,7 +38,6 @@ Feature: Quotation Template with a new Private customer Italy including vehicles
     And he set the insurance type '<insurance>'
     Then he calculates the quote
     And he sets the number of vehicle to 2
-    ##TODO il faut regarder a partir dici, ca clashe
     And he check the lease price '<leasePrice>'
     And he check the service price '<servicePrice>'
     And he check the total price '<totalPrice>'
@@ -48,4 +47,4 @@ Feature: Quotation Template with a new Private customer Italy including vehicles
 
     Examples:
       | car manufacturer| model        | car type                                   | color       | upholstery      | accessories    | street_name   | street_number | city_name | zip_code | phone_number | title   |surname  | name         |     email     |duration |distance | paymentIndex |                   paymentMethod                        |insurance                              |Fuel card Eni|leasePrice |servicePrice|totalPrice|accessoriesPrice|
-      | Toyota          | PROACE VERSO | 2.0D 150Cv S&S M/T L2 D Lounge 9 p. (2020) | White gloss | Dark grey cloth | LoJack Classic | Plaza del sol |       3       | Nichelino | 10042    |    5455566   |   Miss  |Silviana | Berluscozini | ac@milano.it  |36       |75000    |    1         |TFM2_Delivery cost direct/broker from dealer to customer|Anti-Theft LoJack Abbonamento > 34 mesi|yes          |€ 524.50   |€ 148.35    |€ 1,201.31| € 155.00       |
+      | Toyota          | PROACE VERSO | 2.0D 150Cv S&S M/T L2 D Lounge 9 p. (2020) | White gloss | Dark grey cloth | LoJack Classic | Plaza del sol |       3       | Nichelino | 10042    |    5455566   |   Miss  |Silviana | Berluscozini | ac@milano.it  |36       |75000    |    1         |TFM2_Delivery cost direct/broker from dealer to customer|Anti-Theft LoJack Abbonamento > 34 mesi|yes          |€ 458.90   |€ 180.99    |€ 639.89  |€ 189.10        |
