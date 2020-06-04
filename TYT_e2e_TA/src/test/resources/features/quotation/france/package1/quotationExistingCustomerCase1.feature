@@ -24,8 +24,12 @@ Feature: Quotation Template with an existing Customer France
     And he go to the next page
     And he updates the duration <duration>
     And he updates the distance <distance>
-#    And he selects the first <paymentIndex> payment '<paymentMethod>'
     Then he calculates the quote
+    And he check the total price '€ 251,34'
+    And he clicks on the financial summary panel
+    And he clicks on the vehicle panel
+    And he checks the selected option price '<option>' '€ 150,00'
+    And he clicks on the financial summary panel
     And he saved it
     And he log out
 

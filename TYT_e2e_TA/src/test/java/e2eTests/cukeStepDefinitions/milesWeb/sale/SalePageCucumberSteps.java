@@ -259,4 +259,14 @@ public class SalePageCucumberSteps {
     public void addService(String serviceName, String value) {
         salePage.getFinancesServicesComponent().addService(serviceName, value);
     }
+
+    @And("he clicks on the financial summary panel")
+    public void heClosesTheFinancialSummaryPanel() {
+        salePage.getFinancesServicesComponent().closeSummaryPanel();
+    }
+
+    @And("he clicks on the vehicle panel")
+    public void heClosesTheVehiclePanel() {
+        salePage.getFinancesServicesComponent().closeVehiclePanel();
+    }
 }

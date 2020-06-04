@@ -19,18 +19,21 @@ Feature: Quotation Template with an existing Customer Italy
     And he go to the next page
     Then he search the customer by name '<customer Name>'
     And he go to the next page
-    Then he accepts the prospect agreement 'Geo-Localization', 'Marketing purposes','Surveys'
+    Then he accepts the prospect agreement
     And he go to the next page
     And he updates the duration <duration>
     And he updates the distance <distance>
     And he selects the first <paymentIndex> payment '<paymentMethod>'
     Then he calculates the quote
+    And he check the lease price '<leasePrice>'
+    And he check the service price '<servicePrice>'
+    And he checks the selected option price '<accessories>' '<accessoriesPrice>'
     And he saved it
     Then he sends the credit request
-    Then he accepts the prospect agreement 'Geo-Localization', 'Marketing purposes','Surveys'
+    Then he accepts the prospect agreement
     And he prints the document
 
 
     Examples:
-      | car manufacturer| model | car type                                 | color                    | upholstery       |accessories    | customer Name | duration | distance | paymentIndex | paymentMethod                                          |
-      | Toyota          | Yaris | 1.5 Hybrid Lounge Red/Bronze MY19 (2019) | Red Mica&Black metallic  | Cloth black/grey | lojack classic| Cifelli       | 48       | 80000    | 1            |TFM2_Delivery cost direct/broker from dealer to customer|
+      | car manufacturer| model | car type                                 | color                    | upholstery       |accessories    | customer Name | duration | distance | paymentIndex | paymentMethod                                          |leasePrice|servicePrice|accessoriesPrice|
+      | Toyota          | Yaris | 1.5 Hybrid Lounge Red/Bronze MY19 (2019) | Red Mica&Black metallic  | Cloth black/grey | LoJack Classic| Cifelli       | 48       | 80000    | 1            |TFM2_Delivery cost direct/broker from dealer to customer| € 288.90 | € 140.88   | € 189.10       |

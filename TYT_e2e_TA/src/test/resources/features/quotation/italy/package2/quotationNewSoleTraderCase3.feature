@@ -2,7 +2,7 @@
 # Tags: opti
 @italy
 @pck2case3
-Feature: Quotation Template with an existing Customer Italy
+Feature: Quotation Template with an existing Customer Italy including combinaison of services
 
   Scenario Outline: quotation
     Given The dealer open the MilesWeb backoffice 'ITALY'
@@ -16,7 +16,7 @@ Feature: Quotation Template with an existing Customer Italy
     Then he can selects vehicle options
     And he chooses color '<color>' and upholstery '<upholstery>'
     And he selects an option '<option>'
-    And he selects the option pack '<option pack>'
+    And he selects the option pack '<optionPack>'
     And he selects the accessories '<accessories>'
     And he go to the next page
     Then he can create a new customer
@@ -33,7 +33,7 @@ Feature: Quotation Template with an existing Customer Italy
     And he sets the first name '<name>'
     And he sets the email '<email>'
     And he go to the next page
-    Then he accepts the prospect agreement 'Geo-Localization', 'Marketing purposes','Surveys'
+    Then he accepts the prospect agreement
     And he go to the next page
     And he updates the duration <duration>
     And he updates the distance <distance>
@@ -43,14 +43,12 @@ Feature: Quotation Template with an existing Customer Italy
     Then he calculates the quote
     And he sets the number of vehicle to 2
     And he check the lease price '<leasePrice>'
-    And he check the service price '<servicePrice>'
-    And he check the total price '<totalPrice>'
-    And he check the accessories price '<accessoriesPrice>'
-    And he check the option price '<optionPrice>'
-    And he check the option pack price '<optionPackPrice>'
+    And he checks the selected option price '<option>' '<optionPrice>'
+    And he checks the selected option price '<accessories>' '<accessoriesPrice>'
+    And he checks the selected option price '<optionPack>' '<optionPackPrice>'
     And he saved it
     And he log out
 
     Examples:
-      |manufacturer|  model  |               car type               |  position |   color         | upholstery       |  accessories  |         option        |            option pack          |   legal entity    |  street_name   | street_number | city_name | zip_code | phone_number | title |surname| name         |     email     | duration|distance| paymentIndex |                   paymentMethod                        |              insurance                 |leasePrice|servicePrice|totalPrice|accessoriesPrice|optionPrice|optionPackPrice|Fuel card Eni|
-      |Toyota      | Corolla |   TS 1.8 Hybrid Active (2020)        |     1     |Super White gloss| Black Cloth      | LoJack Classic|Super White gloss paint| Sensori di parcheggio anteriori |IMPRESA INDIVIDUALE|  Plaza del sol |       3       | Nichelino | 10042    |    5455566   |   Dr  |Silvio | Berluscozini | ac@milano.it  |     48  | 100000 |      1       |TFM2_Delivery cost direct/broker from dealer to customer|Anti-Theft LoJack Abbonamento > 34 mesi | € 369.82 | € 166.42   |€ 536.24  | € 189.10       |€ 450.00   |€ 400.00       |      yes    |
+      |manufacturer|  model  |               car type               |  position |   color         | upholstery       |  accessories  |         option        |            optionPack          |   legal entity    |  street_name   | street_number | city_name | zip_code | phone_number | title |surname| name         |     email     | duration|distance| paymentIndex |                   paymentMethod                        |              insurance                 |leasePrice|accessoriesPrice|optionPrice|optionPackPrice|Fuel card Eni|
+      |Toyota      | Corolla |   TS 1.8 Hybrid Active (2020)        |     1     |Super White gloss| Black Cloth      | LoJack Classic|Super White gloss paint| Sensori di parcheggio anteriori |IMPRESA INDIVIDUALE|  Plaza del sol |       3       | Nichelino | 10042    |    5455566   |   Dr  |Silvio | Berluscozini | ac@milano.it  |     48  | 100000 |      1       |TFM2_Delivery cost direct/broker from dealer to customer|Anti-Theft LoJack Abbonamento > 34 mesi | € 333.89 | € 189.10       |€ 450.00   |€ 400.00       |      yes    |

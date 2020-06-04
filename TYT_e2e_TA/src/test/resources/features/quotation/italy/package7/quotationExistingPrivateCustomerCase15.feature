@@ -32,12 +32,11 @@ Feature: Quotation Template with an existing Private Customer Italy including Do
     Then he calculates the quote
     And he check the lease price '<leasePrice>'
     And he check the service price '<servicePrice>'
-    And he check the total price '<totalPrice>'
     And he checks the selected option price '<option>' '<optionPrice>'
     And he checks the selected option price '<accessories>' '<accessoriesPrice>'
     And he saved it
     And he log out
 
     Examples:
-      | car manufacturer| model | car type                           | color              | upholstery       |option            | accessories    |customer Name |duration |distance | paymentIndex |                   paymentMethod                        |downPayment |relief_vehicle| insurance                             |leasePrice |servicePrice|totalPrice|accessoriesPrice|optionPrice|
-      | Toyota          | Yaris | 1.5 Hybrid Active Plus MY19 (2019) | Super White gloss  | Cloth black/grey |Super White paint | LoJack Classic |Addoloreta    |36       |40000    |      1       |TFM2_Delivery cost direct/broker from dealer to customer|   4000     |yes           |Anti-Theft LoJack Abbonamento > 34 mesi| € 198.27  |€ 136.89    |€ 335.16  | € 189.10       |€ 450.00   |
+      | car manufacturer| model | car type                           | color              | upholstery       |option            | accessories    |customer Name |duration |distance | paymentIndex |                   paymentMethod                        |downPayment |relief_vehicle| insurance                             |leasePrice |servicePrice|accessoriesPrice|optionPrice|
+      | Toyota          | Yaris | 1.5 Hybrid Active Plus MY19 (2019) | Super White gloss  | Cloth black/grey |Super White paint | LoJack Classic |Addoloreta    |36       |40000    |      1       |TFM2_Delivery cost direct/broker from dealer to customer|   4000     |yes           |Anti-Theft LoJack Abbonamento > 34 mesi| € 198.27  |€ 136.89    | € 189.10       |€ 450.00   |

@@ -38,12 +38,19 @@ Feature: Quotation Template with a New Sole Trader France including Downpayment
     And he go to the next page
     And he updates the duration <duration>
     And he updates the distance <distance>
+    ##TODO il faut implementer le downpayment
+#    And he gives a down payment of '<downPayment>'
     And he selects the tyre type <tyreIndex> '<tyreName>'
     And he adds at index 0 '<tyreNumber>' tires
     Then he calculates the quote
+    And he check the lease price '€ 849,99'
+    And he clicks on the financial summary panel
+    And he clicks on the vehicle panel
+    And he checks the selected option price '<option>' '€ 2.300,00'
+    And he clicks on the financial summary panel
     And he saved it
     And he log out
 
     Examples:
-      | car manufacturer| model | car type         | color              | upholstery                   |option          |position | legal entity |  street_name       | street_number | city_name  | zip_code | phone_number | title |surname| name       |     email                |product_type | duration | distance |tyreIndex | tyreName     |tyreNumber |
-      | Lexus           | RX    | 450h Luxe (2020) | Gris Titane métal. |Sièges Cuir Noir Inserts Noir |Pack Technology |    1    |PROF.LIB      |  Place du Boulevard|       80      | Vaucresson | 92420    |    5787556   |   Mr  |Lumiere | Renard    | soleautomation@paris.fr  |KINTO ONE    |36        | 45000    |     0    | Summer Tires |      4    |
+      | car manufacturer| model | car type         | color              | upholstery                   |option          |position | legal entity |  street_name       | street_number | city_name  | zip_code | phone_number | title |surname| name       |     email                |product_type | duration | distance |downPayment|tyreIndex | tyreName     |tyreNumber |
+      | Lexus           | RX    | 450h Luxe (2020) | Gris Titane métal. |Sièges Cuir Noir Inserts Noir |Pack Technology |    1    |PROF.LIB      |  Place du Boulevard|       80      | Vaucresson | 92420    |    5787556   |   Mr  |Lumiere | Renard    | soleautomation@paris.fr  |KINTO ONE    |36        | 45000    |4000       |     0    | Summer Tires |      4    |

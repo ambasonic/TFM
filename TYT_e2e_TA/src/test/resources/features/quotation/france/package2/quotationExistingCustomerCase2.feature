@@ -18,7 +18,7 @@ Feature: Quotation Duplication with an existing Customer France(change of durati
     And he go to the next page
     Then he search the customer by name '<customer Name>'
     And he go to the next page
-    Then he accepts the prospect agreement 'Geo-Localization', 'Marketing purposes','Surveys'
+    Then he accepts the prospect agreement
     And he sets the product to '<product_type>'
     And he go to the next page
     And he updates the duration <duration>
@@ -26,9 +26,15 @@ Feature: Quotation Duplication with an existing Customer France(change of durati
     And he selects the tyre type <tyreIndex> '<tyreName>'
     And he adds at index 2 '<tyreNumber>' tires
     Then he calculates the quote
+    And he check the lease price '€ 410,38'
+    And he clicks on the financial summary panel
+    And he clicks on the vehicle panel
+    And he checks the selected option price '<option>' '€ 650,00'
+    And he checks the selected option price '<option2>' '€ 280,00'
+    And he clicks on the financial summary panel
     And he saved it
     And he log out
-# retirer tous les index tyreIndex, tyreNumberIndex
+
     Examples:
       | car manufacturer| model   | car type                             | color                  | upholstery          |option         |option2                              | customer Name  | product_type        | duration | distance   |tyreIndex | tyreName     | tyreNumber |
       | Toyota          | COROLLA | Hybride 122h Dynamic Business (2020) | Black metallic paint   | Sellerie tissu Noir |Metallic paint | Front radar parking distance sensors|2BDEVELOPPEMENT | KINTO ONE DECALAGE  |60        | 120000     |     0    | Summer Tires |       4    |

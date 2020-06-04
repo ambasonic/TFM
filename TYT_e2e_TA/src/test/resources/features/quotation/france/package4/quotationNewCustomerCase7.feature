@@ -39,10 +39,16 @@ Feature: Quotation Template with a New Customer France including relief vehicle 
     And he updates the distance <distance>
     And he selects the tyre type <tyreIndex> '<tyreName>'
     And he adds at index 2 '<tyreNumber>' tires
+    And he sets relief vehicle to '<relief_vehicle>'
     Then he calculates the quote
+    And he check the lease price '€ 267,13'
+    And he clicks on the financial summary panel
+    And he clicks on the vehicle panel
+    And he checks the selected option price '<option>' '€ 250,00'
+    And he clicks on the financial summary panel
     And he saved it
     And he log out
-# retirer tous les index tyreIndex, tyreNumberIndex
+
     Examples:
-      | car manufacturer| model | car type                | color                   | upholstery                                                             |option            | legal_entity|Fleet_Size | street_name       | street_number |city_name       | zip_code | phone_number | title |surname| name     |     email             |product_type        | duration | distance |tyreIndex | tyreName        |tyreNumber |
-      | Toyota          | AYGO  | 1.0 VVT-i x-play (2019) | Red Chilien gloss paint | Cloth upholstery Dark Grey with bi-toned bolsters white and light grey |Chilien Red paint | SARL        |   2       |Place du boulevard |       80      | VAUCRESSON     | 92420    |    5455566   |   Mr  |Bernard| Xavier   | Automation@france.fr  |KINTO ONE DECALAGE  |36        | 60000    |     2    | 4-Seasons Tires |      4    |
+      | car manufacturer| model | car type                | color                   | upholstery                                                             |option            | legal_entity|Fleet_Size | street_name       | street_number |city_name       | zip_code | phone_number | title |surname| name     |     email             |product_type        | duration | distance |tyreIndex | tyreName        |tyreNumber |relief_vehicle|
+      | Toyota          | AYGO  | 1.0 VVT-i x-play (2019) | Red Chilien gloss paint | Cloth upholstery Dark Grey with bi-toned bolsters white and light grey |Chilien Red paint | SARL        |   2       |Place du boulevard |       80      | VAUCRESSON     | 92420    |    5455566   |   Mr  |Bernard| Xavier   | Automation@france.fr  |KINTO ONE DECALAGE  |36        | 60000    |     2    | 4-Seasons Tires |      4    |yes           |

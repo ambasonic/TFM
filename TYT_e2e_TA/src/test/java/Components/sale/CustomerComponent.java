@@ -61,21 +61,15 @@ public class CustomerComponent extends ReusableViewElements {
             return;
         }else if(currentProperties.getCurrentCountry().equalsIgnoreCase("italy")){
             waitABit(4000);
-            element(SAVE_BUTTON).click();
-            waitABit(1000);
+            try {
+                element(SAVE_BUTTON).click();
+            } catch (ElementShouldBeEnabledException e){
+                element(By.id("prospectdetail:submit-confirmButton")).click();
+            }
+            waitABit(3000);
             return;
-//            for (String item: agreements) {
-//                findAll(GDPR_start +item+GDPR_end).get(0).click();
-//            }
         }
         waitABit(2000);
-//
-        try {
-            element(SAVE_BUTTON).click();
-        } catch (ElementShouldBeEnabledException e){
-            element(By.id("prospectdetail:submit-confirmButton")).click();
-        }
-        waitABit(3000);
     }
 
     public void clickOnNewCustomer() {

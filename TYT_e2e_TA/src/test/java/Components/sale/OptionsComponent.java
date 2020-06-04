@@ -95,7 +95,7 @@ public class OptionsComponent extends ReusableViewElements {
     }
 
     public void setAccessoriesByText(String accessory){
-        waitABit(1000);
+        waitABit(2000);
         List<WebElementFacade> anchors = element(ACCESSORIES_BODY_ELEMENT).thenFindAll(By.tagName("tr"))
                 .stream()
                 .filter(c -> c.find(By.className("optdescription")).getText().equalsIgnoreCase(accessory))

@@ -255,4 +255,14 @@ public class FinancesServicesComponent extends ReusableViewElements {
         element(By.cssSelector("#printdocument > table > tbody > tr:nth-child(2) > td > div > a")).click();
         waitABit(100);
     }
+
+    public void closeSummaryPanel() {
+        waitABit(1000);
+        element(By.cssSelector("#quote\\:retailfinanceSummary\\:rentalSummaryPanel > legend")).click();
+    }
+
+    public void closeVehiclePanel(){
+        waitABit(1000);
+        element(By.cssSelector("#quote\\:selectedVehiclePanel > legend")).click();
+    }
 }

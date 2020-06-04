@@ -24,11 +24,15 @@ Feature: Quotation Duplication with an existing Customer France (change of durat
     And he go to the next page
     And he updates the duration <duration>
     And he updates the distance <distance>
-#    And he selects the first <paymentIndex> payment '<paymentMethod>'
     Then he calculates the quote
+    And he check the lease price '€ 261,04'
+    And he clicks on the financial summary panel
+    And he clicks on the vehicle panel
+    And he checks the selected option price '<option>' '€ 150,00'
+    And he clicks on the financial summary panel
     And he saved it
     And he log out
 
     Examples:
       | car manufacturer| model         | car type                      | color                    | upholstery  |option                 | customer Name  | product_type| duration | distance |
-      | Toyota          | Yaris Hybride | 1.5 VVT-I HYBRID France (2019)| Pure White gloss paint   | Cloth black |Space saver spare wheel| 2BDEVELOPPEMENT| KINTO ONE   |60        | 120000    |
+      | Toyota          | Yaris Hybride | 1.5 VVT-I HYBRID France (2019)| Pure White gloss paint   | Cloth black |Space saver spare wheel| 2BDEVELOPPEMENT| KINTO ONE   |60        | 120000   |
