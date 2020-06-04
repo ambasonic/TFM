@@ -94,6 +94,36 @@ public class FinancesServicesComponent extends ReusableViewElements {
         element(By.id(Tires_Number_Input_Field_Start+index+Tires_Number_Input_Field_End)).sendKeys(String.valueOf(tiresNumber));
     }
 
+
+    public void addService(String serviceName, String choice){
+        waitABit(1000);
+        String id ="";
+        WebElementFacade element = element(By.id("quote:retailfinance:ps"));//Table
+        List<WebElementFacade> table = element.thenFindAll(By.tagName("table"));
+        for (int i = 1; i<table.size();i++) { // ignore the first element of the table
+            waitABit(500);
+            List<WebElementFacade> td = table.get(i).thenFindAll(By.tagName("td"));
+            if(td.get(0).getTextContent().equalsIgnoreCase(serviceName)){
+                List<WebElementFacade> div = td.get(1).thenFindAll(By.tagName("div"));
+                waitABit(1000);
+                id = div.get(0).getAttribute("id");
+                if(!choice.equalsIgnoreCase("")){
+                    waitABit(500);
+                    String items_id = id+"_items";
+                    String label_id = id+"_label";
+                    element(By.id(label_id)).click();
+                    List<WebElementFacade> li = element(By.id(items_id)).thenFindAll(By.tagName("li"));
+                    for (WebElementFacade elem: li) {
+                        if(elem.getTextContent().equalsIgnoreCase(choice)){
+                            elem.click();
+                            return;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
     public void quoteCalculation(){
         element(By.id(Calculate_Button)).click();
         waitABit(4000);

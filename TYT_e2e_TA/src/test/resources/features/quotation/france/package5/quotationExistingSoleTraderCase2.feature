@@ -18,8 +18,7 @@ Feature: Quotation Template with an Existing Sole Trader France including Downpa
     And he selects an option '<option>'
     And he chooses color '<color>' and upholstery '<upholstery>'
     And he go to the next page
-    ##TODO il faut checker ici car ca cherche plutot dans 'organization' au lieu de 'Soletrader'
-    Then he search the customer by name '<customer Name>'
+    Then he search the sole trader by name '<customer Name>'
     And he go to the next page
     Then he accepts the prospect agreement
     And he sets the product to '<product_type>'

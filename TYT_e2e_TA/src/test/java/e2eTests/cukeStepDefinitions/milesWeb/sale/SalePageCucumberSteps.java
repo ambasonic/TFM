@@ -80,6 +80,12 @@ public class SalePageCucumberSteps {
         salePageSteps.selectOrganization();
     }
 
+    @Then("he search the sole trader by name {string}")
+    public void searchSoleTrader(String name) {
+        salePageSteps.searchCustomerByName(name);
+        salePageSteps.selectOrganization();
+    }
+
     @Then("he accepts the prospect agreement {string}, {string},{string}")
     public void he_accepts_the_prospect_agreement(String gdpr1, String gdpr2, String gdpr3) {
         salePageSteps.acceptProspectAgreement(gdpr1, gdpr2,gdpr3);
@@ -249,4 +255,8 @@ public class SalePageCucumberSteps {
         salePageSteps.selectCustomerType(customerType);
     }
 
+    @And("he adds the service {string} {string}")
+    public void addService(String serviceName, String value) {
+        salePage.getFinancesServicesComponent().addService(serviceName, value);
+    }
 }

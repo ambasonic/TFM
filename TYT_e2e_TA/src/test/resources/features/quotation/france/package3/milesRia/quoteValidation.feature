@@ -38,8 +38,6 @@ Feature: Quote validation
     And he set the distance
     Then he deliver
     And he checks the status 'Running'
-    #LE status que la methode donne est Running pas Actif
-
 
     Examples:
       |quoteID   |

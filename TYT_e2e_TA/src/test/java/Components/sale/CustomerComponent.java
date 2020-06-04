@@ -47,7 +47,7 @@ public class CustomerComponent extends ReusableViewElements {
     }
 
     public void selectOrganization(){
-        waitABit(1000);
+        waitABit(3000);
         List<WebElementFacade> anchor = element(PROSPECT_DATA_TABLE).thenFindAll(By.tagName("tr"));
         anchor.get(0).findElement(By.tagName("button")).click();
         waitABit(500);
@@ -57,12 +57,16 @@ public class CustomerComponent extends ReusableViewElements {
         waitABit(1000);
         if(currentProperties.getCurrentCountry().equalsIgnoreCase("france")){
             element(SAVE_BUTTON).click();
+            waitABit(1000);
             return;
         }else if(currentProperties.getCurrentCountry().equalsIgnoreCase("italy")){
+            waitABit(4000);
+            element(SAVE_BUTTON).click();
             waitABit(1000);
-            for (String item: agreements) {
-                findAll(GDPR_start +item+GDPR_end).get(0).click();
-            }
+            return;
+//            for (String item: agreements) {
+//                findAll(GDPR_start +item+GDPR_end).get(0).click();
+//            }
         }
         waitABit(2000);
 //
