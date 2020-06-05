@@ -147,6 +147,7 @@ public class OrganizationComponent extends ReusableViewElements {
     }
 
     public void setSurname(String surname) {
+        waitABit(500);
         element(SURNAME).sendKeys(surname);
         waitABit(1000);
     }

@@ -16,3 +16,4 @@
 [0601/153012.808:ERROR:file_io.cc(89)] ReadExactly: expected 36, observed 0
 [0601/164122.526:ERROR:file_io.cc(89)] ReadExactly: expected 36, observed 0
 [0602/172828.970:ERROR:file_io.cc(89)] ReadExactly: expected 36, observed 0
+[0604/202606.894:ERROR:file_io_win.cc(161)] CreateFile C:\Users\Admin\AppData\Local\Temp\scoped_dir35608_1926592670\Crashpad\settings.dat: The system cannot find the file specified. (0x2)

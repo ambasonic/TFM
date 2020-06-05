@@ -3,7 +3,7 @@
 @france
 @pck1case2france
 Feature: Quotation Duplication with an existing Customer France (change of duration and distance)
-
+#Duplication
   Scenario Outline: quotation
     Given The dealer open the MilesWeb backoffice 'FRANCE'
     And he login

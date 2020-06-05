@@ -179,5 +179,9 @@ public class SalePageSteps {
     public void selectCustomerType(String customerType) {
         salePage.getVehicleComponent().setCustomerType(customerType);
     }
+
+    public void switchToSoleTrader() {
+        salePage.getCustomerComponent().switchToSoleTrader();
+    }
 }
 

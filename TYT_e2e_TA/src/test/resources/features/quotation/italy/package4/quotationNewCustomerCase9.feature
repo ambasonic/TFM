@@ -33,11 +33,12 @@ Feature: Quotation Template with a New Customer Italy including Relief Vehicle a
     And he gives the email '<email>'
     And he gives the date of birth '<birthDate>'
     And he go to the next page
-    Then he accepts the prospect agreement 'Geo-Localization', 'Marketing purposes','Surveys'
+    Then he accepts the prospect agreement
     And he go to the next page
     And he selects the first <paymentIndex> payment '<paymentMethod>'
-    And he accepts the Fuel Card Edenred '<Fuel Card EdenRed>'
-    And he sets relief vehicle to '<relief_vehicle>'
+    And he adds the service 'Relief vehicle' 'yes'
+    And he adds the service 'Fuel card EDENRED' 'yes'
+#    And he accepts the Fuel Card Edenred '<Fuel Card EdenRed>'
     Then he calculates the quote
     And he check the lease price '<leasePrice>'
     And he check the service price '<servicePrice>'

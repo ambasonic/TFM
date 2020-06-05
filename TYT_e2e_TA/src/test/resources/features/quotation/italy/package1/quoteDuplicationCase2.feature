@@ -6,7 +6,7 @@
 Feature: Duplicate a quote and change of duration and distance with additional options
 
   Scenario Outline: quote duplication
-    Given The dealer open the MilesWeb portal Dealer home page
+    Given The dealer open the MilesWeb backoffice 'ITALY'
     And he login
     Then he can see the dealer home page
     When he select the pending quotes menu
@@ -23,4 +23,4 @@ Feature: Duplicate a quote and change of duration and distance with additional o
 
     Examples:
       |duration| distance | paymentIndex | paymentMethod                                          | relief_vehicle | tyreIndex | tyreName      | tyreNumber | totalPrice |
-      |60      | 190000   | 1            |TFM2_Delivery cost direct/broker from dealer to customer| yes            | 2         | Flex Standard | 4          |€ 535.91    |
+      |60      | 190000   | 1            |TFM2_Delivery cost direct/broker from dealer to customer| yes            | 2         | Flex Standard | 4          |€ 429.78    |

@@ -122,9 +122,11 @@ public class FinancesServicesComponent extends ReusableViewElements {
                 }
             }
         }
+        fail("Unknown service or choice "+serviceName);
     }
 
     public void quoteCalculation(){
+        scrollToPosition(0,0);
         element(By.id(Calculate_Button)).click();
         waitABit(4000);
     }

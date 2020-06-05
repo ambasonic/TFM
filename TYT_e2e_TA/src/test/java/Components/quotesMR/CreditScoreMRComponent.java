@@ -57,6 +57,7 @@ public class CreditScoreMRComponent extends ReusableViewElements {
     }
 
     public void clickOnContract() {
+        waitABit(1000);
         element(By.name("R1305")).click();
         waitABit(2000);
         element(contract).click();

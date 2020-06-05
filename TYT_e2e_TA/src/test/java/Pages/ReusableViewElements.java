@@ -104,6 +104,7 @@ public class ReusableViewElements extends PageObject {
         while(staleElement && (System.currentTimeMillis()-startTime)< 5000){
             try{
                 if(cleartext) element(elementBy).clear();
+                waitABit(500);
                 element(elementBy).sendKeys(charSequences);
                 staleElement = false;
 

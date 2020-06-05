@@ -34,9 +34,9 @@ Feature: Quote validation
     And he select the 'Express delivery' as delivery
     And he set the distance
     Then he deliver
-    And he checks the status 'Runnings'
+    And he checks the status 'Running'
 
 
     Examples:
       |quoteID   |
-      |001984/001|
+      |019373/001|

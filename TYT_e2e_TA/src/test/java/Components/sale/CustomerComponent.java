@@ -1,6 +1,7 @@
 package Components.sale;
 
 import Pages.ReusableViewElements;
+import Utils.CurrentProperties;
 import net.serenitybdd.core.pages.WebElementFacade;
 import net.thucydides.core.webdriver.exceptions.ElementShouldBeEnabledException;
 import org.openqa.selenium.By;
@@ -20,7 +21,7 @@ public class CustomerComponent extends ReusableViewElements {
     private final By MODIFY_CUSTOMER_NEW_FR = By.id("quote:j_idt945");
     private final By PROSPECT_DATA_TABLE = By.id("prospectdata:prospectlistTable_data");
     private final By PROSPECT_NAME = By.id("quote:prospectname");
-//    ex GDPR "//*[contains(text(),'Geo-Localization')]";
+    //    ex GDPR "//*[contains(text(),'Geo-Localization')]";
     private final String GDPR_start = "//*[contains(text(),'";
     private final String GDPR_end = "')]";
     private final By SAVE_BUTTON = By.xpath("//*[@id='quote:save-confirmButton']");
@@ -43,6 +44,11 @@ public class CustomerComponent extends ReusableViewElements {
     public void switchToOrganizationSearch(){
         getDriver().switchTo().frame(0);
         element(By.xpath(organizationMenuButton)).click();
+        waitABit(5000);
+    }
+    public void switchToSoleTrader(){
+        getDriver().switchTo().frame(0);
+        findAll(By.xpath(organizationMenuButton)).get(1).click();
         waitABit(5000);
     }
 

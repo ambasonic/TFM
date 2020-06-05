@@ -21,7 +21,7 @@ Feature: Quotation Template with an existing Customer Italy including PickUp and
     And he go to the next page
     Then he search the customer by name '<customer Name>'
     And he go to the next page
-    Then he accepts the prospect agreement 'Geo-Localization', 'Marketing purposes','Surveys'
+    Then he accepts the prospect agreement
     And he go to the next page
     And he updates the duration <duration>
     And he updates the distance <distance>

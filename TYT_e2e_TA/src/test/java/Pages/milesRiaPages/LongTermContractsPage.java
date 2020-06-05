@@ -78,7 +78,7 @@ public class LongTermContractsPage extends ReusableViewElements {
         if (currentProperties.getCurrentCountry().equalsIgnoreCase("france")){
             setVehicleReceipt("Roland, Bosch");
         } else {
-            setVehicleReceipt("TestAutomation");
+            setVehicleReceipt("ROSSO, ALBERTO");
         }
         waitABit(5000);
         int size = findAll(DELIVER).size();
@@ -111,9 +111,9 @@ public class LongTermContractsPage extends ReusableViewElements {
 
     public void setRequestLocation(){
         if (currentProperties.getCurrentCountry().equalsIgnoreCase("france")){
-            sendKeysAfterStaleness(REQUESTED_LOCATION, false, location_text_France);
+            sendKeysAfterStaleness(REQUESTED_LOCATION, true, location_text_France);
         }else if (currentProperties.getCurrentCountry().equalsIgnoreCase("Italy")){
-            sendKeysAfterStaleness(REQUESTED_LOCATION, false, location_text_Italy);
+            sendKeysAfterStaleness(REQUESTED_LOCATION, true, location_text_Italy);
         }
         waitABit(1000);
     }

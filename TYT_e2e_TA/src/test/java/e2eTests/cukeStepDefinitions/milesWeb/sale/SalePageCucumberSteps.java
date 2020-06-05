@@ -83,6 +83,7 @@ public class SalePageCucumberSteps {
     @Then("he search the sole trader by name {string}")
     public void searchSoleTrader(String name) {
         salePageSteps.searchCustomerByName(name);
+        salePageSteps.switchToSoleTrader();
         salePageSteps.selectOrganization();
     }
 

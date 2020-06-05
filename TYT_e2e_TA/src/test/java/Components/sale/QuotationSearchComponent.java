@@ -6,8 +6,8 @@ import org.openqa.selenium.WebDriver;
 
 public class QuotationSearchComponent extends ReusableViewElements {
 
-    private final String Quote_Selection_Check_Box = "qlist_dealermanager:quotelistTable:0:checking";
-    private final String Quote_Selection_Actions_Button= "qlist_dealermanager:quotelistTable:0:j_idt177_button";
+    private final String Quote_Selection_Check_Box = "qlist_dealer:quotelistTable:0:checking";
+    private final String Quote_Selection_Actions_Button= "qlist_dealer:quotelistTable:0:j_idt177_button";
     private final String Quote_Copy_Button = "Copy";
 
     public QuotationSearchComponent(WebDriver driver) {
@@ -15,10 +15,18 @@ public class QuotationSearchComponent extends ReusableViewElements {
     }
 
     public void selectQuote() {
+        if(currentProperties.getCurrentCountry().equalsIgnoreCase("france")){
+           String Quote_Selection_Check_Box = "qlist_dealermanager:quotelistTable:0:checking";
+           element(Quote_Selection_Check_Box).click();
+        }
         element(By.id(Quote_Selection_Check_Box)).click();
     }
 
     public void openQuoteActionsMenu() {
+        if(currentProperties.getCurrentCountry().equalsIgnoreCase("france")){
+           String Quote_Selection_Actions_Button= "qlist_dealermanager:quotelistTable:0:j_idt177_button";
+           element(Quote_Selection_Actions_Button).click();
+        }
         element(By.id(Quote_Selection_Actions_Button)).click();
     }
 
