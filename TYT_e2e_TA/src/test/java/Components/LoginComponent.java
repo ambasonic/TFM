@@ -4,6 +4,9 @@ import Pages.ReusableViewElements;
 import net.serenitybdd.core.annotations.findby.By;
 import org.openqa.selenium.WebDriver;
 
+import java.awt.*;
+import java.awt.event.KeyEvent;
+
 public class LoginComponent extends ReusableViewElements {
 
     public LoginComponent(WebDriver driver) {
@@ -11,7 +14,6 @@ public class LoginComponent extends ReusableViewElements {
     }
 
     public void setUsername(String username) {
-        waitABit(2000);
         element(By.id("login:user")).sendKeys(username);
     }
 

@@ -41,4 +41,4 @@ Feature: Quote validation
 
     Examples:
       |quoteID   |
-      |002707/001|
+      |002709/001|

@@ -183,5 +183,13 @@ public class SalePageSteps {
     public void switchToSoleTrader() {
         salePage.getCustomerComponent().switchToSoleTrader();
     }
+
+    public void selectIndividual() {
+        salePage.getCustomerComponent().selectIndividual();
+    }
+
+    public void setLegalEntityToPrivate() {
+        salePage.getCustomerComponent().setLegalEntityToPrivate();
+    }
 }
 

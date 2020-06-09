@@ -36,9 +36,8 @@ Feature: Quotation Template with a New Customer Italy including Relief Vehicle a
     Then he accepts the prospect agreement
     And he go to the next page
     And he selects the first <paymentIndex> payment '<paymentMethod>'
-    And he adds the service 'Relief vehicle' 'yes'
-    And he adds the service 'Fuel card EDENRED' 'yes'
-#    And he accepts the Fuel Card Edenred '<Fuel Card EdenRed>'
+    And he adds the service '<relief vehicle>' '<relief vehicle choice>'
+    And he adds the service '<Fuel Card EdenRed>' '<Fuel Card EdenRed choice>'
     Then he calculates the quote
     And he check the lease price '<leasePrice>'
     And he check the service price '<servicePrice>'
@@ -49,5 +48,5 @@ Feature: Quotation Template with a New Customer Italy including Relief Vehicle a
     And he log out
 
     Examples:
-      | car manufacturer| model | car type                          | color           | upholstery       |option         | accessories    | accessories2| legal entity    |  street_name   | street_number | city_name | zip_code | phone_number | title |surname| name         |     email     | birthDate   |paymentIndex | paymentMethod                                          |relief_vehicle |Fuel Card EdenRed |leasePrice|servicePrice|optionPrice |accessoriesPrice|accessories2Price|
-      | Toyota          | Yaris |   1.5 Hybrid Active MY19 (2019)   | Silver metallic | Cloth black/grey |Metallic paint | LoJack Premium | Portabici Sx|Societa  Semplice|  Plaza del sol |       3       | Nichelino | 10042    |    5455566   |   Dr  |Silvio | Berluscozini | ac@milano.it  | 10/01/1947  |1            |TFM2_Delivery cost direct/broker from dealer to customer|    yes        |yes               | € 270.44 |  € 142.47  |€ 700.00    |€ 272.06        |€ 161.22         |
+      | car manufacturer| model | car type                          | color           | upholstery       |option         | accessories    | accessories2| legal entity    |  street_name   | street_number | city_name | zip_code | phone_number | title |surname| name         |     email     | birthDate   |paymentIndex | paymentMethod                                          |relief vehicle|relief vehicle choice |Fuel Card EdenRed |Fuel Card EdenRed choice|leasePrice|servicePrice|optionPrice |accessoriesPrice|accessories2Price|
+      | Toyota          | Yaris |   1.5 Hybrid Active MY19 (2019)   | Silver metallic | Cloth black/grey |Metallic paint | LoJack Premium | Portabici Sx|Societa  Semplice|  Plaza del sol |       3       | Nichelino | 10042    |    5455566   |   Dr  |Silvio | Berluscozini | ac@milano.it  | 10/01/1947  |1            |TFM2_Delivery cost direct/broker from dealer to customer|relief vehicle|        yes           |Fuel Card EdenRed |           yes          | € 270.44 |  € 142.47  |€ 700.00    |€ 272.06        |€ 161.22         |

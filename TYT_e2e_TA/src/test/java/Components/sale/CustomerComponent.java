@@ -52,6 +52,12 @@ public class CustomerComponent extends ReusableViewElements {
         waitABit(5000);
     }
 
+    public void selectIndividual(){
+        getDriver().switchTo().frame(0);
+        findAll(By.xpath(organizationMenuButton)).get(0).click();
+        waitABit(5000);
+    }
+
     public void selectOrganization(){
         waitABit(3000);
         List<WebElementFacade> anchor = element(PROSPECT_DATA_TABLE).thenFindAll(By.tagName("tr"));
@@ -89,6 +95,13 @@ public class CustomerComponent extends ReusableViewElements {
             waitABit(2000);
         }
 
+    }
+
+    public void setLegalEntityToPrivate() {
+        element(By.id("prospectdata:prospectlegalEntity_label")).click();
+        waitABit(500);
+        element(By.id("prospectdata:prospectlegalEntity_1")).click();
+        waitABit(4000);
     }
 }
 

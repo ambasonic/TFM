@@ -24,8 +24,7 @@ Feature: Quotation Template with an existing Customer Italy including Relief Veh
     Then he accepts the prospect agreement
     And he go to the next page
     And he selects the first <paymentIndex> payment '<paymentMethod>'
-    And he accepts the Fuel Card Edenred '<Fuel Card EdenRed>'
-    And he sets relief vehicle to '<relief_vehicle>'
+    And he adds the service '<Fuel Card EdenRed>' '<Fuel Card EdenRed choice>'
     Then he calculates the quote
     And he check the lease price '<leasePrice>'
     And he check the service price '<servicePrice>'
@@ -36,5 +35,5 @@ Feature: Quotation Template with an existing Customer Italy including Relief Veh
     And he log out
 
     Examples:
-      | car manufacturer| model | car type                          | color            | upholstery       |option         | accessories    | accessories2|customer Name |paymentIndex | paymentMethod                                          |relief_vehicle |Fuel Card EdenRed |leasePrice|servicePrice|optionPrice |accessoriesPrice|accessories2Price|
-      | Toyota          | Yaris |   1.5 Hybrid Active MY19 (2019)   | Silver metallic  | Cloth black/grey |Metallic paint | LoJack Premium | Portabici Sx|CHIMAR SPA    |1            |TFM2_Delivery cost direct/broker from dealer to customer|    yes        |yes               | € 270.44 | € 125.27   |€ 700.00    |€ 272.06        |€ 161.22         |
+      | car manufacturer| model | car type                          | color            | upholstery       |option         | accessories    | accessories2|customer Name |paymentIndex | paymentMethod                                          |Fuel Card EdenRed|Fuel Card EdenRed choice |leasePrice|servicePrice|optionPrice |accessoriesPrice|accessories2Price|
+      | Toyota          | Yaris |   1.5 Hybrid Active MY19 (2019)   | Silver metallic  | Cloth black/grey |Metallic paint | LoJack Premium | Portabici Sx|CHIMAR SPA    |1            |TFM2_Delivery cost direct/broker from dealer to customer|Fuel Card EdenRed|yes                      | € 270.44 | € 125.27   |€ 700.00    |€ 272.06        |€ 161.22         |

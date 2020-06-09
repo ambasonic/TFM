@@ -34,15 +34,15 @@ Feature: Quotation Template with a new Private customer Italy including vehicles
     And he updates the duration <duration>
     And he updates the distance <distance>
     And he selects the first <paymentIndex> payment '<paymentMethod>'
-    And he adds the service 'Fuel card Eni' 'yes'
+    And he adds the service '<Fuel card Eni>' '<Fuel card Eni choice>'
     And he set the insurance type '<insurance>'
     Then he calculates the quote
-    And he sets the number of vehicle to 2
+    And he sets the number of vehicle to <number of vehicle>
     And he check the total price '<totalPrice>'
     And he checks the selected option price '<accessories>' '<accessoriesPrice>'
     And he saved it
     And he log out
 
     Examples:
-      | car manufacturer| model        | car type                                   | color       | upholstery      | accessories    | street_name   | street_number | city_name | zip_code | phone_number | title   |surname  | name         |     email     |duration |distance | paymentIndex |                   paymentMethod                        |insurance                              |totalPrice|accessoriesPrice|
-      | Toyota          | PROACE VERSO | 2.0D 150Cv S&S M/T L2 D Lounge 9 p. (2020) | White gloss | Dark grey cloth | LoJack Classic | Plaza del sol |       3       | Nichelino | 10042    |    5455566   |   Miss  |Silviana | Berluscozini | ac@milano.it  |36       |75000    |    1         |TFM2_Delivery cost direct/broker from dealer to customer|Anti-Theft LoJack Abbonamento > 34 mesi|€ 578.82  |€ 189.10        |
+      | car manufacturer| model        | car type                                   | color       | upholstery      | accessories    | street_name   | street_number | city_name | zip_code | phone_number | title   |surname  | name         |     email     |duration |distance | paymentIndex |                   paymentMethod                        |insurance                              |totalPrice|accessoriesPrice|Fuel card Eni|Fuel card Eni choice|number of vehicle|
+      | Toyota          | PROACE VERSO | 2.0D 150Cv S&S M/T L2 D Lounge 9 p. (2020) | White gloss | Dark grey cloth | LoJack Classic | Plaza del sol |       3       | Nichelino | 10042    |    5455566   |   Miss  |Silviana | Berluscozini | ac@milano.it  |36       |75000    |    1         |TFM2_Delivery cost direct/broker from dealer to customer|Anti-Theft LoJack Abbonamento > 34 mesi|€ 578.82  |€ 189.10        |Fuel card Eni|yes                 |2                |

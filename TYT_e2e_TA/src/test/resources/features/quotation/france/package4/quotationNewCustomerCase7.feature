@@ -15,7 +15,6 @@ Feature: Quotation Template with a New Customer France including relief vehicle 
     And he selects the type '<car type>'
     And he go to the next page
     Then he can selects vehicle options
-    And he selects an option '<option>'
     And he chooses color '<color>' and upholstery '<upholstery>'
     And he go to the next page
     Then he can create a new customer
@@ -35,20 +34,17 @@ Feature: Quotation Template with a New Customer France including relief vehicle 
     Then he accepts the prospect agreement
     And he sets the product to '<product_type>'
     And he go to the next page
+    And he scrolls down
     And he updates the duration <duration>
     And he updates the distance <distance>
-    And he selects the tyre type <tyreIndex> '<tyreName>'
-    And he adds at index 2 '<tyreNumber>' tires
-    And he sets relief vehicle to '<relief_vehicle>'
+    And he adds the service '<tires>' '<tire choice>'
+    And he adds at index 0 '<tyreNumber>' tires
+    And he adds the service '<relief vehicle>' '<relief vehicle choice>'
     Then he calculates the quote
-    And he check the lease price '€ 267,13'
-    And he clicks on the financial summary panel
-    And he clicks on the vehicle panel
-    And he checks the selected option price '<option>' '€ 250,00'
-    And he clicks on the financial summary panel
+    And he check the lease price '<lease price>'
     And he saved it
     And he log out
 
     Examples:
-      | car manufacturer| model | car type                | color                   | upholstery                                                             |option            | legal_entity|Fleet_Size | street_name       | street_number |city_name       | zip_code | phone_number | title |surname| name     |     email             |product_type        | duration | distance |tyreIndex | tyreName        |tyreNumber |relief_vehicle|
-      | Toyota          | AYGO  | 1.0 VVT-i x-play (2019) | Red Chilien gloss paint | Cloth upholstery Dark Grey with bi-toned bolsters white and light grey |Chilien Red paint | SARL        |   2       |Place du boulevard |       80      | VAUCRESSON     | 92420    |    5455566   |   Mr  |Bernard| Xavier   | Automation@france.fr  |KINTO ONE DECALAGE  |36        | 60000    |     2    | 4-Seasons Tires |      4    |yes           |
+      | car manufacturer| model | car type                | color                   | upholstery                                                             |legal_entity|Fleet_Size | street_name       | street_number |city_name       | zip_code | phone_number | title |surname| name     |     email             |product_type        | duration | distance |tires | tire choice        |tyreNumber |relief vehicle choice|relief vehicle|lease price|
+      | Toyota          | AYGO  | 1.0 VVT-i x-play (2019) | Pure white gloss paint  | Cloth upholstery Dark Grey with bi-toned bolsters white and light grey | SARL        |   2      |Place du boulevard |       80      | VAUCRESSON     | 92420    |    5455566   |   Mr  |Bernard| Xavier   | Automation@france.fr  |KINTO ONE DECALAGE  |36        | 60000    |tires | 4-Seasons Tires    |     8     |yes                  |relief vehicle|€ 281,17  |

@@ -87,7 +87,9 @@ public class OptionsComponent extends ReusableViewElements {
                 .filter(c -> c.find(By.className("optionNameColumn")).getText().equalsIgnoreCase(optionPack))
                 .collect(Collectors.toList());
         assertFalse("The optionPack: "+optionPack+" is unknown", anchors.size()!=1);
-        scrollToPosition(0,500);
+        if(!currentProperties.getCurrentCountry().equalsIgnoreCase("france")){
+            scrollToPosition(0,500);
+        }
         waitABit(750);
         WebElement optchk = anchors.get(0).findElement(By.className("optchk"));
         optchk.findElement(By.tagName("div")).click();

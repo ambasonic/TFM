@@ -2,7 +2,7 @@
 # Tags: optional
 
 @france
-@pck5case2
+@pck5case2france
 Feature: Quotation Template with an Existing Sole Trader France including Downpayment and relief vehicle
 
   Scenario Outline: quotation
@@ -23,22 +23,23 @@ Feature: Quotation Template with an Existing Sole Trader France including Downpa
     Then he accepts the prospect agreement
     And he sets the product to '<product_type>'
     And he go to the next page
+    And he scrolls down
+    And he gives a down payment of '<downPayment>'
     And he updates the duration <duration>
     And he updates the distance <distance>
-    ##TODO il faut implementer downpayment
-#    And he gives a down payment of '<downPayment>'
-    And he selects the tyre type <tyreIndex> '<tyreName>'
-    And he adds at index 2 '<tyreNumber>' tires
-    And he sets relief vehicle to '<relief_vehicle>'
+    And he adds the service '<tires>' '<tire choice>'
+    And he adds at index 0 '<tyreNumber>' tires
+    And he adds the service '<relief vehicle>' '<relief vehicle choice>'
     Then he calculates the quote
-    And he check the lease price '€ 324,35'
+    And he check the lease price '<lease price>'
     And he clicks on the financial summary panel
     And he clicks on the vehicle panel
-    And he checks the selected option price '<option>' '€ 300,00'
+    And he checks the selected option price '<option>' '<optionPrice>'
     And he clicks on the financial summary panel
+    And he scrolls down
     And he saved it
     And he log out
 
     Examples:
-      | car manufacturer| model         | car type                           | color                      | upholstery       |option               |customer Name  | product_type       | duration | distance  |downPayment|tyreIndex | tyreName        |tyreNumber |relief_vehicle|
-      | Toyota          | YARIS HYBRIDE | 1.5 VVT-I HYBRID Collection (2019) | Two-tone Pearl White/Black |Cloth Black/White |Rear parking sensors |COCCINELLE     | KINTO ONE DECALAGE |48        | 80000     | 4000      |    2     | 4-Seasons Tires |     4     |yes           |
+      | car manufacturer| model         | car type                        | color                   | upholstery       |option         |customer Name  | product_type       |  distance  |duration |downPayment|tyreNumber |tires | tire choice        |relief vehicle choice|relief vehicle|lease price|optionPrice|
+      | Toyota          | YARIS HYBRIDE | 1.5 VVT-I HYBRID Dynamic (2019) | Manhattan Grey metallic |Cloth Black/Grey  |Metallic paint |COCCINELLE     | KINTO ONE DECALAGE |  80000     |48        |1000       |     4     |tires | Summer Tires       |yes                  |relief vehicle|€ 289,13   |€ 300,00   |

@@ -5,6 +5,7 @@ import net.serenitybdd.core.pages.WebElementFacade;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
+import java.util.DuplicateFormatFlagsException;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -28,6 +29,7 @@ public class FinancesServicesComponent extends ReusableViewElements {
     private final String Save_Quote = "quote:retailfinanceSummary:save";
     private final String TotalPrice_Value = "quote:retailfinanceSummary:pricewithfuelexclvat";
     private final By DOWN_PAYMENT = By.id("quote:retailfinanceSummary:upfront");
+    private final By DOWN_PAYMENT_FR = By.id("quote:retailfinanceSummary:firsthigherpaymentinclvat");
     private final By DURATION  = By.id("quote:retailfinance:months");
     private final By DISTANCE  = By.id("quote:retailfinance:kms");
     private final By INSURANCE_LABEL = By.id("quote:retailfinance:lsc:8:pcs_label");
@@ -57,7 +59,7 @@ public class FinancesServicesComponent extends ReusableViewElements {
     }
 
     public void setDistance(int distance){
-        waitABit(500);
+        waitABit(1000);
         element(DISTANCE).clear();
         element(DISTANCE).sendKeys(String.valueOf(distance));
     }
@@ -84,7 +86,6 @@ public class FinancesServicesComponent extends ReusableViewElements {
 
     //TODO find a way to check the Tires name
     public void selectTires(int tiresIndex, String tiresName){
-//        scrollToElement( element(By.id(Tires_Vehicle_Field)));
         element(By.id(Tires_Vehicle_Field)).click();
         element(By.id(Tires_Type+tiresIndex)).click();
     }
@@ -126,6 +127,11 @@ public class FinancesServicesComponent extends ReusableViewElements {
     }
 
     public void quoteCalculation(){
+        if(currentProperties.getCurrentCountry().equalsIgnoreCase("france")){
+            element(By.id(Calculate_Button)).click();
+            waitABit(1000);
+            return;
+        }
         scrollToPosition(0,0);
         element(By.id(Calculate_Button)).click();
         waitABit(4000);
@@ -143,6 +149,11 @@ public class FinancesServicesComponent extends ReusableViewElements {
 
     public void setDownPayment(String payment) {
         waitABit(1000);
+        if(currentProperties.getCurrentCountry().equalsIgnoreCase("france")){
+            element(DOWN_PAYMENT_FR).sendKeys(payment);
+            waitABit(2000);
+            return;
+        }
         element(DOWN_PAYMENT).sendKeys(payment);
     }
 
@@ -240,7 +251,7 @@ public class FinancesServicesComponent extends ReusableViewElements {
 
     public void setVehicleNumber(int number) {
         scrollToPosition(0,0);
-        waitABit(1000);
+        waitABit(1500);
         element(VEHICLE_NUMBER).clear();
         element(VEHICLE_NUMBER).sendKeys(String.valueOf(number));
         waitABit(500);

@@ -1,7 +1,7 @@
 # new feature
 # Tags: optional
 @france
-@pck4case6
+@pck4case6france
 Feature: Quotation Template with an existing Customer France including relief vehicle
 
   Scenario Outline: quotation
@@ -22,20 +22,22 @@ Feature: Quotation Template with an existing Customer France including relief ve
     Then he accepts the prospect agreement
     And he sets the product to '<product_type>'
     And he go to the next page
+    And he scrolls down
     And he updates the duration <duration>
     And he updates the distance <distance>
-    And he selects the tyre type <tyreIndex> '<tyreName>'
-    And he adds at index 2 '<tyreNumber>' tires
-    And he sets relief vehicle to '<relief_vehicle>'
+    And he adds the service '<tires>' '<tire choice>'
+    And he adds at index 0 '<tyreNumber>' tires
+    And he adds the service '<relief vehicle>' '<relief vehicle choice>'
     Then he calculates the quote
-    And he check the lease price '€ 242,08'
+    And he check the lease price '<lease price>'
     And he clicks on the financial summary panel
     And he clicks on the vehicle panel
-    And he checks the selected option price '<option>' '€ 250,00'
+    And he checks the selected option price '<option>' '<optionPrice>'
     And he clicks on the financial summary panel
+    And he scrolls down
     And he saved it
     And he log out
 
     Examples:
-      | car manufacturer| model   | car type                | color                   | upholstery                                                             |option            | customer Name  | product_type  | duration | distance  |tyreIndex | tyreName        |tyreNumber |relief_vehicle|
-      | Toyota          | AYGO    | 1.0 VVT-i x-play (2019) | Red Chilien gloss paint | Cloth upholstery Dark Grey with bi-toned bolsters white and light grey |Chilien Red paint |2BDEVELOPPEMENT | KINTO ONE     |90        | 48000     |     2    | 4-Seasons Tires |     4     |yes           |
+      | car manufacturer| model   | car type                | color                   | upholstery                                                             |option            | customer Name  | product_type  | duration | distance  |tires | tire choice        |tyreNumber |relief vehicle choice|relief vehicle|lease price|optionPrice|
+      | Toyota          | AYGO    | 1.0 VVT-i x-play (2019) | Red Chilien gloss paint | Cloth upholstery Dark Grey with bi-toned bolsters white and light grey |Chilien Red paint |2BDEVELOPPEMENT | KINTO ONE     |48        | 90000     |tires | 4-Seasons Tires    |     8     |yes                  |relief vehicle|€ 251,58   |€ 250,00   |

@@ -42,14 +42,17 @@ public class TopBarComponent extends ReusableViewElements {
     }
 
     public void openTopBar(){
+        waitABit(500);
         element(By.id(Top_Bar_Menu)).click();
     }
 
     public void clickOnProfile(){
+        waitABit(500);
         element(By.linkText(Profile_Button)).click();
     }
 
     public void clickOnLogOut(){
+        waitABit(1000);
         element(By.xpath(Logout_Button)).click();
     }
 }

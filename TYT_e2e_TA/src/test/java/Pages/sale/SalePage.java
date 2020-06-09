@@ -31,4 +31,14 @@ public class SalePage extends ReusableViewElements {
         element(PRINT_DOCUMENT).click();
         waitABit(1000);
     }
+
+    public void clickOnOptionTab() {
+        element(By.id("quote:j_idt642:j_idt649")).click();
+        waitABit(4000);
+    }
+
+    public void clickOnFinanceTab() {
+        element(By.id("quote:j_idt529:j_idt536")).click();
+        waitABit(4000);
+    }
 }

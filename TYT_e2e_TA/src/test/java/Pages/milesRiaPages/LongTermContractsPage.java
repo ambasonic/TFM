@@ -124,6 +124,7 @@ public class LongTermContractsPage extends ReusableViewElements {
     }
 
     public void checkStatus(String expectedStatus) {
+        waitABit(4000);
         String  actualStatus= element(Status).getAttribute("value");
         Assert.assertEquals("Status do not match", expectedStatus.toLowerCase(), actualStatus.toLowerCase());
     }
@@ -147,7 +148,9 @@ public class LongTermContractsPage extends ReusableViewElements {
         waitABit(3000);
         Actions action = new Actions(getDriver());
         action.sendKeys(Keys.TAB).build().perform();
-        element(By.className("silkMultipleValue_closeButton")).click();
+        waitABit(500);
+        action.sendKeys(Keys.BACK_SPACE).build().perform();
+//        element(By.className("silkMultipleValue_closeButton")).click();
         waitABit(500);
         element(By.cssSelector("[id^='id__toLinks_'] > div:nth-child(2) > input")).sendKeys(email);
     }

@@ -16,8 +16,8 @@ Feature: Quotation Template with a New Customer France
     And he go to the next page
     Then he can selects vehicle options
     And he selects an option '<option>'
-    And he chooses color '<color>' and upholstery '<upholstery>'
     And he selects an option '<option2>'
+    And he chooses color '<color>' and upholstery '<upholstery>'
     And he go to the next page
     Then he can create a new customer
     And he selects the legal entity '<legal_entity>'
@@ -36,18 +36,19 @@ Feature: Quotation Template with a New Customer France
     Then he accepts the prospect agreement
     And he sets the product to '<product_type>'
     And he go to the next page
+    And he scrolls down
     And he updates the duration <duration>
     And he updates the distance <distance>
     Then he calculates the quote
-    And he check the total price '€ 401,51'
+    And he check the total price '<totalPrice>'
     And he clicks on the financial summary panel
     And he clicks on the vehicle panel
-    And he checks the selected option price '<option>' '€ 650,00'
-    And he checks the selected option price '<option2>' '€ 280,00'
+    And he checks the selected option price '<option>' '<optionPrice>'
+    And he checks the selected option price '<option2>' '<optionPrice2>'
     And he clicks on the financial summary panel
+    And he scrolls down
     And he saved it
     And he log out
-# retirer tous les index tyreIndex, tyreNumberIndex
     Examples:
-      | car manufacturer| model   | car type                             | color                  | upholstery          |option          | option2                             | legal_entity|Fleet_Size | street_name       | street_number |city_name       | zip_code | phone_number | title |surname| name     |     email             |product_type        | duration | distance |
-      | Toyota          | COROLLA | Hybride 122h Dynamic Business (2020) | Black metallic paint   | Sellerie tissu Noir |Metallic paint  | Front radar parking distance sensors| SARL        |   2       |Place du boulevard |       80      | VAUCRESSON     | 92420    |    5455566   |   Mr  |Bernard| Xavier   | Automation@france.fr  |KINTO ONE DECALAGE  |48        | 80000    |
+      | car manufacturer| model   | car type                             | color                  | upholstery          |option          | option2                             | legal_entity|Fleet_Size | street_name       | street_number |city_name       | zip_code | phone_number | title |surname| name     |     email             |product_type        | duration | distance |totalPrice|optionPrice|optionPrice2|
+      | Toyota          | COROLLA | Hybride 122h Dynamic Business (2020) | Black metallic paint   | Sellerie tissu Noir |Metallic paint  | Front radar parking distance sensors| SARL        |   2       |Place du boulevard |       80      | VAUCRESSON     | 92420    |    5455566   |   Mr  |Bernard| Xavier   | Automation@france.fr  |KINTO ONE DECALAGE  |48        | 80000    |€ 401,51  |€ 650,00   |€ 280,00    |

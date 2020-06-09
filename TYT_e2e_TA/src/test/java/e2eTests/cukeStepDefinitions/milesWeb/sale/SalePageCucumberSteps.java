@@ -87,6 +87,13 @@ public class SalePageCucumberSteps {
         salePageSteps.selectOrganization();
     }
 
+    @Then("he search the private customer by name {string}")
+    public void searchPrivateCustomer(String name) {
+        salePageSteps.searchCustomerByName(name);
+        salePageSteps.setLegalEntityToPrivate();
+        salePageSteps.selectOrganization();
+    }
+
     @Then("he accepts the prospect agreement {string}, {string},{string}")
     public void he_accepts_the_prospect_agreement(String gdpr1, String gdpr2, String gdpr3) {
         salePageSteps.acceptProspectAgreement(gdpr1, gdpr2,gdpr3);
@@ -269,5 +276,25 @@ public class SalePageCucumberSteps {
     @And("he clicks on the vehicle panel")
     public void heClosesTheVehiclePanel() {
         salePage.getFinancesServicesComponent().closeVehiclePanel();
+    }
+
+    @And("he clicks on option tab")
+    public void heClicksOnOption() {
+        salePage.clickOnOptionTab();
+    }
+
+    @And("he clicks on Finance tab")
+    public void heClicksOnFinanceServicesTab() {
+        salePage.clickOnFinanceTab();
+    }
+
+    @And("he scrolls down")
+    public void heScrollsDown() {
+        salePage.scrollToPosition(0,550);
+    }
+
+    @And("he scrolls up")
+    public void heScrollsUp() {
+        salePage.scrollToPosition(0,0);
     }
 }

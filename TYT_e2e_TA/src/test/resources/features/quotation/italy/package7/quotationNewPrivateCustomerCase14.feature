@@ -33,7 +33,7 @@ Feature: Quotation Template with a new private Customer Italy including Downpaym
     And he sets the first name '<name>'
     And he sets the email '<email>'
     And he go to the next page
-    Then he accepts the prospect agreement 'Geo-Localization', 'Marketing purposes','Surveys'
+    Then he accepts the prospect agreement
     And he go to the next page
     And he updates the duration <duration>
     And he updates the distance <distance>

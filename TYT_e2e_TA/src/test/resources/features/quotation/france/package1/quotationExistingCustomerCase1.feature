@@ -5,7 +5,7 @@
 Feature: Quotation Template with an existing Customer France
 
   Scenario Outline: quotation
-    Given The dealer open the MilesWeb backoffice 'FRANCE'
+    Given The dealer open the MilesWeb backoffice '<country>'
     And he login
     Then he can see the dealer home page
     When he selects a new quotation
@@ -25,14 +25,14 @@ Feature: Quotation Template with an existing Customer France
     And he updates the duration <duration>
     And he updates the distance <distance>
     Then he calculates the quote
-    And he check the total price '€ 251,34'
+    And he check the total price '<totalPrice>'
     And he clicks on the financial summary panel
     And he clicks on the vehicle panel
-    And he checks the selected option price '<option>' '€ 150,00'
+    And he checks the selected option price '<option>' '<optionPrice>'
     And he clicks on the financial summary panel
     And he saved it
     And he log out
 
     Examples:
-      | car manufacturer| model         | car type                      | color                    | upholstery  |option                 | customer Name  | product_type| duration | distance |
-      | Toyota          | Yaris Hybride | 1.5 VVT-I HYBRID France (2019)| Pure White gloss paint   | Cloth black |Space saver spare wheel| 2BDEVELOPPEMENT| KINTO ONE   |48        | 80000    |
+      |country| car manufacturer| model         | car type                               | color                    | upholstery       |option                 | customer Name  | product_type| duration | distance |totalPrice|optionPrice|
+      |france | Toyota          | Yaris Hybride | 1.5 VVT-I HYBRID France Business (2019)| Pure White gloss paint   | Cloth Black/Grey |Space saver spare wheel| 2BDEVELOPPEMENT| KINTO ONE   |48        | 80000    |€ 260,29|€ 150,00|
