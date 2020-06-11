@@ -4,8 +4,12 @@ import Components.header.TopBarComponent;
 import Components.sale.FinancesServicesComponent;
 import Components.sale.*;
 import Pages.ReusableViewElements;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
+import net.serenitybdd.core.pages.WebElementFacade;
+import org.openqa.selenium.*;
+import org.openqa.selenium.interactions.Actions;
+
+import java.awt.*;
+import java.awt.event.KeyEvent;
 
 public class SalePage extends ReusableViewElements {
 
@@ -40,5 +44,35 @@ public class SalePage extends ReusableViewElements {
     public void clickOnFinanceTab() {
         element(By.id("quote:j_idt529:j_idt536")).click();
         waitABit(4000);
+    }
+
+    public void scrollDownForCreditRequest() {
+        waitABit(3000);
+        try {
+            Robot robot = new Robot();
+            robot.keyPress(KeyEvent.VK_CONTROL);
+            robot.keyPress(KeyEvent.VK_MINUS);
+            robot.keyRelease(KeyEvent.VK_CONTROL);
+            robot.keyRelease(KeyEvent.VK_MINUS);
+            robot.delay(1000);
+            robot.keyPress(KeyEvent.VK_CONTROL);
+            robot.keyPress(KeyEvent.VK_MINUS);
+            robot.keyRelease(KeyEvent.VK_CONTROL);
+            robot.keyRelease(KeyEvent.VK_MINUS);
+            robot.delay(1000);
+            robot.keyPress(KeyEvent.VK_CONTROL);
+            robot.keyPress(KeyEvent.VK_ADD);
+            robot.keyRelease(KeyEvent.VK_CONTROL);
+            robot.keyRelease(KeyEvent.VK_ADD);
+            robot.delay(1000);
+            robot.keyPress(KeyEvent.VK_CONTROL);
+            robot.keyPress(KeyEvent.VK_ADD);
+            robot.keyRelease(KeyEvent.VK_CONTROL);
+            robot.keyRelease(KeyEvent.VK_ADD);
+            robot.delay(1000);
+        } catch (AWTException e) {
+            e.printStackTrace();
+        }
+        scrollToPosition(0, 500);
     }
 }

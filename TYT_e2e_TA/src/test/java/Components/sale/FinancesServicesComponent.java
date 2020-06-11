@@ -240,6 +240,7 @@ public class FinancesServicesComponent extends ReusableViewElements {
     }
 
     public void clickOnCreditRequest() {
+        waitABit(1000);
         element(CREDIT_REQUEST).click();
         waitABit(2000);
     }

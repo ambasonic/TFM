@@ -18,3 +18,4 @@
 [0602/172828.970:ERROR:file_io.cc(89)] ReadExactly: expected 36, observed 0
 [0604/202606.894:ERROR:file_io_win.cc(161)] CreateFile C:\Users\Admin\AppData\Local\Temp\scoped_dir35608_1926592670\Crashpad\settings.dat: The system cannot find the file specified. (0x2)
 [0607/190433.005:ERROR:file_io.cc(89)] ReadExactly: expected 36, observed 0
+[0610/140542.814:ERROR:file_io.cc(134)] WriteFile: The pipe is being closed. (0xE8)

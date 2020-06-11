@@ -290,11 +290,21 @@ public class SalePageCucumberSteps {
 
     @And("he scrolls down")
     public void heScrollsDown() {
-        salePage.scrollToPosition(0,550);
+        salePage.scrollToPosition(0,500);
     }
 
     @And("he scrolls up")
     public void heScrollsUp() {
+        try {
+          Thread.sleep(2000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         salePage.scrollToPosition(0,0);
+    }
+
+    @And("he scrolls down for credit request")
+    public void heScrollsDownForCreditRequest() {
+        salePage.scrollDownForCreditRequest();
     }
 }
