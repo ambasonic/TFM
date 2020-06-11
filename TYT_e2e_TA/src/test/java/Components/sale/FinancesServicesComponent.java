@@ -128,6 +128,7 @@ public class FinancesServicesComponent extends ReusableViewElements {
 
     public void quoteCalculation(){
         if(currentProperties.getCurrentCountry().equalsIgnoreCase("france")){
+//            element(By.xpath("(//*[contains(text(), 'Calculate')]")).click();
             element(By.id(Calculate_Button)).click();
             waitABit(1000);
             return;
@@ -278,5 +279,14 @@ public class FinancesServicesComponent extends ReusableViewElements {
     public void closeVehiclePanel(){
         waitABit(1000);
         element(By.cssSelector("#quote\\:selectedVehiclePanel > legend")).click();
+    }
+
+    public void selectQuotationTemplate(String template) {// TODO refactor
+        waitABit(1000);
+        element(By.id("quote:retailfinanceSummary:finance_basedonlut_generalTC_label")).click();
+        waitABit(500);
+        if(template.toLowerCase().contains("kinto business")){
+            element(By.id("quote:retailfinanceSummary:finance_basedonlut_generalTC_3")).click();
+        }
     }
 }

@@ -128,7 +128,7 @@ public class OrganizationComponent extends ReusableViewElements {
         String s = anchors.get(0).getAttribute("textContent");
         assertFalse("The title: "+title+" is unknown", anchors.size()!=1);
         anchors.get(0).click();
-        waitABit(1000);
+        waitABit(3000);
     }
 
     public void setTitle(String title) {

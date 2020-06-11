@@ -21,8 +21,9 @@ Feature: Quotation Duplication with an existing Customer France (change of durat
     And he checks the selected option price '<option>' '<optionPrice>'
     And he scrolls down for credit request
     And he saved it
-#    Then he sends the credit request
-#    Then he accepts the prospect agreement
+    And he scrolls down for credit request
+    Then he sends the credit request
+    Then he accepts the prospect agreement
 
     Examples:
      |country |duration| distance |optionPack        |option                 |totalPrice|optionPack Price| optionPrice|

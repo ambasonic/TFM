@@ -307,4 +307,9 @@ public class SalePageCucumberSteps {
     public void heScrollsDownForCreditRequest() {
         salePage.scrollDownForCreditRequest();
     }
+
+    @And("he selects the quotation template {string}")
+    public void heSelectsTheQuotationTemplateQuotationTemplate(String template) {
+        salePage.getFinancesServicesComponent().selectQuotationTemplate(template);
+    }
 }

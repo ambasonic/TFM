@@ -37,6 +37,7 @@ Feature: Quotation Template with a New Customer France including relief vehicle 
     And he scrolls down
     And he updates the duration <duration>
     And he updates the distance <distance>
+    And he selects the quotation template '<quotation template>'
     And he adds the service '<tires>' '<tire choice>'
     And he adds at index 0 '<tyreNumber>' tires
     And he adds the service '<relief vehicle>' '<relief vehicle choice>'
@@ -46,5 +47,5 @@ Feature: Quotation Template with a New Customer France including relief vehicle 
     And he log out
 
     Examples:
-      | car manufacturer| model | car type                | color                   | upholstery                                                             |legal_entity|Fleet_Size | street_name       | street_number |city_name       | zip_code | phone_number | title |surname| name     |     email             |product_type        | duration | distance |tires | tire choice        |tyreNumber |relief vehicle choice|relief vehicle|lease price|
-      | Toyota          | AYGO  | 1.0 VVT-i x-play (2019) | Pure white gloss paint  | Cloth upholstery Dark Grey with bi-toned bolsters white and light grey | SARL        |   2      |Place du boulevard |       80      | VAUCRESSON     | 92420    |    5455566   |   Mr  |Bernard| Xavier   | Automation@france.fr  |KINTO ONE DECALAGE  |36        | 60000    |tires | 4-Seasons Tires    |     8     |yes                  |relief vehicle|€ 281,17  |
+      | car manufacturer| model | car type                | color                   | upholstery                                                             |legal_entity|Fleet_Size | street_name       | street_number |city_name       | zip_code | phone_number | title |surname| name     |     email             |product_type        | duration | distance |tires | tire choice        |tyreNumber |relief vehicle choice|relief vehicle|quotation template|lease price|
+      | Toyota          | AYGO  | 1.0 VVT-i x-play (2019) | Pure white gloss paint  | Cloth upholstery Dark Grey with bi-toned bolsters white and light grey | SARL        |   2      |Place du boulevard |       80      | VAUCRESSON     | 92420    |    5455566   |   Mr  |Bernard| Xavier   | Automation@france.fr  |KINTO ONE DECALAGE  |36        | 60000    |tires | 4-Seasons Tires    |     8     |yes                  |relief vehicle|KINTO BUSINESS    |€ 260,42   |
