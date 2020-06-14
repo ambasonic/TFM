@@ -247,6 +247,11 @@ public class FinancesServicesComponent extends ReusableViewElements {
     }
 
     public void clickOnSendCreditRequest() {
+        if(currentProperties.getCurrentCountry().equalsIgnoreCase("france")){
+            element(By.id("orderQuote:quote:j_idt810")).click();
+            waitABit(2000);
+            return;
+        }
         element(SEND_CREDIT_REQUEST).click();
         waitABit(2000);
     }
