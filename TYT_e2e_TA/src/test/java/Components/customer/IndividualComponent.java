@@ -110,6 +110,7 @@ public class IndividualComponent extends ReusableViewElements {
     }
 
     public void setSurname(String surname) {
+        waitABit(2000);
         element(SURNAME).sendKeys(surname);
         waitABit(1000);
     }

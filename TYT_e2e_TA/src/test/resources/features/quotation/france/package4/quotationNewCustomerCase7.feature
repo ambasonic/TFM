@@ -43,6 +43,7 @@ Feature: Quotation Template with a New Customer France including relief vehicle 
     And he adds the service '<relief vehicle>' '<relief vehicle choice>'
     Then he calculates the quote
     And he check the lease price '<lease price>'
+    And he scrolls down for credit request
     And he saved it
     And he log out
 

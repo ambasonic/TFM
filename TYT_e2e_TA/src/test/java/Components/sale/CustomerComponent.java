@@ -62,11 +62,11 @@ public class CustomerComponent extends ReusableViewElements {
         waitABit(3000);
         List<WebElementFacade> anchor = element(PROSPECT_DATA_TABLE).thenFindAll(By.tagName("tr"));
         anchor.get(0).findElement(By.tagName("button")).click();
-        waitABit(500);
+        waitABit(1000);
     }
 
     public void acceptProspectAgreement(String ... agreements) {
-        waitABit(1000);
+        waitABit(2000);
         if(currentProperties.getCurrentCountry().equalsIgnoreCase("france")){
             element(SAVE_BUTTON).click();
             waitABit(1000);

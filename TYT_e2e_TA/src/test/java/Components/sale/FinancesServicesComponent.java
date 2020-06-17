@@ -127,6 +127,7 @@ public class FinancesServicesComponent extends ReusableViewElements {
     }
 
     public void quoteCalculation(){
+        waitABit(2000);
         if(currentProperties.getCurrentCountry().equalsIgnoreCase("france")){
 //            element(By.xpath("(//*[contains(text(), 'Calculate')]")).click();
             element(By.id(Calculate_Button)).click();
@@ -139,6 +140,7 @@ public class FinancesServicesComponent extends ReusableViewElements {
     }
 
     public void saveQuote(){
+        waitABit(2000);
         element(By.id(Save_Quote)).click();
         waitABit(3000);
     }

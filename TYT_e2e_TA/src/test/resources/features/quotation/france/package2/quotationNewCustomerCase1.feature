@@ -2,7 +2,7 @@
 # Tags: optional
 
 @france
-@pck2case1
+@pck2case1france
 Feature: Quotation Template with a New Customer France
 
   Scenario Outline: quotation
@@ -36,9 +36,9 @@ Feature: Quotation Template with a New Customer France
     Then he accepts the prospect agreement
     And he sets the product to '<product_type>'
     And he go to the next page
-    And he scrolls down
     And he updates the duration <duration>
     And he updates the distance <distance>
+    And he scrolls down
     Then he calculates the quote
     And he check the total price '<totalPrice>'
     And he clicks on the financial summary panel
@@ -46,6 +46,7 @@ Feature: Quotation Template with a New Customer France
     And he checks the selected option price '<option>' '<optionPrice>'
     And he checks the selected option price '<option2>' '<optionPrice2>'
     And he clicks on the financial summary panel
+    And he scrolls down for credit request
     And he scrolls down
     And he saved it
     And he log out

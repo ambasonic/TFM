@@ -42,6 +42,7 @@ Feature: Quotation Template with a New Sole Trader France including Downpayment
     And he updates the distance <distance>
     And he adds the service '<tires>' '<tire choice>'
     And he adds at index 0 '<tyreNumber>' tires
+    And he scrolls down for credit request
     Then he calculates the quote
     And he check the lease price '<lease price>'
     And he clicks on the financial summary panel

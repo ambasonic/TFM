@@ -80,8 +80,10 @@ public class OrganizationComponent extends ReusableViewElements {
     }
 
     public void setCompany(String company_Name) {
+        waitABit(2000);
         element(COMPANY).sendKeys(company_Name);
         scrollToPosition(0, 300);
+        waitABit(1000);
     }
 
     public void setStreetName(String street_Name) {
@@ -105,6 +107,7 @@ public class OrganizationComponent extends ReusableViewElements {
     }
 
     public void setPhoneNumber(String phone_Number) {
+        waitABit(3000);
         element(PHONE_NUMBER).sendKeys(phone_Number);
         waitABit(2000);
     }
