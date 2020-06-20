@@ -39,4 +39,4 @@ Feature: Quote validation
 
     Examples:
       |quoteID   |
-      |019374/001|
+      |019517/001|
