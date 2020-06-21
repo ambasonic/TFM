@@ -10,7 +10,7 @@ import org.junit.runner.RunWith;
 @CucumberOptions(
         plugin = {"pretty"},
         features = "src/test/resources/features",
-        tags = "@italy"
+        tags = "@france"
 )
 public class CucumberTestSuite {
 

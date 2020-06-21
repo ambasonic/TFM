@@ -68,6 +68,7 @@ public class FinancesServicesComponent extends ReusableViewElements {
     public void selectPaymentMethod(int paymentIndex, String paymentName) {
         element(By.id(Delivery_Menu)).click();
         element(By.id(Delivery_Method +paymentIndex)).click();
+        waitABit(2000);
     }
 
     /**
@@ -75,6 +76,7 @@ public class FinancesServicesComponent extends ReusableViewElements {
      * @param choice 1 for true 0 for false
      */
     public void setReliefVehicle(boolean choice){
+        waitABit(2000);
         element(By.id(Relief_Vehicle_Field)).click();
         if(choice){
             element(Relief_Vehicle_Yes_Choice).click();

@@ -42,4 +42,4 @@ Feature: Quotation Template with an Existing Sole Trader France including Downpa
 
     Examples:
       | car manufacturer| model         | car type                        | color                   | upholstery       |option         |customer Name  | product_type       |  distance  |duration |downPayment|tyreNumber |tires | tire choice        |relief vehicle choice|relief vehicle|lease price|optionPrice|
-      | Toyota          | YARIS HYBRIDE | 1.5 VVT-I HYBRID Dynamic (2019) | Manhattan Grey metallic |Cloth Black/Grey  |Metallic paint |COCCINELLE     | KINTO ONE DECALAGE |  80000     |36       |1000       |     4     |tires | Summer Tires       |yes                  |relief vehicle|€ 289,13   |€ 300,00   |
+      | Toyota          | YARIS HYBRIDE | 1.5 VVT-I HYBRID Dynamic (2019) | Manhattan Grey metallic |Cloth Black/Grey  |Metallic paint |COCCINELLE     | KINTO ONE DECALAGE |  80000     |36       |1000       |     4     |tires | Summer Tires       |yes                  |relief vehicle|€ 292,73   |€ 300,00   |
