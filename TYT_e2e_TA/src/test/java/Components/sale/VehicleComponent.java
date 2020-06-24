@@ -30,13 +30,13 @@ public class VehicleComponent extends ReusableViewElements {
     public void selectCarManufacturer(String manufacturer) {
         WebElement plusSign = makeTable.findElement(By.tagName("span"));
         try {
-            Thread.sleep(2000);
+            Thread.sleep(3000);
             if(plusSign.getAttribute("class").contains("ui-icon-plusthick"))
             {
                 makeTable.findElement(By.tagName("legend")).click();
             }
 
-            Thread.sleep(2000);
+            Thread.sleep(3000);
             List<WebElement> anchors = makeTable.findElements(By.tagName("a"));
             Actions actions = new Actions(getDriver());
             for(int i=0; i<anchors.size(); i++) {
@@ -64,6 +64,7 @@ public class VehicleComponent extends ReusableViewElements {
     }
 
     public void selectCarTypeByText(String carType){
+        waitABit(2000);
         List<WebElementFacade> anchors = findAll(VEHICLE_ROWS)
                 .stream()
                 .filter(c -> c.findElements(By.tagName("span")).get(1).getText().equalsIgnoreCase(carType))
