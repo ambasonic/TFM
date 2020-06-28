@@ -14,6 +14,7 @@ import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.time.Duration;
 import java.util.Calendar;
+import java.util.List;
 import java.util.NoSuchElementException;
 import java.util.concurrent.TimeUnit;
 
@@ -27,6 +28,7 @@ public class ReusableViewElements extends PageObject {
         super(driver);
     }
     public static CurrentProperties currentProperties;
+    public static String quoteID;
     protected WebDriverWait webDriverWait= new WebDriverWait(getDriver(), 7);
 
     public void openURL(String pageURL){
@@ -197,6 +199,15 @@ public class ReusableViewElements extends PageObject {
         } catch (NoSuchElementException e) {
             Assert.fail("Unable to JS click on the WebElement, Exception: " + e.getMessage());
         }
+    }
+
+    public void getQuoteID() {
+        String text = element(By.cssSelector("td.tabButtonBottomSelected > div")).getText();
+        quoteID= text.replaceAll("Quote ", "");
+    }
+
+    public void closeBrowser() {
+        getDriver().close();
     }
     // getter and setter
 }

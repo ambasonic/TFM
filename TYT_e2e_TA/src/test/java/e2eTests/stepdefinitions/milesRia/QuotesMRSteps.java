@@ -58,4 +58,22 @@ public class QuotesMRSteps {
     public void clickOnGeneral() {
         quotesPage.getResultingContractMRComponent().backToGeneral();
     }
+
+    @Step()
+    public void clickOnCopy() {
+        quotesPage.clickOnCopy();
+    }
+
+    @Step()
+    public void clickOnNewRequest() {
+        quotesPage.selectNewRequest();
+    }
+
+    public void getQuoteId() {
+        quotesPage.getQuoteID();
+    }
+
+    public void closeBrowser() {
+        quotesPage.closeBrowser();
+    }
 }

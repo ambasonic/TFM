@@ -16,4 +16,6 @@ public class MilesRiaHomePage extends ReusableViewElements {
     public QuotationComponent getQuotationComponent(){
         return new QuotationComponent(getDriver());}
 
+    public void searchItem() {
+    }
 }

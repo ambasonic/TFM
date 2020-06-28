@@ -41,4 +41,20 @@ public class QuotesMRCucumberSteps {
     public void selectedStipulationActivation() {
         quotesMRSteps.activateStipulation();
     }
+
+    @And("he generates a quote")
+    public void heGenerateAQuote() {
+        quotesMRSteps.clickOnCopy();
+        quotesMRSteps.clickOnNewRequest();
+    }
+
+    @And("he saves the quoteID")
+    public void getQuoteID() {
+        quotesMRSteps.getQuoteId();
+    }
+
+    @Then("he closes the browser")
+    public void heClosesTheBrowser() {
+        quotesMRSteps.closeBrowser();
+    }
 }

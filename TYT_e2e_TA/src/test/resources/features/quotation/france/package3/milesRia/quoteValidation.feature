@@ -9,6 +9,12 @@ Feature: Quote validation
     Given The dealer open the MilesRia backoffice 'FRANCE'
     And he login in MilesRia
     And he search a quote '<quoteID>'
+    And he generates a quote
+    And he saves the quoteID
+    Then he closes the browser
+    And The dealer open the MilesRia backoffice 'FRANCE'
+    And he login in MilesRia
+    And he search the saved quote
     When he selects the credit score
     And he set the status to 'Complété' and the decision to 'Accepted'
     Then he generate the contract
@@ -40,5 +46,5 @@ Feature: Quote validation
     And he checks the status 'Running'
 
     Examples:
-      |quoteID   |
-      | 003233/001|
+      |quoteID    |
+      |003174/001 |

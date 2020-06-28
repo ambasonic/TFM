@@ -25,4 +25,10 @@ public class HomePageMRCucumberSteps {
         homePageMRSteps.selectItemInQuickAccess(LONG_TERM_CONTRACTS.getName());
         homePageMRSteps.searchItem(ltc);
     }
+
+    @And("he search the saved quote")
+    public void heSearchTheSavedQuote() {
+        homePageMRSteps.selectItemInQuickAccess(QUOTES.getName());
+        homePageMRSteps.searchItem();
+    }
 }

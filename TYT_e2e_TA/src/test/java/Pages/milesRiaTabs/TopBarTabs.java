@@ -35,15 +35,14 @@ public class TopBarTabs extends ReusableViewElements {
     }
 
     public void clickOnValidate(){
+        waitABit(4000);
         List<WebElementFacade> getAllNextButton = findAll(NEXT_BUTTONS);
-        waitABit(2000);
         getAllNextButton.get(0).click();
     }
 
     public void clickOnApprove() {
         waitABit(2000);
         List<WebElementFacade> getAllNextButton = findAll(NEXT_BUTTONS);
-        findAll(NEXT_BUTTONS);
         getAllNextButton.get(1).click();
         waitABit(10000);
     }

@@ -3,8 +3,7 @@ package Components.quotesMR;
 import Pages.ReusableViewElements;
 import Utils.CurrentProperties;
 import org.openqa.selenium.*;
-
-
+import org.openqa.selenium.interactions.Actions;
 
 
 public class CreditScoreMRComponent extends ReusableViewElements {
@@ -19,6 +18,7 @@ public class CreditScoreMRComponent extends ReusableViewElements {
     }
 
     public String selectCreditScore() {
+        waitABit(2000);
         element(creditScore).click();
         waitABit(5000);
         return element(creditScore).getText();

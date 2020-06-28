@@ -16,4 +16,8 @@ public class HomePageMRSteps {
     public void searchItem(String item) {
         milesRiaHomePage.getMilesRiaTopHeaderComponent().searchQuote(item);
     }
+
+    public void searchItem() {
+        milesRiaHomePage.getMilesRiaTopHeaderComponent().searchItem();
+    }
 }
