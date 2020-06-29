@@ -176,7 +176,7 @@ public class FinancesServicesComponent extends ReusableViewElements {
     }
 
     public void checkLeasePrice(String leasePrice) {
-        waitABit(500);
+        waitABit(700);
         String price = element(VAT_LEASE_PRICE).getText();
         assertThat(price, is(leasePrice));
     }

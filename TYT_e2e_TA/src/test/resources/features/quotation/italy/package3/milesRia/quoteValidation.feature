@@ -8,6 +8,12 @@ Feature: Quote validation
     Given The dealer open the MilesRia backoffice 'ITALY'
     And he login in MilesRia
     And he search a quote '<quoteID>'
+    And he generates a quote
+    And he saves the quoteID
+    Then he closes the browser
+    And The dealer open the MilesRia backoffice 'ITALY'
+    And he login in MilesRia
+    And he search the saved quote
     When he selects the credit score
     And he set the status to 'Completed' and the decision to 'Accepted'
     Then he generate the contract
