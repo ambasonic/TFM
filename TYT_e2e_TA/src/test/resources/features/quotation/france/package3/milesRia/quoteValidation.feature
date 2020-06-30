@@ -2,7 +2,7 @@
 # Tags: optional
 
 @france
-@pck3
+@pck3france
 Feature: Quote validation
 
   Scenario Outline: The dealer validates a quote in MilesRia
