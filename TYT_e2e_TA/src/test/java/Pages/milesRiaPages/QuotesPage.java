@@ -3,6 +3,7 @@ package Pages.milesRiaPages;
 import Components.quotesMR.CreditScoreMRComponent;
 import Components.quotesMR.ResultingContractMRComponent;
 import Pages.ReusableViewElements;
+import Utils.CurrentProperties;
 import net.serenitybdd.core.pages.WebElementFacade;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -27,12 +28,21 @@ public class QuotesPage extends ReusableViewElements {
 
     public void clickOnCopy() {
         waitABit(1500);
-        findAll(submenu_down).get(1).click();
+
+        if(currentProperties.getCurrentCountry().equalsIgnoreCase("italy")){
+            findAll(submenu_down).get(0).click();
+        } else {
+            findAll(submenu_down).get(1).click();
+        }
     }
 
     public void selectNewRequest(){
         waitABit(1500);
-        findAll(By.xpath("//tbody/tr[5]/td[2]/div")).get(1).click();
+        if(currentProperties.getCurrentCountry().equalsIgnoreCase("italy")){
+            findAll(By.xpath("//tbody/tr[4]/td[2]/div")).get(2).click();
+        }else {
+            findAll(By.xpath("//tbody/tr[5]/td[2]/div")).get(1).click();
+        }
         clickOnValidate();
         clickOnApprove();
     }
