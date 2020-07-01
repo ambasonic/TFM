@@ -45,4 +45,4 @@ Feature: Quote validation
 
     Examples:
       |quoteID   |
-      |019517/001|
+      | 019621/001|
