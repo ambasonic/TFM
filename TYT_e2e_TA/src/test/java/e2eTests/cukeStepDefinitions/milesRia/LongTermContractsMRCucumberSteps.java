@@ -44,7 +44,7 @@ public class LongTermContractsMRCucumberSteps extends TestData {
         longTermContractsMRSteps.setRegistrationDate(getActualDate());
     }
 
-    @And("he open the vehicle")
+    @And("he opens the vehicle")
     public void heOpenTheVehicle() {
         longTermContractsMRSteps.openVehicle();
     }
@@ -117,5 +117,10 @@ public class LongTermContractsMRCucumberSteps extends TestData {
     @And("he sets the email Address To with: {string}")
     public void sendEmailWithoutClearing(String email) {
         longTermContractsMRSteps.sendEmailWithoutClearing(email);
+    }
+
+    @And("he opens the vehicle order")
+    public void heOpenTheVehicleOrder() {
+        longTermContractsMRSteps.openVehicleOrder();
     }
 }

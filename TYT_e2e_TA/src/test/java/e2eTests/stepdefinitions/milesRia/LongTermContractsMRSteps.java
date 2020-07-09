@@ -16,12 +16,16 @@ public class LongTermContractsMRSteps {
 
     @Step("The dealer go to the Long terms contract tab")
     public void openMRTab() {
-        homePage.openMRTab(2);
+        homePage.openMRTabPerIndex(2);
     }
 
     @Step("The dealer Open the vehicle")
     public void openVehicle() {
         longTermContractsPage.getTopBarTabs().clickOnOpenVehicle();
+    }
+    @Step("The dealer Open the vehicle")
+    public void openVehicleOrder() {
+        longTermContractsPage.getTopBarTabs().clickOnVehicleOrder();
     }
 
     @Step("The dealer open the vehicle usage menu")

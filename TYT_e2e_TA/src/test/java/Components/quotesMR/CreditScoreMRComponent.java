@@ -42,12 +42,18 @@ public class CreditScoreMRComponent extends ReusableViewElements {
     }
 
     public void setDecision(String decision) {
+        waitABit(3500);
+        Actions actions = new Actions(getDriver());
+        actions.sendKeys(Keys.TAB);
+        actions.build().perform();
         Boolean staleElement = true;
         while(staleElement){
             try{
-                element(decisionTextField).clear();
-                element(decisionTextField).sendKeys(decision);
-                element(decisionTextField).sendKeys(Keys.ENTER);
+//                element(decisionTextField).clear();
+                actions.sendKeys(decision);
+                actions.build().perform();
+//                element(decisionTextField).sendKeys(decision);
+//                element(decisionTextField).sendKeys(Keys.ENTER);
                 staleElement = false;
 
             } catch(StaleElementReferenceException e){

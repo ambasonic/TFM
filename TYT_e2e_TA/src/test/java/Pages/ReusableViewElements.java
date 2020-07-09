@@ -36,7 +36,7 @@ public class ReusableViewElements extends PageObject {
         waitABit(1000);
     }
 
-    public void openMRTab(int tabIndex){
+    public void openMRTabPerIndex(int tabIndex){
         String country =  currentProperties.getCurrentCountry();
         switch (country.toUpperCase()){
             case "ITALY": openURL(ITALY.getMilesRiaURL()+"#tab_"+tabIndex);
@@ -208,6 +208,24 @@ public class ReusableViewElements extends PageObject {
 
     public void closeBrowser() {
         getDriver().close();
+    }
+
+    public void openMRTabPerName(String tabName) {
+        List<WebElementFacade> tabs = findAll(By.className("tabButtonBottom"));
+        for (WebElementFacade tab: tabs) {
+            String text = tab.getText();
+            if(text.contains(tabName)){
+                tab.click();
+                waitABit(2000);
+            }
+        }
+
+    }
+
+    public void clickOnContextMenu(By contextMenuByName) {
+        scrollToElement(element(contextMenuByName));
+        element(contextMenuByName).click();
+        waitABit(1000);
     }
     // getter and setter
 }

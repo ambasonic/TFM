@@ -58,4 +58,9 @@ public class QuotesPage extends ReusableViewElements {
         getAllNextButton.get(0).click();
         waitABit(2000);
     }
+
+    public void selectsCreditApplication() {
+        List<WebElementFacade> silkClickableLink = findAll(By.className("silkClickableLink"));
+        silkClickableLink.get(0).click();
+    }
 }

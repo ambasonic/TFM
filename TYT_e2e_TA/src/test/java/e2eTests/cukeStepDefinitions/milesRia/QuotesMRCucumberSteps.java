@@ -1,10 +1,14 @@
 package e2eTests.cukeStepDefinitions.milesRia;
 
+import Utils.constance.ContextMRMenu;
+import Utils.constance.TabName;
 import e2eTests.stepdefinitions.milesRia.QuotesMRSteps;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import net.thucydides.core.annotations.Steps;
+
+import static Utils.constance.ContextMRMenu.SUMMARY;
 
 public class QuotesMRCucumberSteps {
 
@@ -16,9 +20,19 @@ public class QuotesMRCucumberSteps {
         quotesMRSteps.selectCreditScore();
     }
 
-    @And("he set the status to {string} and the decision to {string}")
+    @And("he sets the status to {string} and the decision to {string}")
     public void set_Status_And_Decision(String status, String decision) {
         quotesMRSteps.setStatus(status);
+        quotesMRSteps.setDecision(decision);
+    }
+
+    @And("he sets the status to {string}")
+    public void setStatus(String status) {
+        quotesMRSteps.setStatus(status);
+    }
+
+    @And("he sets the decision to {string}")
+    public void setDecision(String decision) {
         quotesMRSteps.setDecision(decision);
     }
 
@@ -35,6 +49,12 @@ public class QuotesMRCucumberSteps {
     @When("he selects stipulation")
     public void selectsStipulation() {
         quotesMRSteps.selectStipulation();
+    }
+
+    @When("he selects stipulation from credit applications")
+    public void selectCAStipulation() {
+        quotesMRSteps.selectCAStipulation();
+//        openCAStipulation
     }
 
     @And("he activates the selected stipulation")
@@ -56,5 +76,30 @@ public class QuotesMRCucumberSteps {
     @Then("he closes the browser")
     public void heClosesTheBrowser() {
         quotesMRSteps.closeBrowser();
+    }
+
+    @And("he selects the credit application")
+    public void heSelectsTheCreditApplication() {
+        quotesMRSteps.selectsCreditApplication();
+    }
+
+    @Then("he selects overview")
+    public void heSelectsOverview() {
+        quotesMRSteps.clickOnGeneral();
+    }
+
+    @Then("he selects in LTC general")
+    public void clickOnGeneral() {
+        quotesMRSteps.clickOnLTCGeneral();
+    }
+
+    @Then("he selects summary")
+    public void selectSummary() {
+        quotesMRSteps.clickOnContextMenu(SUMMARY.getContextMenuByName());
+    }
+
+    @When("he opens the quote tab")
+    public void openQuote() {
+        quotesMRSteps.openTab(TabName.QUOTE.getTabName());
     }
 }

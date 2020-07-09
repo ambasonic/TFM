@@ -15,7 +15,7 @@ Feature: Quote validation
     And he login in MilesRia
     And he search the saved quote
     When he selects the credit score
-    And he set the status to 'Completed' and the decision to 'Accepted'
+    And he sets the status to 'Completed' and the decision to 'Accepted'
     Then he generate the contract
     When he selects the resulting contract
     Then he can see the generated long term contract
@@ -29,7 +29,7 @@ Feature: Quote validation
     And he set the invoice number
     And he validate the process
     When he open the long term contract
-    And he open the vehicle
+    And he opens the vehicle
     Then he select the vehicle usage
     And he registered the vehicle plates
     Then he saved

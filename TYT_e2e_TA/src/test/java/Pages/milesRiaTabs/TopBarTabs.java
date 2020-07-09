@@ -14,12 +14,17 @@ public class TopBarTabs extends ReusableViewElements {
     private final String NEXT_BUTTONS = "//img[contains(@src,'"+currentProperties.getCurrentCountryIP()+"milesria/resource/skins/MRI/images/Sofico/24/status_next.png?')]";
     private final String NEW_INVOICE = "//img[contains(@src,'"+currentProperties.getCurrentCountryIP()+"milesria/resource/skins/MRI/images/Sofico/16/invoice.png')]";
     private String OPEN_VEHICLE = "//img[contains(@src,'"+currentProperties.getCurrentCountryIP()+"milesria/resource/skins/MRI/images/Sofico/24/vehicle.png')]";
-
+    private String OPEN_VEHICLE_Order = "//img[contains(@src,'"+currentProperties.getCurrentCountryIP()+"milesria/resource/skins/MRI/images/Sofico/16/order.png')]";
     public TopBarTabs(WebDriver driver) {
         super(driver);
     }
 
     public void clickOnOpenVehicle(){
+        element(OPEN_VEHICLE).click();
+        waitABit(1000);
+    }
+
+    public void clickOnVehicleOrder(){
         element(OPEN_VEHICLE).click();
         waitABit(1000);
     }

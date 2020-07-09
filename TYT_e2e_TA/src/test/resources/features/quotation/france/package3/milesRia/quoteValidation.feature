@@ -16,13 +16,30 @@ Feature: Quote validation
     And he login in MilesRia
     And he search the saved quote
     When he selects the credit score
-    And he set the status to 'Complété' and the decision to 'Accepted'
-    Then he generate the contract
-    When he selects the resulting contract
-    When he selects stipulation
+    And he sets the status to 'Demandé'
+    Then he saved
+    And he selects the credit application
+    And he clicks on complete
+    And he sets the decision to 'Refused'
+    And he clicks on complete
+    When he selects stipulation from credit applications
     And he activates the selected stipulation
-    Then he can see the generated long term contract
-    And he click on the vehicle order link
+    Then he selects overview
+    And he clicks on complete
+    And he clicks on complete
+    And he selects overview
+    And he sets the decision to 'Accepted'
+    Then he clicks on complete
+    When he opens the quote tab
+    Then he selects summary
+    When he selects the resulting contract
+    Then he selects stipulation
+    And he activates the selected stipulation
+    And he selects in LTC general
+#    Then he can see the generated long term contract
+#    And he click on the vehicle order link
+    And he opens the vehicle
+    And he opens the vehicle order
     And he update the delivery date
     Then he saved
     And he validate

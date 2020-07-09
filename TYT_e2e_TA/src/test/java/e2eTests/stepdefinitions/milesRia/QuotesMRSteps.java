@@ -2,6 +2,7 @@ package e2eTests.stepdefinitions.milesRia;
 
 import Pages.milesRiaPages.QuotesPage;
 import net.thucydides.core.annotations.Step;
+import org.openqa.selenium.By;
 
 import static org.hamcrest.Matchers.is;
 import static org.junit.Assert.assertThat;
@@ -51,12 +52,16 @@ public class QuotesMRSteps {
     @Step()
     public void activateStipulation() {
         quotesPage.getResultingContractMRComponent().activateStipulation();
-        clickOnGeneral();
     }
 
     @Step()
     public void clickOnGeneral() {
         quotesPage.getResultingContractMRComponent().backToGeneral();
+    }
+
+    @Step()
+    public void clickOnLTCGeneral() {
+        quotesPage.getResultingContractMRComponent().clickOnLTCGeneral();
     }
 
     @Step()
@@ -75,5 +80,23 @@ public class QuotesMRSteps {
 
     public void closeBrowser() {
         quotesPage.closeBrowser();
+    }
+
+    public void selectsCreditApplication() {
+        quotesPage.selectsCreditApplication();
+    }
+
+    @Step()
+    public void selectCAStipulation() {
+        quotesPage.getResultingContractMRComponent().openCAStipulation();
+        quotesPage.getResultingContractMRComponent().selectAllStipulation();
+    }
+
+    public void openTab(String name) {
+        quotesPage.openMRTabPerName(name);
+    }
+
+    public void clickOnContextMenu(By contextMenuByName) {
+        quotesPage.clickOnContextMenu(contextMenuByName);
     }
 }
