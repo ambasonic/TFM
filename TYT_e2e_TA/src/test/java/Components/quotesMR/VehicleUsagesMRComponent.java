@@ -19,15 +19,31 @@ public class VehicleUsagesMRComponent extends ReusableViewElements {
 
     private final By VehicleUsages = By.xpath("//div[@id='id_menu_5_valueCell6']/div");
     private final By Registration_And_Documents = By.xpath("//div[@id='id_menu_5_valueCell7']/div");
+    private final By Registration_And_Documents_fr = By.xpath("//div[@id='id_menu_4_valueCell7']/div");
     private final String ADD_LICENCE_PLATE = "//img[contains(@src,'"+currentProperties.getCurrentCountryIP()+"milesria/resource/skins/MRI/images/Sofico/16/add.png')]";
     private final By VinNumber = By.name("A917");
+
     public void clickOnVehicleUsages() {
+//        id_menu_4_valueCell6
+        if(currentProperties.getCurrentCountry().equalsIgnoreCase("france")){
+            By VehicleUsagesFr = By.xpath("//div[@id='id_menu_4_valueCell6']/div");
+            waitABit(3000);
+            scrollToElement(element(VehicleUsagesFr));
+            element(VehicleUsagesFr).click();
+            return;
+        }
         waitABit(3000);
         scrollToElement(element(VehicleUsages));
         element(VehicleUsages).click();
     }
 
     public void clickOnRegistrationAndDocuments() {
+        if(currentProperties.getCurrentCountry().equalsIgnoreCase("france")){
+            waitABit(2000);
+            element(Registration_And_Documents_fr).click();
+            waitABit(1000);
+            return;
+        }
         waitABit(2000);
         element(Registration_And_Documents).click();
         waitABit(1000);
@@ -43,7 +59,6 @@ public class VehicleUsagesMRComponent extends ReusableViewElements {
         Actions actions = new Actions(getDriver());
         List<WebElementFacade> all = findAll(ADD_LICENCE_PLATE);
         all.get(6).click();
-//        all.get(4).click();
         waitABit(2000);
         actions.sendKeys(Keys.TAB).build().perform();
         waitABit(1000);

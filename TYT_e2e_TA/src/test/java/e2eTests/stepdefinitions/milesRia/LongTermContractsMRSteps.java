@@ -3,6 +3,7 @@ package e2eTests.stepdefinitions.milesRia;
 import Pages.home.HomePage;
 import Pages.milesRiaPages.LongTermContractsPage;
 import net.thucydides.core.annotations.Step;
+import org.openqa.selenium.By;
 
 public class LongTermContractsMRSteps {
 
@@ -117,5 +118,9 @@ public class LongTermContractsMRSteps {
 
     public void sendEmailWithoutClearing(String email) {
         longTermContractsPage.sendEmailWithoutClearing(email);
+    }
+
+    public void openLTCTab(String tabName) {
+        longTermContractsPage.openMRTabPerName(tabName);
     }
 }

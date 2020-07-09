@@ -21,6 +21,7 @@ public class LongTermContractsPage extends ReusableViewElements {
     private final By DiSTANCE = By.name("A1339");
     private final String DELIVER = "//img[contains(@src,'"+currentProperties.getCurrentCountryIP()+"milesria/resource/skins/MRI/images/Sofico/16/action.png')]";
     private final By CONTRACT_INITIATION = By.id("grid_WorkList_Activities_Tree_2_valueCell0");
+    private final By CONTRACT_INITIATION_FR = By.id("grid_WorkList_Activities_Tree_3_valueCell0");
     private final By NEW_DOCUMENT = By.xpath("//img[contains(@src,'"+currentProperties.getCurrentCountryIP()+"milesria/resource/skins/MRI/images/Sofico/24/document.png')]");
     private final By CLOSE = By.className("buttonRounded");
     private final String location_text_Italy = "Via Verdi  1\n" +
@@ -95,6 +96,11 @@ public class LongTermContractsPage extends ReusableViewElements {
 
     public void clickOnContractInitiation() {
         waitABit(2000);
+        if(currentProperties.getCurrentCountry().equalsIgnoreCase("france")){
+            element(CONTRACT_INITIATION_FR).click();
+            waitABit(2000);
+            return;
+        }
         element(CONTRACT_INITIATION).click();
         waitABit(2000);
     }

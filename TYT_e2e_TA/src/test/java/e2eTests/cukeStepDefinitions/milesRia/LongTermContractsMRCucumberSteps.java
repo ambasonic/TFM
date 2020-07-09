@@ -1,5 +1,7 @@
 package e2eTests.cukeStepDefinitions.milesRia;
 
+import Utils.constance.ContextMRMenu;
+import Utils.constance.TabName;
 import Utils.generatedTestData.TestData;
 import Utils.generatedTestData.VinGeneratorUtils;
 import e2eTests.stepdefinitions.milesRia.LongTermContractsMRSteps;
@@ -7,6 +9,9 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import net.thucydides.core.annotations.Steps;
+import org.openqa.selenium.By;
+
+import static Utils.constance.TabName.LONG_TERM_CONTRACTS;
 
 public class LongTermContractsMRCucumberSteps extends TestData {
 
@@ -28,7 +33,7 @@ public class LongTermContractsMRCucumberSteps extends TestData {
 
     @When("he open the long term contract")
     public void heOpenTheLongTermContract() {
-        longTermContractsMRSteps.openMRTab( ); //TODO refactor creer un context Italy des le d?but des Tests
+        longTermContractsMRSteps.openLTCTab(LONG_TERM_CONTRACTS.getTabName()); //TODO refactor creer un context Italy des le d?but des Tests
     }
 
     @Then("he select the vehicle usage")

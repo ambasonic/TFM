@@ -20,13 +20,15 @@ public class TopBarTabs extends ReusableViewElements {
     }
 
     public void clickOnOpenVehicle(){
+        waitABit(1500);
         element(OPEN_VEHICLE).click();
         waitABit(1000);
     }
 
     public void clickOnVehicleOrder(){
-        element(OPEN_VEHICLE).click();
-        waitABit(1000);
+        List<WebElementFacade> all = findAll(OPEN_VEHICLE_Order);
+        all.get(2).click();
+        waitABit(4000);
     }
 
     public void clickOnSaved() {
@@ -54,6 +56,11 @@ public class TopBarTabs extends ReusableViewElements {
 
     public void clickOnNewInvoice(){
         waitABit(1000);
+        if(currentProperties.getCurrentCountry().equalsIgnoreCase("france")){
+            findAll(NEW_INVOICE).get(1).click();
+            waitABit(5000);
+            return;
+        }
         element(NEW_INVOICE).click();
     }
 }
