@@ -49,7 +49,7 @@ Feature: Quote validation
     And he validate
     And he approve
     When he open the long term contract
-    And he open the vehicle
+    And he opens the vehicle
     Then he select the vehicle usage
     And he registered the vehicle plates
     Then he saved
