@@ -41,4 +41,4 @@ Feature: Quotation Template with an existing Customer France including relief ve
 
     Examples:
       | car manufacturer| model   | car type                | color                   | upholstery                                                             |option            | customer Name  | product_type  | duration | distance  |tires | tire choice        |tyreNumber |relief vehicle choice|relief vehicle|lease price|optionPrice|
-      | Toyota          | AYGO    | 1.0 VVT-i x-play (2019) | Red Chilien gloss paint | Cloth upholstery Dark Grey with bi-toned bolsters white and light grey |Chilien Red paint |2BDEVELOPPEMENT | KINTO ONE     |48        | 90000     |tires | 4-Seasons Tires    |     8     |yes                  |relief vehicle|€ 251,58   |€ 250,00   |
+      | Toyota          | AYGO    | 1.0 VVT-i x-play (2019) | Red Chilien gloss paint | Cloth upholstery Dark Grey with bi-toned bolsters white and light grey |Chilien Red paint |2BDEVELOPPEMENT | KINTO ONE     |48        | 90000     |tires | 4-Seasons Tires    |     8     |yes                  |relief vehicle|€ 254,71   |€ 250,00   |

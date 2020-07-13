@@ -39,4 +39,4 @@ Feature: Quotation Duplication with an existing Customer France(change of durati
 
     Examples:
       | car manufacturer| model   | car type                             | color                  | upholstery          |option         |option2                              | customer Name  | product_type        | duration | distance   |tyreIndex | tyreName     | tyreNumber |leasePrice|optionPrice|optionPrice2|
-      | Toyota          | COROLLA | Hybride 122h Dynamic Business (2020) | Black metallic paint   | Sellerie tissu Noir |Metallic paint | Front radar parking distance sensors|2BDEVELOPPEMENT | KINTO ONE DECALAGE  |60        | 120000     |     0    | Summer Tires |       4    |€ 407,23  |€ 650,00   |€ 280,00    |
+      | Toyota          | COROLLA | Hybride 122h Dynamic Business (2020) | Black metallic paint   | Sellerie tissu Noir |Metallic paint | Front radar parking distance sensors|2BDEVELOPPEMENT | KINTO ONE DECALAGE  |60        | 120000     |     0    | Summer Tires |       4    |€ 409,47  |€ 650,00   |€ 280,00    |
