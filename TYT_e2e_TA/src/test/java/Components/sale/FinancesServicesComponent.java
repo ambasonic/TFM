@@ -303,6 +303,6 @@ public class FinancesServicesComponent extends ReusableViewElements {
     public void acceptGDPRFromCreditRequest() {
         waitABit(2000);
         element(SUBMIT_2).click();
-        waitABit(5500);
+        waitABit(8500);
     }
 }
