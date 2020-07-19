@@ -13,7 +13,7 @@ Feature: Quotation Duplication with an existing Customer France(change of durati
     And he go to the next page
     Then he can selects vehicle options
     And he selects an option '<option>'
-    And he selects an option '<option2>'
+    And he selects the option pack '<optionPack>'
     And he chooses color '<color>' and upholstery '<upholstery>'
     And he go to the next page
     Then he search the customer by name '<customer Name>'
@@ -31,12 +31,12 @@ Feature: Quotation Duplication with an existing Customer France(change of durati
     And he clicks on the financial summary panel
     And he clicks on the vehicle panel
     And he checks the selected option price '<option>' '<optionPrice>'
-    And he checks the selected option price '<option2>' '<optionPrice2>'
+    And he checks the selected option price '<optionPack>' '<optionPackPrice>'
     And he clicks on the financial summary panel
     And he scrolls down
     And he saved it
     And he log out
 
     Examples:
-      | car manufacturer| model   | car type                             | color                  | upholstery          |option         |option2                              | customer Name  | product_type        | duration | distance   |tyreIndex | tyreName     | tyreNumber |leasePrice|optionPrice|optionPrice2|
-      | Toyota          | COROLLA | Hybride 122h Dynamic Business (2020) | Black metallic paint   | Sellerie tissu Noir |Metallic paint | Front radar parking distance sensors|2BDEVELOPPEMENT | KINTO ONE DECALAGE  |60        | 120000     |     0    | Summer Tires |       4    |€ 409,47  |€ 650,00   |€ 280,00    |
+      | car manufacturer| model   | car type                             | color                  | upholstery          |option         |optionPack                              | customer Name  | product_type        | duration | distance   |tyreIndex | tyreName     | tyreNumber |leasePrice|optionPrice|optionPackPrice|
+      | Toyota          | COROLLA | Hybride 122h Dynamic Business (2020) | Black metallic paint   | Sellerie tissu Noir |Metallic paint | Front radar parking distance sensors   |2BDEVELOPPEMENT | KINTO ONE DECALAGE  |60        | 120000     |     0    | Summer Tires |       4    |€ 409,47  |€ 650,00   |€ 280,00    |

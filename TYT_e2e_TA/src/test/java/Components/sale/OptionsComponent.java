@@ -61,6 +61,7 @@ public class OptionsComponent extends ReusableViewElements {
         List<WebElement> rows = element(OPTION_BODY_ELEMENT).findElements(By.tagName("tr"));
         for(int i=0; i<rows.size(); i++) {
             WebElement optionName = rows.get(i).findElement(By.className("optionNameColumn"));
+            String op = optionName.getText();
             if(optionName.getText().equalsIgnoreCase(option)) {
                 rows.get(i).findElement(By.className("optchk")).click();
             }
