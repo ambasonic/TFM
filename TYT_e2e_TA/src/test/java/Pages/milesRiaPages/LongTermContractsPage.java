@@ -78,7 +78,7 @@ public class LongTermContractsPage extends ReusableViewElements {
         waitABit(2000);
         setRequestLocation();
         if (currentProperties.getCurrentCountry().equalsIgnoreCase("france")){
-            setVehicleReceipt("Roland, Bosch");
+            setVehicleReceipt("Bernardo, Jean Luc");
         } else {
             setVehicleReceipt("ROSSO, ALBERTO");
         }

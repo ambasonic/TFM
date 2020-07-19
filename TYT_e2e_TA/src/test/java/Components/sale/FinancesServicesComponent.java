@@ -47,6 +47,7 @@ public class FinancesServicesComponent extends ReusableViewElements {
     private final By SEND_CREDIT_REQUEST = By.id("orderQuote:quote:j_idt768");
     private final By VEHICLE_NUMBER = By.id("quote:retailfinanceSummary:nr_of_vehicles_input");
     private final By SUBMIT = By.id("prospectdetail:submitbtn");
+    private final By SUBMIT_2 = By.id("prospectdetail:submit-confirmButton");
 
     public FinancesServicesComponent(WebDriver driver) {
         super(driver);
@@ -297,5 +298,11 @@ public class FinancesServicesComponent extends ReusableViewElements {
         if(template.toLowerCase().contains("kinto business")){
             element(By.id("quote:retailfinanceSummary:finance_basedonlut_generalTC_3")).click();
         }
+    }
+
+    public void acceptGDPRFromCreditRequest() {
+        waitABit(2000);
+        element(SUBMIT_2).click();
+        waitABit(3500);
     }
 }

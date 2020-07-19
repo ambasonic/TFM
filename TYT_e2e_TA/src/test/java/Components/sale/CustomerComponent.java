@@ -66,7 +66,7 @@ public class CustomerComponent extends ReusableViewElements {
     }
 
     public void acceptProspectAgreement(String ... agreements) {
-        waitABit(2000);
+        waitABit(3000);
         if(currentProperties.getCurrentCountry().equalsIgnoreCase("france")){
             element(SAVE_BUTTON).click();
             waitABit(1000);

@@ -312,4 +312,9 @@ public class SalePageCucumberSteps {
     public void heSelectsTheQuotationTemplateQuotationTemplate(String template) {
         salePage.getFinancesServicesComponent().selectQuotationTemplate(template);
     }
+
+    @Then("he accepts the prospect agreement from credit request")
+    public void heAcceptsTheProspectAgreementFromCreditRequest() {
+        salePage.getFinancesServicesComponent().acceptGDPRFromCreditRequest();
+    }
 }

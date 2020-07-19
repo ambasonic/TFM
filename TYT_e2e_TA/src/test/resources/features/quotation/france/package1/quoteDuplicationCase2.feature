@@ -50,9 +50,8 @@ Feature: Quotation Duplication with an existing Customer France (change of durat
     And he saved it
     And he scrolls down for credit request
     Then he sends the credit request
-    Then he accepts the prospect agreement
+    Then he accepts the prospect agreement from credit request
 #    And he prints the document
-
     Examples:
       |country| car manufacturer| model         | car type                               | color                    | upholstery       |option                 | customer Name  | product_type| duration | distance |totalPrice|optionPrice|duration2| distance2 |optionPack        |option2                |totalPrice2|optionPack Price| optionPrice2|
       |france | Toyota          | Yaris Hybride | 1.5 VVT-I HYBRID France Business (2019)| Pure White gloss paint   | Cloth Black/Grey |Space saver spare wheel| 2BDEVELOPPEMENT| KINTO ONE   |48        | 80000    |€ 260,29  |€ 150,00   |60       | 120000    | Pack Confort Plus|Space saver spare wheel|€ 275,88   |€ 600,00        |€ 150,00    |
