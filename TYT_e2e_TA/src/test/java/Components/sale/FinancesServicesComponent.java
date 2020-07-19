@@ -145,7 +145,7 @@ public class FinancesServicesComponent extends ReusableViewElements {
     public void saveQuote(){
         waitABit(2000);
         element(By.id(Save_Quote)).click();
-        waitABit(3000);
+        waitABit(4000);
     }
 
     public String getTotalPrice(){
