@@ -242,6 +242,7 @@ public class FinancesServicesComponent extends ReusableViewElements {
                 .collect(Collectors.toList());
         String price = anchors.get(0).thenFindAll(By.className("optionPriceColumn")).get(1).getText();
         assertThat(price, is(expectedVATPrice));
+        waitABit(2000);
 
     }
 
