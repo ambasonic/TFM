@@ -27,8 +27,8 @@ Feature: Quotation Template with an existing Sole Trader Italy including downpay
     And he updates the distance <distance>
     And he gives a down payment of '<downPayment>'
     And he selects the first <paymentIndex> payment '<paymentMethod>'
-    And he sets relief vehicle to '<relief_vehicle>'
     And he set the insurance type '<insurance>'
+    And he sets relief vehicle to '<relief_vehicle>'
     Then he calculates the quote
     And he check the lease price '<leasePrice>'
     And he checks the selected option price '<accessories>' '<accessoriesPrice>'

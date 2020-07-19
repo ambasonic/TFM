@@ -37,9 +37,9 @@ Feature: Duplicate a quote and change of duration and distance with additional o
     And he updates the duration <duration2>
     And he updates the distance <distance2>
     And he selects the first <paymentIndex> payment '<paymentMethod>'
-    And he sets relief vehicle to '<relief_vehicle>'
     And he selects the tyre type <tyreIndex> '<tyreName>'
     And he adds at index 1 '<tyreNumber>' tires
+    And he sets relief vehicle to '<relief_vehicle>'
     And he scrolls up
     Then he calculates the quote
     And he check the total price '<totalPrice>'
