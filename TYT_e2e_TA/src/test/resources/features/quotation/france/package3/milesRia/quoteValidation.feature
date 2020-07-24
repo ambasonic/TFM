@@ -3,9 +3,9 @@
 
 @france
 @pck3france
-Feature: Quote validation
+Feature: Contract Running
 
-  Scenario Outline: The dealer validates a quote in MilesRia
+  Scenario Outline: Contract creation and running in MilesRia
     Given The dealer open the MilesRia backoffice 'FRANCE'
     And he login in MilesRia
     And he search a quote '<quoteID>'

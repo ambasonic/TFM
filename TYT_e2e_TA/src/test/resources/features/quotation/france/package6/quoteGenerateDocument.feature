@@ -2,9 +2,9 @@
 # Tags: optional
 @france
 @pck6case1
-Feature: Quote validation
+Feature: Generate Documents
 
-  Scenario Outline: The dealer validates a quote in MilesRia
+  Scenario Outline: Documents Generation
     Given The dealer open the MilesRia backoffice 'FRANCE'
     And he login in MilesRia
     And he search a long term contract '20I00197'
