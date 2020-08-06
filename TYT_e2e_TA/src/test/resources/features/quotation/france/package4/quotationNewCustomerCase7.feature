@@ -3,7 +3,7 @@
 
 @france
 @pck4case7
-Feature: Quotation Template with a New Customer France including relief vehicle and Fuel card
+Feature: Create a quote with a new customer - company-  including relief vehicle and tires all seasons
 
   Scenario Outline: quotation
     Given The dealer open the MilesWeb backoffice 'FRANCE'

@@ -2,7 +2,7 @@
 # Tags: optional
 @france
 @pck4case6france
-Feature: Quotation Template with an existing Customer France including relief vehicle
+Feature: Create a quote with an existing customer including relief vehicle and tires
 
   Scenario Outline: quotation
     Given The dealer open the MilesWeb backoffice 'FRANCE'

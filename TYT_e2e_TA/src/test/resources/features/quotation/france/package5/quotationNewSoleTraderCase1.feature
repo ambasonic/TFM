@@ -3,7 +3,7 @@
 
 @france
 @pck5case1france
-Feature: Quotation Template with a New Sole Trader France including Downpayment
+Feature: Create a quote with a new sole trader including Downpayment and summer tires
 
   Scenario Outline: quotation
     Given The dealer open the MilesWeb backoffice 'FRANCE'

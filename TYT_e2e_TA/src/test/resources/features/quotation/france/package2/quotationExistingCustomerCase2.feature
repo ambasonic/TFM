@@ -1,6 +1,6 @@
 @france
 @pck2case2france
-Feature: Quotation Duplication with an existing Customer France(change of duration and distance)
+Feature: Quote creation with service -tires
 
   Scenario Outline: quotation
     Given The dealer open the MilesWeb backoffice 'FRANCE'
