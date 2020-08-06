@@ -44,7 +44,7 @@ Feature: Quotation Template with a New Customer France
     And he clicks on the financial summary panel
     And he clicks on the vehicle panel
     And he checks the selected option price '<option>' '<optionPrice>'
-    And he checks the selected option price '<option2>' '<optionPrice2>'
+ #   And he checks the selected option price '<option2>' '<optionPrice2>'
     And he clicks on the financial summary panel
     And he scrolls down for credit request
     And he scrolls down
