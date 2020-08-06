@@ -1,6 +1,6 @@
 # new feature
 # Tags: optional
-@italy
+@italyMilesRia
 @pck3
 Feature: Contract Running
 
