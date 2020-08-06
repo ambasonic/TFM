@@ -1,7 +1,7 @@
 # new feature
 # Tags: optional
 
-@france
+@franceMilesRia
 @pck3france
 Feature: Contract Running
 

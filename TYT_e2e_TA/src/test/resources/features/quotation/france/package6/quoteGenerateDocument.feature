@@ -1,6 +1,6 @@
 # new feature
 # Tags: optional
-@france
+@franceMilesRia
 @pck6case1
 Feature: Generate Documents
 
