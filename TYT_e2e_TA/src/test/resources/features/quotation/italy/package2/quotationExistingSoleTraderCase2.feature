@@ -3,7 +3,7 @@
 
 @italy
 @pck2case2
-Feature: Quotation Template with an existing Sole Trader Italy including downpayment and relief vehicle
+Feature: Create a quotation with an existing Sole Trader including downpayment and relief vehicle
 
   Scenario Outline: quotation
     Given The dealer open the MilesWeb backoffice 'ITALY'

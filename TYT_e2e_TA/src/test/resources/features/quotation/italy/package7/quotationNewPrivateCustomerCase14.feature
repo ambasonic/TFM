@@ -4,7 +4,7 @@
 @italy
 @pck7case14
 
-Feature: Quotation Template with a new private Customer Italy including Downpayment
+Feature: Quotation  with a new private customer  including downpayment and insurance
 
   Scenario Outline: quotation
     Given The dealer open the MilesWeb backoffice 'ITALY'

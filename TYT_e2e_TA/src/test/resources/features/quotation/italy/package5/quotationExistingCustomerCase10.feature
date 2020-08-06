@@ -2,7 +2,7 @@
 # Tags: optional
 @italy
 @pck5case10
-Feature: Quotation Template with an existing Customer Italy including PickUp and Delivery(Service)
+Feature: Create a quote with an existing customer - company including downpayment and PickUp and Delivery(Service)
 
   Scenario Outline: quotation
     Given The dealer open the MilesWeb backoffice 'ITALY'

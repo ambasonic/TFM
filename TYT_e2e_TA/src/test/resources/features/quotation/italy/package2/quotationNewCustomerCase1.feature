@@ -2,7 +2,7 @@
 # Tags: optional
 @italy
 @pck2case1
-Feature: Quotation Template with an existing Customer Italy
+Feature: Create a quotation with an new customer - comapany including insurance and tires
 
   Scenario Outline: quotation
     Given The dealer open the MilesWeb backoffice 'ITALY'

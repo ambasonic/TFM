@@ -1,7 +1,7 @@
 # new feature
 # Tags: optional
 
-@italy
+@italywrong
 @case3
 Feature: Failed Duplicate a quote and change of duration and distance with additional options
 

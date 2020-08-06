@@ -2,7 +2,7 @@
 # Tags: optional
 @italy
 @pck4case8
-Feature: Quotation Template with an existing Customer Italy including Relief Vehicle
+Feature: Create a quote with an existing customer including fuel card
 
   Scenario Outline: quotation
     Given The dealer open the MilesWeb backoffice 'ITALY'

@@ -2,7 +2,7 @@
 # Tags: optional
 @italy
 @pck5case11
-Feature: Quotation Template with a New Customer Italy including TPL(Services)
+Feature: Create a quote with a new customer including TPL(Services)
 
   Scenario Outline: quotation
     Given The dealer open the MilesWeb backoffice 'ITALY'
