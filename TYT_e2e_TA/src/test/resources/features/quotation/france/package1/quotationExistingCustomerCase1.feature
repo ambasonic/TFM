@@ -2,7 +2,7 @@
 # Tags: optional
 @france
 @pck1case1france
-Feature: Quotation Template with an existing Customer France
+Feature: Create an quote with an existing customer -company
 
   Scenario Outline: quotation
     Given The dealer open the MilesWeb backoffice '<country>'

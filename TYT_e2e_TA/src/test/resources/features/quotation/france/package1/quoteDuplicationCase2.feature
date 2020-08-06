@@ -2,7 +2,7 @@
 # Tags: optional
 @france
 @pck1case2france
-Feature: Quotation Duplication with an existing Customer France (change of duration and distance)
+Feature: Quote duplication with an existing customer - company  (change of duration and distance)
 
   Scenario Outline: quote duplication
     Given The dealer open the MilesWeb backoffice '<country>'

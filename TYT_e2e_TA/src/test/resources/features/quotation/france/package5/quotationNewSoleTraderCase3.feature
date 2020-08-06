@@ -3,7 +3,7 @@
 
 @france
 @pck5case3france
-Feature: Quotation Template with a New Sole Trader France including combinations of services(fuel card)
+Feature: Create a quote with a new sole trader with additional number of vehicule and fuel card
 
   Scenario Outline: quotation
     Given The dealer open the MilesWeb backoffice '<country>'

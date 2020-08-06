@@ -3,7 +3,7 @@
 
 @france
 @pck2case1france
-Feature: Quotation Template with a New Customer France
+Feature: Create a quote with a new customer - company
 
   Scenario Outline: quotation
     Given The dealer open the MilesWeb backoffice 'FRANCE'
