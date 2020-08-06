@@ -35,4 +35,4 @@ Feature: Quotation Template with an existing Customer France
 
     Examples:
       |country| car manufacturer| model         | car type                               | color                    | upholstery       |option                 | customer Name  | product_type| duration | distance |totalPrice|optionPrice|
-      |france | Toyota          | Yaris Hybride | 1.5 VVT-I HYBRID France Business (2019)| Pure White gloss paint   | Cloth Black/Grey |Space saver spare wheel| 2BDEVELOPPEMENT| KINTO ONE   |48        | 80000    |€ 260,29|€ 150,00|
+      |france | Toyota          | Yaris Hybride | 1.5 VVT-I HYBRID France Business (2019)| Pure White gloss paint   | Cloth Black/Grey |Space saver spare wheel| 2BDEVELOPPEMENT| KINTO ONE   |48        | 80000    |€ 260,29  |€ 150,00|
