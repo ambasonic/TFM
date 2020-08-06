@@ -9,7 +9,7 @@ import org.junit.runner.RunWith;
 
 @RunWith(CucumberSerenityRunner.class)
 @CucumberOptions(
-        plugin = {"pretty"},
+        plugin = {"pretty","json:target/cucumber.json"},
         features = "src/test/resources/features",
         tags = "@pck4case8"
 )
