@@ -2,7 +2,7 @@
 # Tags: optional
 @italy
 @pck7case16
-Feature: Quotation Template with a new Private customer Italy including vehicles with combinaison of services(fuel card)
+Feature: Create a quote with a new Private customer including vehicles with combinaison of services(fuel card)
 
   Scenario Outline: quotation
     Given The dealer open the MilesWeb backoffice 'ITALY'

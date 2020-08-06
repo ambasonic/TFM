@@ -2,7 +2,7 @@
 # Tags: optional
 @italy
 @pck1case2
-Feature: Duplicate a quote and change of duration and distance with additional options
+Feature: Quote duplication with an existing customer - company  (change of duration and distance)
 
   Scenario Outline: quote duplication
     Given The dealer open the MilesWeb backoffice 'ITALY'

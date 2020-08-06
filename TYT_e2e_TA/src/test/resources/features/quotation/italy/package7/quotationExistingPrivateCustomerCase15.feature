@@ -2,7 +2,7 @@
 # Tags: optional
 @italy
 @pck7case15
-Feature: Quotation Template with an existing Private Customer Italy including Downpayment and Relief Vehicle
+Feature: Quotation with an existing Private Customer  including Downpayment and Relief Vehicle
 
   Scenario Outline: quotation
     Given The dealer open the MilesWeb backoffice 'ITALY'

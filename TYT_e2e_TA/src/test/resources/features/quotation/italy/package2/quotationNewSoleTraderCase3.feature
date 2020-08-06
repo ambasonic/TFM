@@ -2,7 +2,7 @@
 # Tags: opti
 @italy
 @pck2case3
-Feature: Quotation Template with an existing Customer Italy including combinaison of services
+Feature: Create a quotation with an new sole trader including fuel card and additional vehicle number
 
   Scenario Outline: quotation
     Given The dealer open the MilesWeb backoffice 'ITALY'
