@@ -2,7 +2,7 @@
 # Tags: optional
 @italy
 @pck8case1
-Feature: Quote validation
+Feature: Generate Documents
 
   Scenario Outline: The dealer validates a quote in MilesRia
     Given The dealer open the MilesRia backoffice 'ITALY'

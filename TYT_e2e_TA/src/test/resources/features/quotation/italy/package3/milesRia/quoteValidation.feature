@@ -2,7 +2,7 @@
 # Tags: optional
 @italy
 @pck3
-Feature: Quote validation
+Feature: Contract Running
 
   Scenario Outline: The dealer validates a quote in MilesRia
     Given The dealer open the MilesRia backoffice 'ITALY'
