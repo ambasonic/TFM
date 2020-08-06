@@ -35,4 +35,4 @@ Feature: Quotation Template with an existing Customer Italy
 
     Examples:
       | car manufacturer| model | car type                                 | color                    | upholstery       |accessories    | customer Name | duration | distance | paymentIndex | paymentMethod                                          |leasePrice|servicePrice|accessoriesPrice|
-      | Toyota          | Yaris | 1.5 Hybrid Lounge Red/Bronze MY19 (2019) | Red Mica&Black metallic  | Cloth black/grey | LoJack Classic| Cifelli       | 48       | 80000    | 1            |TFM2_Delivery cost direct/broker from dealer to customer| € 416.62 | € 145.90   | € 189.10       |
+      | Toyota          | Yaris | 1.5 Hybrid Lounge Red/Bronze MY19 (2019) | Red Mica&Black metallic  | Cloth black/grey | LoJack Classic| Cifelli       | 48       | 80000    | 1            |TFM2_Delivery cost direct/broker from dealer to customer| € 416.62 | € 158.72   | € 189.10       |
