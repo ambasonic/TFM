@@ -11,7 +11,7 @@ import org.junit.runner.RunWith;
 @CucumberOptions(
         plugin = {"pretty"},
         features = "src/test/resources/features",
-        tags = "@pck5case10"
+        tags = "@pck5case11"
 )
 public class CucumberTestSuite {
 
