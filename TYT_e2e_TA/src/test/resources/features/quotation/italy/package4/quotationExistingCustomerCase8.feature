@@ -36,4 +36,4 @@ Feature: Quotation Template with an existing Customer Italy including Relief Veh
 
     Examples:
       | car manufacturer| model | car type                          | color            | upholstery       |option         | accessories    | accessories2|customer Name |paymentIndex | paymentMethod                                          |Fuel Card EdenRed|Fuel Card EdenRed choice |leasePrice|servicePrice|optionPrice |accessoriesPrice|accessories2Price|
-      | Toyota          | Yaris |   1.5 Hybrid Active MY19 (2019)   | Silver metallic  | Cloth black/grey |Metallic paint | LoJack Premium | Portabici Sx|CHIMAR SPA    |1            |TFM2_Delivery cost direct/broker from dealer to customer|Fuel Card EdenRed|yes                      | € 285.30 | € 130.11   |€ 700.00    |€ 272.06        |€ 161.22         |
+      | Toyota          | Yaris |   1.5 Hybrid Active MY19 (2019)   | Silver metallic  | Cloth black/grey |Metallic paint | LoJack Premium | Portabici Sx|CHIMAR SPA    |1            |TFM2_Delivery cost direct/broker from dealer to customer|Fuel Card EdenRed|yes                      | € 390.46 | € 141.14   |€ 700.00    |€ 272.06        |€ 161.22         |
