@@ -30,7 +30,7 @@ public class QuotesPage extends ReusableViewElements {
         waitABit(1500);
 
         if(currentProperties.getCurrentCountry().equalsIgnoreCase("italy")){
-            findAll(submenu_down).get(0).click();
+            findAll(submenu_down).get(1).click();
         } else {
             findAll(submenu_down).get(1).click();
         }
@@ -39,7 +39,7 @@ public class QuotesPage extends ReusableViewElements {
     public void selectNewRequest(){
         waitABit(1500);
         if(currentProperties.getCurrentCountry().equalsIgnoreCase("italy")){
-            findAll(By.xpath("//tbody/tr[4]/td[2]/div")).get(2).click();
+            findAll(By.xpath("//tbody/tr[4]/td[2]/div")).get(3).click();
         }else {
             findAll(By.xpath("//tbody/tr[5]/td[2]/div")).get(1).click();
         }
@@ -53,7 +53,7 @@ public class QuotesPage extends ReusableViewElements {
     }
 
     private void clickOnApprove() {
-        waitABit(3000);
+        waitABit(4000);
         List<WebElementFacade> getAllNextButton = findAll(NEXT_BUTTONS);
         getAllNextButton.get(0).click();
         waitABit(2000);
