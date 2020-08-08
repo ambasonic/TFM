@@ -80,7 +80,7 @@ public class LongTermContractsPage extends ReusableViewElements {
         if (currentProperties.getCurrentCountry().equalsIgnoreCase("france")){
             setVehicleReceipt("Bernardo, Jean Luc");
         } else {
-            setVehicleReceipt("ROSSO, ALBERTO");
+            setVehicleReceipt("Matteucci, Simone");
         }
         waitABit(5000);
         int size = findAll(DELIVER).size();
