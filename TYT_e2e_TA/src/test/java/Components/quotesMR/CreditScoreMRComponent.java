@@ -42,24 +42,28 @@ public class CreditScoreMRComponent extends ReusableViewElements {
     }
 
     public void setDecision(String decision) {
-        waitABit(3500);
-        Actions actions = new Actions(getDriver());
-        actions.sendKeys(Keys.TAB);
-        actions.build().perform();
-        Boolean staleElement = true;
-        while(staleElement){
-            try{
-//                element(decisionTextField).clear();
-                actions.sendKeys(decision);
-                actions.build().perform();
-//                element(decisionTextField).sendKeys(decision);
-//                element(decisionTextField).sendKeys(Keys.ENTER);
-                staleElement = false;
-
-            } catch(StaleElementReferenceException e){
-                staleElement = true;
-            }
-        }
+        waitABit(4500);
+//        element(decisionTextField).sendKeys(decision);
+        element(decisionTextField).click();
+        element(decisionTextField).sendKeys(decision);
+//        Actions actions = new Actions(getDriver());
+//        actions.moveToElement(element(decisionTextField));
+//        actions.sendKeys(Keys.ENTER);
+//        actions.build().perform();
+//        Boolean staleElement = true;
+//        while(staleElement){
+//            try{
+////                element(decisionTextField).clear();
+//                actions.sendKeys(decision);
+//                actions.build().perform();
+////                element(decisionTextField).sendKeys(decision);
+////                element(decisionTextField).sendKeys(Keys.ENTER);
+//                staleElement = false;
+//
+//            } catch(StaleElementReferenceException e){
+//                staleElement = true;
+//            }
+//        }
     }
 
     public void clickOnContract() {
