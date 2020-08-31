@@ -132,7 +132,7 @@ public class XRayRestApiCall {
         PrintWriter writer = new PrintWriter(new OutputStreamWriter(outputStream, UTF_8),
             true);
         connection.connect();
-        Permission permission = connection.getPermission();
+        Permission  permission = connection.getPermission();
         // send data if necessary
 
 //        InputStream inputStream = connection.getInputStream();
