@@ -17,7 +17,6 @@ src
            geckodriver.exe
 
 
-
 ## Executing the tests
 To run the sample project, you can either just run the `CucumberTestSuite` test runner class, or run either `mvn verify` or `gradle test` from the command line.
 
