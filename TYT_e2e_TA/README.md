@@ -30,7 +30,7 @@ Or
 $ gradle clean test -Pdriver=chrome  -Dcucumber.options=–tags italy
 ```
 
-Commands to run all features from Italy
+Command to run all features from Italy
 
 ```json
 example to run all features from a country
